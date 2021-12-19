@@ -1,0 +1,59 @@
+{
+	"name": "mars3d-plugin-widget",
+	"version": "3.1.17",
+	"description": "Mars3D平台插件,原生JS下的项目widget模块化设计功能模块",
+	"main": "src/index.js",
+	"dependencies": {
+		"mars3d": "^3.1.17",
+		"cesium": "^1.88"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.14.3",
+		"@babel/eslint-parser": "^7.14.3",
+		"@babel/plugin-proposal-class-properties": "^7.14.3",
+		"@babel/plugin-transform-runtime": "^7.14.3",
+		"@babel/preset-env": "^7.14.3",
+		"babel-eslint": "^10.1.0",
+		"babel-loader": "^8.2.2",
+		"eslint": "^7.26.0",
+		"eslint-config-prettier": "^7.2.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^3.3.1",
+		"eslint-plugin-promise": "^4.3.1",
+		"prettier": "^2.2.1",
+		"node-sass": "^5.0.0",
+		"sass-loader": "^10.1.1",
+		"mini-css-extract-plugin": "^0.6.0",
+		"optimize-css-assets-webpack-plugin": "^5.0.3",
+		"css-loader": "^2.1.1",
+		"webpack": "^4.46.0",
+		"webpack-cli": "^3.3.12"
+	},
+	"scripts": {
+		"build": "webpack --env.prod  --env.min --progress --profile --colors --config ./scripts/webpack.config.js && webpack --env.prod --progress --profile --colors --config ./scripts/webpack.config.js --devtool source-map",
+		"build-src": "webpack --env.prod --progress --profile --colors --config ./scripts/webpack.config.js --devtool source-map",
+		"build-min": "webpack --env.prod  --env.min  --progress --profile --colors --config ./scripts/webpack.config.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/marsgis/mars3d.git"
+	},
+	"bugs": {
+		"url": "https://github.com/marsgis/mars3d/issues",
+		"email": "wh@marsgis.cn"
+	},
+	"keywords": [
+		"marsgis",
+		"mars3d",
+		"cesium",
+		"webgl",
+		"gis",
+		"3dgis",
+		"webgis",
+		"widget"
+	],
+	"author": "火星科技",
+	"license": "Apache-2.0",
+	"homepage": "http://mars3d.cn"
+}
