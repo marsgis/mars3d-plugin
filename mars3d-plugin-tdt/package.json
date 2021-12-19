@@ -33,10 +33,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/marsgis/mars3d.git"
+		"url": "https://github.com/marsgis/mars3d-plugin.git"
 	},
 	"bugs": {
-		"url": "https://github.com/marsgis/mars3d/issues",
+		"url": "https://github.com/marsgis/mars3d-plugin/issues",
 		"email": "wh@marsgis.cn"
 	},
 	"keywords": [
