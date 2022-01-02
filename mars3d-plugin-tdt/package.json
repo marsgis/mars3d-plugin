@@ -4,7 +4,7 @@
 	"description": "Mars3D平台插件, 支持对 天地图三维地名服务和地形服务加载使用",
 	"main": "src/index.js",
 	"dependencies": {
-		"mars3d": "^3.1.18",
+		"mars3d": "^3.1.19",
 		"cesium": "^1.88",
 		"bytebuffer": "^5.0.1"
 	},
