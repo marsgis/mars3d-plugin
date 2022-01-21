@@ -7,7 +7,7 @@ let BaseTileLayer = mars3d.layer.BaseTileLayer;
  * 超图影像瓦片服务图层,
  * 【需要引入  mars3d-supermap 插件库】
  *
- * @param {Object} options 参数对象，包括以下：
+ * @param {Object} [options] 参数对象，包括以下：
  * @param {String} options.url supermap的影像服务地址
  * @param {String|String[]} [options.subdomains] URL模板中用于 {s} 占位符的子域。 如果此参数是单个字符串，则字符串中的每个字符都是一个子域。如果是 一个数组，数组中的每个元素都是一个子域。
  * @param {String} [options.tileFormat] 影像图片格式，默认为png。
@@ -25,7 +25,7 @@ let BaseTileLayer = mars3d.layer.BaseTileLayer;
  * @param {Number} options.rectangle.xmax 最大纬度值, -180 至 180
  * @param {Number} options.rectangle.ymin 最小纬度值, -90 至 90
  * @param {Number} options.rectangle.ymax 最大纬度值, -90 至 90
- * @param {Number[]} options.bbox bbox规范的瓦片数据的矩形区域范围,与rectangle二选一即可。
+ * @param {Number[]} [options.bbox] bbox规范的瓦片数据的矩形区域范围,与rectangle二选一即可。
  * @param {Number} [options.zIndex] 控制图层的叠加层次，默认按加载的顺序进行叠加，但也可以自定义叠加顺序，数字大的在上面。
  * @param {CRS} [options.crs=CRS.EPSG:3857] 瓦片数据的坐标系信息，默认为墨卡托投影
  * @param {ChinaCRS} [options.chinaCRS] 标识瓦片的国内坐标系（用于自动纠偏或加偏），自动将瓦片转为map对应的chinaCRS类型坐标系。
@@ -64,10 +64,10 @@ let BaseTileLayer = mars3d.layer.BaseTileLayer;
  * @param {Object} [options.center] 图层自定义定位视角 {@link Map#setCameraView}
  * @param {Number} options.center.lng 经度值, 180 - 180
  * @param {Number} options.center.lat 纬度值, -90 - 90
- * @param {Number} options.center.alt 高度值
- * @param {Number} options.center.heading 方向角度值，绕垂直于地心的轴旋转角度, 0-360
- * @param {Number} options.center.pitch 俯仰角度值，绕纬度线旋转角度, 0-360
- * @param {Number} options.center.roll 翻滚角度值，绕经度线旋转角度, 0-360
+ * @param {Number} [options.center.alt] 高度值
+ * @param {Number} [options.center.heading] 方向角度值，绕垂直于地心的轴旋转角度, 0-360
+ * @param {Number} [options.center.pitch] 俯仰角度值，绕纬度线旋转角度, 0-360
+ * @param {Number} [options.center.roll] 翻滚角度值，绕经度线旋转角度, 0-360
  * @param {Boolean} [options.flyTo] 加载完成数据后是否自动飞行定位到数据所在的区域。
  * @export
  * @class SmImgLayer
@@ -84,13 +84,21 @@ export class SmImgLayer extends BaseTileLayer {
   _addedHook() {
     super._addedHook();
 
-    if (Cesium.defined(this.options.transparentBackColorTolerance)) {
+    if (Cesium.defined(this.options.transparentBackColor)) {
+      this._imageryLayer.transparentBackColor = mars3d.Util.getCesiumColor(this.options.transparentBackColor);
       this._imageryLayer.transparentBackColorTolerance = this.options.transparentBackColorTolerance; //去黑边
     }
   }
 }
 function createImageryProvider(options) {
   options = mars3d.LayerUtil.converOptions(options);
+
+  if (options.url instanceof Cesium.Resource) options.url = options.url.url;
+
+  if (Cesium.defined(options.transparentBackColor)) {
+    delete options.transparentBackColor;
+    delete options.transparentBackColorTolerance;
+  }
   return new Cesium.SuperMapImageryProvider(options);
 }
 

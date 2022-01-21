@@ -1,11 +1,11 @@
 {
 	"name": "mars3d-plugin-supermap",
-	"version": "3.1.17",
+	"version": "3.1.23",
 	"description": "Mars3D平台插件,结合supermap超图库使用的功能插件",
 	"main": "src/index.js",
 	"dependencies": {
-		"mars3d": "^3.1.19",
-		"cesium": "^1.88"
+		"mars3d": "^3.1.23",
+		"cesium": "^1.89"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.14.3",

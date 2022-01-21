@@ -33,7 +33,7 @@ let removeKeys = ["_class"];
  * @return {void}  无
  * @example
 let widgetCfg ={
-  "version": "20210803",
+  "version": "2017",
   "defaultOptions": {
     "style": "dark",
     "windowOptions": {
@@ -346,15 +346,16 @@ export function activate(item, noDisableOther) {
     window.location.hash = "#" + thisItem.uri;
   }
 
-  //兼容之前历史版本的错误命名时的属性名称
-  if (thisItem.hasOwnProperty("disableOhter") && !thisItem.hasOwnProperty("disableOther")) {
-    thisItem.disableOther = thisItem.disableOhter;
-  }
-
   //释放其他已激活的widget
   if (thisItem.disableOther) {
-    disableAll(thisItem.uri, thisItem.group);
-  } else {
+    if (Array.isArray(thisItem.disableOther)) {
+      disable(thisItem.disableOther);
+    } else {
+      disableAll(thisItem.uri, thisItem.group);
+    }
+  }
+
+  if (thisItem.group) {
     disableGroup(thisItem.group, thisItem.uri);
   }
 
@@ -451,7 +452,7 @@ export function isActivate(uri) {
 /**
  * 释放指定的widget
  *
- * @param {String} uri widget的uri 或 id
+ * @param {String|String[]} uri widget的uri 或 id
  * @return {Boolean} 是否成功调用了释放
  */
 export function disable(uri) {
@@ -459,16 +460,31 @@ export function disable(uri) {
     return false;
   }
 
-  if (typeof id === "object") {
-    uri = uri.uri;
-  }
+  if (Array.isArray(uri)) {
+    let arrUri = uri;
+    for (let i = 0; i < widgetsdata.length; i++) {
+      let item = widgetsdata[i];
 
-  for (let i = 0; i < widgetsdata.length; i++) {
-    let item = widgetsdata[i];
+      for (let j = 0; j < arrUri.length; j++) {
+        let uri = arrUri[j];
+        if (item._class && (uri == item.uri || uri == item.id)) {
+          item._class.disableBase();
+          arrUri.splice(j, 1);
+          break;
+        }
+      }
+    }
+  } else {
+    if (typeof uri === "object") {
+      uri = uri.uri;
+    }
+    for (let i = 0; i < widgetsdata.length; i++) {
+      let item = widgetsdata[i];
 
-    if (item._class && (uri == item.uri || uri == item.id)) {
-      item._class.disableBase();
-      return true;
+      if (item._class && (uri == item.uri || uri == item.id)) {
+        item._class.disableBase();
+        return true;
+      }
     }
   }
   return false;
@@ -478,7 +494,7 @@ export function disable(uri) {
  * 关闭释放所有widget
  *
  * @export
- * @param {String|Boolean} [nodisable]  指定不释放的widget的uri或id 或 传true值强制释放所有widget(默认autoDisable为false的widet不会释放)
+ * @param {String|Boolean} [nodisable] 传string时 指定不释放的widget的uri或id ，传true值强制释放所有widget(默认autoDisable为false的widet不会释放)
  * @param {String} [group] 指定强制释放的group名(默认autoDisable为false的widet不会释放)，传入group值后会强制释放所有同group组的widget
  * @return {void}  无
  */

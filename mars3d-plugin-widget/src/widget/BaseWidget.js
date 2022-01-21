@@ -38,12 +38,12 @@ let _resources_cache = [];
  * @property {Boolean} [windowOptions.shadeClose=false] 当shade是存在的，点击弹层外区域后是否关闭弹窗。
  * @property {Number} [windowOptions.closeBtn=1] 当为0时，不显示关闭按钮，配置1和2来展示两种风格的关闭按钮
  * @property {Number} [windowOptions.noTitle=false] 是否不显示标题，为true是不显示标题
+ * @property {Boolean} [windowOptions.show=true] 激活后是否显示弹窗，false时激活后自动隐藏弹窗。
  *
  * @property {Boolean} [openAtStart=false] 打开系统后是否自动启动本插件
  * @property {String} [style] 添加到widget的view中的class样式名
  * @property {Object} [css] 添加到widget的css值
- * @property {Boolean} [show=true] 激活后是否显示弹窗，false时激活后自动隐藏弹窗。
- * @property {*} [其他] 传入数据等，定义的任意参数在widget内部方法中都可以通过this.config获取到
+ * @property {*} [多个参数] 传入数据等，定义的任意参数在widget内部方法中都可以通过this.config获取到
  */
 
 /**
@@ -159,9 +159,9 @@ export class BaseWidget extends BaseClass {
 
   /**
    * 定义关联的view弹窗或页面配置信息，目前支持3种类型，
-   * （1）type:'window'，iframe模式弹窗	,参考_example示例，	独立的html子页面，比较自由，简单粗暴、无任何限制；可以每个页面用不同的UI和第三方插件不用考虑冲突问题；任何水平的开发人员均容易快速开发。
-   * （2）type:'divwindow'，div元素模式弹窗	参考_example_divwin示例，可直接互相访问，这种模式弊端是易引起模块间id命名冲突，在css和html中命名时需注意。
-   * （3）type:'append'，任意html元素	参考_example_append示例，任意div节点，比较自由。
+   * （1）type:'window'，iframe模式弹窗 ,参考_example示例， 独立的html子页面，比较自由，简单粗暴、无任何限制；可以每个页面用不同的UI和第三方插件不用考虑冲突问题；任何水平的开发人员均容易快速开发。
+   * （2）type:'divwindow'，div元素模式弹窗 参考_example_divwin示例，可直接互相访问，这种模式弊端是易引起模块间id命名冲突，在css和html中命名时需注意。
+   * （3）type:'append'，任意html元素 参考_example_append示例，任意div节点，比较自由。
    * 为空时表示当前模块无关联的view页面，
    * 其中url地址规则，参考resources说明
    * @type {Object|Object[]}
@@ -385,13 +385,18 @@ export class BaseWidget extends BaseClass {
         //得到iframe页的窗口对象，执行iframe页的方法：viewWindow.method();
         let viewWindow = window[layero.find("iframe")[0]["name"]];
 
+        //绑定常用对象到子页面，方便直接使用
+        viewWindow.map = this.map;
+        viewWindow.mars3d = mars3d;
+        viewWindow.Cesium = mars3d.Cesium;
+
         //设置css
         if (this.options.css) {
           jQuery("#layui-layer" + viewopt._layerIdx).css(this.options.css);
         }
 
         //隐藏弹窗
-        if (this.options.hasOwnProperty("visible") && !this.options.visible) {
+        if (viewopt.windowOptions.hasOwnProperty("show") && !viewopt.windowOptions.show) {
           jQuery(layero).hide();
         }
 
@@ -450,7 +455,7 @@ export class BaseWidget extends BaseClass {
           viewopt._dom = layero;
 
           //隐藏弹窗
-          if (this.options.hasOwnProperty("show") && !this.options.show) {
+          if (viewopt.windowOptions.hasOwnProperty("show") && !viewopt.windowOptions.show) {
             jQuery(layero).hide();
           }
 

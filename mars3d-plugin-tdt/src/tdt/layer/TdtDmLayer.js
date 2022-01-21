@@ -6,7 +6,7 @@ let BaseLayer = mars3d.layer.BaseLayer;
 /**
  * 天地图 三维地名服务图层
  * 【需要引入 mars3d-tdt 插件库】
- * @param {Object} options 参数对象，包括以下：
+ * @param {Object} [options] 参数对象，包括以下：
  * @param {String} [options.url='https://t{s}.tianditu.gov.cn/mapservice/GetTiles'] 天地图服务地址
  * @param {String} [options.subdomains='01234567'] 服务负载子域
  * @param {String} [options.key=mars3d.Token.tianditu] 天地图服务token令牌
@@ -19,10 +19,10 @@ let BaseLayer = mars3d.layer.BaseLayer;
  * @param {Object} [options.center] 图层自定义定位视角 {@link Map#setCameraView}
  * @param {Number} options.center.lng 经度值, 180 - 180
  * @param {Number} options.center.lat 纬度值, -90 - 90
- * @param {Number} options.center.alt 高度值
- * @param {Number} options.center.heading 方向角度值，绕垂直于地心的轴旋转角度, 0-360
- * @param {Number} options.center.pitch 俯仰角度值，绕纬度线旋转角度, 0-360
- * @param {Number} options.center.roll 翻滚角度值，绕经度线旋转角度, 0-360
+ * @param {Number} [options.center.alt] 高度值
+ * @param {Number} [options.center.heading] 方向角度值，绕垂直于地心的轴旋转角度, 0-360
+ * @param {Number} [options.center.pitch] 俯仰角度值，绕纬度线旋转角度, 0-360
+ * @param {Number} [options.center.roll] 翻滚角度值，绕经度线旋转角度, 0-360
  * @param {Boolean} [options.flyTo] 加载完成数据后是否自动飞行定位到数据所在的区域。
  * @export
  * @class TdtDmLayer

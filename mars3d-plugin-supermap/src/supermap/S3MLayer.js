@@ -7,7 +7,7 @@ let BaseLayer = mars3d.layer.BaseLayer;
  * 超图S3M三维模型图层,
  * 【需要引入  mars3d-supermap 插件库】
  *
- * @param {Object} options 参数对象，包括以下：
+ * @param {Object} [options] 参数对象，包括以下：
  * @param {String} options.url supermap的S3M服务地址,示例："url": "http://www.supermapol.com/realspace/services/3D-Olympic/rest/realspace"
  * @param {String} [options.layername] 指定图层名称,未指定时，打开iserver场景服务下所有图层
  * @param {String} [options.sceneName] 工作空间中有多个场景，需要指定场景名称；设置为undefined，默认打开第一个
@@ -23,10 +23,10 @@ let BaseLayer = mars3d.layer.BaseLayer;
  * @param {Object} [options.center] 图层自定义定位视角 {@link Map#setCameraView}
  * @param {Number} options.center.lng 经度值, 180 - 180
  * @param {Number} options.center.lat 纬度值, -90 - 90
- * @param {Number} options.center.alt 高度值
- * @param {Number} options.center.heading 方向角度值，绕垂直于地心的轴旋转角度, 0-360
- * @param {Number} options.center.pitch 俯仰角度值，绕纬度线旋转角度, 0-360
- * @param {Number} options.center.roll 翻滚角度值，绕经度线旋转角度, 0-360
+ * @param {Number} [options.center.alt] 高度值
+ * @param {Number} [options.center.heading] 方向角度值，绕垂直于地心的轴旋转角度, 0-360
+ * @param {Number} [options.center.pitch] 俯仰角度值，绕纬度线旋转角度, 0-360
+ * @param {Number} [options.center.roll] 翻滚角度值，绕经度线旋转角度, 0-360
  * @param {Boolean} [options.flyTo] 加载完成数据后是否自动飞行定位到数据所在的区域。
  * @export
  * @class S3MLayer
