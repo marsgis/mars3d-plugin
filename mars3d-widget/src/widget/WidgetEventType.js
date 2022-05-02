@@ -40,7 +40,7 @@ const WidgetEventType = {
   /**
    *加载完成，执行所有内部处理后
    */
-  load: "load",
-};
+  load: "load"
+}
 
-export { WidgetEventType };
+export { WidgetEventType }

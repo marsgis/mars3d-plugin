@@ -1,13 +1,13 @@
-import * as mars3d from "mars3d";
-import { Loader } from "./loader";
-import { eventTarget, getCacheVersion, getDefWindowOptions } from "./widgetManager";
-import { WidgetEventType } from "./WidgetEventType";
+import * as mars3d from "mars3d"
+import { Loader } from "./loader"
+import { eventTarget, getCacheVersion, getDefWindowOptions } from "./widgetManager"
+import { WidgetEventType } from "./WidgetEventType"
 
-let jQuery = window.jQuery;
-let layer = window.layer; //请引入layer弹窗插件
-let BaseClass = mars3d.BaseClass;
+const jQuery = window.jQuery
+const layer = window.layer // 请引入layer弹窗插件
+const BaseClass = mars3d.BaseClass
 
-let _resources_cache = [];
+let _resources_cache = []
 
 /**
  * widget 配置参数
@@ -94,55 +94,55 @@ mars3d.widget.bindClass(MyWidget)
  */
 export class BaseWidget extends BaseClass {
   constructor(map, options) {
-    super(options);
+    super(options)
 
     /**
      *  获取当前地图
      * @type {Map}
      * @readonly
      */
-    this.map = map;
+    this.map = map
 
     /**
      *  获取当前配置参数
      * @type {BaseWidget.widgetOptions}
      * @readonly
      */
-    this.options = options; //配置的config信息
+    this.options = options // 配置的config信息
 
     /**
      *  获取当前配置参数，别名，同options
      * @type {BaseWidget.widgetOptions}
      * @readonly
      */
-    this.config = options;
+    this.config = options
 
     /**
      *  获取当前widget的目录路径
      * @type {String}
      * @readonly
      */
-    this.path = options.path || ""; //当前widget目录相对路径
+    this.path = options.path || "" // 当前widget目录相对路径
 
     /**
      *  是否激活状态
      * @type {Boolean}
      * @readonly
      */
-    this.isActivate = false;
+    this.isActivate = false
 
     /**
      *  是否已创建
      * @type {Boolean}
      * @readonly
      */
-    this.isCreate = false;
+    this.isCreate = false
 
-    this._viewcreate_allcount = 0;
-    this._viewcreate_okcount = 0;
-    this._viewConfig = this.view;
+    this._viewcreate_allcount = 0
+    this._viewcreate_okcount = 0
+    this._viewConfig = this.view
 
-    this.init();
+    this.init()
   }
 
   /**
@@ -154,7 +154,7 @@ export class BaseWidget extends BaseClass {
    * @abstract
    */
   get resources() {
-    return null;
+    return null
   }
 
   /**
@@ -169,102 +169,102 @@ export class BaseWidget extends BaseClass {
    * @abstract
    */
   get view() {
-    return null;
+    return null
   }
 
-  //==============激活插件=================
+  //= =============激活插件=================
   /**
    * 激活widget，同 mars3d.widget.activate方法
    * @return {void}  无
    */
   activateBase() {
-    let that = this;
+    const that = this
 
     if (this.isActivate) {
-      //已激活状态时跳出
+      // 已激活状态时跳出
       this.eachView(function (viewopt) {
         if (viewopt._dom) {
-          //将层置顶
+          // 将层置顶
           jQuery(".layui-layer").each(function () {
-            jQuery(this).css("z-index", 19891000);
-          });
-          jQuery(viewopt._dom).css("z-index", 19891014);
+            jQuery(this).css("z-index", 19891000)
+          })
+          jQuery(viewopt._dom).css("z-index", 19891014)
         }
-      });
-      return;
+      })
+      return
     }
 
     eventTarget.fire(WidgetEventType.beforeActivate, {
-      sourceTarget: this,
-    });
-    this.beforeActivate();
-    this.isActivate = true;
+      sourceTarget: this
+    })
+    this.beforeActivate()
+    this.isActivate = true
 
     if (!this.isCreate) {
       eventTarget.fire(WidgetEventType.beforeCreate, {
-        sourceTarget: this,
-      });
+        sourceTarget: this
+      })
 
-      //首次进行创建
+      // 首次进行创建
       if (this.resources && this.resources.length > 0) {
-        let resources = [];
+        const resources = []
 
         for (let i = 0; i < this.resources.length; i++) {
-          let _resource = this.resources[i];
-          _resource = this._getUrl(_resource);
+          let _resource = this.resources[i]
+          _resource = this._getUrl(_resource)
 
-          if (_resources_cache.indexOf(_resource) != -1) {
-            continue;
-          } //不加重复资源
+          if (_resources_cache.indexOf(_resource) !== -1) {
+            continue
+          } // 不加重复资源
 
-          resources.push(_resource);
+          resources.push(_resource)
         }
-        _resources_cache = _resources_cache.concat(resources); //不加重复资源
+        _resources_cache = _resources_cache.concat(resources) // 不加重复资源
 
         Loader.async(resources, function () {
-          let result = that.create(function () {
-            that._createWidgetView();
-            that.isCreate = true;
-          });
+          const result = that.create(function () {
+            that._createWidgetView()
+            that.isCreate = true
+          })
           eventTarget.fire(WidgetEventType.created, {
-            sourceTarget: that,
-          });
+            sourceTarget: that
+          })
 
           if (result) {
-            return;
+            return
           }
           if (that.options.createAtStart) {
-            that.options.createAtStart = false;
-            that.isActivate = false;
-            that.isCreate = true;
-            return;
+            that.options.createAtStart = false
+            that.isActivate = false
+            that.isCreate = true
+            return
           }
-          that._createWidgetView();
-          that.isCreate = true;
-        });
-        return;
+          that._createWidgetView()
+          that.isCreate = true
+        })
+        return
       } else {
-        let result = this.create(function () {
-          that._createWidgetView();
-          this.isCreate = true;
-        });
+        const result = this.create(function () {
+          that._createWidgetView()
+          this.isCreate = true
+        })
         eventTarget.fire(WidgetEventType.created, {
-          sourceTarget: this,
-        });
+          sourceTarget: this
+        })
 
         if (result) {
-          return;
+          return
         }
         if (that.options.createAtStart) {
-          that.options.createAtStart = false;
-          that.isActivate = false;
-          that.isCreate = true;
-          return;
+          that.options.createAtStart = false
+          that.isActivate = false
+          that.isCreate = true
+          return
         }
       }
-      this.isCreate = true;
+      this.isCreate = true
     }
-    this._createWidgetView();
+    this._createWidgetView()
   }
 
   /**
@@ -282,22 +282,22 @@ export class BaseWidget extends BaseClass {
    */
   create() {}
 
-  //创建插件的view
+  // 创建插件的view
   _createWidgetView() {
-    let viewopt = this._viewConfig;
-    if (viewopt === undefined || viewopt === null) {
-      this._startActivate();
+    const viewopt = this._viewConfig
+    if (viewopt === undefined || viewopt == null) {
+      this._startActivate()
     } else if (Array.isArray(viewopt)) {
-      this._viewcreate_allcount = viewopt.length;
-      this._viewcreate_okcount = 0;
+      this._viewcreate_allcount = viewopt.length
+      this._viewcreate_okcount = 0
 
       for (let i = 0; i < viewopt.length; i++) {
-        this.createItemView(viewopt[i]);
+        this.createItemView(viewopt[i])
       }
     } else {
-      this._viewcreate_allcount = 1;
-      this._viewcreate_okcount = 0;
-      this.createItemView(viewopt);
+      this._viewcreate_allcount = 1
+      this._viewcreate_okcount = 0
+      this.createItemView(viewopt)
     }
   }
 
@@ -309,317 +309,321 @@ export class BaseWidget extends BaseClass {
    * @return {*} callback执行的返回结果
    */
   eachView(callback, index) {
-    let viewopt = this._viewConfig;
-    if (viewopt === undefined || viewopt === null) {
-      return false;
+    const viewopt = this._viewConfig
+    if (viewopt === undefined || viewopt == null) {
+      return false
     } else if (Array.isArray(viewopt)) {
-      let hascal = false;
+      let hascal = false
       if (index != null) {
-        return callback(viewopt[index]);
+        return callback(viewopt[index])
       }
       for (let i = 0; i < viewopt.length; i++) {
-        hascal = callback(viewopt[i]);
+        hascal = callback(viewopt[i])
       }
-      return hascal;
+      return hascal
     } else {
-      return callback(viewopt);
+      return callback(viewopt)
     }
   }
 
   createItemView(viewopt) {
-    let that = this;
+    const that = this
     switch (viewopt.type) {
-      default:
-      case "window":
-        this._openWindow(viewopt);
-        break;
       case "divwindow":
-        this._openDivWindow(viewopt);
-        break;
+        this._openDivWindow(viewopt)
+        break
       case "append":
         that.getHtml(this._getUrl(viewopt.url), function (html) {
-          that._appendView(viewopt, html);
-        });
-        break;
-      case "custom": //自定义
+          that._appendView(viewopt, html)
+        })
+        break
+      case "custom": // 自定义
         viewopt.open(
           this._getUrl(viewopt.url),
           function (html) {
-            that.winCreateOK(viewopt, html);
+            that.winCreateOK(viewopt, html)
             eventTarget.fire(WidgetEventType.openView, {
               sourceTarget: that,
               view: viewopt,
-              dom: html,
-            });
-            that._viewcreate_okcount++;
+              dom: html
+            })
+            that._viewcreate_okcount++
             if (that._viewcreate_okcount >= that._viewcreate_allcount) {
-              that._startActivate(html);
+              that._startActivate(html)
             }
           },
           this
-        );
-        break;
+        )
+        break
+      case "window":
+      default:
+        this._openWindow(viewopt)
+        break
     }
   }
 
-  //==============layer弹窗=================
+  //= =============layer弹窗=================
   _openWindow(viewopt) {
-    let view_url = this._getUrl(viewopt.url);
+    const view_url = this._getUrl(viewopt.url)
 
-    let opts = {
+    const opts = {
       type: 2,
       content: [view_url, "no"],
       success: (layero, index) => {
         if (!this.isActivate) {
-          layer.close(index);
-          return;
+          layer.close(index)
+          return
         }
-        if (viewopt._layerIdx != index) {
-          layer.close(viewopt._layerIdx);
-          viewopt._layerIdx = index;
+        if (viewopt._layerIdx !== index) {
+          layer.close(viewopt._layerIdx)
+          viewopt._layerIdx = index
         }
 
-        viewopt._layerOpening = false;
-        viewopt._dom = layero;
+        viewopt._layerOpening = false
+        viewopt._dom = layero
 
-        //得到iframe页的窗口对象，执行iframe页的方法：viewWindow.method();
-        let viewWindow = window[layero.find("iframe")[0]["name"]];
+        // 得到iframe页的窗口对象，执行iframe页的方法：viewWindow.method();
+        const viewWindow = window[layero.find("iframe")[0].name]
 
-        //绑定常用对象到子页面，方便直接使用
-        viewWindow.map = this.map;
-        viewWindow.mars3d = mars3d;
-        viewWindow.Cesium = mars3d.Cesium;
+        // 绑定常用对象到子页面，方便直接使用
+        viewWindow.map = this.map
+        viewWindow.mars3d = mars3d
+        viewWindow.Cesium = mars3d.Cesium
 
-        //设置css
+        // 设置css
         if (this.options.css) {
-          jQuery("#layui-layer" + viewopt._layerIdx).css(this.options.css);
+          jQuery("#layui-layer" + viewopt._layerIdx).css(this.options.css)
         }
 
-        //隐藏弹窗
+        // 隐藏弹窗
         if (viewopt.windowOptions.hasOwnProperty("show") && !viewopt.windowOptions.show) {
-          jQuery(layero).hide();
+          jQuery(layero).hide()
         }
 
-        layer.setTop(layero);
+        layer.setTop(layero)
 
-        this.winCreateOK(viewopt, viewWindow);
+        this.winCreateOK(viewopt, viewWindow)
         eventTarget.fire(WidgetEventType.openView, {
           sourceTarget: this,
           view: viewopt,
-          dom: layero,
-        });
+          dom: layero
+        })
 
-        this._viewcreate_okcount++;
+        this._viewcreate_okcount++
         if (this._viewcreate_okcount >= this._viewcreate_allcount) {
-          this._startActivate(layero);
+          this._startActivate(layero)
         }
 
-        //通知页面,页面需要定义initWidgetView方法
+        // 通知页面,页面需要定义initWidgetView方法
         if (viewWindow && viewWindow.initWidgetView) {
           if (this.config?.style) {
-            jQuery(viewWindow.document.body).addClass(this.config.style);
+            jQuery(viewWindow.document.body).addClass(this.config.style)
           }
 
-          viewWindow.initWidgetView(this);
+          viewWindow.initWidgetView(this)
         } else {
-          mars3d.Log.logError(view_url + "页面没有定义function initWidgetView(widget)方法，无法初始化widget页面!");
+          mars3d.Log.logError(view_url + "页面没有定义function initWidgetView(widget)方法，无法初始化widget页面!")
         }
-      },
-    };
+      }
+    }
     if (viewopt._layerIdx && viewopt._layerIdx > 0) {
-      layer.close(viewopt._layerIdx);
-      viewopt._layerIdx = -1;
+      layer.close(viewopt._layerIdx)
+      viewopt._layerIdx = -1
     }
 
-    viewopt._layerOpening = true;
-    viewopt._layerIdx = layer.open(this._getWinOpt(viewopt, opts));
+    viewopt._layerOpening = true
+    viewopt._layerIdx = layer.open(this._getWinOpt(viewopt, opts))
   }
+
   _openDivWindow(viewopt) {
-    let view_url = this._getUrl(viewopt.url);
-    //div弹窗
+    const view_url = this._getUrl(viewopt.url)
+    // div弹窗
     this.getHtml(view_url, (data) => {
-      let opts = {
+      const opts = {
         type: 1,
         content: data,
         success: (layero, index) => {
           if (!this.isActivate) {
-            layer.close(index);
-            return;
+            layer.close(index)
+            return
           }
-          if (viewopt._layerIdx != index) {
-            layer.close(viewopt._layerIdx);
-            viewopt._layerIdx = index;
+          if (viewopt._layerIdx !== index) {
+            layer.close(viewopt._layerIdx)
+            viewopt._layerIdx = index
           }
 
-          viewopt._layerOpening = false;
-          viewopt._dom = layero;
+          viewopt._layerOpening = false
+          viewopt._dom = layero
 
-          //隐藏弹窗
+          // 隐藏弹窗
           if (viewopt.windowOptions.hasOwnProperty("show") && !viewopt.windowOptions.show) {
-            jQuery(layero).hide();
+            jQuery(layero).hide()
           }
 
-          layer.setTop(layero);
-          this.winCreateOK(viewopt, layero);
+          layer.setTop(layero)
+          this.winCreateOK(viewopt, layero)
           eventTarget.fire(WidgetEventType.openView, {
             sourceTarget: this,
             view: viewopt,
-            dom: layero,
-          });
+            dom: layero
+          })
 
-          this._viewcreate_okcount++;
+          this._viewcreate_okcount++
           if (this._viewcreate_okcount >= this._viewcreate_allcount) {
-            this._startActivate(layero);
+            this._startActivate(layero)
           }
-        },
-      };
-      viewopt._layerOpening = true;
-      viewopt._layerIdx = layer.open(this._getWinOpt(viewopt, opts));
-    });
+        }
+      }
+      viewopt._layerOpening = true
+      viewopt._layerIdx = layer.open(this._getWinOpt(viewopt, opts))
+    })
   }
+
   _getUrl(url) {
-    url = this.addCacheVersion(url);
+    url = this.addCacheVersion(url)
 
     if (url.startsWith("/") || url.startsWith(".") || url.startsWith("http")) {
-      return url;
+      return url
     } else {
-      return this.path + url;
+      return this.path + url
     }
   }
+
   _getWinOpt(viewopt, opts) {
-    //优先使用cofig中配置，覆盖js中的定义
-    let def = getDefWindowOptions();
+    // 优先使用cofig中配置，覆盖js中的定义
+    const def = getDefWindowOptions()
 
-    let windowOptions = { ...def, ...viewopt.windowOptions, ...this.options.windowOptions };
-    viewopt.windowOptions = windowOptions; //赋值
+    const windowOptions = { ...def, ...viewopt.windowOptions, ...this.options.windowOptions }
+    viewopt.windowOptions = windowOptions // 赋值
 
-    let that = this;
-    let _size = this._getWinSize(windowOptions);
+    const that = this
+    const _size = this._getWinSize(windowOptions)
 
-    let title = false;
+    let title = false
     if (!windowOptions.noTitle) {
-      title = this.options.name || " ";
+      title = this.options.name || " "
       if (this.options.icon) {
-        title = '<i class="' + this.options.icon + '" ></i>&nbsp;' + title;
+        title = '<i class="' + this.options.icon + '" ></i>&nbsp;' + title
       }
     }
 
-    //默认值
-    let defOpts = {
+    // 默认值
+    const defOpts = {
       title: title,
       area: _size.area,
       offset: _size.offset,
       shade: 0,
       maxmin: false,
       beforeEnd: function () {
-        that.beforeDisable();
+        that.beforeDisable()
       },
       end: function () {
         // 销毁后触发的回调
-        viewopt._layerIdx = -1;
-        viewopt._dom = null;
-        that.disableBase();
+        viewopt._layerIdx = -1
+        viewopt._dom = null
+        that.disableBase()
       },
       full: function (dom) {
-        //最大化后触发的回调
-        that.winFull(dom);
+        // 最大化后触发的回调
+        that.winFull(dom)
       },
       min: function (dom) {
-        //最小化后触发的回调
-        that.winMin(dom);
+        // 最小化后触发的回调
+        that.winMin(dom)
       },
       restore: function (dom) {
-        //还原 后触发的回调
-        that.winRestore(dom);
-      },
-    };
-    return { ...defOpts, ...windowOptions, ...opts };
+        // 还原 后触发的回调
+        that.winRestore(dom)
+      }
+    }
+    return { ...defOpts, ...windowOptions, ...opts }
   }
-  //计算弹窗大小和位置
-  _getWinSize(windowOptions) {
-    //获取高宽
-    let _width = this.bfb2Number(windowOptions.width, document.documentElement.clientWidth, windowOptions);
-    let _height = this.bfb2Number(windowOptions.height, document.documentElement.clientHeight, windowOptions);
 
-    //计算位置offset
-    let offset = "";
-    let position = windowOptions.position;
+  // 计算弹窗大小和位置
+  _getWinSize(windowOptions) {
+    // 获取高宽
+    let _width = this.bfb2Number(windowOptions.width, document.documentElement.clientWidth, windowOptions)
+    let _height = this.bfb2Number(windowOptions.height, document.documentElement.clientHeight, windowOptions)
+
+    // 计算位置offset
+    let offset = ""
+    const position = windowOptions.position
     if (position) {
       if (typeof position === "string") {
-        //t顶部,b底部,r右边缘,l左边缘,lt左上角,lb左下角,rt右上角,rb右下角
-        offset = position;
+        // t顶部,b底部,r右边缘,l左边缘,lt左上角,lb左下角,rt右上角,rb右下角
+        offset = position
       } else if (typeof position === "object") {
-        let _top;
-        let _left;
+        let _top
+        let _left
 
         if (position.hasOwnProperty("top") && position.top != null) {
-          _top = this.bfb2Number(position.top, document.documentElement.clientHeight, windowOptions);
+          _top = this.bfb2Number(position.top, document.documentElement.clientHeight, windowOptions)
         }
         if (position.hasOwnProperty("bottom") && position.bottom != null) {
-          windowOptions._hasresize = true;
+          windowOptions._hasresize = true
 
-          let _bottom = this.bfb2Number(position.bottom, document.documentElement.clientHeight, windowOptions);
+          const _bottom = this.bfb2Number(position.bottom, document.documentElement.clientHeight, windowOptions)
 
           if (_top != null) {
-            _height = document.documentElement.clientHeight - _top - _bottom;
+            _height = document.documentElement.clientHeight - _top - _bottom
           } else {
-            _top = document.documentElement.clientHeight - _height - _bottom;
+            _top = document.documentElement.clientHeight - _height - _bottom
           }
         }
 
         if (position.hasOwnProperty("left") && position.left != null) {
-          _left = this.bfb2Number(position.left, document.documentElement.clientWidth, windowOptions);
+          _left = this.bfb2Number(position.left, document.documentElement.clientWidth, windowOptions)
         }
         if (position.hasOwnProperty("right") && position.right != null) {
-          windowOptions._hasresize = true;
-          let _right = this.bfb2Number(position.right, document.documentElement.clientWidth, windowOptions);
+          windowOptions._hasresize = true
+          const _right = this.bfb2Number(position.right, document.documentElement.clientWidth, windowOptions)
 
           if (_left != null) {
-            _width = document.documentElement.clientWidth - _left - _right;
+            _width = document.documentElement.clientWidth - _left - _right
           } else {
-            _left = document.documentElement.clientWidth - _width - _right;
+            _left = document.documentElement.clientWidth - _width - _right
           }
         }
 
-        if (_top == null) {
-          _top = (document.documentElement.clientHeight - _height) / 2;
+        if (_top == null || _top === undefined) {
+          _top = (document.documentElement.clientHeight - _height) / 2
         }
-        if (_left == null) {
-          _left = (document.documentElement.clientWidth - _width) / 2;
+        if (_left == null || _left === undefined) {
+          _left = (document.documentElement.clientWidth - _width) / 2
         }
 
-        offset = [_top + "px", _left + "px"];
+        offset = [_top + "px", _left + "px"]
       }
     }
 
-    //最大最小高度判断
+    // 最大最小高度判断
     if (windowOptions.hasOwnProperty("minHeight") && _height < windowOptions.minHeight) {
-      windowOptions._hasresize = true;
-      _height = windowOptions.minHeight;
+      windowOptions._hasresize = true
+      _height = windowOptions.minHeight
     }
     if (windowOptions.hasOwnProperty("maxHeight") && _height > windowOptions.maxHeight) {
-      windowOptions._hasresize = true;
-      _height = windowOptions.maxHeight;
+      windowOptions._hasresize = true
+      _height = windowOptions.maxHeight
     }
 
-    //最大最小宽度判断
+    // 最大最小宽度判断
     if (windowOptions.hasOwnProperty("minWidth") && _width < windowOptions.minWidth) {
-      windowOptions._hasresize = true;
-      _width = windowOptions.minWidth;
+      windowOptions._hasresize = true
+      _width = windowOptions.minWidth
     }
     if (windowOptions.hasOwnProperty("maxWidth") && _width > windowOptions.maxWidth) {
-      windowOptions._hasresize = true;
-      _width = windowOptions.maxWidth;
+      windowOptions._hasresize = true
+      _width = windowOptions.maxWidth
     }
 
-    let area;
+    let area
     if (_width && _height) {
-      area = [_width + "px", _height + "px"];
+      area = [_width + "px", _height + "px"]
     } else {
-      area = _width + "px";
+      area = _width + "px"
     }
 
-    return { area: area, offset: offset };
+    return { area: area, offset: offset }
   }
 
   /**
@@ -628,58 +632,58 @@ export class BaseWidget extends BaseClass {
    */
   indexResize() {
     if (!this.isActivate) {
-      return;
+      return
     }
 
-    let that = this;
+    const that = this
     this.eachView(function (viewopt) {
-      if (viewopt._layerIdx == null || viewopt._layerIdx == -1 || viewopt.windowOptions == null || !viewopt.windowOptions._hasresize) {
-        return;
+      if (!viewopt._layerIdx || viewopt._layerIdx === -1 || !viewopt.windowOptions || !viewopt.windowOptions._hasresize) {
+        return
       }
 
-      let _size = that._getWinSize(viewopt.windowOptions);
+      const _size = that._getWinSize(viewopt.windowOptions)
 
-      let _style = {};
+      const _style = {}
       if (Array.isArray(_size.area)) {
         if (_size.area[0]) {
-          _style.width = _size.area[0];
+          _style.width = _size.area[0]
         }
         if (_size.area[1]) {
-          _style.height = _size.area[1];
+          _style.height = _size.area[1]
         }
       }
 
       if (Array.isArray(_size.offset)) {
         if (_size.offset[1]) {
-          _style.top = _size.offset[0];
+          _style.top = _size.offset[0]
         }
         if (_size.offset[1]) {
-          _style.left = _size.offset[1];
+          _style.left = _size.offset[1]
         }
       }
-      jQuery(viewopt._dom).attr("myTopLeft", true);
-      layer.style(viewopt._layerIdx, _style);
+      jQuery(viewopt._dom).attr("myTopLeft", true)
+      layer.style(viewopt._layerIdx, _style)
 
-      if (viewopt.type == "divwindow") {
-        layer.iframeAuto(viewopt._layerIdx);
+      if (viewopt.type === "divwindow") {
+        layer.iframeAuto(viewopt._layerIdx)
       }
-    });
+    })
   }
 
-  //==============直接添加dom节点=================
+  //= =============直接添加dom节点=================
   _appendView(viewopt, html) {
-    viewopt._dom = jQuery(html).appendTo(viewopt.parent || "body");
+    viewopt._dom = jQuery(html).appendTo(viewopt.parent || "body")
 
-    //设置css
+    // 设置css
     if (this.options.css) {
-      jQuery(viewopt._dom).css(this.options.css);
+      jQuery(viewopt._dom).css(this.options.css)
     }
 
-    this.winCreateOK(viewopt, html);
+    this.winCreateOK(viewopt, html)
 
-    this._viewcreate_okcount++;
+    this._viewcreate_okcount++
     if (this._viewcreate_okcount >= this._viewcreate_allcount) {
-      this._startActivate(html);
+      this._startActivate(html)
     }
   }
 
@@ -714,9 +718,9 @@ export class BaseWidget extends BaseClass {
   minView() {
     this.eachView(function (viewopt) {
       if (viewopt._layerIdx) {
-        layer.min(viewopt._layerIdx, viewopt);
+        layer.min(viewopt._layerIdx, viewopt)
       }
-    });
+    })
   }
 
   /**
@@ -726,9 +730,9 @@ export class BaseWidget extends BaseClass {
   restoreView() {
     this.eachView(function (viewopt) {
       if (viewopt._layerIdx) {
-        layer.restore(viewopt._layerIdx);
+        layer.restore(viewopt._layerIdx)
       }
-    });
+    })
   }
 
   /**
@@ -738,9 +742,9 @@ export class BaseWidget extends BaseClass {
   fullView() {
     this.eachView(function (viewopt) {
       if (viewopt._layerIdx) {
-        layer.full(viewopt._layerIdx, viewopt);
+        layer.full(viewopt._layerIdx, viewopt)
       }
-    });
+    })
   }
 
   /**
@@ -751,18 +755,18 @@ export class BaseWidget extends BaseClass {
   winRestore() {}
 
   _startActivate(layero) {
-    this.activate(layero);
+    this.activate(layero)
     eventTarget.fire(WidgetEventType.activated, {
-      sourceTarget: this,
-    });
+      sourceTarget: this
+    })
 
     if (this.options.success) {
-      this.options.success(this);
-      delete this.options.success; //一次性的
+      this.options.success(this)
+      delete this.options.success // 一次性的
     }
     if (!this.isActivate) {
-      //窗口打开中没加载完成时，被释放
-      this.disableBase();
+      // 窗口打开中没加载完成时，被释放
+      this.disableBase()
     }
   }
 
@@ -780,7 +784,7 @@ export class BaseWidget extends BaseClass {
    */
   activate() {}
 
-  //==============释放插件=================
+  //= =============释放插件=================
 
   /**
    * 释放插件，同 mars3d.widget.disable方法
@@ -788,47 +792,47 @@ export class BaseWidget extends BaseClass {
    */
   disableBase() {
     if (!this.isActivate) {
-      return;
+      return
     }
-    this.isActivate = false;
+    this.isActivate = false
 
-    this.beforeDisable();
+    this.beforeDisable()
     eventTarget.fire(WidgetEventType.beforeDisable, {
-      sourceTarget: this,
-    });
+      sourceTarget: this
+    })
 
-    //关闭所有窗口
+    // 关闭所有窗口
     this.eachView(function (viewopt) {
       if (viewopt._layerIdx && viewopt._layerIdx > 0) {
-        layer.close(viewopt._layerIdx);
+        layer.close(viewopt._layerIdx)
 
         if (viewopt._layerOpening) {
-          //窗口还在加载中,success方法中去关闭
+          // 窗口还在加载中,success方法中去关闭
         } else {
-          viewopt._layerIdx = -1;
+          viewopt._layerIdx = -1
         }
-        return true;
+        return true
       } else {
-        if (viewopt.type == "append" && viewopt._dom) {
-          viewopt._dom.remove();
-          viewopt._dom = null;
+        if (viewopt.type === "append" && viewopt._dom) {
+          viewopt._dom.remove()
+          viewopt._dom = null
         }
-        if (viewopt.type == "custom" && viewopt.close) {
-          viewopt.close();
+        if (viewopt.type === "custom" && viewopt.close) {
+          viewopt.close()
         }
-        return false;
+        return false
       }
-    });
+    })
 
-    this.disable();
+    this.disable()
 
-    //还原配置为初始状态
+    // 还原配置为初始状态
     if (this.options.autoReset) {
-      this.resetConfig();
+      this.resetConfig()
     }
     eventTarget.fire(WidgetEventType.disabled, {
-      sourceTarget: this,
-    });
+      sourceTarget: this
+    })
   }
 
   /**
@@ -845,29 +849,30 @@ export class BaseWidget extends BaseClass {
    */
   disable() {}
 
-  //==============其他方法=================
+  //= =============其他方法=================
   bfb2Number(str, allnum, windowOptions) {
-    if (typeof str === "string" && str.indexOf("%") != -1) {
-      windowOptions._hasresize = true;
+    if (typeof str === "string" && str.indexOf("%") !== -1) {
+      windowOptions._hasresize = true
 
-      return (allnum * Number(str.replace("%", ""))) / 100;
+      return (allnum * Number(str.replace("%", ""))) / 100
     }
-    return str;
+    return str
   }
+
   addCacheVersion(_resource) {
-    if (_resource == null) {
-      return _resource;
+    if (!_resource) {
+      return _resource
     }
 
-    let cacheVersion = getCacheVersion();
+    const cacheVersion = getCacheVersion()
     if (cacheVersion) {
-      if (_resource.indexOf("?") == -1) {
-        _resource += "?cache=" + cacheVersion;
-      } else if (_resource.indexOf("cache=" + cacheVersion) == -1) {
-        _resource += "&cache=" + cacheVersion;
+      if (_resource.indexOf("?") === -1) {
+        _resource += "?cache=" + cacheVersion
+      } else if (_resource.indexOf("cache=" + cacheVersion) === -1) {
+        _resource += "&cache=" + cacheVersion
       }
     }
-    return _resource;
+    return _resource
   }
 
   /**
@@ -876,12 +881,12 @@ export class BaseWidget extends BaseClass {
    */
   resetConfig() {
     if (this.options._firstConfigBak) {
-      let _backData = this.options._firstConfigBak;
-      for (let aa in _backData) {
-        if (aa == "uri") {
-          continue;
+      const _backData = this.options._firstConfigBak
+      for (const aa in _backData) {
+        if (aa === "uri") {
+          continue
         }
-        this.options[aa] = _backData[aa];
+        this.options[aa] = _backData[aa]
       }
     }
   }
@@ -897,18 +902,18 @@ export class BaseWidget extends BaseClass {
     this.eachView(function (viewopt) {
       if (viewopt._layerIdx && viewopt._layerIdx > 0) {
         if (show) {
-          jQuery("#layui-layer" + viewopt._layerIdx).show();
+          jQuery("#layui-layer" + viewopt._layerIdx).show()
         } else {
-          jQuery("#layui-layer" + viewopt._layerIdx).hide();
+          jQuery("#layui-layer" + viewopt._layerIdx).hide()
         }
-      } else if (viewopt.type == "append" && viewopt._dom) {
+      } else if (viewopt.type === "append" && viewopt._dom) {
         if (show) {
-          jQuery(viewopt._dom).show();
+          jQuery(viewopt._dom).show()
         } else {
-          jQuery(viewopt._dom).hide();
+          jQuery(viewopt._dom).hide()
         }
       }
-    }, index);
+    }, index)
   }
 
   /**
@@ -921,11 +926,11 @@ export class BaseWidget extends BaseClass {
   setViewCss(style, index) {
     this.eachView(function (viewopt) {
       if (viewopt._layerIdx != null && viewopt._layerIdx > 0) {
-        layer.style(viewopt._layerIdx, style);
-      } else if (viewopt.type == "append" && viewopt._dom) {
-        jQuery(viewopt._dom).css(style);
+        layer.style(viewopt._layerIdx, style)
+      } else if (viewopt.type === "append" && viewopt._dom) {
+        jQuery(viewopt._dom).css(style)
       }
-    }, index);
+    }, index)
   }
 
   /**
@@ -938,9 +943,9 @@ export class BaseWidget extends BaseClass {
   setTitle(title, index) {
     this.eachView(function (viewopt) {
       if (viewopt._dom) {
-        viewopt._dom.find(".layui-layer-title").html(title);
+        viewopt._dom.find(".layui-layer-title").html(title)
       }
-    }, index);
+    }, index)
   }
 
   /**
@@ -955,10 +960,10 @@ export class BaseWidget extends BaseClass {
       url: url,
       type: "GET",
       dataType: "html",
-      timeout: 0, //永不超时
+      timeout: 0, // 永不超时
       success: function (data) {
-        callback(data);
-      },
-    });
+        callback(data)
+      }
+    })
   }
 }

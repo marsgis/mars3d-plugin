@@ -1,7 +1,7 @@
-import * as Cesium from "cesium";
-import * as mars3d from "mars3d";
+import * as mars3d from "mars3d"
+const Cesium = mars3d.Cesium
 
-let BaseTileLayer = mars3d.layer.BaseTileLayer;
+const BaseTileLayer = mars3d.layer.BaseTileLayer
 
 /**
  * 超图影像瓦片服务图层,
@@ -26,7 +26,7 @@ let BaseTileLayer = mars3d.layer.BaseTileLayer;
  * @param {Number} options.rectangle.ymin 最小纬度值, -90 至 90
  * @param {Number} options.rectangle.ymax 最大纬度值, -90 至 90
  * @param {Number[]} [options.bbox] bbox规范的瓦片数据的矩形区域范围,与rectangle二选一即可。
- * @param {Number} [options.zIndex] 控制图层的叠加层次，默认按加载的顺序进行叠加，但也可以自定义叠加顺序，数字大的在上面。
+ * @param {Number} [options.zIndex] 控制图层的叠加层次，默认按加载的顺序进行叠加，但也可以自定义叠加顺序，数字大的在上面(只对同类型图层间有效)。
  * @param {CRS} [options.crs=CRS.EPSG:3857] 瓦片数据的坐标系信息，默认为墨卡托投影
  * @param {ChinaCRS} [options.chinaCRS] 标识瓦片的国内坐标系（用于自动纠偏或加偏），自动将瓦片转为map对应的chinaCRS类型坐标系。
  *
@@ -76,30 +76,33 @@ let BaseTileLayer = mars3d.layer.BaseTileLayer;
  * @see http://support.supermap.com.cn:8090/webgl/docs/Documentation/SuperMapImageryProvider.html?classFilter=SuperMapImageryProvider
  */
 export class SmImgLayer extends BaseTileLayer {
-  //构建ImageryProvider
+  // 构建ImageryProvider
   _createImageryProvider(options) {
-    return createImageryProvider(options);
+    return createImageryProvider(options)
   }
-  //添加时
+
+  // 添加时
   _addedHook() {
-    super._addedHook();
+    super._addedHook()
 
     if (Cesium.defined(this.options.transparentBackColor)) {
-      this._imageryLayer.transparentBackColor = mars3d.Util.getCesiumColor(this.options.transparentBackColor);
-      this._imageryLayer.transparentBackColorTolerance = this.options.transparentBackColorTolerance; //去黑边
+      this._imageryLayer.transparentBackColor = mars3d.Util.getCesiumColor(this.options.transparentBackColor)
+      this._imageryLayer.transparentBackColorTolerance = this.options.transparentBackColorTolerance // 去黑边
     }
   }
 }
 function createImageryProvider(options) {
-  options = mars3d.LayerUtil.converOptions(options);
+  options = mars3d.LayerUtil.converOptions(options)
 
-  if (options.url instanceof Cesium.Resource) options.url = options.url.url;
+  if (options.url instanceof Cesium.Resource) {
+    options.url = options.url.url
+  }
 
   if (Cesium.defined(options.transparentBackColor)) {
-    delete options.transparentBackColor;
-    delete options.transparentBackColorTolerance;
+    delete options.transparentBackColor
+    delete options.transparentBackColorTolerance
   }
-  return new Cesium.SuperMapImageryProvider(options);
+  return new Cesium.SuperMapImageryProvider(options)
 }
 
 /**
@@ -109,11 +112,11 @@ function createImageryProvider(options) {
  * @return {Cesium.ImageryProvider} ImageryProvider类
  * @function
  */
-SmImgLayer.createImageryProvider = createImageryProvider;
+SmImgLayer.createImageryProvider = createImageryProvider
 
-mars3d.layer.SmImgLayer = SmImgLayer;
+mars3d.layer.SmImgLayer = SmImgLayer
 
-//注册下
-const layerType = "supermap_img";
-mars3d.LayerUtil.register(layerType, SmImgLayer);
-mars3d.LayerUtil.registerImageryProvider(layerType, createImageryProvider);
+// 注册下
+const layerType = "supermap_img"
+mars3d.LayerUtil.register(layerType, SmImgLayer)
+mars3d.LayerUtil.registerImageryProvider(layerType, createImageryProvider)

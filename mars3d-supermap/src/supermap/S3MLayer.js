@@ -1,7 +1,7 @@
-﻿import * as Cesium from "cesium";
-import * as mars3d from "mars3d";
+import * as mars3d from "mars3d"
+const Cesium = mars3d.Cesium
 
-let BaseLayer = mars3d.layer.BaseLayer;
+const BaseLayer = mars3d.layer.BaseLayer
 
 /**
  * 超图S3M三维模型图层,
@@ -40,7 +40,7 @@ export class S3MLayer extends BaseLayer {
    * @see http://support.supermap.com.cn:8090/webgl/docs/Documentation/S3MTilesLayer.html
    */
   get layer() {
-    return this._layerArr;
+    return this._layerArr
   }
 
   /**
@@ -49,28 +49,36 @@ export class S3MLayer extends BaseLayer {
    * @see [S3M支持的参数]{@link http://support.supermap.com.cn:8090/webgl/docs/Documentation/S3MTilesLayer.html?classFilter=S3MTilesLayer}
    */
   get s3mOptions() {
-    return this.options.s3mOptions;
+    return this.options.s3mOptions
   }
-  set s3mOptions(value) {
-    for (let key in value) {
-      let val = value[key];
-      this.options.s3mOptions[key] = val;
 
-      if (key == "transparentBackColor") {
-        //去黑边，与offset互斥，注意别配置offset
-        val = Cesium.Color.fromCssColorString(val);
-      } else if (key == "transparentBackColorTolerance") {
-        val = Number(val);
+  set s3mOptions(value) {
+    for (const key in value) {
+      let val = value[key]
+      this.options.s3mOptions[key] = val
+
+      if (key === "transparentBackColor") {
+        // 去黑边，与offset互斥，注意别配置offset
+        val = Cesium.Color.fromCssColorString(val)
+      } else if (key === "transparentBackColorTolerance") {
+        val = Number(val)
       }
 
       for (let i = 0; i < this._layerArr.length; i++) {
-        let layer = this._layerArr[i];
+        const layer = this._layerArr[i]
         if (layer == null) {
-          continue;
+          continue
         }
-        layer[key] = val;
+        layer[key] = val
       }
     }
+  }
+
+  _showHook(show) {
+    this.eachLayer((layer) => {
+      layer.visible = show // 不同超图版本，有的是visible，有的是show
+      layer.show = show
+    }, this)
   }
 
   /**
@@ -80,92 +88,88 @@ export class S3MLayer extends BaseLayer {
    * @private
    */
   _mountedHook() {
-    //场景添加S3M图层服务
-    let promise;
+    // 场景添加S3M图层服务
+    let promise
     if (this.options.layername) {
       promise = this._map.scene.addS3MTilesLayerByScp(this.options.url, {
         name: this.options.layername,
         autoSetVie: this.options.flyTo,
-        cullEnabled: this.options.cullEnabled,
-      });
+        cullEnabled: this.options.cullEnabled
+      })
     } else {
       promise = this._map.scene.open(this.options.url, this.options.sceneName, {
-        autoSetVie: this.options.flyTo,
-      });
+        autoSetVie: this.options.flyTo
+      })
     }
 
-    Cesium.when(
-      promise,
+    promise.then(
       (smLayer) => {
         if (Array.isArray(smLayer)) {
-          this._layerArr = smLayer;
+          this._layerArr = smLayer
         } else {
-          this._layerArr = [smLayer];
+          this._layerArr = [smLayer]
         }
 
-        //设置图层属性
         for (let i = 0; i < this._layerArr.length; i++) {
-          let layer = this._layerArr[i];
-          if (layer == null) {
-            continue;
+          const layer = this._layerArr[i]
+          if (!layer) {
+            continue
           }
-
-          layer.isS3M = true; //标识下
-
-          //s3mOptions
-          if (this.options.s3mOptions) {
-            for (let key in this.options.s3mOptions) {
-              let val = this.options.s3mOptions[key];
-              if (key == "transparentBackColor") {
-                //去黑边，与offset互斥，注意别配置offset
-                layer[key] = Cesium.Color.fromCssColorString(val);
-              } else if (key == "transparentBackColorTolerance") {
-                layer[key] = Number(val);
-              } else {
-                layer[key] = this.options.s3mOptions[key];
-              }
-            }
-          }
-
-          //高度调整 offset.z
-          if (this.options?.position?.alt) {
-            layer.style3D.bottomAltitude = this.options.position.alt;
-            layer.refresh();
+          try {
+            this._initModelItem(layer)
+          } catch (e) {
+            mars3d.Log.logError("s3m图层初始化出错", e)
           }
         }
+
+        this._showHook(this.show)
 
         if (this.options.flyTo) {
-          this.flyToByAnimationEnd();
+          this.flyToByAnimationEnd()
         }
-
-        if (this.options.dataUrl) {
-          for (let i = 0; i < this._layerArr.length; i++) {
-            let ql = this._layerArr[i];
-
-            //读取子图层信息，通过数组的方式返回子图层的名称以及子图层所包含的对象的IDs
-            ql.setQueryParameter({
-              url: this.options.dataUrl,
-              dataSourceName: ql.name.split("@")[1],
-              dataSetName: ql.name.split("@")[0],
-              isMerge: true,
-            });
-
-            //获取图层风格
-            //Note_GJ: rgba, 1为不透明，0为全透明。已经在模型中导入材质，所以这里的颜色不特别设置
-            //var style3D = new Cesium.Style3D();
-            // var color = Cesium.Color.fromCssColorString("#919191");//混泥土颜色 RGB(145, 145,145)
-            // style3D.fillForeColor = color;
-            // ql.style3D = style3D;
-            //设置后需刷新图层
-            // ql.refresh();
-            ql.selectEnabled = true;
-          }
-        }
+        this._readyPromise.resolve(this)
+        this.fire(mars3d.EventType.load, { layers: this._layerArr })
       },
       (error) => {
-        this.showError("渲染时发生错误，已停止渲染。", error);
+        this._readyPromise.reject(error)
       }
-    );
+    )
+
+    // this._map.viewer.pickEvent.addEventListener(function (feature) {
+    //   debugger;
+    // });
+  }
+
+  // 对单个s3m图层处理
+  _initModelItem(layer) {
+    // 图层参数合并
+    if (this.options.s3mOptions) {
+      for (const key in this.options.s3mOptions) {
+        const val = this.options.s3mOptions[key]
+
+        if (key === "transparentBackColor") {
+          layer[key] = Cesium.Color.fromCssColorString(val) // 去黑边
+        } else if (key === "transparentBackColorTolerance") {
+          layer[key] = Number(val)
+        } else {
+          layer[key] = val
+        }
+      }
+    }
+
+    // 选中颜色
+    if (this.options.highlight) {
+      layer.selectedColor = mars3d.Util.getColorByStyle(this.options.highlight)
+    }
+
+    // 高度调整
+    if (this.options?.position?.alt) {
+      layer.style3D.altitudeMode = Cesium.HeightReference.NONE
+      layer.style3D.bottomAltitude = this.options.position.alt
+      if (layer.refresh) {
+        layer.refresh() // 设置风格后需刷新
+      }
+    }
   }
 
   /**
@@ -175,10 +179,7 @@ export class S3MLayer extends BaseLayer {
    * @private
    */
   _addedHook() {
-    for (let i in this._layerArr) {
-      this._layerArr[i].visible = true;
-      this._layerArr[i].show = true;
-    }
+    this._showHook(this.show)
   }
 
   /**
@@ -188,12 +189,24 @@ export class S3MLayer extends BaseLayer {
    * @private
    */
   _removedHook() {
-    if (this._layerArr) {
-      for (let i in this._layerArr) {
-        this._layerArr[i].visible = false;
-        this._layerArr[i].show = false;
-      }
+    this._showHook(false)
+  }
+
+  /**
+   * 遍历每一个子图层并将其作为参数传递给回调函数
+   *
+   * @param {Function} method 回调方法
+   * @param {Object} context  侦听器的上下文(this关键字将指向的对象)。
+   * @return {GroupLayer} 当前对象本身,可以链式调用
+   */
+  eachLayer(method, context) {
+    if (!this._layerArr) {
+      return
     }
+    this._layerArr.forEach((layer) => {
+      method.call(context, layer)
+    })
+    return this
   }
 
   /**
@@ -202,28 +215,21 @@ export class S3MLayer extends BaseLayer {
    * @return {void}  无
    */
   setOpacity(value) {
-    if (this._layerArr) {
-      for (let i = 0; i < this._layerArr.length; i++) {
-        let item = this._layerArr[i];
-        if (item == null) {
-          continue;
-        }
-
-        item.style3D.fillForeColor.alpha = value;
-      }
-    }
+    this.eachLayer((layer) => {
+      layer.style3D.fillForeColor.alpha = value
+    }, this)
   }
 
-  //定位至数据区域
+  // 定位至数据区域
   flyTo(options = {}) {
     if (this.options.center) {
-      this._map.setCameraView(this.options.center, options);
+      this._map.setCameraView(this.options.center, options)
     } else if (this.options.extent) {
-      this._map.flyToExtent(this.options.extent, options);
+      this._map.flyToExtent(this.options.extent, options)
     }
   }
 }
-mars3d.layer.S3MLayer = S3MLayer;
+mars3d.layer.S3MLayer = S3MLayer
 
-//注册下
-mars3d.LayerUtil.register("supermap_s3m", S3MLayer);
+// 注册下
+mars3d.LayerUtil.register("supermap_s3m", S3MLayer)

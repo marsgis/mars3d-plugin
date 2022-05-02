@@ -1,7 +1,7 @@
-﻿import * as Cesium from "cesium";
-import * as mars3d from "mars3d";
+import * as mars3d from "mars3d"
+const Cesium = mars3d.Cesium
 
-let BaseLayer = mars3d.layer.BaseLayer;
+const BaseLayer = mars3d.layer.BaseLayer
 
 /**
  * 超图MVT矢量瓦片图层,
@@ -41,7 +41,7 @@ export class SmMvtLayer extends BaseLayer {
    * @see http://support.supermap.com.cn:8090/webgl/docs/Documentation/VectorTilesLayer.html
    */
   get layer() {
-    return this._mvtLayer;
+    return this._mvtLayer
   }
 
   /**
@@ -51,56 +51,47 @@ export class SmMvtLayer extends BaseLayer {
    * @private
    */
   _mountedHook() {
-    //options参考API文档：http://support.supermap.com.cn:8090/webgl/docs/Documentation/Scene.html
-    this._mvtLayer = this._map.scene.addVectorTilesMap(this.options);
-    let layerReadyPromise = this._mvtLayer.readyPromise;
+    // options参考API文档：http://support.supermap.com.cn:8090/webgl/docs/Documentation/Scene.html
+    this._mvtLayer = this._map.scene.addVectorTilesMap(this.options)
+    this._mvtLayer.readyPromise.then(function (data) {
+      // setPaintProperty(layerId, name, value, options)
+      // for(var layerId in that.options.style){
+      //     that._mvtLayer.setPaintProperty(layerId, "fill-color", "rgba(255,0,0,0.8)");
+      // }
+    })
 
-    Cesium.when(
-      layerReadyPromise,
-      (data) => {
-        //setPaintProperty(layerId, name, value, options)
-        // for(var layerId in that.options.style){
-        //     that._mvtLayer.setPaintProperty(layerId, "fill-color", "rgba(255,0,0,0.8)");
-        // }
-      },
-      (error) => {
-        this.showError("渲染时发生错误，已停止渲染。", error);
-      }
-    );
-
-    let scene = this._map.scene;
-    let handler = new Cesium.ScreenSpaceEventHandler(scene.canvas);
+    const scene = this._map.scene
+    const handler = new Cesium.ScreenSpaceEventHandler(scene.canvas)
     handler.setInputAction((event) => {
       if (!this.show) {
-        return;
+        return
       }
 
-      let position = mars3d.PointUtil.getCurrentMousePosition(scene, event.position);
+      const position = mars3d.PointUtil.getCurrentMousePosition(scene, event.position)
 
-      //查询出相交图层的feature
-      let features = this._mvtLayer.queryRenderedFeatures([position], {
+      // 查询出相交图层的feature
+      const features = this._mvtLayer.queryRenderedFeatures([position], {
         // layers: [selectLayer.id]
-      });
+      })
 
-      let filter = features.reduce(
-        (memo, result) => {
-          let attr = result.feature.properties;
-          if (!attr) {
-            return;
-          }
+      // eslint-disable-next-line array-callback-return
+      const filter = features.reduce((memo, result) => {
+        const attr = result.feature.properties
+        if (!attr) {
+          // eslint-disable-next-line array-callback-return
+          return
+        }
 
-          let content = mars3d.Util.getPopupForConfig(this.options, attr);
-          let item = {
-            data: attr,
-            event: event,
-          };
-          this._map.openPopup(position, content, item);
-        },
-        ["in", "$id"]
-      );
-    }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+        const content = mars3d.Util.getPopupForConfig(this.options, attr)
+        const item = {
+          data: attr,
+          event: event
+        }
+        this._map.openPopup(position, content, item)
+      })
+    }, Cesium.ScreenSpaceEventType.LEFT_CLICK)
 
-    this.handler = handler;
+    this.handler = handler
   }
 
   /**
@@ -110,7 +101,7 @@ export class SmMvtLayer extends BaseLayer {
    * @private
    */
   _addedHook() {
-    this._mvtLayer.show = true;
+    this._mvtLayer.show = true
     // this._mvtLayer.refresh();
   }
 
@@ -122,7 +113,7 @@ export class SmMvtLayer extends BaseLayer {
    */
   _removedHook() {
     if (this._mvtLayer) {
-      this._mvtLayer.show = false;
+      this._mvtLayer.show = false
     }
   }
 
@@ -133,25 +124,25 @@ export class SmMvtLayer extends BaseLayer {
    */
   setOpacity(value) {
     if (this._mvtLayer) {
-      this._mvtLayer.alpha = parseFloat(value);
+      this._mvtLayer.alpha = parseFloat(value)
     }
   }
 
-  //定位至数据区域
+  // 定位至数据区域
   flyTo(options = {}) {
     if (this.options.center) {
-      this._map.setCameraView(this.options.center, options);
+      this._map.setCameraView(this.options.center, options)
     } else if (this.options.extent) {
-      this._map.flyToExtent(this.options.extent, options);
+      this._map.flyToExtent(this.options.extent, options)
     } else if (this._mvtLayer) {
       this._map.camera.flyTo({
         ...options,
-        destination: this._mvtLayer.rectangle,
-      });
+        destination: this._mvtLayer.rectangle
+      })
     }
   }
 }
-mars3d.layer.SmMvtLayer = SmMvtLayer;
+mars3d.layer.SmMvtLayer = SmMvtLayer
 
-//注册下
-mars3d.LayerUtil.register("supermap_mvt", SmMvtLayer);
+// 注册下
+mars3d.LayerUtil.register("supermap_mvt", SmMvtLayer)

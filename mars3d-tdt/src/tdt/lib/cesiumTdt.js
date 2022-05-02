@@ -1,4 +1,5 @@
-import * as Cesium from "cesium";
+import * as mars3d from "mars3d";
+const Cesium = mars3d.Cesium;
 
 !(function (e, t) {
   t();
@@ -25,7 +26,7 @@ import * as Cesium from "cesium";
           });
       }),
       (i.r = function (e) {
-        "undefined" != typeof Symbol &&
+        "undefined" !== typeof Symbol &&
           Symbol.toStringTag &&
           Object.defineProperty(e, Symbol.toStringTag, {
             value: "Module",
@@ -36,7 +37,7 @@ import * as Cesium from "cesium";
       }),
       (i.t = function (e, t) {
         if ((1 & t && (e = i(e)), 8 & t)) return e;
-        if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+        if (4 & t && "object" === typeof e && e && e.__esModule) return e;
         var r = Object.create(null);
         if (
           (i.r(r),
@@ -44,7 +45,7 @@ import * as Cesium from "cesium";
             enumerable: !0,
             value: e,
           }),
-          2 & t && "string" != typeof e)
+          2 & t && "string" !== typeof e)
         )
           for (var n in e)
             i.d(
@@ -80,12 +81,12 @@ import * as Cesium from "cesium";
       function o(t) {
         return (
           (e.exports = o =
-            "function" == typeof n && "symbol" == typeof r
+            "function" === typeof n && "symbol" === typeof r
               ? function (e) {
                   return typeof e;
                 }
               : function (e) {
-                  return e && "function" == typeof n && e.constructor === n && e !== n.prototype ? "symbol" : typeof e;
+                  return e && "function" === typeof n && e.constructor === n && e !== n.prototype ? "symbol" : typeof e;
                 }),
           o(t)
         );
@@ -105,7 +106,7 @@ import * as Cesium from "cesium";
       var r = i(50)("wks"),
         n = i(28),
         o = i(10).Symbol,
-        a = "function" == typeof o;
+        a = "function" === typeof o;
       (e.exports = function (e) {
         return r[e] || (r[e] = (a && o[e]) || (a ? o : n)("Symbol." + e));
       }).store = r;
@@ -114,19 +115,19 @@ import * as Cesium from "cesium";
       var i = (e.exports = {
         version: "2.6.11",
       });
-      "number" == typeof __e && (__e = i);
+      "number" === typeof __e && (__e = i);
     },
     function (e, t, i) {
       e.exports = i(183);
     },
     function (e, t) {
       var i = (e.exports =
-        "undefined" != typeof window && window.Math == Math
+        "undefined" !== typeof window && window.Math === Math
           ? window
-          : "undefined" != typeof self && self.Math == Math
+          : "undefined" !== typeof self && self.Math === Math
           ? self
           : Function("return this")());
-      "number" == typeof __g && (__g = i);
+      "number" === typeof __g && (__g = i);
     },
     function (e, t, i) {
       e.exports = i(167);
@@ -136,12 +137,12 @@ import * as Cesium from "cesium";
     },
     function (e, t) {
       var i = (e.exports =
-        "undefined" != typeof window && window.Math == Math
+        "undefined" !== typeof window && window.Math === Math
           ? window
-          : "undefined" != typeof self && self.Math == Math
+          : "undefined" !== typeof self && self.Math === Math
           ? self
           : Function("return this")());
-      "number" == typeof __g && (__g = i);
+      "number" === typeof __g && (__g = i);
     },
     function (e, t, i) {
       e.exports = !i(18)(function () {
@@ -178,11 +179,11 @@ import * as Cesium from "cesium";
             ((c = !h && C && void 0 !== C[l]) && s(b, l)) ||
               ((u = c ? C[l] : i[l]),
               (b[l] =
-                f && "function" != typeof C[l]
+                f && "function" !== typeof C[l]
                   ? i[l]
                   : p && c
                   ? o(u, r)
-                  : m && C[l] == u
+                  : m && C[l] === u
                   ? (function (e) {
                       var t = function (t, i, r) {
                         if (this instanceof e) {
@@ -200,7 +201,7 @@ import * as Cesium from "cesium";
                       };
                       return (t.prototype = e.prototype), t;
                     })(u)
-                  : g && "function" == typeof u
+                  : g && "function" === typeof u
                   ? o(Function.call, u)
                   : u),
               g && (((b.virtual || (b.virtual = {}))[l] = u), e & x.R && v && !v[l] && a(v, l, u)));
@@ -227,7 +228,7 @@ import * as Cesium from "cesium";
       var r = i(75)("wks"),
         n = i(58),
         o = i(7).Symbol,
-        a = "function" == typeof o;
+        a = "function" === typeof o;
       (e.exports = function (e) {
         return r[e] || (r[e] = (a && o[e]) || (a ? o : n)("Symbol." + e));
       }).store = r;
@@ -274,7 +275,7 @@ import * as Cesium from "cesium";
     },
     function (e, t) {
       e.exports = function (e) {
-        return "object" == typeof e ? null !== e : "function" == typeof e;
+        return "object" === typeof e ? null !== e : "function" === typeof e;
       };
     },
     function (e, t, i) {
@@ -288,13 +289,13 @@ import * as Cesium from "cesium";
         return s.call(e);
       }),
         (e.exports = function (e, t, i, s) {
-          var l = "function" == typeof i;
+          var l = "function" === typeof i;
           l && (o(i, "name") || n(i, "name", t)),
             e[t] !== i &&
               (l && (o(i, a) || n(i, a, e[t] ? "" + e[t] : x.join(String(t)))),
               e === r ? (e[t] = i) : s ? (e[t] ? (e[t] = i) : n(e, t, i)) : (delete e[t], n(e, t, i)));
         })(Function.prototype, "toString", function () {
-          return ("function" == typeof this && this[a]) || s.call(this);
+          return ("function" === typeof this && this[a]) || s.call(this);
         });
     },
     function (e, t, i) {
@@ -318,10 +319,10 @@ import * as Cesium from "cesium";
             C = v.prototype || (v.prototype = {});
           for (l in (d && (i = t), i))
             (u = ((c = !f && b && void 0 !== b[l]) ? b : i)[l]),
-              (h = m && c ? s(u, r) : p && "function" == typeof u ? s(Function.call, u) : u),
+              (h = m && c ? s(u, r) : p && "function" === typeof u ? s(Function.call, u) : u),
               b && a(b, l, u, e & x.U),
-              v[l] != u && o(v, l, h),
-              p && C[l] != u && (C[l] = u);
+              v[l] !== u && o(v, l, h),
+              p && C[l] !== u && (C[l] = u);
         };
       (r.core = n), (x.F = 1), (x.G = 2), (x.S = 4), (x.P = 8), (x.B = 16), (x.W = 32), (x.U = 64), (x.R = 128), (e.exports = x);
     },
@@ -405,7 +406,7 @@ import * as Cesium from "cesium";
     },
     function (e, t) {
       e.exports = function (e) {
-        return "object" == typeof e ? null !== e : "function" == typeof e;
+        return "object" === typeof e ? null !== e : "function" === typeof e;
       };
     },
     function (e, t, i) {
@@ -534,7 +535,7 @@ import * as Cesium from "cesium";
               c = x > 1 ? arguments[1] : void 0,
               u = void 0 !== c,
               h = E(s);
-            if (null != h && !A(h)) {
+            if (null !== h && !A(h)) {
               for (a = h.call(s), r = [], t = 0; !(o = a.next()).done; t++) r.push(o.value);
               s = r;
             }
@@ -638,7 +639,7 @@ import * as Cesium from "cesium";
             },
           },
           Ue = function (e, t) {
-            return y(e) && e[ve] && "symbol" != typeof t && t in e && String(+t) == String(t);
+            return y(e) && e[ve] && "symbol" !== typeof t && t in e && String(+t) === String(t);
           },
           ke = function (e, t) {
             return Ue(e, (t = b(t, !0))) ? u(2, e[t]) : j(e, t);
@@ -721,7 +722,7 @@ import * as Cesium from "cesium";
                     u = 0,
                     f = 0;
                   if (y(i)) {
-                    if (!(i instanceof X || "ArrayBuffer" == (x = C(i)) || "SharedArrayBuffer" == x)) return ve in i ? Se(d, i) : Pe.call(d, i);
+                    if (!(i instanceof X || "ArrayBuffer" === (x = C(i)) || "SharedArrayBuffer" === x)) return ve in i ? Se(d, i) : Pe.call(d, i);
                     (o = i), (f = Ie(r, t));
                     var m = i.byteLength;
                     if (void 0 === n) {
@@ -759,7 +760,7 @@ import * as Cesium from "cesium";
                   return (
                     c(e, d, l),
                     y(i)
-                      ? i instanceof X || "ArrayBuffer" == (o = C(i)) || "SharedArrayBuffer" == o
+                      ? i instanceof X || "ArrayBuffer" === (o = C(i)) || "SharedArrayBuffer" === o
                         ? void 0 !== n
                           ? new m(i, Ie(r, t), n)
                           : void 0 !== r
@@ -777,20 +778,20 @@ import * as Cesium from "cesium";
                 (d.prototype = A),
                 r || (A.constructor = d));
             var S = A[de],
-              T = !!S && ("values" == S.name || null == S.name),
+              T = !!S && ("values" === S.name || null === S.name),
               P = De.values;
             h(d, pe, !0),
               h(A, ve, l),
               h(A, Ce, !0),
               h(A, me, d),
-              (x ? new d(1)[ge] == l : ge in A) ||
+              (x ? new d(1)[ge] === l : ge in A) ||
                 W(A, ge, {
                   get: function () {
                     return l;
                   },
                 }),
               (_[l] = d),
-              a(a.G + a.W + a.F * (d != m), _),
+              a(a.G + a.W + a.F * (d !== m), _),
               a(a.S, l, {
                 BYTES_PER_ELEMENT: t,
               }),
@@ -813,7 +814,7 @@ import * as Cesium from "cesium";
                 set: Fe,
               }),
               a(a.P + a.F * !T, l, De),
-              r || A.toString == he || (A.toString = he),
+              r || A.toString === he || (A.toString = he),
               a(
                 a.P +
                   a.F *
@@ -829,7 +830,7 @@ import * as Cesium from "cesium";
                 a.P +
                   a.F *
                     (o(function () {
-                      return [1, 2].toLocaleString() != new d([1, 2]).toLocaleString();
+                      return [1, 2].toLocaleString() !== new d([1, 2]).toLocaleString();
                     }) ||
                       !o(function () {
                         A.toLocaleString.call([1, 2]);
@@ -859,7 +860,7 @@ import * as Cesium from "cesium";
     },
     function (e, t) {
       e.exports = function (e) {
-        if (null == e) throw TypeError("Can't call method on  " + e);
+        if (null === e) throw TypeError("Can't call method on  " + e);
         return e;
       };
     },
@@ -904,7 +905,7 @@ import * as Cesium from "cesium";
           var e = this._t,
             t = this._k,
             i = this._i++;
-          return !e || i >= e.length ? ((this._t = void 0), n(1)) : n(0, "keys" == t ? i : "values" == t ? e[i] : [i, e[i]]);
+          return !e || i >= e.length ? ((this._t = void 0), n(1)) : n(0, "keys" === t ? i : "values" === t ? e[i] : [i, e[i]]);
         },
         "values"
       )),
@@ -917,16 +918,16 @@ import * as Cesium from "cesium";
       var i = (e.exports = {
         version: "2.6.11",
       });
-      "number" == typeof __e && (__e = i);
+      "number" === typeof __e && (__e = i);
     },
     function (e, t, i) {
       var r = i(21);
       e.exports = function (e, t) {
         if (!r(e)) return e;
         var i, n;
-        if (t && "function" == typeof (i = e.toString) && !r((n = i.call(e)))) return n;
-        if ("function" == typeof (i = e.valueOf) && !r((n = i.call(e)))) return n;
-        if (!t && "function" == typeof (i = e.toString) && !r((n = i.call(e)))) return n;
+        if (t && "function" === typeof (i = e.toString) && !r((n = i.call(e)))) return n;
+        if ("function" === typeof (i = e.valueOf) && !r((n = i.call(e)))) return n;
+        if (!t && "function" === typeof (i = e.toString) && !r((n = i.call(e)))) return n;
         throw TypeError("Can't convert object to primitive value");
       };
     },
@@ -1056,7 +1057,7 @@ import * as Cesium from "cesium";
     },
     function (e, t) {
       e.exports = function (e) {
-        if (null == e) throw TypeError("Can't call method on  " + e);
+        if (null === e) throw TypeError("Can't call method on  " + e);
         return e;
       };
     },
@@ -1101,7 +1102,7 @@ import * as Cesium from "cesium";
     },
     function (e, t) {
       e.exports = function (e) {
-        if ("function" != typeof e) throw TypeError(e + " is not a function!");
+        if ("function" !== typeof e) throw TypeError(e + " is not a function!");
         return e;
       };
     },
@@ -1121,9 +1122,9 @@ import * as Cesium from "cesium";
         n = RegExp.prototype.exec;
       e.exports = function (e, t) {
         var i = e.exec;
-        if ("function" == typeof i) {
+        if ("function" === typeof i) {
           var o = i.call(e, t);
-          if ("object" != typeof o) throw new TypeError("RegExp exec method returned something other than an Object or null");
+          if ("object" !== typeof o) throw new TypeError("RegExp exec method returned something other than an Object or null");
           return o;
         }
         if ("RegExp" !== r(e)) throw new TypeError("RegExp#exec called on incompatible receiver");
@@ -1155,7 +1156,7 @@ import * as Cesium from "cesium";
           ? i
           : o
           ? r(t)
-          : "Object" == (a = r(t)) && "function" == typeof t.callee
+          : "Object" === (a = r(t)) && "function" === typeof t.callee
           ? "Arguments"
           : a;
       };
@@ -1211,7 +1212,7 @@ import * as Cesium from "cesium";
               (t[h] = function () {
                 return 7;
               }),
-              7 != ""[e](t)
+              7 !== ""[e](t)
             );
           }),
           d = f
@@ -1255,7 +1256,7 @@ import * as Cesium from "cesium";
             n(
               RegExp.prototype,
               h,
-              2 == t
+              2 === t
                 ? function (e, t) {
                     return b.call(e, this, t);
                   }
@@ -1416,9 +1417,9 @@ import * as Cesium from "cesium";
       e.exports = function (e, t) {
         if (!r(e)) return e;
         var i, n;
-        if (t && "function" == typeof (i = e.toString) && !r((n = i.call(e)))) return n;
-        if ("function" == typeof (i = e.valueOf) && !r((n = i.call(e)))) return n;
-        if (!t && "function" == typeof (i = e.toString) && !r((n = i.call(e)))) return n;
+        if (t && "function" === typeof (i = e.toString) && !r((n = i.call(e)))) return n;
+        if ("function" === typeof (i = e.valueOf) && !r((n = i.call(e)))) return n;
+        if (!t && "function" === typeof (i = e.toString) && !r((n = i.call(e)))) return n;
         throw TypeError("Can't convert object to primitive value");
       };
     },
@@ -1442,10 +1443,10 @@ import * as Cesium from "cesium";
         var g;
         return (
           (g =
-            "c" == "abbc".split(/(b)*/)[1] ||
-            4 != "test".split(/(?:)/, -1)[f] ||
-            2 != "ab".split(/(?:ab)*/)[f] ||
-            4 != ".".split(/(.?)(.?)/)[f] ||
+            "c" === "abbc".split(/(b)*/)[1] ||
+            4 !== "test".split(/(?:)/, -1)[f] ||
+            2 !== "ab".split(/(?:ab)*/)[f] ||
+            4 !== ".".split(/(.?)(.?)/)[f] ||
             ".".split(/()()/)[f] > 1 ||
             "".split(/.?/)[f]
               ? function (e, t) {
@@ -1479,7 +1480,7 @@ import * as Cesium from "cesium";
           [
             function (i, r) {
               var n = e(this),
-                o = null == i ? void 0 : i[t];
+                o = null === i ? void 0 : i[t];
               return void 0 !== o ? o.call(i, n, r) : g.call(String(n), i, r);
             },
             function (e, t) {
@@ -1517,7 +1518,7 @@ import * as Cesium from "cesium";
         o = i(4)("match");
       e.exports = function (e) {
         var t;
-        return r(e) && (void 0 !== (t = e[o]) ? !!t : "RegExp" == n(e));
+        return r(e) && (void 0 !== (t = e[o]) ? !!t : "RegExp" === n(e));
       };
     },
     function (e, t, i) {
@@ -1631,7 +1632,7 @@ import * as Cesium from "cesium";
             var e = r(this);
             return "/".concat(e.source, "/", "flags" in e ? e.flags : !o && e instanceof RegExp ? n.call(e) : void 0);
           })
-        : "toString" != a.name &&
+        : "toString" !== a.name &&
           s(function () {
             return a.call(this);
           });
@@ -1641,7 +1642,7 @@ import * as Cesium from "cesium";
       var r = i(63),
         n = {};
       (n[i(4)("toStringTag")] = "z"),
-        n + "" != "[object z]" &&
+        n + "" !== "[object z]" &&
           i(22)(
             Object.prototype,
             "toString",
@@ -1671,7 +1672,7 @@ import * as Cesium from "cesium";
         return [
           function (r, n) {
             var o = e(this),
-              a = null == r ? void 0 : r[t];
+              a = null === r ? void 0 : r[t];
             return void 0 !== a ? a.call(r, o, n) : i.call(String(o), r, n);
           },
           function (e, t) {
@@ -1679,7 +1680,7 @@ import * as Cesium from "cesium";
             if (n.done) return n.value;
             var u = r(e),
               h = String(this),
-              f = "function" == typeof t;
+              f = "function" === typeof t;
             f || (t = String(t));
             var p = u.global;
             if (p) {
@@ -1753,7 +1754,7 @@ import * as Cesium from "cesium";
         s = i(26).f;
       e.exports = function (e) {
         var t = n.Symbol || (n.Symbol = o ? {} : r.Symbol || {});
-        "_" == e.charAt(0) ||
+        "_" === e.charAt(0) ||
           e in t ||
           s(t, e, {
             value: a.f(e),
@@ -1827,12 +1828,12 @@ import * as Cesium from "cesium";
       }
       !(function () {
         try {
-          i = "function" == typeof setTimeout ? setTimeout : o;
+          i = "function" === typeof setTimeout ? setTimeout : o;
         } catch (e) {
           i = o;
         }
         try {
-          r = "function" == typeof clearTimeout ? clearTimeout : a;
+          r = "function" === typeof clearTimeout ? clearTimeout : a;
         } catch (e) {
           r = a;
         }
@@ -1940,7 +1941,7 @@ import * as Cesium from "cesium";
     function (e, t, i) {
       var r = i(4)("unscopables"),
         n = Array.prototype;
-      null == n[r] && i(20)(n, r, {}),
+      null === n[r] && i(20)(n, r, {}),
         (e.exports = function (e) {
           n[r][e] = !0;
         });
@@ -1972,12 +1973,12 @@ import * as Cesium from "cesium";
       e.exports = Object("z").propertyIsEnumerable(0)
         ? Object
         : function (e) {
-            return "String" == r(e) ? e.split("") : Object(e);
+            return "String" === r(e) ? e.split("") : Object(e);
           };
     },
     function (e, t) {
       e.exports = function (e) {
-        if ("function" != typeof e) throw TypeError(e + " is not a function!");
+        if ("function" !== typeof e) throw TypeError(e + " is not a function!");
         return e;
       };
     },
@@ -1991,7 +1992,7 @@ import * as Cesium from "cesium";
           s = n(e),
           x = 0,
           l = [];
-        for (i in s) i != a && r(s, i) && l.push(i);
+        for (i in s) i !== a && r(s, i) && l.push(i);
         for (; t.length > x; ) r(s, (i = t[x++])) && (~o(l, i) || l.push(i));
         return l;
       };
@@ -2006,8 +2007,8 @@ import * as Cesium from "cesium";
             x = r(t),
             l = n(x.length),
             c = o(a, l);
-          if (e && i != i) {
-            for (; l > c; ) if ((s = x[c++]) != s) return !0;
+          if (e && i !== i) {
+            for (; l > c; ) if ((s = x[c++]) !== s) return !0;
           } else for (; l > c; c++) if ((e || c in x) && x[c] === i) return e || c || 0;
           return !e && -1;
         };
@@ -2025,7 +2026,7 @@ import * as Cesium from "cesium";
             (e = n(e)),
             r(e, o)
               ? e[o]
-              : "function" == typeof e.constructor && e instanceof e.constructor
+              : "function" === typeof e.constructor && e instanceof e.constructor
               ? e.constructor.prototype
               : e instanceof Object
               ? a
@@ -2043,7 +2044,7 @@ import * as Cesium from "cesium";
           s = n(e),
           x = 0,
           l = [];
-        for (i in s) i != a && r(s, i) && l.push(i);
+        for (i in s) i !== a && r(s, i) && l.push(i);
         for (; t.length > x; ) r(s, (i = t[x++])) && (~o(l, i) || l.push(i));
         return l;
       };
@@ -2076,7 +2077,7 @@ import * as Cesium from "cesium";
       e.exports = function (e, t) {
         var i,
           a = r(e).constructor;
-        return void 0 === a || null == (i = r(a)[o]) ? t : n(i);
+        return void 0 === a || null === (i = r(a)[o]) ? t : n(i);
       };
     },
     function (e, t, i) {
@@ -2100,7 +2101,7 @@ import * as Cesium from "cesium";
       e.exports =
         Array.isArray ||
         function (e) {
-          return "Array" == r(e);
+          return "Array" === r(e);
         };
     },
     function (e, t, i) {
@@ -2114,7 +2115,7 @@ import * as Cesium from "cesium";
         c = function (e, t, i) {
           var n = {},
             s = o(function () {
-              return !!a[e]() || "​" != "​"[e]();
+              return !!a[e]() || "​" !== "​"[e]();
             }),
             x = (n[e] = s ? t(u) : a[e]);
           i && (n[i] = x), r(r.P + r.F * s, "String", n);
@@ -2185,15 +2186,15 @@ import * as Cesium from "cesium";
             };
           },
           _ = t + " Iterator",
-          A = "values" == g,
+          A = "values" === g,
           I = !1,
           w = e.prototype,
           G = w[u] || w["@@iterator"] || (g && w[g]),
           E = G || y(g),
           S = g ? (A ? y("entries") : E) : void 0,
-          T = ("Array" == t && w.entries) || G;
+          T = ("Array" === t && w.entries) || G;
         if (
-          (T && (C = c(T.call(new e()))) !== Object.prototype && C.next && (l(C, _, !0), r || "function" == typeof C[u] || a(C, u, f)),
+          (T && (C = c(T.call(new e()))) !== Object.prototype && C.next && (l(C, _, !0), r || "function" === typeof C[u] || a(C, u, f)),
           A &&
             G &&
             "values" !== G.name &&
@@ -2370,7 +2371,7 @@ import * as Cesium from "cesium";
                   return new t(e, i, r);
                 }),
                 (t.concat = function (e, i, r, n) {
-                  ("boolean" != typeof i && "string" == typeof i) || ((n = r), (r = i), (i = void 0));
+                  ("boolean" !== typeof i && "string" === typeof i) || ((n = r), (r = i), (i = void 0));
                   for (var o, a = 0, s = 0, x = e.length; s < x; ++s)
                     t.isByteBuffer(e[s]) || (e[s] = t.wrap(e[s], i)), (o = e[s].limit - e[s].offset) > 0 && (a += o);
                   if (0 === a) return new t(0, r, n);
@@ -2387,7 +2388,7 @@ import * as Cesium from "cesium";
                   return ArrayBuffer;
                 }),
                 (t.wrap = function (e, r, n, o) {
-                  if (("string" != typeof r && ((o = n), (n = r), (r = void 0)), "string" == typeof e))
+                  if (("string" !== typeof r && ((o = n), (n = r), (r = void 0)), "string" === typeof e))
                     switch ((void 0 === r && (r = "utf8"), r)) {
                       case "base64":
                         return t.fromBase64(e, n);
@@ -2402,7 +2403,7 @@ import * as Cesium from "cesium";
                       default:
                         throw Error("Unsupported encoding: " + r);
                     }
-                  if (null === e || "object" != typeof e) throw TypeError("Illegal buffer");
+                  if (null === e || "object" !== typeof e) throw TypeError("Illegal buffer");
                   var a;
                   if (t.isByteBuffer(e)) return ((a = i.clone.call(e)).markedOffset = -1), a;
                   if (e instanceof Uint8Array)
@@ -2427,7 +2428,7 @@ import * as Cesium from "cesium";
                   var i = void 0 === t;
                   if ((i && (t = this.offset), !this.noAssert)) {
                     if (!(e instanceof Array)) throw TypeError("Illegal BitSet: Not an array");
-                    if ("number" != typeof t || t % 1 != 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                    if ("number" !== typeof t || t % 1 !== 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
                     if ((t >>>= 0) < 0 || t + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + t + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -2482,7 +2483,7 @@ import * as Cesium from "cesium";
                 (i.readBytes = function (e, t) {
                   var i = void 0 === t;
                   if ((i && (t = this.offset), !this.noAssert)) {
-                    if ("number" != typeof t || t % 1 != 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                    if ("number" !== typeof t || t % 1 !== 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
                     if ((t >>>= 0) < 0 || t + e > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + t + " (+" + e + ") <= " + this.buffer.byteLength);
                   }
@@ -2493,8 +2494,8 @@ import * as Cesium from "cesium";
                 (i.writeInt8 = function (e, t) {
                   var i = void 0 === t;
                   if ((i && (t = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal value: " + e + " (not an integer)");
-                    if (((e |= 0), "number" != typeof t || t % 1 != 0)) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal value: " + e + " (not an integer)");
+                    if (((e |= 0), "number" !== typeof t || t % 1 !== 0)) throw TypeError("Illegal offset: " + t + " (not an integer)");
                     if ((t >>>= 0) < 0 || t + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + t + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -2506,19 +2507,19 @@ import * as Cesium from "cesium";
                 (i.readInt8 = function (e) {
                   var t = void 0 === e;
                   if ((t && (e = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
                     if ((e >>>= 0) < 0 || e + 1 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + e + " (+1) <= " + this.buffer.byteLength);
                   }
                   var i = this.view[e];
-                  return 128 == (128 & i) && (i = -(255 - i + 1)), t && (this.offset += 1), i;
+                  return 128 === (128 & i) && (i = -(255 - i + 1)), t && (this.offset += 1), i;
                 }),
                 (i.readByte = i.readInt8),
                 (i.writeUint8 = function (e, t) {
                   var i = void 0 === t;
                   if ((i && (t = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal value: " + e + " (not an integer)");
-                    if (((e >>>= 0), "number" != typeof t || t % 1 != 0)) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal value: " + e + " (not an integer)");
+                    if (((e >>>= 0), "number" !== typeof t || t % 1 !== 0)) throw TypeError("Illegal offset: " + t + " (not an integer)");
                     if ((t >>>= 0) < 0 || t + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + t + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -2530,7 +2531,7 @@ import * as Cesium from "cesium";
                 (i.readUint8 = function (e) {
                   var t = void 0 === e;
                   if ((t && (e = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
                     if ((e >>>= 0) < 0 || e + 1 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + e + " (+1) <= " + this.buffer.byteLength);
                   }
@@ -2541,8 +2542,8 @@ import * as Cesium from "cesium";
                 (i.writeInt16 = function (e, t) {
                   var i = void 0 === t;
                   if ((i && (t = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal value: " + e + " (not an integer)");
-                    if (((e |= 0), "number" != typeof t || t % 1 != 0)) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal value: " + e + " (not an integer)");
+                    if (((e |= 0), "number" !== typeof t || t % 1 !== 0)) throw TypeError("Illegal offset: " + t + " (not an integer)");
                     if ((t >>>= 0) < 0 || t + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + t + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -2562,14 +2563,14 @@ import * as Cesium from "cesium";
                 (i.readInt16 = function (e) {
                   var t = void 0 === e;
                   if ((t && (e = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
                     if ((e >>>= 0) < 0 || e + 2 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + e + " (+2) <= " + this.buffer.byteLength);
                   }
                   var i = 0;
                   return (
                     this.littleEndian ? ((i = this.view[e]), (i |= this.view[e + 1] << 8)) : ((i = this.view[e] << 8), (i |= this.view[e + 1])),
-                    32768 == (32768 & i) && (i = -(65535 - i + 1)),
+                    32768 === (32768 & i) && (i = -(65535 - i + 1)),
                     t && (this.offset += 2),
                     i
                   );
@@ -2578,8 +2579,8 @@ import * as Cesium from "cesium";
                 (i.writeUint16 = function (e, t) {
                   var i = void 0 === t;
                   if ((i && (t = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal value: " + e + " (not an integer)");
-                    if (((e >>>= 0), "number" != typeof t || t % 1 != 0)) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal value: " + e + " (not an integer)");
+                    if (((e >>>= 0), "number" !== typeof t || t % 1 !== 0)) throw TypeError("Illegal offset: " + t + " (not an integer)");
                     if ((t >>>= 0) < 0 || t + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + t + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -2599,7 +2600,7 @@ import * as Cesium from "cesium";
                 (i.readUint16 = function (e) {
                   var t = void 0 === e;
                   if ((t && (e = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
                     if ((e >>>= 0) < 0 || e + 2 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + e + " (+2) <= " + this.buffer.byteLength);
                   }
@@ -2614,8 +2615,8 @@ import * as Cesium from "cesium";
                 (i.writeInt32 = function (e, t) {
                   var i = void 0 === t;
                   if ((i && (t = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal value: " + e + " (not an integer)");
-                    if (((e |= 0), "number" != typeof t || t % 1 != 0)) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal value: " + e + " (not an integer)");
+                    if (((e |= 0), "number" !== typeof t || t % 1 !== 0)) throw TypeError("Illegal offset: " + t + " (not an integer)");
                     if ((t >>>= 0) < 0 || t + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + t + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -2641,7 +2642,7 @@ import * as Cesium from "cesium";
                 (i.readInt32 = function (e) {
                   var t = void 0 === e;
                   if ((t && (e = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
                     if ((e >>>= 0) < 0 || e + 4 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + e + " (+4) <= " + this.buffer.byteLength);
                   }
@@ -2659,8 +2660,8 @@ import * as Cesium from "cesium";
                 (i.writeUint32 = function (e, t) {
                   var i = void 0 === t;
                   if ((i && (t = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal value: " + e + " (not an integer)");
-                    if (((e >>>= 0), "number" != typeof t || t % 1 != 0)) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal value: " + e + " (not an integer)");
+                    if (((e >>>= 0), "number" !== typeof t || t % 1 !== 0)) throw TypeError("Illegal offset: " + t + " (not an integer)");
                     if ((t >>>= 0) < 0 || t + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + t + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -2686,7 +2687,7 @@ import * as Cesium from "cesium";
                 (i.readUint32 = function (e) {
                   var t = void 0 === e;
                   if ((t && (e = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
                     if ((e >>>= 0) < 0 || e + 4 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + e + " (+4) <= " + this.buffer.byteLength);
                   }
@@ -2704,14 +2705,14 @@ import * as Cesium from "cesium";
                   ((i.writeInt64 = function (t, i) {
                     var r = void 0 === i;
                     if ((r && (i = this.offset), !this.noAssert)) {
-                      if ("number" == typeof t) t = e.fromNumber(t);
-                      else if ("string" == typeof t) t = e.fromString(t);
+                      if ("number" === typeof t) t = e.fromNumber(t);
+                      else if ("string" === typeof t) t = e.fromString(t);
                       else if (!(t && t instanceof e)) throw TypeError("Illegal value: " + t + " (not an integer or Long)");
-                      if ("number" != typeof i || i % 1 != 0) throw TypeError("Illegal offset: " + i + " (not an integer)");
+                      if ("number" !== typeof i || i % 1 !== 0) throw TypeError("Illegal offset: " + i + " (not an integer)");
                       if ((i >>>= 0) < 0 || i + 0 > this.buffer.byteLength)
                         throw RangeError("Illegal offset: 0 <= " + i + " (+0) <= " + this.buffer.byteLength);
                     }
-                    "number" == typeof t ? (t = e.fromNumber(t)) : "string" == typeof t && (t = e.fromString(t)), (i += 8);
+                    "number" === typeof t ? (t = e.fromNumber(t)) : "string" === typeof t && (t = e.fromString(t)), (i += 8);
                     var n = this.buffer.byteLength;
                     i > n && this.resize((n *= 2) > i ? n : i), (i -= 8);
                     var o = t.low,
@@ -2744,7 +2745,7 @@ import * as Cesium from "cesium";
                   (i.readInt64 = function (t) {
                     var i = void 0 === t;
                     if ((i && (t = this.offset), !this.noAssert)) {
-                      if ("number" != typeof t || t % 1 != 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                      if ("number" !== typeof t || t % 1 !== 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
                       if ((t >>>= 0) < 0 || t + 8 > this.buffer.byteLength)
                         throw RangeError("Illegal offset: 0 <= " + t + " (+8) <= " + this.buffer.byteLength);
                     }
@@ -2776,14 +2777,14 @@ import * as Cesium from "cesium";
                   (i.writeUint64 = function (t, i) {
                     var r = void 0 === i;
                     if ((r && (i = this.offset), !this.noAssert)) {
-                      if ("number" == typeof t) t = e.fromNumber(t);
-                      else if ("string" == typeof t) t = e.fromString(t);
+                      if ("number" === typeof t) t = e.fromNumber(t);
+                      else if ("string" === typeof t) t = e.fromString(t);
                       else if (!(t && t instanceof e)) throw TypeError("Illegal value: " + t + " (not an integer or Long)");
-                      if ("number" != typeof i || i % 1 != 0) throw TypeError("Illegal offset: " + i + " (not an integer)");
+                      if ("number" !== typeof i || i % 1 !== 0) throw TypeError("Illegal offset: " + i + " (not an integer)");
                       if ((i >>>= 0) < 0 || i + 0 > this.buffer.byteLength)
                         throw RangeError("Illegal offset: 0 <= " + i + " (+0) <= " + this.buffer.byteLength);
                     }
-                    "number" == typeof t ? (t = e.fromNumber(t)) : "string" == typeof t && (t = e.fromString(t)), (i += 8);
+                    "number" === typeof t ? (t = e.fromNumber(t)) : "string" === typeof t && (t = e.fromString(t)), (i += 8);
                     var n = this.buffer.byteLength;
                     i > n && this.resize((n *= 2) > i ? n : i), (i -= 8);
                     var o = t.low,
@@ -2816,7 +2817,7 @@ import * as Cesium from "cesium";
                   (i.readUint64 = function (t) {
                     var i = void 0 === t;
                     if ((i && (t = this.offset), !this.noAssert)) {
-                      if ("number" != typeof t || t % 1 != 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                      if ("number" !== typeof t || t % 1 !== 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
                       if ((t >>>= 0) < 0 || t + 8 > this.buffer.byteLength)
                         throw RangeError("Illegal offset: 0 <= " + t + " (+8) <= " + this.buffer.byteLength);
                     }
@@ -2848,8 +2849,8 @@ import * as Cesium from "cesium";
                 (i.writeFloat32 = function (e, t) {
                   var i = void 0 === t;
                   if ((i && (t = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e) throw TypeError("Illegal value: " + e + " (not a number)");
-                    if ("number" != typeof t || t % 1 != 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                    if ("number" !== typeof e) throw TypeError("Illegal value: " + e + " (not a number)");
+                    if ("number" !== typeof t || t % 1 !== 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
                     if ((t >>>= 0) < 0 || t + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + t + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -2863,7 +2864,7 @@ import * as Cesium from "cesium";
                 (i.readFloat32 = function (e) {
                   var t = void 0 === e;
                   if ((t && (e = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
                     if ((e >>>= 0) < 0 || e + 4 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + e + " (+4) <= " + this.buffer.byteLength);
                   }
@@ -2874,8 +2875,8 @@ import * as Cesium from "cesium";
                 (i.writeFloat64 = function (e, t) {
                   var i = void 0 === t;
                   if ((i && (t = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e) throw TypeError("Illegal value: " + e + " (not a number)");
-                    if ("number" != typeof t || t % 1 != 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                    if ("number" !== typeof e) throw TypeError("Illegal value: " + e + " (not a number)");
+                    if ("number" !== typeof t || t % 1 !== 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
                     if ((t >>>= 0) < 0 || t + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + t + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -2889,7 +2890,7 @@ import * as Cesium from "cesium";
                 (i.readFloat64 = function (e) {
                   var t = void 0 === e;
                   if ((t && (e = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
                     if ((e >>>= 0) < 0 || e + 8 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + e + " (+8) <= " + this.buffer.byteLength);
                   }
@@ -2910,8 +2911,8 @@ import * as Cesium from "cesium";
                 (i.writeVarint32 = function (e, i) {
                   var r = void 0 === i;
                   if ((r && (i = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal value: " + e + " (not an integer)");
-                    if (((e |= 0), "number" != typeof i || i % 1 != 0)) throw TypeError("Illegal offset: " + i + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal value: " + e + " (not an integer)");
+                    if (((e |= 0), "number" !== typeof i || i % 1 !== 0)) throw TypeError("Illegal offset: " + i + " (not an integer)");
                     if ((i >>>= 0) < 0 || i + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + i + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -2929,7 +2930,7 @@ import * as Cesium from "cesium";
                 (i.readVarint32 = function (e) {
                   var t = void 0 === e;
                   if ((t && (e = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
                     if ((e >>>= 0) < 0 || e + 1 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + e + " (+1) <= " + this.buffer.byteLength);
                   }
@@ -2942,7 +2943,7 @@ import * as Cesium from "cesium";
                       throw ((o.truncated = !0), o);
                     }
                     (i = this.view[e++]), r < 5 && (n |= (127 & i) << (7 * r)), ++r;
-                  } while (0 != (128 & i));
+                  } while (0 !== (128 & i));
                   return (
                     (n |= 0),
                     t
@@ -2955,17 +2956,17 @@ import * as Cesium from "cesium";
                 }),
                 (i.readVarint32ZigZag = function (e) {
                   var i = this.readVarint32(e);
-                  return "object" == typeof i ? (i.value = t.zigZagDecode32(i.value)) : (i = t.zigZagDecode32(i)), i;
+                  return "object" === typeof i ? (i.value = t.zigZagDecode32(i.value)) : (i = t.zigZagDecode32(i)), i;
                 }),
                 e &&
                   ((t.MAX_VARINT64_BYTES = 10),
                   (t.calculateVarint64 = function (t) {
-                    "number" == typeof t ? (t = e.fromNumber(t)) : "string" == typeof t && (t = e.fromString(t));
+                    "number" === typeof t ? (t = e.fromNumber(t)) : "string" === typeof t && (t = e.fromString(t));
                     var i = t.toInt() >>> 0,
                       r = t.shiftRightUnsigned(28).toInt() >>> 0,
                       n = t.shiftRightUnsigned(56).toInt() >>> 0;
-                    return 0 == n
-                      ? 0 == r
+                    return 0 === n
+                      ? 0 === r
                         ? i < 16384
                           ? i < 128
                             ? 1
@@ -2986,9 +2987,9 @@ import * as Cesium from "cesium";
                   }),
                   (t.zigZagEncode64 = function (t) {
                     return (
-                      "number" == typeof t
+                      "number" === typeof t
                         ? (t = e.fromNumber(t, !1))
-                        : "string" == typeof t
+                        : "string" === typeof t
                         ? (t = e.fromString(t, !1))
                         : !1 !== t.unsigned && (t = t.toSigned()),
                       t.shiftLeft(1).xor(t.shiftRight(63)).toUnsigned()
@@ -2996,9 +2997,9 @@ import * as Cesium from "cesium";
                   }),
                   (t.zigZagDecode64 = function (t) {
                     return (
-                      "number" == typeof t
+                      "number" === typeof t
                         ? (t = e.fromNumber(t, !1))
-                        : "string" == typeof t
+                        : "string" === typeof t
                         ? (t = e.fromString(t, !1))
                         : !1 !== t.unsigned && (t = t.toSigned()),
                       t.shiftRightUnsigned(1).xor(t.and(e.ONE).toSigned().negate()).toSigned()
@@ -3007,16 +3008,16 @@ import * as Cesium from "cesium";
                   (i.writeVarint64 = function (i, r) {
                     var n = void 0 === r;
                     if ((n && (r = this.offset), !this.noAssert)) {
-                      if ("number" == typeof i) i = e.fromNumber(i);
-                      else if ("string" == typeof i) i = e.fromString(i);
+                      if ("number" === typeof i) i = e.fromNumber(i);
+                      else if ("string" === typeof i) i = e.fromString(i);
                       else if (!(i && i instanceof e)) throw TypeError("Illegal value: " + i + " (not an integer or Long)");
-                      if ("number" != typeof r || r % 1 != 0) throw TypeError("Illegal offset: " + r + " (not an integer)");
+                      if ("number" !== typeof r || r % 1 !== 0) throw TypeError("Illegal offset: " + r + " (not an integer)");
                       if ((r >>>= 0) < 0 || r + 0 > this.buffer.byteLength)
                         throw RangeError("Illegal offset: 0 <= " + r + " (+0) <= " + this.buffer.byteLength);
                     }
-                    "number" == typeof i
+                    "number" === typeof i
                       ? (i = e.fromNumber(i, !1))
-                      : "string" == typeof i
+                      : "string" === typeof i
                       ? (i = e.fromString(i, !1))
                       : !1 !== i.unsigned && (i = i.toSigned());
                     var o = t.calculateVarint64(i),
@@ -3055,7 +3056,7 @@ import * as Cesium from "cesium";
                   (i.readVarint64 = function (t) {
                     var i = void 0 === t;
                     if ((i && (t = this.offset), !this.noAssert)) {
-                      if ("number" != typeof t || t % 1 != 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                      if ("number" !== typeof t || t % 1 !== 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
                       if ((t >>>= 0) < 0 || t + 1 > this.buffer.byteLength)
                         throw RangeError("Illegal offset: 0 <= " + t + " (+1) <= " + this.buffer.byteLength);
                     }
@@ -3104,9 +3105,9 @@ import * as Cesium from "cesium";
                   var r,
                     n = e.length;
                   if (!this.noAssert) {
-                    if ("string" != typeof e) throw TypeError("Illegal str: Not a string");
+                    if ("string" !== typeof e) throw TypeError("Illegal str: Not a string");
                     for (r = 0; r < n; ++r) if (0 === e.charCodeAt(r)) throw RangeError("Illegal str: Contains NULL-characters");
-                    if ("number" != typeof t || t % 1 != 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                    if ("number" !== typeof t || t % 1 !== 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
                     if ((t >>>= 0) < 0 || t + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + t + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -3128,7 +3129,7 @@ import * as Cesium from "cesium";
                 (i.readCString = function (e) {
                   var t = void 0 === e;
                   if ((t && (e = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
                     if ((e >>>= 0) < 0 || e + 1 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + e + " (+1) <= " + this.buffer.byteLength);
                   }
@@ -3156,8 +3157,8 @@ import * as Cesium from "cesium";
                 (i.writeIString = function (e, t) {
                   var i = void 0 === t;
                   if ((i && (t = this.offset), !this.noAssert)) {
-                    if ("string" != typeof e) throw TypeError("Illegal str: Not a string");
-                    if ("number" != typeof t || t % 1 != 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                    if ("string" !== typeof e) throw TypeError("Illegal str: Not a string");
+                    if ("number" !== typeof t || t % 1 !== 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
                     if ((t >>>= 0) < 0 || t + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + t + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -3186,13 +3187,13 @@ import * as Cesium from "cesium";
                     ),
                     t !== n + 4 + r)
                   )
-                    throw RangeError("Illegal range: Truncated data, " + t + " == " + (t + 4 + r));
+                    throw RangeError("Illegal range: Truncated data, " + t + " === " + (t + 4 + r));
                   return i ? ((this.offset = t), this) : t - n;
                 }),
                 (i.readIString = function (e) {
                   var i = void 0 === e;
                   if ((i && (e = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
                     if ((e >>>= 0) < 0 || e + 4 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + e + " (+4) <= " + this.buffer.byteLength);
                   }
@@ -3215,7 +3216,7 @@ import * as Cesium from "cesium";
                   var i,
                     r = void 0 === t;
                   if ((r && (t = this.offset), !this.noAssert)) {
-                    if ("number" != typeof t || t % 1 != 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
+                    if ("number" !== typeof t || t % 1 !== 0) throw TypeError("Illegal offset: " + t + " (not an integer)");
                     if ((t >>>= 0) < 0 || t + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + t + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -3243,11 +3244,11 @@ import * as Cesium from "cesium";
                 }),
                 (t.calculateString = t.calculateUTF8Bytes),
                 (i.readUTF8String = function (e, i, r) {
-                  "number" == typeof i && ((r = i), (i = void 0));
+                  "number" === typeof i && ((r = i), (i = void 0));
                   var n = void 0 === r;
                   if ((n && (r = this.offset), void 0 === i && (i = t.METRICS_CHARS), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal length: " + e + " (not an integer)");
-                    if (((e |= 0), "number" != typeof r || r % 1 != 0)) throw TypeError("Illegal offset: " + r + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal length: " + e + " (not an integer)");
+                    if (((e |= 0), "number" !== typeof r || r % 1 !== 0)) throw TypeError("Illegal offset: " + r + " (not an integer)");
                     if ((r >>>= 0) < 0 || r + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + r + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -3267,7 +3268,7 @@ import * as Cesium from "cesium";
                       ),
                       s !== e)
                     )
-                      throw RangeError("Illegal range: Truncated data, " + s + " == " + e);
+                      throw RangeError("Illegal range: Truncated data, " + s + " === " + e);
                     return n
                       ? ((this.offset = r), o())
                       : {
@@ -3277,7 +3278,7 @@ import * as Cesium from "cesium";
                   }
                   if (i === t.METRICS_BYTES) {
                     if (!this.noAssert) {
-                      if ("number" != typeof r || r % 1 != 0) throw TypeError("Illegal offset: " + r + " (not an integer)");
+                      if ("number" !== typeof r || r % 1 !== 0) throw TypeError("Illegal offset: " + r + " (not an integer)");
                       if ((r >>>= 0) < 0 || r + e > this.buffer.byteLength)
                         throw RangeError("Illegal offset: 0 <= " + r + " (+" + e + ") <= " + this.buffer.byteLength);
                     }
@@ -3292,7 +3293,7 @@ import * as Cesium from "cesium";
                       ),
                       r !== l)
                     )
-                      throw RangeError("Illegal range: Truncated data, " + r + " == " + l);
+                      throw RangeError("Illegal range: Truncated data, " + r + " === " + l);
                     return n
                       ? ((this.offset = r), o())
                       : {
@@ -3306,8 +3307,8 @@ import * as Cesium from "cesium";
                 (i.writeVString = function (e, i) {
                   var r = void 0 === i;
                   if ((r && (i = this.offset), !this.noAssert)) {
-                    if ("string" != typeof e) throw TypeError("Illegal str: Not a string");
-                    if ("number" != typeof i || i % 1 != 0) throw TypeError("Illegal offset: " + i + " (not an integer)");
+                    if ("string" !== typeof e) throw TypeError("Illegal str: Not a string");
+                    if ("number" !== typeof i || i % 1 !== 0) throw TypeError("Illegal offset: " + i + " (not an integer)");
                     if ((i >>>= 0) < 0 || i + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + i + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -3328,13 +3329,13 @@ import * as Cesium from "cesium";
                     ),
                     i !== s + n + a)
                   )
-                    throw RangeError("Illegal range: Truncated data, " + i + " == " + (i + n + a));
+                    throw RangeError("Illegal range: Truncated data, " + i + " === " + (i + n + a));
                   return r ? ((this.offset = i), this) : i - s;
                 }),
                 (i.readVString = function (e) {
                   var i = void 0 === e;
                   if ((i && (e = this.offset), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
                     if ((e >>>= 0) < 0 || e + 1 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + e + " (+1) <= " + this.buffer.byteLength);
                   }
@@ -3352,10 +3353,10 @@ import * as Cesium from "cesium";
                   );
                 }),
                 (i.append = function (e, i, r) {
-                  ("number" != typeof i && "string" == typeof i) || ((r = i), (i = void 0));
+                  ("number" !== typeof i && "string" === typeof i) || ((r = i), (i = void 0));
                   var n = void 0 === r;
                   if ((n && (r = this.offset), !this.noAssert)) {
-                    if ("number" != typeof r || r % 1 != 0) throw TypeError("Illegal offset: " + r + " (not an integer)");
+                    if ("number" !== typeof r || r % 1 !== 0) throw TypeError("Illegal offset: " + r + " (not an integer)");
                     if ((r >>>= 0) < 0 || r + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + r + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -3399,8 +3400,8 @@ import * as Cesium from "cesium";
                 }),
                 (i.compact = function (e, t) {
                   if ((void 0 === e && (e = this.offset), void 0 === t && (t = this.limit), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal begin: Not an integer");
-                    if (((e >>>= 0), "number" != typeof t || t % 1 != 0)) throw TypeError("Illegal end: Not an integer");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal begin: Not an integer");
+                    if (((e >>>= 0), "number" !== typeof t || t % 1 !== 0)) throw TypeError("Illegal end: Not an integer");
                     if (((t >>>= 0), e < 0 || e > t || t > this.buffer.byteLength))
                       throw RangeError("Illegal range: 0 <= " + e + " <= " + t + " <= " + this.buffer.byteLength);
                   }
@@ -3429,8 +3430,8 @@ import * as Cesium from "cesium";
                 }),
                 (i.copy = function (e, i) {
                   if ((void 0 === e && (e = this.offset), void 0 === i && (i = this.limit), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal begin: Not an integer");
-                    if (((e >>>= 0), "number" != typeof i || i % 1 != 0)) throw TypeError("Illegal end: Not an integer");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal begin: Not an integer");
+                    if (((e >>>= 0), "number" !== typeof i || i % 1 !== 0)) throw TypeError("Illegal end: Not an integer");
                     if (((i >>>= 0), e < 0 || e > i || i > this.buffer.byteLength))
                       throw RangeError("Illegal range: 0 <= " + e + " <= " + i + " <= " + this.buffer.byteLength);
                   }
@@ -3463,14 +3464,14 @@ import * as Cesium from "cesium";
                   var r = void 0 === t;
                   if (
                     (r && (t = this.offset),
-                    "string" == typeof e && e.length > 0 && (e = e.charCodeAt(0)),
+                    "string" === typeof e && e.length > 0 && (e = e.charCodeAt(0)),
                     void 0 === t && (t = this.offset),
                     void 0 === i && (i = this.limit),
                     !this.noAssert)
                   ) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal value: " + e + " (not an integer)");
-                    if (((e |= 0), "number" != typeof t || t % 1 != 0)) throw TypeError("Illegal begin: Not an integer");
-                    if (((t >>>= 0), "number" != typeof i || i % 1 != 0)) throw TypeError("Illegal end: Not an integer");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal value: " + e + " (not an integer)");
+                    if (((e |= 0), "number" !== typeof t || t % 1 !== 0)) throw TypeError("Illegal begin: Not an integer");
+                    if (((t >>>= 0), "number" !== typeof i || i % 1 !== 0)) throw TypeError("Illegal end: Not an integer");
                     if (((i >>>= 0), t < 0 || t > i || i > this.buffer.byteLength))
                       throw RangeError("Illegal range: 0 <= " + t + " <= " + i + " <= " + this.buffer.byteLength);
                   }
@@ -3483,14 +3484,14 @@ import * as Cesium from "cesium";
                 }),
                 (i.mark = function (e) {
                   if (((e = void 0 === e ? this.offset : e), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal offset: " + e + " (not an integer)");
                     if ((e >>>= 0) < 0 || e + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + e + " (+0) <= " + this.buffer.byteLength);
                   }
                   return (this.markedOffset = e), this;
                 }),
                 (i.order = function (e) {
-                  if (!this.noAssert && "boolean" != typeof e) throw TypeError("Illegal littleEndian: Not a boolean");
+                  if (!this.noAssert && "boolean" !== typeof e) throw TypeError("Illegal littleEndian: Not a boolean");
                   return (this.littleEndian = !!e), this;
                 }),
                 (i.LE = function (e) {
@@ -3500,10 +3501,10 @@ import * as Cesium from "cesium";
                   return (this.littleEndian = void 0 !== e && !e), this;
                 }),
                 (i.prepend = function (e, i, r) {
-                  ("number" != typeof i && "string" == typeof i) || ((r = i), (i = void 0));
+                  ("number" !== typeof i && "string" === typeof i) || ((r = i), (i = void 0));
                   var n = void 0 === r;
                   if ((n && (r = this.offset), !this.noAssert)) {
-                    if ("number" != typeof r || r % 1 != 0) throw TypeError("Illegal offset: " + r + " (not an integer)");
+                    if ("number" !== typeof r || r % 1 !== 0) throw TypeError("Illegal offset: " + r + " (not an integer)");
                     if ((r >>>= 0) < 0 || r + 0 > this.buffer.byteLength)
                       throw RangeError("Illegal offset: 0 <= " + r + " (+0) <= " + this.buffer.byteLength);
                   }
@@ -3528,7 +3529,7 @@ import * as Cesium from "cesium";
                   return e.prepend(this, t), this;
                 }),
                 (i.printDebug = function (e) {
-                  "function" != typeof e && (e = console.log.bind(console)),
+                  "function" !== typeof e && (e = console.log.bind(console)),
                     e(this.toString() + "\n-------------------------------------------------------------------\n" + this.toDebug(!0));
                 }),
                 (i.remaining = function () {
@@ -3539,7 +3540,7 @@ import * as Cesium from "cesium";
                 }),
                 (i.resize = function (e) {
                   if (!this.noAssert) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal capacity: " + e + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal capacity: " + e + " (not an integer)");
                     if ((e |= 0) < 0) throw RangeError("Illegal capacity: 0 <= " + e);
                   }
                   if (this.buffer.byteLength < e) {
@@ -3551,8 +3552,8 @@ import * as Cesium from "cesium";
                 }),
                 (i.reverse = function (e, t) {
                   if ((void 0 === e && (e = this.offset), void 0 === t && (t = this.limit), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal begin: Not an integer");
-                    if (((e >>>= 0), "number" != typeof t || t % 1 != 0)) throw TypeError("Illegal end: Not an integer");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal begin: Not an integer");
+                    if (((e >>>= 0), "number" !== typeof t || t % 1 !== 0)) throw TypeError("Illegal end: Not an integer");
                     if (((t >>>= 0), e < 0 || e > t || t > this.buffer.byteLength))
                       throw RangeError("Illegal range: 0 <= " + e + " <= " + t + " <= " + this.buffer.byteLength);
                   }
@@ -3560,7 +3561,7 @@ import * as Cesium from "cesium";
                 }),
                 (i.skip = function (e) {
                   if (!this.noAssert) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal length: " + e + " (not an integer)");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal length: " + e + " (not an integer)");
                     e |= 0;
                   }
                   var t = this.offset + e;
@@ -3570,8 +3571,8 @@ import * as Cesium from "cesium";
                 }),
                 (i.slice = function (e, t) {
                   if ((void 0 === e && (e = this.offset), void 0 === t && (t = this.limit), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal begin: Not an integer");
-                    if (((e >>>= 0), "number" != typeof t || t % 1 != 0)) throw TypeError("Illegal end: Not an integer");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal begin: Not an integer");
+                    if (((e >>>= 0), "number" !== typeof t || t % 1 !== 0)) throw TypeError("Illegal end: Not an integer");
                     if (((t >>>= 0), e < 0 || e > t || t > this.buffer.byteLength))
                       throw RangeError("Illegal range: 0 <= " + e + " <= " + t + " <= " + this.buffer.byteLength);
                   }
@@ -3582,8 +3583,8 @@ import * as Cesium from "cesium";
                   var t = this.offset,
                     i = this.limit;
                   if (!this.noAssert) {
-                    if ("number" != typeof t || t % 1 != 0) throw TypeError("Illegal offset: Not an integer");
-                    if (((t >>>= 0), "number" != typeof i || i % 1 != 0)) throw TypeError("Illegal limit: Not an integer");
+                    if ("number" !== typeof t || t % 1 !== 0) throw TypeError("Illegal offset: Not an integer");
+                    if (((t >>>= 0), "number" !== typeof i || i % 1 !== 0)) throw TypeError("Illegal limit: Not an integer");
                     if (((i >>>= 0), t < 0 || t > i || i > this.buffer.byteLength))
                       throw RangeError("Illegal range: 0 <= " + t + " <= " + i + " <= " + this.buffer.byteLength);
                   }
@@ -3606,7 +3607,7 @@ import * as Cesium from "cesium";
                       this.capacity() +
                       ")"
                     );
-                  switch (("number" == typeof e && (i = t = e = "utf8"), e)) {
+                  switch (("number" === typeof e && (i = t = e = "utf8"), e)) {
                     case "utf8":
                       return this.toUTF8(t, i);
                     case "base64":
@@ -3693,7 +3694,7 @@ import * as Cesium from "cesium";
                 );
               }),
                 (t.fromBase64 = function (e, i) {
-                  if ("string" != typeof e) throw TypeError("str");
+                  if ("string" !== typeof e) throw TypeError("str");
                   var r = new t((e.length / 4) * 3, i),
                     n = 0;
                   return (
@@ -3719,7 +3720,7 @@ import * as Cesium from "cesium";
                   return r.join("") + String.fromCharCode.apply(String, i);
                 }),
                 (t.fromBinary = function (e, i) {
-                  if ("string" != typeof e) throw TypeError("str");
+                  if ("string" !== typeof e) throw TypeError("str");
                   for (var r, n = 0, o = e.length, a = new t(o, i); n < o; ) {
                     if ((r = e.charCodeAt(n)) > 255) throw RangeError("illegal char code: " + r);
                     a.view[n++] = r;
@@ -3733,7 +3734,7 @@ import * as Cesium from "cesium";
                         ((n += (t = this.view[i]) < 16 ? "0" + t.toString(16).toUpperCase() : t.toString(16).toUpperCase()),
                         e && (o += t > 32 && t < 127 ? String.fromCharCode(t) : ".")),
                       ++i,
-                      e && i > 0 && i % 16 == 0 && i !== r)
+                      e && i > 0 && i % 16 === 0 && i !== r)
                     ) {
                       for (; n.length < 51; ) n += " ";
                       (a += n + o + "\n"), (n = o = "");
@@ -3847,8 +3848,8 @@ import * as Cesium from "cesium";
                 }),
                 (i.toHex = function (e, t) {
                   if (((e = void 0 === e ? this.offset : e), (t = void 0 === t ? this.limit : t), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal begin: Not an integer");
-                    if (((e >>>= 0), "number" != typeof t || t % 1 != 0)) throw TypeError("Illegal end: Not an integer");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal begin: Not an integer");
+                    if (((e >>>= 0), "number" !== typeof t || t % 1 !== 0)) throw TypeError("Illegal end: Not an integer");
                     if (((t >>>= 0), e < 0 || e > t || t > this.buffer.byteLength))
                       throw RangeError("Illegal range: 0 <= " + e + " <= " + t + " <= " + this.buffer.byteLength);
                   }
@@ -3857,8 +3858,8 @@ import * as Cesium from "cesium";
                 }),
                 (t.fromHex = function (e, i, r) {
                   if (!r) {
-                    if ("string" != typeof e) throw TypeError("Illegal str: Not a string");
-                    if (e.length % 2 != 0) throw TypeError("Illegal str: Length not a multiple of 2");
+                    if ("string" !== typeof e) throw TypeError("Illegal str: Not a string");
+                    if (e.length % 2 !== 0) throw TypeError("Illegal str: Length not a multiple of 2");
                   }
                   for (var n, o = e.length, a = new t((o / 2) | 0, i), s = 0, x = 0; s < o; s += 2) {
                     if (((n = parseInt(e.substring(s, s + 2), 16)), !r && (!isFinite(n) || n < 0 || n > 255)))
@@ -3873,7 +3874,7 @@ import * as Cesium from "cesium";
                   encodeUTF8: function (e, t) {
                     var i = null;
                     for (
-                      "number" == typeof e &&
+                      "number" === typeof e &&
                       ((i = e),
                       (e = function () {
                         return null;
@@ -3904,12 +3905,12 @@ import * as Cesium from "cesium";
                       null !== (i = e());
 
                     )
-                      if (0 == (128 & i)) t(i);
-                      else if (192 == (224 & i)) null === (r = e()) && a([i, r]), t(((31 & i) << 6) | (63 & r));
-                      else if (224 == (240 & i))
+                      if (0 === (128 & i)) t(i);
+                      else if (192 === (224 & i)) null === (r = e()) && a([i, r]), t(((31 & i) << 6) | (63 & r));
+                      else if (224 === (240 & i))
                         (null === (r = e()) || null === (n = e())) && a([i, r, n]), t(((15 & i) << 12) | ((63 & r) << 6) | (63 & n));
                       else {
-                        if (240 != (248 & i)) throw RangeError("Illegal starting byte: " + i);
+                        if (240 !== (248 & i)) throw RangeError("Illegal starting byte: " + i);
                         (null === (r = e()) || null === (n = e()) || null === (o = e())) && a([i, r, n, o]),
                           t(((7 & i) << 18) | ((63 & r) << 12) | ((63 & n) << 6) | (63 & o));
                       }
@@ -3924,7 +3925,7 @@ import * as Cesium from "cesium";
                   UTF8toUTF16: function (e, t) {
                     var i = null;
                     for (
-                      "number" == typeof e &&
+                      "number" === typeof e &&
                       ((i = e),
                       (e = function () {
                         return null;
@@ -3967,8 +3968,8 @@ import * as Cesium from "cesium";
               return (
                 (i.toUTF8 = function (e, t) {
                   if ((void 0 === e && (e = this.offset), void 0 === t && (t = this.limit), !this.noAssert)) {
-                    if ("number" != typeof e || e % 1 != 0) throw TypeError("Illegal begin: Not an integer");
-                    if (((e >>>= 0), "number" != typeof t || t % 1 != 0)) throw TypeError("Illegal end: Not an integer");
+                    if ("number" !== typeof e || e % 1 !== 0) throw TypeError("Illegal begin: Not an integer");
+                    if (((e >>>= 0), "number" !== typeof t || t % 1 !== 0)) throw TypeError("Illegal end: Not an integer");
                     if (((t >>>= 0), e < 0 || e > t || t > this.buffer.byteLength))
                       throw RangeError("Illegal range: 0 <= " + e + " <= " + t + " <= " + this.buffer.byteLength);
                   }
@@ -3981,12 +3982,12 @@ import * as Cesium from "cesium";
                       (i = a())
                     );
                   } catch (i) {
-                    if (e !== t) throw RangeError("Illegal range: Truncated data, " + e + " != " + t);
+                    if (e !== t) throw RangeError("Illegal range: Truncated data, " + e + " !== " + t);
                   }
                   return i();
                 }),
                 (t.fromUTF8 = function (e, i, r) {
-                  if (!r && "string" != typeof e) throw TypeError("Illegal str: Not a string");
+                  if (!r && "string" !== typeof e) throw TypeError("Illegal str: Not a string");
                   var n = new t(c.calculateUTF16asUTF8(o(e), !0)[1], i, r),
                     a = 0;
                   return (
@@ -4026,7 +4027,7 @@ import * as Cesium from "cesium";
         (t.resolve = function () {
           for (var t = "", n = !1, o = arguments.length - 1; o >= -1 && !n; o--) {
             var a = o >= 0 ? arguments[o] : e.cwd();
-            if ("string" != typeof a) throw new TypeError("Arguments to path.resolve must be strings");
+            if ("string" !== typeof a) throw new TypeError("Arguments to path.resolve must be strings");
             a && ((t = a + "/" + t), (n = "/" === a.charAt(0)));
           }
           return (
@@ -4062,7 +4063,7 @@ import * as Cesium from "cesium";
             var e = Array.prototype.slice.call(arguments, 0);
             return t.normalize(
               r(e, function (e, t) {
-                if ("string" != typeof e) throw new TypeError("Arguments to path.join must be strings");
+                if ("string" !== typeof e) throw new TypeError("Arguments to path.join must be strings");
                 return e;
               }).join("/")
             );
@@ -4086,7 +4087,7 @@ import * as Cesium from "cesium";
           (t.sep = "/"),
           (t.delimiter = ":"),
           (t.dirname = function (e) {
-            if (("string" != typeof e && (e += ""), 0 === e.length)) return ".";
+            if (("string" !== typeof e && (e += ""), 0 === e.length)) return ".";
             for (var t = e.charCodeAt(0), i = 47 === t, r = -1, n = !0, o = e.length - 1; o >= 1; --o)
               if (47 === (t = e.charCodeAt(o))) {
                 if (!n) {
@@ -4098,7 +4099,7 @@ import * as Cesium from "cesium";
           }),
           (t.basename = function (e, t) {
             var i = (function (e) {
-              "string" != typeof e && (e += "");
+              "string" !== typeof e && (e += "");
               var t,
                 i = 0,
                 r = -1,
@@ -4115,7 +4116,7 @@ import * as Cesium from "cesium";
             return t && i.substr(-1 * t.length) === t && (i = i.substr(0, i.length - t.length)), i;
           }),
           (t.extname = function (e) {
-            "string" != typeof e && (e += "");
+            "string" !== typeof e && (e += "");
             for (var t = -1, i = 0, r = -1, n = !0, o = 0, a = e.length - 1; a >= 0; --a) {
               var s = e.charCodeAt(a);
               if (47 !== s) -1 === r && ((n = !1), (r = a + 1)), 46 === s ? (-1 === t ? (t = a) : 1 !== o && (o = 1)) : -1 !== t && (o = -1);
@@ -4188,7 +4189,7 @@ import * as Cesium from "cesium";
       e.exports =
         Array.isArray ||
         function (e) {
-          return "Array" == r(e);
+          return "Array" === r(e);
         };
     },
     function (e, t, i) {
@@ -4289,7 +4290,7 @@ import * as Cesium from "cesium";
           ? i
           : o
           ? r(t)
-          : "Object" == (a = r(t)) && "function" == typeof t.callee
+          : "Object" === (a = r(t)) && "function" === typeof t.callee
           ? "Arguments"
           : a;
       };
@@ -4301,7 +4302,7 @@ import * as Cesium from "cesium";
       e.exports = function (e, t) {
         var i,
           a = r(e).constructor;
-        return void 0 === a || null == (i = r(a)[o]) ? t : n(i);
+        return void 0 === a || null === (i = r(a)[o]) ? t : n(i);
       };
     },
     function (e, t, i) {
@@ -4335,7 +4336,7 @@ import * as Cesium from "cesium";
           for (var t = [], i = 1; arguments.length > i; ) t.push(arguments[i++]);
           return (
             (m[++p] = function () {
-              s("function" == typeof e ? e : Function(e), t);
+              s("function" === typeof e ? e : Function(e), t);
             }),
             r(p),
             p
@@ -4344,7 +4345,7 @@ import * as Cesium from "cesium";
         (f = function (e) {
           delete m[e];
         }),
-        "process" == i(47)(u)
+        "process" === i(47)(u)
           ? (r = function (e) {
               u.nextTick(a(b, e, 1));
             })
@@ -4354,7 +4355,7 @@ import * as Cesium from "cesium";
             })
           : d
           ? ((o = (n = new d()).port2), (n.port1.onmessage = v), (r = a(o.postMessage, o, 1)))
-          : c.addEventListener && "function" == typeof postMessage && !c.importScripts
+          : c.addEventListener && "function" === typeof postMessage && !c.importScripts
           ? ((r = function (e) {
               c.postMessage(e + "", "*");
             }),
@@ -4407,7 +4408,7 @@ import * as Cesium from "cesium";
         s = i(13).f;
       e.exports = function (e) {
         var t = n.Symbol || (n.Symbol = o ? {} : r.Symbol || {});
-        "_" == e.charAt(0) ||
+        "_" === e.charAt(0) ||
           e in t ||
           s(t, e, {
             value: a.f(e),
@@ -4435,11 +4436,11 @@ import * as Cesium from "cesium";
         f = r.Number,
         d = f,
         g = f.prototype,
-        p = "Number" == o(i(52)(g)),
+        p = "Number" === o(i(52)(g)),
         m = "trim" in String.prototype,
         b = function (e) {
           var t = s(e, !1);
-          if ("string" == typeof t && t.length > 2) {
+          if ("string" === typeof t && t.length > 2) {
             var i,
               r,
               n,
@@ -4474,7 +4475,7 @@ import * as Cesium from "cesium";
               ? x(function () {
                   g.valueOf.call(i);
                 })
-              : "Number" != o(i))
+              : "Number" !== o(i))
             ? a(new d(b(t)), i, f)
             : b(t);
         };
@@ -4499,7 +4500,7 @@ import * as Cesium from "cesium";
       e.exports = function (e, t, i) {
         var o,
           a = t.constructor;
-        return a !== i && "function" == typeof a && (o = a.prototype) !== i.prototype && r(o) && n && n(e, o), e;
+        return a !== i && "function" === typeof a && (o = a.prototype) !== i.prototype && r(o) && n && n(e, o), e;
       };
     },
     function (e, t, i) {
@@ -4519,7 +4520,7 @@ import * as Cesium from "cesium";
         i(11) &&
         (!d ||
           i(18)(function () {
-            return (f[i(4)("match")] = !1), l(h) != h || l(f) == f || "/a/i" != l(h, "i");
+            return (f[i(4)("match")] = !1), l(h) !== h || l(f) === f || "/a/i" !== l(h, "i");
           }))
       ) {
         l = function (e, t) {
@@ -4582,7 +4583,7 @@ import * as Cesium from "cesium";
           var n = i(120);
           (window.dcodeIO = window.dcodeIO || {}),
             (window.dcodeIO.ByteBuffer = n),
-            "function" == typeof define && i(121)
+            "function" === typeof define && i(121)
               ? define(["bytebuffer"], r)
               : "object" === b()(t) && t && t.exports
               ? (t.exports = r(i(120), !0))
@@ -4715,7 +4716,7 @@ import * as Cesium from "cesium";
             (s.populateAccessors = !0),
             (s.populateDefaults = !0),
             (s.Util =
-              (((o = {}).IS_NODE = !("object" !== (void 0 === e ? "undefined" : b()(e)) || "[object process]" != e + "" || e.browser)),
+              (((o = {}).IS_NODE = !("object" !== (void 0 === e ? "undefined" : b()(e)) || "[object process]" !== e + "" || e.browser)),
               (o.XHR = function () {
                 for (
                   var e = [
@@ -4748,7 +4749,7 @@ import * as Cesium from "cesium";
                 return t;
               }),
               (o.fetch = function (e, t) {
-                if ((t && "function" != typeof t && (t = null), o.IS_NODE)) {
+                if ((t && "function" !== typeof t && (t = null), o.IS_NODE)) {
                   var r = i(192);
                   if (t)
                     r.readFile(e, function (e, i) {
@@ -4765,14 +4766,14 @@ import * as Cesium from "cesium";
                   if (
                     (n.open("GET", e, !!t),
                     n.setRequestHeader("Accept", "text/plain"),
-                    "function" == typeof n.overrideMimeType && n.overrideMimeType("text/plain"),
+                    "function" === typeof n.overrideMimeType && n.overrideMimeType("text/plain"),
                     !t)
                   )
-                    return n.send(null), 200 == n.status || (0 == n.status && "string" == typeof n.responseText) ? n.responseText : null;
+                    return n.send(null), 200 === n.status || (0 === n.status && "string" === typeof n.responseText) ? n.responseText : null;
                   (n.onreadystatechange = function () {
-                    4 == n.readyState && (200 == n.status || (0 == n.status && "string" == typeof n.responseText) ? t(n.responseText) : t(null));
+                    4 === n.readyState && (200 === n.status || (0 === n.status && "string" === typeof n.responseText) ? t(n.responseText) : t(null));
                   }),
-                    4 != n.readyState && n.send(null);
+                    4 !== n.readyState && n.send(null);
                 }
               }),
               (o.toCamelCase = function (e) {
@@ -4806,7 +4807,7 @@ import * as Cesium from "cesium";
               function i(e, i) {
                 var r = -1,
                   n = 1;
-                if (("-" == e.charAt(0) && ((n = -1), (e = e.substring(1))), t.NUMBER_DEC.test(e))) r = p()(e);
+                if (("-" === e.charAt(0) && ((n = -1), (e = e.substring(1))), t.NUMBER_DEC.test(e))) r = p()(e);
                 else if (t.NUMBER_HEX.test(e)) r = p()(e.substring(2), 16);
                 else {
                   if (!t.NUMBER_OCT.test(e)) throw Error("illegal id value: " + (0 > n ? "-" : "") + e);
@@ -4817,7 +4818,7 @@ import * as Cesium from "cesium";
               }
               function r(e) {
                 var i = 1;
-                if (("-" == e.charAt(0) && ((i = -1), (e = e.substring(1))), t.NUMBER_DEC.test(e))) return i * p()(e, 10);
+                if (("-" === e.charAt(0) && ((i = -1), (e = e.substring(1))), t.NUMBER_DEC.test(e))) return i * p()(e, 10);
                 if (t.NUMBER_HEX.test(e)) return i * p()(e.substring(2), 16);
                 if (t.NUMBER_OCT.test(e)) return i * p()(e.substring(1), 8);
                 if ("inf" === e) return (1 / 0) * i;
@@ -4849,7 +4850,7 @@ import * as Cesium from "cesium";
                       if (("\n" === i && ++this.line, ++this.index === this.source.length)) return null;
                     if ("/" === this.source.charAt(this.index))
                       if ((++this.index, "/" === this.source.charAt(this.index))) {
-                        for (; "\n" !== this.source.charAt(++this.index); ) if (this.index == this.source.length) return null;
+                        for (; "\n" !== this.source.charAt(++this.index); ) if (this.index === this.source.length) return null;
                         ++this.index, ++this.line, (e = !0);
                       } else {
                         if ("*" !== (i = this.source.charAt(this.index))) return "/";
@@ -5205,15 +5206,15 @@ import * as Cesium from "cesium";
               function i(t, i) {
                 if (
                   t &&
-                  "number" == typeof t.low &&
-                  "number" == typeof t.high &&
-                  "boolean" == typeof t.unsigned &&
-                  t.low == t.low &&
-                  t.high == t.high
+                  "number" === typeof t.low &&
+                  "number" === typeof t.high &&
+                  "boolean" === typeof t.unsigned &&
+                  t.low === t.low &&
+                  t.high === t.high
                 )
                   return new e.Long(t.low, t.high, void 0 === i ? t.unsigned : i);
-                if ("string" == typeof t) return e.Long.fromString(t, i || !1, 10);
-                if ("number" == typeof t) return e.Long.fromNumber(t, i || !1);
+                if ("string" === typeof t) return e.Long.fromString(t, i || !1, 10);
+                if ("number" === typeof t) return e.Long.fromNumber(t, i || !1);
                 throw Error("not convertible to Long");
               }
               function r(t, i) {
@@ -5223,7 +5224,7 @@ import * as Cesium from "cesium";
                   case e.WIRE_TYPES.VARINT:
                     do {
                       o = i.readUint8();
-                    } while (128 == (128 & o));
+                    } while (128 === (128 & o));
                     break;
                   case e.WIRE_TYPES.BITS64:
                     i.offset += 8;
@@ -5251,7 +5252,7 @@ import * as Cesium from "cesium";
                 };
               ((l = s.prototype).fqn = function () {
                 for (var e = this.name, t = this; ; ) {
-                  if (null == (t = t.parent)) break;
+                  if (null === (t = t.parent)) break;
                   e = t.name + "." + e;
                 }
                 return e;
@@ -5272,7 +5273,7 @@ import * as Cesium from "cesium";
                     (this.syntax = n || "proto2");
                 };
               ((l = u.prototype = c()(s.prototype)).getChildren = function (e) {
-                if (null == (e = e || null)) return this.children.slice();
+                if (null === (e = e || null)) return this.children.slice();
                 for (var t = [], i = 0, r = this.children.length; i < r; ++i) this.children[i] instanceof e && t.push(this.children[i]);
                 return t;
               }),
@@ -5288,12 +5289,12 @@ import * as Cesium from "cesium";
                   this.children.push(e);
                 }),
                 (l.getChild = function (e) {
-                  for (var t = "number" == typeof e ? "id" : "name", i = 0, r = this.children.length; i < r; ++i)
+                  for (var t = "number" === typeof e ? "id" : "name", i = 0, r = this.children.length; i < r; ++i)
                     if (this.children[i][t] === e) return this.children[i];
                   return null;
                 }),
                 (l.resolve = function (e, t) {
-                  var i = "string" == typeof e ? e.split(".") : e,
+                  var i = "string" === typeof e ? e.split(".") : e,
                     r = this,
                     n = 0;
                   if ("" === i[n]) {
@@ -5312,9 +5313,9 @@ import * as Cesium from "cesium";
                       }
                       n++;
                     } while (n < i.length);
-                    if (null != r) break;
+                    if (null !== r) break;
                     if (null !== this.parent) return this.parent.resolve(e, t);
-                  } while (null != r);
+                  } while (null !== r);
                   return r;
                 }),
                 (l.qn = function (e) {
@@ -5360,9 +5361,9 @@ import * as Cesium from "cesium";
                 },
                 d = f.prototype;
               (f.defaultFieldValue = function (i) {
-                if (("string" == typeof i && (i = e.TYPES[i]), void 0 === i.defaultValue))
+                if (("string" === typeof i && (i = e.TYPES[i]), void 0 === i.defaultValue))
                   throw Error("default value for type " + i.name + " is not supported");
-                return i == e.TYPES.bytes ? new t(0) : i.defaultValue;
+                return i === e.TYPES.bytes ? new t(0) : i.defaultValue;
               }),
                 (d.toString = function () {
                   return (this.name || "") + (this.isMapKey ? "map" : "value") + " element";
@@ -5376,10 +5377,10 @@ import * as Cesium from "cesium";
                     case e.TYPES.int32:
                     case e.TYPES.sint32:
                     case e.TYPES.sfixed32:
-                      return ("number" != typeof r || (r == r && 0 != r % 1)) && n(b()(r), "not an integer"), 4294967295 < r ? 0 | r : r;
+                      return ("number" !== typeof r || (r === r && 0 !== r % 1)) && n(b()(r), "not an integer"), 4294967295 < r ? 0 | r : r;
                     case e.TYPES.uint32:
                     case e.TYPES.fixed32:
-                      return ("number" != typeof r || (r == r && 0 != r % 1)) && n(b()(r), "not an integer"), 0 > r ? r >>> 0 : r;
+                      return ("number" !== typeof r || (r === r && 0 !== r % 1)) && n(b()(r), "not an integer"), 0 > r ? r >>> 0 : r;
                     case e.TYPES.int64:
                     case e.TYPES.sint64:
                     case e.TYPES.sfixed64:
@@ -5400,20 +5401,20 @@ import * as Cesium from "cesium";
                         }
                       else n(b()(r), "requires Long.js");
                     case e.TYPES.bool:
-                      return "boolean" != typeof r && n(b()(r), "not a boolean"), r;
+                      return "boolean" !== typeof r && n(b()(r), "not a boolean"), r;
                     case e.TYPES.float:
                     case e.TYPES.double:
-                      return "number" != typeof r && n(b()(r), "not a number"), r;
+                      return "number" !== typeof r && n(b()(r), "not a number"), r;
                     case e.TYPES.string:
-                      return "string" == typeof r || (r && r instanceof String) || n(b()(r), "not a string"), "" + r;
+                      return "string" === typeof r || (r && r instanceof String) || n(b()(r), "not a string"), "" + r;
                     case e.TYPES.bytes:
                       return t.isByteBuffer(r) ? r : t.wrap(r, "base64");
                     case e.TYPES.enum:
                       for (var a = this.resolvedType.getChildren(e.Reflect.Enum.Value), s = 0; s < a.length; s++)
-                        if (a[s].name == r || a[s].id == r) return a[s].id;
+                        if (a[s].name === r || a[s].id === r) return a[s].id;
                       if ("proto3" === this.syntax)
                         return (
-                          ("number" != typeof r || (r == r && 0 != r % 1)) && n(b()(r), "not an integer"),
+                          ("number" !== typeof r || (r === r && 0 !== r % 1)) && n(b()(r), "not an integer"),
                           (4294967295 < r || 0 > r) && n(b()(r), "not in range for uint32"),
                           r
                         );
@@ -5502,7 +5503,7 @@ import * as Cesium from "cesium";
                       n.writeInt64(r);
                       break;
                     case e.TYPES.bool:
-                      "string" == typeof r ? n.writeVarint32("false" === r.toLowerCase() ? 0 : !!r) : n.writeVarint32(r ? 1 : 0);
+                      "string" === typeof r ? n.writeVarint32("false" === r.toLowerCase() ? 0 : !!r) : n.writeVarint32(r ? 1 : 0);
                       break;
                     case e.TYPES.enum:
                       n.writeVarint32(r);
@@ -5532,7 +5533,7 @@ import * as Cesium from "cesium";
                   return n;
                 }),
                 (d.decode = function (t, i, r) {
-                  if (i != this.type.wireType) throw Error("Unexpected wire type for element");
+                  if (i !== this.type.wireType) throw Error("Unexpected wire type for element");
                   switch (this.type) {
                     case e.TYPES.int32:
                       return 0 | t.readVarint32();
@@ -5656,7 +5657,7 @@ import * as Cesium from "cesium";
                           1 !== arguments.length ||
                           null === n ||
                           "object" !== b()(n) ||
-                          !("function" != typeof n.encode || n instanceof r) ||
+                          !("function" !== typeof n.encode || n instanceof r) ||
                           h()(n) ||
                           n instanceof e.Map ||
                           t.isByteBuffer(n) ||
@@ -5736,7 +5737,7 @@ import * as Cesium from "cesium";
                   }
                   return (
                     (l.encode = function (e, r) {
-                      "boolean" == typeof e && ((r = e), (e = void 0));
+                      "boolean" === typeof e && ((r = e), (e = void 0));
                       var n = !1;
                       e || ((e = new t()), (n = !0));
                       var o = e.littleEndian;
@@ -5797,8 +5798,8 @@ import * as Cesium from "cesium";
                       return n()(r(this, !0, !0, this.$type));
                     }),
                     (s.decode = function (e, r, n) {
-                      "string" == typeof r && ((n = r), (r = -1)),
-                        "string" == typeof e ? (e = t.wrap(e, n || "base64")) : t.isByteBuffer(e) || (e = t.wrap(e)),
+                      "string" === typeof r && ((n = r), (r = -1)),
+                        "string" === typeof e ? (e = t.wrap(e, n || "base64")) : t.isByteBuffer(e) || (e = t.wrap(e)),
                         (n = e.littleEndian);
                       try {
                         var o = i.decode(e.LE(), r);
@@ -5808,7 +5809,7 @@ import * as Cesium from "cesium";
                       }
                     }),
                     (s.decodeDelimited = function (e, r) {
-                      if (("string" == typeof e ? (e = t.wrap(e, r || "base64")) : t.isByteBuffer(e) || (e = t.wrap(e)), 1 > e.remaining()))
+                      if (("string" === typeof e ? (e = t.wrap(e, r || "base64")) : t.isByteBuffer(e) || (e = t.wrap(e)), 1 > e.remaining()))
                         return null;
                       var n = e.offset,
                         o = e.readVarint32();
@@ -5878,7 +5879,7 @@ import * as Cesium from "cesium";
                   return r;
                 }),
                 (d.decode = function (t, i, n) {
-                  "number" != typeof i && (i = -1);
+                  "number" !== typeof i && (i = -1);
                   for (var o, a, s, x = t.offset, l = new this.clazz(); t.offset < x + i || (-1 === i && 0 < t.remaining()); ) {
                     if (((s = (o = t.readVarint32()) >>> 3), (a = 7 & o) === e.WIRE_TYPES.ENDGROUP)) {
                       if (s !== n)
@@ -6012,7 +6013,7 @@ import * as Cesium from "cesium";
                 (d.encode = function (i, r, n) {
                   if (null === this.type || "object" !== b()(this.type))
                     throw Error("[INTERNAL] Unresolved type in " + this.toString(!0) + ": " + this.type);
-                  if (null === i || (this.repeated && 0 == i.length)) return r;
+                  if (null === i || (this.repeated && 0 === i.length)) return r;
                   try {
                     var o;
                     if (this.repeated)
@@ -6056,7 +6057,7 @@ import * as Cesium from "cesium";
                 (d.calculate = function (i, r) {
                   if (((i = this.verifyValue(i)), null === this.type || "object" !== b()(this.type)))
                     throw Error("[INTERNAL] Unresolved type in " + this.toString(!0) + ": " + this.type);
-                  if (null === i || (this.repeated && 0 == i.length)) return 0;
+                  if (null === i || (this.repeated && 0 === i.length)) return 0;
                   var n = 0;
                   try {
                     var o, a;
@@ -6090,14 +6091,14 @@ import * as Cesium from "cesium";
                 (d.decode = function (t, i, r) {
                   if (
                     !(
-                      (!this.map && t == this.type.wireType) ||
-                      (!r && this.repeated && this.options.packed && t == e.WIRE_TYPES.LDELIM) ||
-                      (this.map && t == e.WIRE_TYPES.LDELIM)
+                      (!this.map && t === this.type.wireType) ||
+                      (!r && this.repeated && this.options.packed && t === e.WIRE_TYPES.LDELIM) ||
+                      (this.map && t === e.WIRE_TYPES.LDELIM)
                     )
                   )
                     throw Error("Illegal wire type for field " + this.toString(!0) + ": " + t + " (" + this.type.wireType + " expected)");
                   if (
-                    t == e.WIRE_TYPES.LDELIM &&
+                    t === e.WIRE_TYPES.LDELIM &&
                     this.repeated &&
                     this.options.packed &&
                     0 <= e.PACKABLE_WIRE_TYPES.indexOf(this.type.wireType) &&
@@ -6267,25 +6268,25 @@ import * as Cesium from "cesium";
                 s = o.prototype;
               return (
                 (o.isMessage = function (e) {
-                  return "string" == typeof e.name && void 0 === e.values && void 0 === e.rpc;
+                  return "string" === typeof e.name && void 0 === e.values && void 0 === e.rpc;
                 }),
                 (o.isMessageField = function (e) {
-                  return "string" == typeof e.rule && "string" == typeof e.name && "string" == typeof e.type && void 0 !== e.id;
+                  return "string" === typeof e.rule && "string" === typeof e.name && "string" === typeof e.type && void 0 !== e.id;
                 }),
                 (o.isEnum = function (e) {
-                  return !("string" != typeof e.name || void 0 === e.values || !h()(e.values) || 0 === e.values.length);
+                  return !("string" !== typeof e.name || void 0 === e.values || !h()(e.values) || 0 === e.values.length);
                 }),
                 (o.isService = function (e) {
-                  return !("string" != typeof e.name || "object" !== b()(e.rpc) || !e.rpc);
+                  return !("string" !== typeof e.name || "object" !== b()(e.rpc) || !e.rpc);
                 }),
                 (o.isExtend = function (e) {
-                  return "string" == typeof e.ref;
+                  return "string" === typeof e.ref;
                 }),
                 (s.reset = function () {
                   return (this.ptr = this.ns), this;
                 }),
                 (s.define = function (e) {
-                  if ("string" != typeof e || !t.TYPEREF.test(e)) throw Error("illegal namespace: " + e);
+                  if ("string" !== typeof e || !t.TYPEREF.test(e)) throw Error("illegal namespace: " + e);
                   return (
                     e.split(".").forEach(function (e) {
                       var t = this.ptr.getChild(e);
@@ -6316,7 +6317,7 @@ import * as Cesium from "cesium";
                               if (null !== x.getChild(0 | e.id)) throw Error("duplicate or invalid field id in " + x.name + ": " + e.id);
                               if (e.options && "object" !== b()(e.options)) throw Error("illegal field options in " + x.name + "#" + e.name);
                               var t = null;
-                              if ("string" == typeof e.oneof && !(t = l[e.oneof]))
+                              if ("string" === typeof e.oneof && !(t = l[e.oneof]))
                                 throw Error("illegal oneof in " + x.name + "#" + e.name + ": " + e.oneof);
                               (e = new r.Message.Field(this, x, e.rule, e.keytype, e.type, e.name, e.id, e.options, t, s.syntax)),
                                 t && t.fields.push(e),
@@ -6336,7 +6337,7 @@ import * as Cesium from "cesium";
                             s.services.forEach(function (e) {
                               c.push(e);
                             }),
-                          s.extensions && (x.extensions = "number" == typeof s.extensions[0] ? [s.extensions] : s.extensions),
+                          s.extensions && (x.extensions = "number" === typeof s.extensions[0] ? [s.extensions] : s.extensions),
                           this.ptr.addChild(x),
                           0 < c.length)
                         ) {
@@ -6390,7 +6391,7 @@ import * as Cesium from "cesium";
                 }),
                 (s.import = function (t, r) {
                   var n = "/";
-                  if ("string" == typeof r) {
+                  if ("string" === typeof r) {
                     if ((e.Util.IS_NODE && (r = i(122).resolve(r)), !0 === this.files[r])) return this.reset();
                     this.files[r] = !0;
                   } else if ("object" === b()(r)) {
@@ -6412,7 +6413,7 @@ import * as Cesium from "cesium";
                         (o = this.importRoot),
                         (r = r.file),
                         (0 <= o.indexOf("\\") || 0 <= r.indexOf("\\")) && (n = "\\"))
-                      : "string" == typeof r
+                      : "string" === typeof r
                       ? this.importRoot
                         ? (o = this.importRoot)
                         : 0 <= r.indexOf("/")
@@ -6422,7 +6423,7 @@ import * as Cesium from "cesium";
                         : (o = ".")
                       : (o = null);
                     for (var x = 0; x < t.imports.length; x++)
-                      if ("string" == typeof t.imports[x]) {
+                      if ("string" === typeof t.imports[x]) {
                         if (!o) throw Error("cannot determine import root");
                         var l = t.imports[x];
                         if ("google/protobuf/descriptor.proto" !== l && ((l = o + n + l), !0 !== this.files[l])) {
@@ -6471,7 +6472,7 @@ import * as Cesium from "cesium";
                 }),
                 (s.resolveAll = function () {
                   var i;
-                  if (null == this.ptr || "object" === b()(this.ptr.type)) return this;
+                  if (null === this.ptr || "object" === b()(this.ptr.type)) return this;
                   if (this.ptr instanceof r.Namespace)
                     this.ptr.children.forEach(function (e) {
                       (this.ptr = e), this.resolveAll();
@@ -6525,7 +6526,7 @@ import * as Cesium from "cesium";
                     !e)
                   )
                     return this.result;
-                  e = "string" == typeof e ? e.split(".") : e;
+                  e = "string" === typeof e ? e.split(".") : e;
                   for (var t = this.result, i = 0; i < e.length; i++) {
                     if (!t[e[i]]) {
                       t = null;
@@ -6632,14 +6633,14 @@ import * as Cesium from "cesium";
             })(0, s.Reflect)),
             (s.loadProto = function (e, t, i) {
               return (
-                ("string" == typeof t || (t && "string" == typeof t.file && "string" == typeof t.root)) && ((i = t), (t = void 0)),
+                ("string" === typeof t || (t && "string" === typeof t.file && "string" === typeof t.root)) && ((i = t), (t = void 0)),
                 s.loadJson(s.DotProto.Parser.parse(e), t, i)
               );
             }),
             (s.protoFromString = s.loadProto),
             (s.loadProtoFile = function (e, t, i) {
-              if ((t && "object" === b()(t) ? ((i = t), (t = null)) : (t && "function" == typeof t) || (t = null), t))
-                return s.Util.fetch("string" == typeof e ? e : e.root + "/" + e.file, function (r) {
+              if ((t && "object" === b()(t) ? ((i = t), (t = null)) : (t && "function" === typeof t) || (t = null), t))
+                return s.Util.fetch("string" === typeof e ? e : e.root + "/" + e.file, function (r) {
                   if (null === r) t(Error("Failed to fetch file"));
                   else
                     try {
@@ -6661,17 +6662,17 @@ import * as Cesium from "cesium";
             }),
             (s.loadJson = function (e, t, i) {
               return (
-                ("string" == typeof t || (t && "string" == typeof t.file && "string" == typeof t.root)) && ((i = t), (t = null)),
+                ("string" === typeof t || (t && "string" === typeof t.file && "string" === typeof t.root)) && ((i = t), (t = null)),
                 (t && "object" === b()(t)) || (t = s.newBuilder()),
-                "string" == typeof e && (e = JSON.parse(e)),
+                "string" === typeof e && (e = JSON.parse(e)),
                 t.import(e, i),
                 t.resolveAll(),
                 t
               );
             }),
             (s.loadJsonFile = function (e, t, i) {
-              if ((t && "object" === b()(t) ? ((i = t), (t = null)) : (t && "function" == typeof t) || (t = null), t))
-                return s.Util.fetch("string" == typeof e ? e : e.root + "/" + e.file, function (r) {
+              if ((t && "object" === b()(t) ? ((i = t), (t = null)) : (t && "function" === typeof t) || (t = null), t))
+                return s.Util.fetch("string" === typeof e ? e : e.root + "/" + e.file, function (r) {
                   if (null === r) t(Error("Failed to fetch file"));
                   else
                     try {
@@ -6741,15 +6742,15 @@ import * as Cesium from "cesium";
             };
           },
           _ = t + " Iterator",
-          A = "values" == g,
+          A = "values" === g,
           I = !1,
           w = e.prototype,
           G = w[u] || w["@@iterator"] || (g && w[g]),
           E = G || y(g),
           S = g ? (A ? y("entries") : E) : void 0,
-          T = ("Array" == t && w.entries) || G;
+          T = ("Array" === t && w.entries) || G;
         if (
-          (T && (C = c(T.call(new e()))) !== Object.prototype && C.next && (l(C, _, !0), r || "function" == typeof C[u] || a(C, u, f)),
+          (T && (C = c(T.call(new e()))) !== Object.prototype && C.next && (l(C, _, !0), r || "function" === typeof C[u] || a(C, u, f)),
           A &&
             G &&
             "values" !== G.name &&
@@ -6827,7 +6828,7 @@ import * as Cesium from "cesium";
       e.exports = Object("z").propertyIsEnumerable(0)
         ? Object
         : function (e) {
-            return "String" == r(e) ? e.split("") : Object(e);
+            return "String" === r(e) ? e.split("") : Object(e);
           };
     },
     function (e, t, i) {
@@ -6840,8 +6841,8 @@ import * as Cesium from "cesium";
             x = r(t),
             l = n(x.length),
             c = o(a, l);
-          if (e && i != i) {
-            for (; l > c; ) if ((s = x[c++]) != s) return !0;
+          if (e && i !== i) {
+            for (; l > c; ) if ((s = x[c++]) !== s) return !0;
           } else for (; l > c; c++) if ((e || c in x) && x[c] === i) return e || c || 0;
           return !e && -1;
         };
@@ -6940,7 +6941,7 @@ import * as Cesium from "cesium";
     },
     function (e, t, i) {
       i(11) &&
-        "g" != /./g.flags &&
+        "g" !== /./g.flags &&
         i(13).f(RegExp.prototype, "flags", {
           configurable: !0,
           get: i(64),
@@ -6961,7 +6962,7 @@ import * as Cesium from "cesium";
     function (e, t, i) {
       var r = i(12),
         n = i(171);
-      r(r.G + r.F * (parseFloat != n), {
+      r(r.G + r.F * (parseFloat !== n), {
         parseFloat: n,
       });
     },
@@ -6969,11 +6970,11 @@ import * as Cesium from "cesium";
       var r = i(7).parseFloat,
         n = i(112).trim;
       e.exports =
-        1 / r(i(87) + "-0") != -1 / 0
+        1 / r(i(87) + "-0") !== -1 / 0
           ? function (e) {
               var t = n(String(e), 3),
                 i = r(t);
-              return 0 === i && "-" == t.charAt(0) ? -0 : i;
+              return 0 === i && "-" === t.charAt(0) ? -0 : i;
             }
           : r;
     },
@@ -6983,7 +6984,7 @@ import * as Cesium from "cesium";
     function (e, t, i) {
       var r = i(12),
         n = i(174);
-      r(r.G + r.F * (parseInt != n), {
+      r(r.G + r.F * (parseInt !== n), {
         parseInt: n,
       });
     },
@@ -7058,7 +7059,7 @@ import * as Cesium from "cesium";
             (e = n(e)),
             r(e, o)
               ? e[o]
-              : "function" == typeof e.constructor && e instanceof e.constructor
+              : "function" === typeof e.constructor && e instanceof e.constructor
               ? e.constructor.prototype
               : e instanceof Object
               ? a
@@ -7082,7 +7083,7 @@ import * as Cesium from "cesium";
           var e = this._t,
             t = this._k,
             i = this._i++;
-          return !e || i >= e.length ? ((this._t = void 0), n(1)) : n(0, "keys" == t ? i : "values" == t ? e[i] : [i, e[i]]);
+          return !e || i >= e.length ? ((this._t = void 0), n(1)) : n(0, "keys" === t ? i : "values" === t ? e[i] : [i, e[i]]);
         },
         "values"
       )),
@@ -7147,7 +7148,7 @@ import * as Cesium from "cesium";
         B = c("symbols"),
         W = c("op-symbols"),
         j = Object.prototype,
-        V = "function" == typeof L && !!E.f,
+        V = "function" === typeof L && !!E.f,
         z = r.QObject,
         H = !z || !z.prototype || !z.prototype.findChild,
         q =
@@ -7176,9 +7177,9 @@ import * as Cesium from "cesium";
           return (t._k = e), t;
         },
         Y =
-          V && "symbol" == typeof L.iterator
+          V && "symbol" === typeof L.iterator
             ? function (e) {
-                return "symbol" == typeof e;
+                return "symbol" === typeof e;
               }
             : function (e) {
                 return e instanceof L;
@@ -7216,7 +7217,7 @@ import * as Cesium from "cesium";
           }
         },
         $ = function (e) {
-          for (var t, i = N(y(e)), r = [], o = 0; i.length > o; ) n(B, (t = i[o++])) || t == F || t == x || r.push(t);
+          for (var t, i = N(y(e)), r = [], o = 0; i.length > o; ) n(B, (t = i[o++])) || t === F || t === x || r.push(t);
           return r;
         },
         ee = function (e) {
@@ -7306,12 +7307,12 @@ import * as Cesium from "cesium";
                   l(function () {
                     var e = L();
                     return (
-                      "[null]" != O([e]) ||
+                      "[null]" !== O([e]) ||
                       "{}" !=
                         O({
                           a: e,
                         }) ||
-                      "{}" != O(Object(e))
+                      "{}" !== O(Object(e))
                     );
                   })),
             "JSON",
@@ -7322,7 +7323,7 @@ import * as Cesium from "cesium";
                   return (
                     m(t) ||
                       (t = function (e, t) {
-                        if (("function" == typeof i && (t = i.call(this, e, t)), !Y(t))) return t;
+                        if (("function" === typeof i && (t = i.call(this, e, t)), !Y(t))) return t;
                       }),
                     (r[1] = t),
                     O.apply(R, r)
@@ -7361,7 +7362,7 @@ import * as Cesium from "cesium";
           KEY: r,
           NEED: !1,
           fastKey: function (e, t) {
-            if (!n(e)) return "symbol" == typeof e ? e : ("string" == typeof e ? "S" : "P") + e;
+            if (!n(e)) return "symbol" === typeof e ? e : ("string" === typeof e ? "S" : "P") + e;
             if (!o(e, r)) {
               if (!x(e)) return "F";
               if (!t) return "E";
@@ -7397,9 +7398,9 @@ import * as Cesium from "cesium";
       var r = i(39),
         n = i(118).f,
         o = {}.toString,
-        a = "object" == typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
+        a = "object" === typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
       e.exports.f = function (e) {
-        return a && "[object Window]" == o.call(e)
+        return a && "[object Window]" === o.call(e)
           ? (function (e) {
               try {
                 return n(e);
@@ -7491,7 +7492,7 @@ import * as Cesium from "cesium";
               function x(e, t, i) {
                 if (0 === e.length) throw Error("empty string");
                 if ("NaN" === e || "Infinity" === e || "+Infinity" === e || "-Infinity" === e) return d;
-                if (("number" == typeof t ? ((i = t), (t = !1)) : (t = !!t), (i = i || 10) < 2 || 36 < i)) throw RangeError("radix");
+                if (("number" === typeof t ? ((i = t), (t = !1)) : (t = !!t), (i = i || 10) < 2 || 36 < i)) throw RangeError("radix");
                 var r;
                 if ((r = e.indexOf("-")) > 0) throw Error("interior hyphen");
                 if (0 === r) return x(e.substring(1), t, i).neg();
@@ -7506,7 +7507,7 @@ import * as Cesium from "cesium";
                 return (a.unsigned = t), a;
               }
               function l(t) {
-                return t instanceof e ? t : "number" == typeof t ? o(t) : "string" == typeof t ? x(t) : a(t.low, t.high, t.unsigned);
+                return t instanceof e ? t : "number" === typeof t ? o(t) : "string" === typeof t ? x(t) : a(t.low, t.high, t.unsigned);
               }
               (e.fromString = x), (e.fromValue = l);
               var c = 4294967296,
@@ -7571,8 +7572,8 @@ import * as Cesium from "cesium";
                 }),
                 (_.getNumBitsAbs = function () {
                   if (this.isNegative()) return this.eq(y) ? 64 : this.neg().getNumBitsAbs();
-                  for (var e = 0 != this.high ? this.high : this.low, t = 31; t > 0 && 0 == (e & (1 << t)); t--);
-                  return 0 != this.high ? t + 33 : t + 1;
+                  for (var e = 0 !== this.high ? this.high : this.low, t = 31; t > 0 && 0 === (e & (1 << t)); t--);
+                  return 0 !== this.high ? t + 33 : t + 1;
                 }),
                 (_.isZero = function () {
                   return 0 === this.high && 0 === this.low;
@@ -7584,15 +7585,15 @@ import * as Cesium from "cesium";
                   return this.unsigned || this.high >= 0;
                 }),
                 (_.isOdd = function () {
-                  return 1 == (1 & this.low);
+                  return 1 === (1 & this.low);
                 }),
                 (_.isEven = function () {
-                  return 0 == (1 & this.low);
+                  return 0 === (1 & this.low);
                 }),
                 (_.equals = function (e) {
                   return (
                     t(e) || (e = l(e)),
-                    (this.unsigned === e.unsigned || this.high >>> 31 != 1 || e.high >>> 31 != 1) && this.high === e.high && this.low === e.low
+                    (this.unsigned === e.unsigned || this.high >>> 31 !== 1 || e.high >>> 31 !== 1) && this.high === e.high && this.low === e.low
                   );
                 }),
                 (_.eq = _.equals),
@@ -7753,7 +7754,7 @@ import * as Cesium from "cesium";
                 (_.shiftLeft = function (e) {
                   return (
                     t(e) && (e = e.toInt()),
-                    0 == (e &= 63)
+                    0 === (e &= 63)
                       ? this
                       : e < 32
                       ? a(this.low << e, (this.high << e) | (this.low >>> (32 - e)), this.unsigned)
@@ -7764,7 +7765,7 @@ import * as Cesium from "cesium";
                 (_.shiftRight = function (e) {
                   return (
                     t(e) && (e = e.toInt()),
-                    0 == (e &= 63)
+                    0 === (e &= 63)
                       ? this
                       : e < 32
                       ? a((this.low >>> e) | (this.high << (32 - e)), this.high >> e, this.unsigned)
@@ -7773,7 +7774,7 @@ import * as Cesium from "cesium";
                 }),
                 (_.shr = _.shiftRight),
                 (_.shiftRightUnsigned = function (e) {
-                  if ((t(e) && (e = e.toInt()), 0 == (e &= 63))) return this;
+                  if ((t(e) && (e = e.toInt()), 0 === (e &= 63))) return this;
                   var i = this.high;
                   return e < 32 ? a((this.low >>> e) | (i << (32 - e)), i >>> e, this.unsigned) : a(32 === e ? i : i >>> (e - 32), 0, this.unsigned);
                 }),
@@ -7872,8 +7873,8 @@ import * as Cesium from "cesium";
           u = 0,
           h = e < 0 || (0 === e && 1 / e < 0) ? 1 : 0;
         for (
-          (e = I(e)) != e || e === _
-            ? ((n = e != e ? 1 : 0), (r = x))
+          (e = I(e)) !== e || e === _
+            ? ((n = e !== e ? 1 : 0), (r = x))
             : ((r = G(E(e) / S)),
               e * (o = w(2, -r)) < 1 && (r--, (o *= 2)),
               (e += r + l >= 1 ? c / o : c * w(2, 1 - l)) * o >= 2 && (r++, (o /= 2)),
@@ -7949,7 +7950,7 @@ import * as Cesium from "cesium";
             new b(-1);
           }) ||
           l(function () {
-            return new b(), new b(1.5), new b(NaN), "ArrayBuffer" != b.name;
+            return new b(), new b(1.5), new b(NaN), "ArrayBuffer" !== b.name;
           })
         ) {
           for (
@@ -8064,7 +8065,7 @@ import * as Cesium from "cesium";
         n = i(4)("iterator"),
         o = i(36);
       e.exports = i(43).getIteratorMethod = function (e) {
-        if (null != e) return e[n] || e["@@iterator"] || o[r(e)];
+        if (null !== e) return e[n] || e["@@iterator"] || o[r(e)];
       };
     },
     function (e, t, i) {
@@ -8074,12 +8075,12 @@ import * as Cesium from "cesium";
         a = i(19),
         s = i(200);
       e.exports = function (e, t) {
-        var i = 1 == e,
-          x = 2 == e,
-          l = 3 == e,
-          c = 4 == e,
-          u = 6 == e,
-          h = 5 == e || u,
+        var i = 1 === e,
+          x = 2 === e,
+          l = 3 === e,
+          c = 4 === e,
+          u = 6 === e,
+          h = 5 === e || u,
           f = t || s;
         return function (t, s, d) {
           for (var g, p, m = o(t), b = n(m), v = r(s, d, 3), C = a(b.length), y = 0, _ = i ? f(t, C) : x ? f(t, 0) : void 0; C > y; y++)
@@ -8115,7 +8116,7 @@ import * as Cesium from "cesium";
         var t;
         return (
           n(e) &&
-            ("function" != typeof (t = e.constructor) || (t !== Array && !n(t.prototype)) || (t = void 0),
+            ("function" !== typeof (t = e.constructor) || (t !== Array && !n(t.prototype)) || (t = void 0),
             r(t) && null === (t = t[o]) && (t = void 0)),
           void 0 === t ? Array : t
         );
@@ -8269,7 +8270,7 @@ import * as Cesium from "cesium";
         w = I && I.versions,
         G = (w && w.v8) || "",
         E = x.Promise,
-        S = "process" == c(I),
+        S = "process" === c(I),
         T = function () {},
         P = (n = v.f),
         M = !!(function () {
@@ -8279,13 +8280,13 @@ import * as Cesium from "cesium";
                 e(T, T);
               });
             return (
-              (S || "function" == typeof PromiseRejectionEvent) && e.then(T) instanceof t && 0 !== G.indexOf("6.6") && -1 === y.indexOf("Chrome/66")
+              (S || "function" === typeof PromiseRejectionEvent) && e.then(T) instanceof t && 0 !== G.indexOf("6.6") && -1 === y.indexOf("Chrome/66")
             );
           } catch (e) {}
         })(),
         N = function (e) {
           var t;
-          return !(!h(e) || "function" != typeof (t = e.then)) && t;
+          return !(!h(e) || "function" !== typeof (t = e.then)) && t;
         },
         L = function (e, t) {
           if (!e._n) {
@@ -8294,7 +8295,7 @@ import * as Cesium from "cesium";
             b(function () {
               for (
                 var r = e._v,
-                  n = 1 == e._s,
+                  n = 1 === e._s,
                   o = 0,
                   a = function (t) {
                     var i,
@@ -8306,7 +8307,7 @@ import * as Cesium from "cesium";
                       c = t.domain;
                     try {
                       s
-                        ? (n || (2 == e._h && F(e), (e._h = 1)),
+                        ? (n || (2 === e._h && F(e), (e._h = 1)),
                           !0 === s ? (i = r) : (c && c.enter(), (i = s(r)), c && (c.exit(), (a = !0))),
                           i === t.promise ? l(A("Promise-chain cycle")) : (o = N(i)) ? o.call(i, x, l) : x(i))
                         : l(r);
@@ -8413,8 +8414,8 @@ import * as Cesium from "cesium";
           then: function (e, t) {
             var i = P(p(this, E));
             return (
-              (i.ok = "function" != typeof e || e),
-              (i.fail = "function" == typeof t && t),
+              (i.ok = "function" !== typeof e || e),
+              (i.fail = "function" === typeof t && t),
               (i.domain = S ? I.domain : void 0),
               this._c.push(i),
               this._a && this._a.push(i),
@@ -8526,7 +8527,7 @@ import * as Cesium from "cesium";
               : x(e),
             b = r(i, u, t ? 2 : 1),
             v = 0;
-          if ("function" != typeof m) throw TypeError(e + " is not iterable!");
+          if ("function" !== typeof m) throw TypeError(e + " is not iterable!");
           if (o(m)) {
             for (f = s(e.length); f > v; v++) if ((p = t ? b(a((d = e[v]))[0], d[1]) : b(e[v])) === l || p === c) return p;
           } else for (g = m.call(e); !(d = g.next()).done; ) if ((p = n(g, b, d.value, t)) === l || p === c) return p;
@@ -8557,7 +8558,7 @@ import * as Cesium from "cesium";
         n = i(14)("iterator"),
         o = i(49);
       e.exports = i(5).getIteratorMethod = function (e) {
-        if (null != e) return e[n] || e["@@iterator"] || o[r(e)];
+        if (null !== e) return e[n] || e["@@iterator"] || o[r(e)];
       };
     },
     function (e, t) {
@@ -8584,7 +8585,7 @@ import * as Cesium from "cesium";
         o = r.MutationObserver || r.WebKitMutationObserver,
         a = r.process,
         s = r.Promise,
-        x = "process" == i(47)(a);
+        x = "process" === i(47)(a);
       e.exports = function () {
         var e,
           t,
@@ -8653,7 +8654,7 @@ import * as Cesium from "cesium";
         a = i(25),
         s = i(14)("species");
       e.exports = function (e) {
-        var t = "function" == typeof n[e] ? n[e] : r[e];
+        var t = "function" === typeof n[e] ? n[e] : r[e];
         a &&
           t &&
           !t[s] &&
@@ -8706,7 +8707,7 @@ import * as Cesium from "cesium";
       r(r.P + r.R, "Promise", {
         finally: function (e) {
           var t = a(this, n.Promise || o.Promise),
-            i = "function" == typeof e;
+            i = "function" === typeof e;
           return this.then(
             i
               ? function (i) {
@@ -8784,7 +8785,7 @@ import * as Cesium from "cesium";
         B = c("symbols"),
         W = c("op-symbols"),
         j = Object.prototype,
-        V = "function" == typeof L && !!E.f,
+        V = "function" === typeof L && !!E.f,
         z = r.QObject,
         H = !z || !z.prototype || !z.prototype.findChild,
         q =
@@ -8813,9 +8814,9 @@ import * as Cesium from "cesium";
           return (t._k = e), t;
         },
         Y =
-          V && "symbol" == typeof L.iterator
+          V && "symbol" === typeof L.iterator
             ? function (e) {
-                return "symbol" == typeof e;
+                return "symbol" === typeof e;
               }
             : function (e) {
                 return e instanceof L;
@@ -8853,7 +8854,7 @@ import * as Cesium from "cesium";
           }
         },
         $ = function (e) {
-          for (var t, i = N(y(e)), r = [], o = 0; i.length > o; ) n(B, (t = i[o++])) || t == F || t == x || r.push(t);
+          for (var t, i = N(y(e)), r = [], o = 0; i.length > o; ) n(B, (t = i[o++])) || t === F || t === x || r.push(t);
           return r;
         },
         ee = function (e) {
@@ -8943,12 +8944,12 @@ import * as Cesium from "cesium";
                   l(function () {
                     var e = L();
                     return (
-                      "[null]" != O([e]) ||
+                      "[null]" !== O([e]) ||
                       "{}" !=
                         O({
                           a: e,
                         }) ||
-                      "{}" != O(Object(e))
+                      "{}" !== O(Object(e))
                     );
                   })),
             "JSON",
@@ -8959,7 +8960,7 @@ import * as Cesium from "cesium";
                   return (
                     m(t) ||
                       (t = function (e, t) {
-                        if (("function" == typeof i && (t = i.call(this, e, t)), !Y(t))) return t;
+                        if (("function" === typeof i && (t = i.call(this, e, t)), !Y(t))) return t;
                       }),
                     (r[1] = t),
                     O.apply(R, r)
@@ -8998,7 +8999,7 @@ import * as Cesium from "cesium";
           KEY: r,
           NEED: !1,
           fastKey: function (e, t) {
-            if (!n(e)) return "symbol" == typeof e ? e : ("string" == typeof e ? "S" : "P") + e;
+            if (!n(e)) return "symbol" === typeof e ? e : ("string" === typeof e ? "S" : "P") + e;
             if (!o(e, r)) {
               if (!x(e)) return "F";
               if (!t) return "E";
@@ -9034,9 +9035,9 @@ import * as Cesium from "cesium";
       var r = i(37),
         n = i(41).f,
         o = {}.toString,
-        a = "object" == typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
+        a = "object" === typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
       e.exports.f = function (e) {
-        return a && "[object Window]" == o.call(e)
+        return a && "[object Window]" === o.call(e)
           ? (function (e) {
               try {
                 return n(e);
@@ -9082,7 +9083,7 @@ import * as Cesium from "cesium";
         c = function (e, t, i) {
           var n = {},
             s = o(function () {
-              return !!a[e]() || "​" != "​"[e]();
+              return !!a[e]() || "​" !== "​"[e]();
             }),
             x = (n[e] = s ? t(u) : a[e]);
           i && (n[i] = x), r(r.P + r.F * s, "String", n);
@@ -9208,7 +9209,7 @@ import * as Cesium from "cesium";
               t = arguments[0],
               i = arguments[e - 1],
               r =
-                "function" == typeof i.initialize
+                "function" === typeof i.initialize
                   ? i.initialize
                   : function () {
                       t.prototype.initialize.apply(this, arguments);
@@ -9220,7 +9221,7 @@ import * as Cesium from "cesium";
               t = arguments[0],
               i = arguments[e - 1],
               r =
-                "function" == typeof i.initialize
+                "function" === typeof i.initialize
                   ? i.initialize
                   : function () {
                       t.prototype.initialize.apply(this, arguments);
@@ -9237,7 +9238,7 @@ import * as Cesium from "cesium";
               n,
               o = function () {};
             for (o.prototype = t.prototype, e.prototype = new o(), i = 2, r = arguments.length; i < r; i++)
-              "function" == typeof (n = arguments[i]) && (n = n.prototype), GeoGlobe.Util.extend(e.prototype, n);
+              "function" === typeof (n = arguments[i]) && (n = n.prototype), GeoGlobe.Util.extend(e.prototype, n);
           }),
           (GeoGlobe.Util = GeoGlobe.Util || {}),
           (GeoGlobe.Util.extend = function (e, t) {
@@ -9246,7 +9247,7 @@ import * as Cesium from "cesium";
                 var r = t[i];
                 void 0 !== r && (e[i] = r);
               }
-              !("function" == typeof window.Event && t instanceof window.Event) &&
+              !("function" === typeof window.Event && t instanceof window.Event) &&
                 t.hasOwnProperty &&
                 t.hasOwnProperty("toString") &&
                 (e.toString = t.toString);
@@ -9277,7 +9278,7 @@ import * as Cesium from "cesium";
           (GeoGlobe.Util.getElement = function () {
             for (var e = [], t = 0, i = arguments.length; t < i; t++) {
               var r = arguments[t];
-              if (("string" == typeof r && (r = document.getElementById(r)), 1 == arguments.length)) return r;
+              if (("string" === typeof r && (r = document.getElementById(r)), 1 === arguments.length)) return r;
               e.push(r);
             }
             return e;
@@ -9289,19 +9290,19 @@ import * as Cesium from "cesium";
             return "[object Array]" === Object.prototype.toString.call(e);
           }),
           (GeoGlobe.Util.removeItem = function (e, t) {
-            for (var i = e.length - 1; i >= 0; i--) e[i] == t && e.splice(i, 1);
+            for (var i = e.length - 1; i >= 0; i--) e[i] === t && e.splice(i, 1);
             return e;
           }),
           (GeoGlobe.Util.indexOf = function (e, t) {
-            if ("function" == typeof e.indexOf) return e.indexOf(t);
-            for (var i = 0, r = e.length; i < r; i++) if (e[i] == t) return i;
+            if ("function" === typeof e.indexOf) return e.indexOf(t);
+            for (var i = 0, r = e.length; i < r; i++) if (e[i] === t) return i;
             return -1;
           }),
           (GeoGlobe.Util.dotless = /\./g),
           (GeoGlobe.IMAGE_RELOAD_ATTEMPTS = 0),
           (GeoGlobe.Util.alphaHackNeeded = null),
           (GeoGlobe.Util.alphaHack = function () {
-            if (null == GeoGlobe.Util.alphaHackNeeded) {
+            if (null === GeoGlobe.Util.alphaHackNeeded) {
               var e = navigator.appVersion.split("MSIE"),
                 t = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(e[1]),
                 i = !1;
@@ -9319,7 +9320,7 @@ import * as Cesium from "cesium";
           }),
           (GeoGlobe.Util.applyDefaults = function (e, t) {
             e = e || {};
-            var i = "function" == typeof window.Event && t instanceof window.Event;
+            var i = "function" === typeof window.Event && t instanceof window.Event;
             for (var r in t) (void 0 === e[r] || (!i && t.hasOwnProperty && t.hasOwnProperty(r) && !e.hasOwnProperty(r))) && (e[r] = t[r]);
             return !i && t && t.hasOwnProperty && t.hasOwnProperty("toString") && !e.hasOwnProperty("toString") && (e.toString = t.toString), e;
           }),
@@ -9327,10 +9328,10 @@ import * as Cesium from "cesium";
             var t = [];
             for (var i in e) {
               var r = e[i];
-              if (null != r && "function" != typeof r) {
+              if (null !== r && "function" !== typeof r) {
                 var n;
-                if ("object" == _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(r) && r.constructor == Array) {
-                  for (var o, a = [], s = 0, x = r.length; s < x; s++) (o = r[s]), a.push(encodeURIComponent(null == o ? "" : o));
+                if ("object" === _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(r) && r.constructor === Array) {
+                  for (var o, a = [], s = 0, x = r.length; s < x; s++) (o = r[s]), a.push(encodeURIComponent(null === o ? "" : o));
                   n = a.join(",");
                 } else n = encodeURIComponent(r);
                 t.push(encodeURIComponent(i) + "=" + n);
@@ -9377,14 +9378,14 @@ import * as Cesium from "cesium";
             );
           }),
           (GeoGlobe.Util.mouseLeft = function (e, t) {
-            for (var i = e.relatedTarget ? e.relatedTarget : e.toElement; i != t && null != i; ) i = i.parentNode;
-            return i != t;
+            for (var i = e.relatedTarget ? e.relatedTarget : e.toElement; i !== t && null !== i; ) i = i.parentNode;
+            return i !== t;
           }),
           (GeoGlobe.Util.DEFAULT_PRECISION = 14),
           (GeoGlobe.Util.toFloat = function (e, t) {
             return (
-              null == t && (t = GeoGlobe.Util.DEFAULT_PRECISION),
-              "number" != typeof e && (e = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(e)),
+              null === t && (t = GeoGlobe.Util.DEFAULT_PRECISION),
+              "number" !== typeof e && (e = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(e)),
               0 === t ? e : _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(e.toPrecision(t))
             );
           }),
@@ -9421,7 +9422,7 @@ import * as Cesium from "cesium";
               var p = Math.sin(f),
                 m = Math.cos(f),
                 b = Math.sqrt(h * p * (h * p) + (c * u - l * h * m) * (c * u - l * h * m));
-              if (0 == b) return 0;
+              if (0 === b) return 0;
               var v = l * u + c * h * m,
                 C = Math.atan2(b, v),
                 y = Math.asin((c * h * p) / b),
@@ -9430,7 +9431,7 @@ import * as Cesium from "cesium";
                 I = (o / 16) * _ * (4 + o * (4 - 3 * _));
               (d = f), (f = a + (1 - I) * o * Math.sin(y) * (C + I * b * (A + I * v * (2 * A * A - 1))));
             }
-            if (0 == g) return NaN;
+            if (0 === g) return NaN;
             var w = (_ * (r * r - n * n)) / (n * n),
               G = (w / 1024) * (256 + w * (w * (74 - 47 * w) - 128));
             return (
@@ -9480,7 +9481,7 @@ import * as Cesium from "cesium";
             return Math.atan2(b, -S), new GeoGlobe.LngLat(x + r.deg(M), r.deg(T));
           }),
           (GeoGlobe.Util.getParameters = function (e, t) {
-            (t = t || {}), (e = null == e ? window.location.href : e);
+            (t = t || {}), (e = null === e ? window.location.href : e);
             var i = "";
             if (GeoGlobe.String.contains(e, "?")) {
               var r = e.indexOf("?") + 1,
@@ -9502,14 +9503,14 @@ import * as Cesium from "cesium";
                 } catch (e) {
                   u = unescape(u);
                 }
-                !1 !== t.splitArgs && (u = u.split(",")), 1 == u.length && (u = u[0]), (o[c] = u);
+                !1 !== t.splitArgs && (u = u.split(",")), 1 === u.length && (u = u[0]), (o[c] = u);
               }
             }
             return o;
           }),
           (GeoGlobe.Util.lastSeqID = 0),
           (GeoGlobe.Util.createUniqueID = function (e) {
-            return (e = null == e ? "id_" : e.replace(GeoGlobe.Util.dotless, "_")), (GeoGlobe.Util.lastSeqID += 1), e + GeoGlobe.Util.lastSeqID;
+            return (e = null === e ? "id_" : e.replace(GeoGlobe.Util.dotless, "_")), (GeoGlobe.Util.lastSeqID += 1), e + GeoGlobe.Util.lastSeqID;
           }),
           (GeoGlobe.INCHES_PER_UNIT = {
             inches: 1,
@@ -9608,23 +9609,23 @@ import * as Cesium from "cesium";
           (GeoGlobe.Util.getResolutionFromScale = function (e, t) {
             var i;
             return (
-              e && (null == t && (t = "degrees"), (i = 1 / (GeoGlobe.Util.normalizeScale(e) * GeoGlobe.INCHES_PER_UNIT[t] * GeoGlobe.DOTS_PER_INCH))),
+              e && (null === t && (t = "degrees"), (i = 1 / (GeoGlobe.Util.normalizeScale(e) * GeoGlobe.INCHES_PER_UNIT[t] * GeoGlobe.DOTS_PER_INCH))),
               i
             );
           }),
           (GeoGlobe.Util.getScaleFromResolution = function (e, t) {
-            return null == t && (t = "degrees"), e * GeoGlobe.INCHES_PER_UNIT[t] * GeoGlobe.DOTS_PER_INCH;
+            return null === t && (t = "degrees"), e * GeoGlobe.INCHES_PER_UNIT[t] * GeoGlobe.DOTS_PER_INCH;
           }),
           (GeoGlobe.Util.pagePosition = function (e) {
             var t = [0, 0],
               i = GeoGlobe.Util.getViewportElement();
-            if (!e || e == window || e == i) return t;
+            if (!e || e === window || e === i) return t;
             var r,
               n =
                 GeoGlobe.IS_GECKO &&
                 document.getBoxObjectFor &&
-                "absolute" == GeoGlobe.Element.getStyle(e, "position") &&
-                ("" == e.style.top || "" == e.style.left),
+                "absolute" === GeoGlobe.Element.getStyle(e, "position") &&
+                ("" === e.style.top || "" === e.style.left),
               o = null;
             if (e.getBoundingClientRect) {
               r = e.getBoundingClientRect();
@@ -9636,24 +9637,24 @@ import * as Cesium from "cesium";
               var x = document.getBoxObjectFor(i);
               (t[0] = r.screenX - x.screenX), (t[1] = r.screenY - x.screenY);
             } else {
-              if (((t[0] = e.offsetLeft), (t[1] = e.offsetTop), (o = e.offsetParent) != e))
+              if (((t[0] = e.offsetLeft), (t[1] = e.offsetTop), (o = e.offsetParent) !== e))
                 for (; o; ) (t[0] += o.offsetLeft), (t[1] += o.offsetTop), (o = o.offsetParent);
               var l = GeoGlobe.BROWSER_NAME;
               for (
-                ("opera" == l || ("safari" == l && "absolute" == GeoGlobe.Element.getStyle(e, "position"))) && (t[1] -= document.body.offsetTop),
+                ("opera" === l || ("safari" === l && "absolute" === GeoGlobe.Element.getStyle(e, "position"))) && (t[1] -= document.body.offsetTop),
                   o = e.offsetParent;
-                o && o != document.body;
+                o && o !== document.body;
 
               )
-                (t[0] -= o.scrollLeft), ("opera" == l && "TR" == o.tagName) || (t[1] -= o.scrollTop), (o = o.offsetParent);
+                (t[0] -= o.scrollLeft), ("opera" === l && "TR" === o.tagName) || (t[1] -= o.scrollTop), (o = o.offsetParent);
             }
             return t;
           }),
           (GeoGlobe.Util.getViewportElement = function () {
             var e = arguments.callee.viewportElement;
             return (
-              null == e &&
-                ((e = "msie" == GeoGlobe.BROWSER_NAME && "CSS1Compat" != document.compatMode ? document.body : document.documentElement),
+              null === e &&
+                ((e = "msie" === GeoGlobe.BROWSER_NAME && "CSS1Compat" !== document.compatMode ? document.body : document.documentElement),
                 (arguments.callee.viewportElement = e)),
               e
             );
@@ -9668,9 +9669,9 @@ import * as Cesium from "cesium";
               });
             var r = GeoGlobe.Util.createUrlObject(e, i),
               n = GeoGlobe.Util.createUrlObject(t, i);
-            for (var o in r) if ("args" !== o && r[o] != n[o]) return !1;
+            for (var o in r) if ("args" !== o && r[o] !== n[o]) return !1;
             for (var o in r.args) {
-              if (r.args[o] != n.args[o]) return !1;
+              if (r.args[o] !== n.args[o]) return !1;
               delete n.args[o];
             }
             for (var o in n.args) return !1;
@@ -9693,27 +9694,27 @@ import * as Cesium from "cesium";
             var s = {};
             (s.host = a.host.split(":").shift()),
               (s.protocol = a.protocol),
-              t.ignorePort80 ? (s.port = "80" == a.port || "0" == a.port ? "" : a.port) : (s.port = "" == a.port || "0" == a.port ? "80" : a.port),
+              t.ignorePort80 ? (s.port = "80" === a.port || "0" === a.port ? "" : a.port) : (s.port = "" === a.port || "0" === a.port ? "80" : a.port),
               (s.hash = t.ignoreHash || "#" === a.hash ? "" : a.hash);
             var x = a.search;
             if (!x) {
               var l = e.indexOf("?");
-              x = -1 != l ? e.substr(l) : "";
+              x = -1 !== l ? e.substr(l) : "";
             }
             return (
               (s.args = GeoGlobe.Util.getParameters(x, {
                 splitArgs: t.splitArgs,
               })),
-              (s.pathname = "/" == a.pathname.charAt(0) ? a.pathname : "/" + a.pathname),
+              (s.pathname = "/" === a.pathname.charAt(0) ? a.pathname : "/" + a.pathname),
               s
             );
           }),
           (GeoGlobe.Util.removeTail = function (e) {
             var t = e.indexOf("?"),
               i = e.indexOf("#");
-            return -1 == t ? (-1 != i ? e.substr(0, i) : e) : -1 != i ? e.substr(0, Math.min(t, i)) : e.substr(0, t);
+            return -1 === t ? (-1 !== i ? e.substr(0, i) : e) : -1 !== i ? e.substr(0, Math.min(t, i)) : e.substr(0, t);
           }),
-          (GeoGlobe.IS_GECKO = ((e = navigator.userAgent.toLowerCase()), -1 == e.indexOf("webkit") && -1 != e.indexOf("gecko"))),
+          (GeoGlobe.IS_GECKO = ((e = navigator.userAgent.toLowerCase()), -1 === e.indexOf("webkit") && -1 !== e.indexOf("gecko"))),
           (GeoGlobe.CANVAS_SUPPORTED = (function () {
             var e = document.createElement("canvas");
             return !(!e.getContext || !e.getContext("2d"));
@@ -9722,13 +9723,13 @@ import * as Cesium from "cesium";
             var e = "",
               t = navigator.userAgent.toLowerCase();
             return (
-              -1 != t.indexOf("opera")
+              -1 !== t.indexOf("opera")
                 ? (e = "opera")
-                : -1 != t.indexOf("msie")
+                : -1 !== t.indexOf("msie")
                 ? (e = "msie")
-                : -1 != t.indexOf("safari")
+                : -1 !== t.indexOf("safari")
                 ? (e = "safari")
-                : -1 != t.indexOf("mozilla") && (e = -1 != t.indexOf("firefox") ? "firefox" : "mozilla"),
+                : -1 !== t.indexOf("mozilla") && (e = -1 !== t.indexOf("firefox") ? "firefox" : "mozilla"),
               e
             );
           })()),
@@ -9737,7 +9738,7 @@ import * as Cesium from "cesium";
           }),
           (GeoGlobe.Util.getScrollbarWidth = function () {
             var e = GeoGlobe.Util._scrollbarWidth;
-            if (null == e) {
+            if (null === e) {
               var t,
                 i,
                 r = null,
@@ -9781,10 +9782,10 @@ import * as Cesium from "cesium";
           }),
           (GeoGlobe.Util.getResolutionFromScale_DPI = function (e, t, i) {
             var r;
-            return e && (null == t && (t = "degrees"), (r = 1 / (GeoGlobe.Util.normalizeScale(e) * GeoGlobe.INCHES_PER_UNIT[t] * i))), r;
+            return e && (null === t && (t = "degrees"), (r = 1 / (GeoGlobe.Util.normalizeScale(e) * GeoGlobe.INCHES_PER_UNIT[t] * i))), r;
           }),
           (GeoGlobe.Util.getScaleFromResolution_DPI = function (e, t, i) {
-            return null == t && (t = "degrees"), e * GeoGlobe.INCHES_PER_UNIT[t] * i;
+            return null === t && (t = "degrees"), e * GeoGlobe.INCHES_PER_UNIT[t] * i;
           }),
           (GeoGlobe.Util.getMapLevelFormResolution = function (e, t) {
             if (!t) return 0;
@@ -9814,9 +9815,9 @@ import * as Cesium from "cesium";
             };
           }),
           (GeoGlobe.Util.clone = function (e) {
-            if ("object" != _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(e)) return e;
-            if (null == e) return e;
-            var t = e.constructor == Array ? [] : {};
+            if ("object" !== _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(e)) return e;
+            if (null === e) return e;
+            var t = e.constructor === Array ? [] : {};
             for (var i in e) t[i] = GeoGlobe.Util.clone(e[i]);
             return t;
           }),
@@ -9969,7 +9970,7 @@ import * as Cesium from "cesium";
               GeoGlobe.Util.extend(this, t),
                 (this.projCode = e),
                 "object" ==
-                  ("undefined" == typeof Proj4js
+                  ("undefined" === typeof Proj4js
                     ? "undefined"
                     : _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(Proj4js)) && (this.proj = new Proj4js.Proj(e));
             },
@@ -9989,18 +9990,18 @@ import * as Cesium from "cesium";
                 if (
                   (t instanceof GeoGlobe.SpatialReference || (t = new GeoGlobe.SpatialReference(t)),
                   "object" ==
-                    ("undefined" == typeof Proj4js
+                    ("undefined" === typeof Proj4js
                       ? "undefined"
                       : _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(Proj4js)) &&
                     this.proj.defData &&
                     t.proj.defData)
                 )
-                  i = this.proj.defData.replace(this.titleRegEx, "") == t.proj.defData.replace(this.titleRegEx, "");
+                  i = this.proj.defData.replace(this.titleRegEx, "") === t.proj.defData.replace(this.titleRegEx, "");
                 else if (t.getCode) {
                   var r = this.getCode(),
                     n = t.getCode();
                   i =
-                    r == n ||
+                    r === n ||
                     (!!GeoGlobe.SpatialReference.transforms[r] &&
                       GeoGlobe.SpatialReference.transforms[r][n] === GeoGlobe.SpatialReference.nullTransform);
                 }
@@ -10104,7 +10105,7 @@ import * as Cesium from "cesium";
           }),
           (function () {
             for (var e = document.getElementsByTagName("script"), t = 0, i = e.length; t < i; ++t)
-              if (-1 != e[t].src.indexOf("firebug.js") && console) {
+              if (-1 !== e[t].src.indexOf("firebug.js") && console) {
                 GeoGlobe.Util.extend(GeoGlobe.Console, console);
                 break;
               }
@@ -10133,12 +10134,12 @@ import * as Cesium from "cesium";
                 r = !i && e.match(this.URL_SPLIT_REGEX);
               if (r) {
                 var n = window.location;
-                i = r[1] == n.protocol && r[3] == n.hostname;
+                i = r[1] === n.protocol && r[3] === n.hostname;
                 var o = r[4],
                   a = n.port;
-                ((80 != o && "" != o) || ("80" != a && "" != a)) && (i = i && o == a);
+                ((80 !== o && "" !== o) || ("80" !== a && "" !== a)) && (i = i && o === a);
               }
-              return i || (t && (e = "function" == typeof t ? t(e) : e.indexOf("cts?") >= 0 ? t + e : t + encodeURIComponent(e))), e;
+              return i || (t && (e = "function" === typeof t ? t(e) : e.indexOf("cts?") >= 0 ? t + e : t + encodeURIComponent(e))), e;
             },
             issue: function (e) {
               var t = GeoGlobe.Util.extend(this.DEFAULT_CONFIG, {
@@ -10158,7 +10159,7 @@ import * as Cesium from "cesium";
               var s = this;
               return (
                 (n.onreadystatechange = function () {
-                  n.readyState == GeoGlobe.Request.XMLHttpRequest.DONE &&
+                  n.readyState === GeoGlobe.Request.XMLHttpRequest.DONE &&
                     s.runCallbacks({
                       request: n,
                       config: e,
@@ -10181,7 +10182,7 @@ import * as Cesium from "cesium";
                 o = n.scope ? GeoGlobe.Function.bind(n.callback, n.scope) : n.callback;
               n.success && (t = n.scope ? GeoGlobe.Function.bind(n.success, n.scope) : n.success),
                 n.failure && (i = n.scope ? GeoGlobe.Function.bind(n.failure, n.scope) : n.failure),
-                "file:" == GeoGlobe.Util.createUrlObject(n.url).protocol && r.responseText && (r.status = 200),
+                "file:" === GeoGlobe.Util.createUrlObject(n.url).protocol && r.responseText && (r.status = 200),
                 o(r),
                 (!r.status || (r.status >= 200 && r.status < 300)) && t && t(r),
                 r.status && (r.status < 200 || r.status >= 300) && i && i(r);
@@ -10245,7 +10246,7 @@ import * as Cesium from "cesium";
             );
           }),
           (GeoGlobe.loadURL = function (e, t, i, r, n) {
-            "string" == typeof t && (t = GeoGlobe.Util.getParameters(t));
+            "string" === typeof t && (t = GeoGlobe.Util.getParameters(t));
             var o = r || GeoGlobe.nullHandler,
               a = n || GeoGlobe.nullHandler;
             return GeoGlobe.Request.GET({
@@ -10316,7 +10317,7 @@ import * as Cesium from "cesium";
                     !r.documentElement &&
                     t.getResponseHeader("Content-Type").match(/[^\/]+\/[^\+]+\+xml/) &&
                     (((r = new window.ActiveXObject("Microsoft.XMLDOM")).async = !1), (r.validateOnParse = !1), r.loadXML(n)),
-                  r && ((i && 0 != r.parseError) || !r.documentElement || (r.documentElement && "parsererror" == r.documentElement.tagName))
+                  r && ((i && 0 !== r.parseError) || !r.documentElement || (r.documentElement && "parsererror" === r.documentElement.tagName))
                     ? null
                     : r);
               } catch (e) {}
@@ -10357,7 +10358,7 @@ import * as Cesium from "cesium";
                 i &&
                   n &&
                   ((u = function () {
-                    f != o.DONE && (x(h), h.abort());
+                    f !== o.DONE && (x(h), h.abort());
                   }),
                   window.attachEvent("onunload", u)),
                   o.onopen && o.onopen.apply(this, arguments),
@@ -10377,8 +10378,8 @@ import * as Cesium from "cesium";
                       s(h),
                       h._aborted
                         ? (h.readyState = o.UNSENT)
-                        : (h.readyState == o.DONE && (delete h._data, x(h), i && n && window.detachEvent("onunload", u)),
-                          f != h.readyState && a(h),
+                        : (h.readyState === o.DONE && (delete h._data, x(h), i && n && window.detachEvent("onunload", u)),
+                          f !== h.readyState && a(h),
                           (f = h.readyState)));
                   });
               }),
@@ -10413,11 +10414,11 @@ import * as Cesium from "cesium";
                 return this._headers || (this._headers = {}), (this._headers[e] = t), this._object.setRequestHeader(e, t);
               }),
               (o.prototype.addEventListener = function (e, t, i) {
-                for (var r, n = 0; (r = this._listeners[n]); n++) if (r[0] == e && r[1] == t && r[2] == i) return;
+                for (var r, n = 0; (r = this._listeners[n]); n++) if (r[0] === e && r[1] === t && r[2] === i) return;
                 this._listeners.push([e, t, i]);
               }),
               (o.prototype.removeEventListener = function (e, t, i) {
-                for (var r, n = 0; (r = this._listeners[n]) && (r[0] != e || r[1] != t || r[2] != i); n++);
+                for (var r, n = 0; (r = this._listeners[n]) && (r[0] !== e || r[1] !== t || r[2] !== i); n++);
                 r && this._listeners.splice(n, 1);
               }),
               (o.prototype.dispatchEvent = function (e) {
@@ -10433,10 +10434,10 @@ import * as Cesium from "cesium";
                   preventDefault: function () {},
                   initEvent: function () {},
                 };
-                "readystatechange" == t.type &&
+                "readystatechange" === t.type &&
                   this.onreadystatechange &&
                   (this.onreadystatechange.handleEvent || this.onreadystatechange).apply(this, [t]);
-                for (var i, r = 0; (i = this._listeners[r]); r++) i[0] != t.type || i[2] || (i[1].handleEvent || i[1]).apply(this, [t]);
+                for (var i, r = 0; (i = this._listeners[r]); r++) i[0] !== t.type || i[2] || (i[1].handleEvent || i[1]).apply(this, [t]);
               }),
               (o.prototype.toString = function () {
                 return "[object XMLHttpRequest]";
@@ -10459,15 +10460,15 @@ import * as Cesium from "cesium";
             },
             setCode: function (e) {
               var t;
-              e || (e = "msie" == GeoGlobe.BROWSER_NAME ? navigator.userLanguage : navigator.language);
+              e || (e = "msie" === GeoGlobe.BROWSER_NAME ? navigator.userLanguage : navigator.language);
               var i = e.split("-");
               if (
                 ((i[0] = i[0].toLowerCase()),
-                "object" == _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(GeoGlobe.Lang[i[0]]) && (t = i[0]),
+                "object" === _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(GeoGlobe.Lang[i[0]]) && (t = i[0]),
                 i[1])
               ) {
                 var r = i[0] + "-" + i[1].toUpperCase();
-                "object" == _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(GeoGlobe.Lang[r]) && (t = r);
+                "object" === _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(GeoGlobe.Lang[r]) && (t = r);
               }
               t ||
                 (GeoGlobe.Console.warn("Failed to find GeoGlobe.Lang." + i.join("-") + " dictionary, falling back to default language"),
@@ -10491,10 +10492,10 @@ import * as Cesium from "cesium";
           }),
           (GeoGlobe.String = {
             startsWith: function (e, t) {
-              return 0 == e.indexOf(t);
+              return 0 === e.indexOf(t);
             },
             contains: function (e, t) {
-              return -1 != e.indexOf(t);
+              return -1 !== e.indexOf(t);
             },
             trim: function (e) {
               return e.replace(/^\s\s*/, "").replace(/\s\s*$/, "");
@@ -10510,8 +10511,8 @@ import * as Cesium from "cesium";
               return (
                 t || (t = window),
                 e.replace(GeoGlobe.String.tokenRegEx, function (e, r) {
-                  for (var n, o = r.split(/\.+/), a = 0; a < o.length && (0 == a && (n = t), void 0 !== n); a++) n = n[o[a]];
-                  return "function" == typeof n && (n = i ? n.apply(null, i) : n()), void 0 === n ? "undefined" : n;
+                  for (var n, o = r.split(/\.+/), a = 0; a < o.length && (0 === a && (n = t), void 0 !== n); a++) n = n[o[a]];
+                  return "function" === typeof n && (n = i ? n.apply(null, i) : n()), void 0 === n ? "undefined" : n;
                 })
               );
             },
@@ -10523,7 +10524,7 @@ import * as Cesium from "cesium";
             numericIf: function (e, t) {
               var i = e;
               return (
-                !0 === t && null != e && e.replace && (e = e.replace(/^\s*|\s*$/g, "")),
+                !0 === t && null !== e && e.replace && (e = e.replace(/^\s*|\s*$/g, "")),
                 GeoGlobe.String.isNumeric(e) ? _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(e) : i
               );
             },
@@ -10539,16 +10540,16 @@ import * as Cesium from "cesium";
               (t = void 0 !== t ? t : 0),
                 (i = void 0 !== i ? i : GeoGlobe.Number.thousandsSeparator),
                 (r = void 0 !== r ? r : GeoGlobe.Number.decimalSeparator),
-                null != t && (e = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(e.toFixed(t)));
+                null !== t && (e = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(e.toFixed(t)));
               var n = e.toString().split(".");
-              1 == n.length && null == t && (t = 0);
+              1 === n.length && null === t && (t = 0);
               var o,
                 a = n[0];
               if (i) for (var s = /(-?[0-9]+)([0-9]{3})/; s.test(a); ) a = a.replace(s, "$1" + i + "$2");
-              if (0 == t) o = a;
+              if (0 === t) o = a;
               else {
                 var x = n.length > 1 ? n[1] : "0";
-                null != t && (x += new Array(t - x.length + 1).join("0")), (o = a + r + x);
+                null !== t && (x += new Array(t - x.length + 1).join("0")), (o = a + r + x);
               }
               return o;
             },
@@ -10584,7 +10585,7 @@ import * as Cesium from "cesium";
               if (Array.prototype.filter) r = e.filter(t, i);
               else {
                 var n = e.length;
-                if ("function" != typeof t) throw new TypeError();
+                if ("function" !== typeof t) throw new TypeError();
                 for (var o = 0; o < n; o++)
                   if (o in e) {
                     var a = e[o];
@@ -10597,7 +10598,7 @@ import * as Cesium from "cesium";
           String.prototype.endsWith ||
             (String.prototype.endsWith = function (e, t) {
               var i = this.toString();
-              ("number" != typeof t || !isFinite(t) || Math.floor(t) !== t || t > i.length) && (t = i.length), (t -= e.length);
+              ("number" !== typeof t || !isFinite(t) || Math.floor(t) !== t || t > i.length) && (t = i.length), (t -= e.length);
               var r = i.lastIndexOf(e, t);
               return -1 !== r && r === t;
             }),
@@ -10654,20 +10655,21 @@ import * as Cesium from "cesium";
             },
           }),
           (function (e) {
-            "object" ==
-              ("undefined" == typeof exports
-                ? "undefined"
-                : _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(exports)) && void 0 !== module
-              ? (module.exports = e())
-              : "function" == typeof define && __webpack_require__(121)
-              ? define([], e)
-              : (("undefined" != typeof window ? window : void 0 !== global ? global : "undefined" != typeof self ? self : this)._GeoGlobe = e());
-          })(function () {
+            // "object" ==
+              // ("undefined" === typeof exports
+              //   ? "undefined"
+              //   : _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(exports)) && void 0 !== module
+              window._GeoGlobe = e()
+              // : "function" === typeof define && __webpack_require__(121)
+              // ? define([], e)
+              // : (("undefined" !== typeof window ? window : void 0 !== global ? global : "undefined" !== typeof self ? self : this)._GeoGlobe = e());
+
+            })(function () {
             return (function e(t, i, r) {
               function n(a, s) {
                 if (!i[a]) {
                   if (!t[a]) {
-                    if (!s && "function" == typeof require && require) return require(a, !0);
+                    if (!s && "function" === typeof require && require) return require(a, !0);
                     if (o) return o(a, !0);
                     var x = new Error("Cannot find module '" + a + "'");
                     throw ((x.code = "MODULE_NOT_FOUND"), x);
@@ -10690,7 +10692,7 @@ import * as Cesium from "cesium";
                 }
                 return i[a].exports;
               }
-              for (var o = "function" == typeof require && require, a = 0; a < r.length; a++) n(r[a]);
+              for (var o = "function" === typeof require && require, a = 0; a < r.length; a++) n(r[a]);
               return n;
             })(
               {
@@ -10721,7 +10723,7 @@ import * as Cesium from "cesium";
                           return new r(Number(e[0]), Number(e[1]));
                         if (
                           !_babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_4___default()(e) &&
-                          "object" == _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(e) &&
+                          "object" === _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(e) &&
                           null !== e
                         )
                           return new r(Number(e.lng), Number(e.lat));
@@ -10845,9 +10847,9 @@ import * as Cesium from "cesium";
           }),
           (GeoGlobe.LngLatBounds.prototype.contains = function (e, t, i) {
             return (
-              null == i && (i = !0),
-              null != e &&
-                null != t &&
+              null === i && (i = !0),
+              null !== e &&
+                null !== t &&
                 ((e = GeoGlobe.Util.toFloat(e)),
                 (t = GeoGlobe.Util.toFloat(t)),
                 i
@@ -10859,7 +10861,7 @@ import * as Cesium from "cesium";
             return this._ne.lng - this._sw.lng;
           }),
           (GeoGlobe.LngLatBounds.prototype.containsLonLat = function (e, t) {
-            "boolean" == typeof t &&
+            "boolean" === typeof t &&
               (t = {
                 inclusive: t,
               }),
@@ -10885,11 +10887,11 @@ import * as Cesium from "cesium";
           (GeoGlobe.LngLatBounds.prototype.equals = function (e) {
             var t = !1;
             return (
-              null != e && (t = this._sw.lng == e._sw.lng && this._ne.lng == e._ne.lng && this._ne.lat == e._ne.lat && this._sw.lat == e._sw.lat), t
+              null !== e && (t = this._sw.lng === e._sw.lng && this._ne.lng === e._ne.lng && this._ne.lat === e._ne.lat && this._sw.lat === e._sw.lat), t
             );
           }),
           (GeoGlobe.LngLatBounds.prototype.toBBOX = function (e, t) {
-            null == e && (e = 6);
+            null === e && (e = 6);
             var i = Math.pow(10, e),
               r = Math.round(this._sw.lng * i) / i,
               n = Math.round(this._sw.lat * i) / i,
@@ -10946,16 +10948,16 @@ import * as Cesium from "cesium";
               this.getBounds() ? this.bounds.extend(e) : this.setBounds(e);
             },
             getBounds: function () {
-              return null == this.bounds && this.calculateBounds(), this.bounds;
+              return null === this.bounds && this.calculateBounds(), this.bounds;
             },
             calculateBounds: function () {},
             distanceTo: function (e, t) {},
             getVertices: function (e) {},
             atPoint: function (e, t, i) {
               var r = !1;
-              if (null != this.getBounds() && null != e) {
-                var n = null != t ? t : 0,
-                  o = null != i ? i : 0,
+              if (null !== this.getBounds() && null !== e) {
+                var n = null !== t ? t : 0,
+                  o = null !== i ? i : 0,
                   a = new GeoGlobe.LngLat(this.bounds._sw.lng - n, this.bounds._sw.lat - o),
                   s = new GeoGlobe.LngLat(this.bounds._ne.lng + n, this.bounds._ne.lat + o);
                 r = new GeoGlobe.LngLatBounds(a, s).containsLonLat(e);
@@ -11005,7 +11007,7 @@ import * as Cesium from "cesium";
               h = c * x - u * l,
               f = u * s - c * a,
               d = x * s - l * a;
-            if (0 == h) 0 == f && 0 == d && (o = !0);
+            if (0 === h) 0 === f && 0 === d && (o = !0);
             else {
               var g = f / h,
                 p = d / h;
@@ -11063,7 +11065,7 @@ import * as Cesium from "cesium";
               l = t.y2,
               c = x - a,
               u = l - s,
-              h = 0 == c && 0 == u ? 0 : (c * (n - a) + u * (o - s)) / (Math.pow(c, 2) + Math.pow(u, 2));
+              h = 0 === c && 0 === u ? 0 : (c * (n - a) + u * (o - s)) / (Math.pow(c, 2) + Math.pow(u, 2));
             return (
               h <= 0 ? ((i = a), (r = s)) : h >= 1 ? ((i = x), (r = l)) : ((i = a + h * c), (r = s + h * u)),
               {
@@ -11092,7 +11094,7 @@ import * as Cesium from "cesium";
             components: null,
             componentTypes: null,
             initialize: function (e) {
-              GeoGlobe.Geometry.prototype.initialize.apply(this, arguments), (this.components = []), null != e && this.addComponents(e);
+              GeoGlobe.Geometry.prototype.initialize.apply(this, arguments), (this.components = []), null !== e && this.addComponents(e);
             },
             destroy: function () {
               (this.components.length = 0), (this.components = null), GeoGlobe.Geometry.prototype.destroy.apply(this, arguments);
@@ -11111,14 +11113,14 @@ import * as Cesium from "cesium";
               var e = new GeoGlobe.LngLatBounds(),
                 t = this.components;
               if (t) for (var i = 0, r = t.length; i < r; i++) e.extend(t[i].getBounds());
-              null != e._sw &&
-                null != e._sw &&
-                null != e._ne &&
-                null != e._ne &&
-                null != e._sw.lng &&
-                null != e._sw.lat &&
-                null != e._ne.lng &&
-                null != e._ne.lat &&
+              null !== e._sw &&
+                null !== e._sw &&
+                null !== e._ne &&
+                null !== e._ne &&
+                null !== e._sw.lng &&
+                null !== e._sw.lat &&
+                null !== e._ne.lng &&
+                null !== e._ne.lat &&
                 this.setBounds(e);
             },
             addComponents: function (e) {
@@ -11127,8 +11129,8 @@ import * as Cesium from "cesium";
             },
             addComponent: function (e, t) {
               var i = !1;
-              if (e && (null == this.componentTypes || GeoGlobe.Util.indexOf(this.componentTypes, e.CLASS_NAME) > -1)) {
-                if (null != t && t < this.components.length) {
+              if (e && (null === this.componentTypes || GeoGlobe.Util.indexOf(this.componentTypes, e.CLASS_NAME) > -1)) {
+                if (null !== t && t < this.components.length) {
                   var r = this.components.slice(0, t),
                     n = this.components.slice(t, this.components.length);
                   r.push(e), (this.components = r.concat(n));
@@ -11196,15 +11198,15 @@ import * as Cesium from "cesium";
             distanceTo: function (e, t) {
               for (
                 var i, r, n, o = !(t && !1 === t.edge) && t && t.details, a = Number.POSITIVE_INFINITY, s = 0, x = this.components.length;
-                s < x && ((i = this.components[s].distanceTo(e, t)), !((n = o ? i.distance : i) < a && ((r = i), 0 == (a = n))));
+                s < x && ((i = this.components[s].distanceTo(e, t)), !((n = o ? i.distance : i) < a && ((r = i), 0 === (a = n))));
                 ++s
               );
               return r;
             },
             equals: function (e) {
               var t = !0;
-              if (e && e.CLASS_NAME && this.CLASS_NAME == e.CLASS_NAME)
-                if (GeoGlobe.Util.isArray(e.components) && e.components.length == this.components.length) {
+              if (e && e.CLASS_NAME && this.CLASS_NAME === e.CLASS_NAME)
+                if (GeoGlobe.Util.isArray(e.components) && e.components.length === this.components.length) {
                   for (var i = 0, r = this.components.length; i < r; ++i)
                     if (!this.components[i].equals(e.components[i])) {
                       t = !1;
@@ -11240,7 +11242,7 @@ import * as Cesium from "cesium";
                 (this.y = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(t));
             },
             clone: function (e) {
-              return null == e && (e = new GeoGlobe.Geometry.Point(this.x, this.y)), GeoGlobe.Util.applyDefaults(e, this), e;
+              return null === e && (e = new GeoGlobe.Geometry.Point(this.x, this.y)), GeoGlobe.Util.applyDefaults(e, this), e;
             },
             calculateBounds: function () {
               var e = new GeoGlobe.LngLat(this.x, this.y),
@@ -11285,7 +11287,7 @@ import * as Cesium from "cesium";
             },
             equals: function (e) {
               var t = !1;
-              return null != e && (t = (this.x == e.x && this.y == e.y) || (isNaN(this.x) && isNaN(this.y) && isNaN(e.x) && isNaN(e.y))), t;
+              return null !== e && (t = (this.x === e.x && this.y === e.y) || (isNaN(this.x) && isNaN(this.y) && isNaN(e.x) && isNaN(e.y))), t;
             },
             toShortString: function () {
               return this.x + ", " + this.y;
@@ -11303,10 +11305,10 @@ import * as Cesium from "cesium";
               return new GeoGlobe.Geometry.Point(this.x, this.y);
             },
             resize: function (e, t, i) {
-              return (i = null == i ? 1 : i), (this.x = t.x + e * i * (this.x - t.x)), (this.y = t.y + e * (this.y - t.y)), this.clearBounds(), this;
+              return (i = null === i ? 1 : i), (this.x = t.x + e * i * (this.x - t.x)), (this.y = t.y + e * (this.y - t.y)), this.clearBounds(), this;
             },
             intersects: function (e) {
-              return "GeoGlobe.Geometry.Point" == e.CLASS_NAME ? this.equals(e) : e.intersects(this);
+              return "GeoGlobe.Geometry.Point" === e.CLASS_NAME ? this.equals(e) : e.intersects(this);
             },
             transform: function (e, t) {
               return e && t && (GeoGlobe.SpatialReference.transform(this, e, t), (this.bounds = null)), this;
@@ -11367,7 +11369,7 @@ import * as Cesium from "cesium";
             intersects: function (e) {
               var t = !1,
                 i = e.CLASS_NAME;
-              if ("GeoGlobe.Geometry.LineString" == i || "GeoGlobe.Geometry.LinearRing" == i || "GeoGlobe.Geometry.Point" == i) {
+              if ("GeoGlobe.Geometry.LineString" === i || "GeoGlobe.Geometry.LinearRing" === i || "GeoGlobe.Geometry.Point" === i) {
                 var r,
                   n,
                   o,
@@ -11379,7 +11381,7 @@ import * as Cesium from "cesium";
                   u,
                   h = this.getSortedSegments();
                 r =
-                  "GeoGlobe.Geometry.Point" == i
+                  "GeoGlobe.Geometry.Point" === i
                     ? [
                         {
                           x1: e.x,
@@ -11631,7 +11633,7 @@ import * as Cesium from "cesium";
                 for (n.push(0), n.push(r); t[0].equals(t[r]); ) r--, n.push(r);
                 !(function e(t, r, o, a) {
                   for (var s, x = 0, l = 0, c = r; c < o; c++) (s = i(t[r], t[o], t[c])) > x && ((x = s), (l = c));
-                  x > a && l != r && (n.push(l), e(t, r, l, a), e(t, l, o, a));
+                  x > a && l !== r && (n.push(l), e(t, r, l, a), e(t, l, o, a));
                 })(t, 0, r, e);
                 var o = [];
                 n.sort(function (e, t) {
@@ -11686,12 +11688,12 @@ import * as Cesium from "cesium";
                     p < 0 &&
                     (p = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(360 + p)),
                   c = 0,
-                  d == f
+                  d === f
                     ? ((o = 0), (a = g - p))
-                    : p == g
+                    : p === g
                     ? ((o = Math.PI / 2), (a = f - d))
                     : ((o = Math.atan((d - f) / (p - g))), (a = (d - f) / Math.sin(o))),
-                  0 == c && (c = o + Math.PI / 5),
+                  0 === c && (c = o + Math.PI / 5),
                   l = (s = a / 2) * Math.cos(c) + g,
                   x = s * Math.sin(c) + f,
                   u = 0;
@@ -11701,14 +11703,14 @@ import * as Cesium from "cesium";
                 curveCoordinates.push(new GeoGlobe.Geometry.Point(g * i(h) + l * r(h) + p * n(h), f * i(h) + x * r(h) + d * n(h))), (h += 1 / 30);
               return curveCoordinates;
             }
-            "undefined" != typeof curveCoordinates && (curveCoordinates = []);
+            "undefined" !== typeof curveCoordinates && (curveCoordinates = []);
           }),
           (GeoGlobe.Geometry.LinearRing = GeoGlobe.Class4OL(GeoGlobe.Geometry.LineString, {
             componentTypes: ["GeoGlobe.Geometry.Point"],
             addComponent: function (e, t) {
               var i = !1,
                 r = this.components.pop();
-              (null == t && e.equals(r)) || (i = GeoGlobe.Geometry.Collection.prototype.addComponent.apply(this, arguments));
+              (null === t && e.equals(r)) || (i = GeoGlobe.Geometry.Collection.prototype.addComponent.apply(this, arguments));
               var n = this.components[0];
               return GeoGlobe.Geometry.Collection.prototype.addComponent.apply(this, [n]), i;
             },
@@ -11748,7 +11750,7 @@ import * as Cesium from "cesium";
                     r = this.components[0].x,
                     n = this.components[0].y,
                     o = -1 * this.getArea();
-                  if (0 != o) {
+                  if (0 !== o) {
                     for (var a = 0; a < e - 1; a++) {
                       var s = this.components[a],
                         x = this.components[a + 1];
@@ -11815,28 +11817,28 @@ import * as Cesium from "cesium";
                 g < f;
                 ++g
               )
-                if (((r = c((t = this.components[g]).x, 14)), (n = c(t.y, 14)), (o = c((i = this.components[g + 1]).x, 14)), n != (a = c(i.y, 14)))) {
+                if (((r = c((t = this.components[g]).x, 14)), (n = c(t.y, 14)), (o = c((i = this.components[g + 1]).x, 14)), n !== (a = c(i.y, 14)))) {
                   if (
-                    (s = c((((x = o) - r) / ((l = a) - n)) * (h - l) + x, 14)) == u &&
+                    (s = c((((x = o) - r) / ((l = a) - n)) * (h - l) + x, 14)) === u &&
                     ((n < a && h >= n && h <= a) || (n > a && h <= n && h >= a))
                   ) {
                     d = -1;
                     break;
                   }
                   s <= u ||
-                    (r != o && (s < Math.min(r, o) || s > Math.max(r, o))) ||
+                    (r !== o && (s < Math.min(r, o) || s > Math.max(r, o))) ||
                     (((n < a && h >= n && h < a) || (n > a && h < n && h >= a)) && ++d);
-                } else if (h == n && ((r <= o && u >= r && u <= o) || (r >= o && u <= r && u >= o))) {
+                } else if (h === n && ((r <= o && u >= r && u <= o) || (r >= o && u <= r && u >= o))) {
                   d = -1;
                   break;
                 }
-              return -1 == d ? 1 : !!(1 & d);
+              return -1 === d ? 1 : !!(1 & d);
             },
             intersects: function (e) {
               var t = !1;
-              if ("GeoGlobe.Geometry.Point" == e.CLASS_NAME) t = this.containsPoint(e);
-              else if ("GeoGlobe.Geometry.LineString" == e.CLASS_NAME) t = e.intersects(this);
-              else if ("GeoGlobe.Geometry.LinearRing" == e.CLASS_NAME) t = GeoGlobe.Geometry.LineString.prototype.intersects.apply(this, [e]);
+              if ("GeoGlobe.Geometry.Point" === e.CLASS_NAME) t = this.containsPoint(e);
+              else if ("GeoGlobe.Geometry.LineString" === e.CLASS_NAME) t = e.intersects(this);
+              else if ("GeoGlobe.Geometry.LinearRing" === e.CLASS_NAME) t = GeoGlobe.Geometry.LineString.prototype.intersects.apply(this, [e]);
               else for (var i = 0, r = e.components.length; i < r && !(t = e.components[i].intersects(this)); ++i);
               return t;
             },
@@ -11878,12 +11880,12 @@ import * as Cesium from "cesium";
               var t,
                 i,
                 r = !1;
-              if ("GeoGlobe.Geometry.Point" == e.CLASS_NAME) r = this.containsPoint(e);
-              else if ("GeoGlobe.Geometry.LineString" == e.CLASS_NAME || "GeoGlobe.Geometry.LinearRing" == e.CLASS_NAME) {
+              if ("GeoGlobe.Geometry.Point" === e.CLASS_NAME) r = this.containsPoint(e);
+              else if ("GeoGlobe.Geometry.LineString" === e.CLASS_NAME || "GeoGlobe.Geometry.LinearRing" === e.CLASS_NAME) {
                 for (t = 0, i = this.components.length; t < i && !(r = e.intersects(this.components[t])); ++t);
                 if (!r) for (t = 0, i = e.components.length; t < i && !(r = this.containsPoint(e.components[t])); ++t);
               } else for (t = 0, i = e.components.length; t < i && !(r = this.intersects(e.components[t])); ++t);
-              if (!r && "GeoGlobe.Geometry.Polygon" == e.CLASS_NAME) {
+              if (!r && "GeoGlobe.Geometry.Polygon" === e.CLASS_NAME) {
                 var n = this.components[0];
                 for (t = 0, i = n.components.length; t < i && !(r = e.containsPoint(n.components[t])); ++t);
               }
@@ -11978,7 +11980,7 @@ import * as Cesium from "cesium";
             url: null,
             modified: null,
             initialize: function (e, t) {
-              (this.data = null != t ? t : {}),
+              (this.data = null !== t ? t : {}),
                 (this.id = GeoGlobe.Util.createUniqueID(this.CLASS_NAME + "_")),
                 (this.lonlat = null),
                 (this.geometry = e || null),
@@ -12005,7 +12007,7 @@ import * as Cesium from "cesium";
             },
             destroyPopup: function () {},
             toState: function (e) {
-              if (e == GeoGlobe.State.UPDATE)
+              if (e === GeoGlobe.State.UPDATE)
                 switch (this.state) {
                   case GeoGlobe.State.UNKNOWN:
                   case GeoGlobe.State.DELETE:
@@ -12014,14 +12016,14 @@ import * as Cesium from "cesium";
                   case GeoGlobe.State.UPDATE:
                   case GeoGlobe.State.INSERT:
                 }
-              else if (e == GeoGlobe.State.INSERT)
+              else if (e === GeoGlobe.State.INSERT)
                 switch (this.state) {
                   case GeoGlobe.State.UNKNOWN:
                     break;
                   default:
                     this.state = e;
                 }
-              else if (e == GeoGlobe.State.DELETE)
+              else if (e === GeoGlobe.State.DELETE)
                 switch (this.state) {
                   case GeoGlobe.State.INSERT:
                   case GeoGlobe.State.DELETE:
@@ -12030,7 +12032,7 @@ import * as Cesium from "cesium";
                   case GeoGlobe.State.UPDATE:
                     this.state = e;
                 }
-              else e == GeoGlobe.State.UNKNOWN && (this.state = e);
+              else e === GeoGlobe.State.UNKNOWN && (this.state = e);
             },
             CLASS_NAME: "GeoGlobe.Feature",
           })),
@@ -12069,7 +12071,7 @@ import * as Cesium from "cesium";
               (this.fids = []), GeoGlobe.Filter.prototype.initialize.apply(this, [e]);
             },
             evaluate: function (e) {
-              for (var t = 0, i = this.fids.length; t < i; t++) if ((e.fid || e.id) == this.fids[t]) return !0;
+              for (var t = 0, i = this.fids.length; t < i; t++) if ((e.fid || e.id) === this.fids[t]) return !0;
               return !1;
             },
             clone: function () {
@@ -12091,10 +12093,10 @@ import * as Cesium from "cesium";
               var t, i;
               switch (this.type) {
                 case GeoGlobe.Filter.Logical.AND:
-                  for (t = 0, i = this.filters.length; t < i; t++) if (0 == this.filters[t].evaluate(e)) return !1;
+                  for (t = 0, i = this.filters.length; t < i; t++) if (0 === this.filters[t].evaluate(e)) return !1;
                   return !0;
                 case GeoGlobe.Filter.Logical.OR:
-                  for (t = 0, i = this.filters.length; t < i; t++) if (1 == this.filters[t].evaluate(e)) return !0;
+                  for (t = 0, i = this.filters.length; t < i; t++) if (1 === this.filters[t].evaluate(e)) return !0;
                   return !1;
                 case GeoGlobe.Filter.Logical.NOT:
                   return !this.filters[0].evaluate(e);
@@ -12132,11 +12134,11 @@ import * as Cesium from "cesium";
               switch (this.type) {
                 case GeoGlobe.Filter.Comparison.EQUAL_TO:
                   (t = this.value),
-                    (i = this.matchCase || "string" != typeof r || "string" != typeof t ? r == t : r.toUpperCase() == t.toUpperCase());
+                    (i = this.matchCase || "string" !== typeof r || "string" !== typeof t ? r === t : r.toUpperCase() === t.toUpperCase());
                   break;
                 case GeoGlobe.Filter.Comparison.NOT_EQUAL_TO:
                   (t = this.value),
-                    (i = this.matchCase || "string" != typeof r || "string" != typeof t ? r != t : r.toUpperCase() != t.toUpperCase());
+                    (i = this.matchCase || "string" !== typeof r || "string" !== typeof t ? r !== t : r.toUpperCase() !== t.toUpperCase());
                   break;
                 case GeoGlobe.Filter.Comparison.LESS_THAN:
                   i = r < this.value;
@@ -12162,7 +12164,7 @@ import * as Cesium from "cesium";
               return i;
             },
             value2regex: function (e, t, i) {
-              if ("." == e) throw new Error("'.' is an unsupported wildCard character for GeoGlobe.Filter.Comparison");
+              if ("." === e) throw new Error("'.' is an unsupported wildCard character for GeoGlobe.Filter.Comparison");
               return (
                 (e = e || "*"),
                 (t = t || "."),
@@ -12210,7 +12212,7 @@ import * as Cesium from "cesium";
                 case GeoGlobe.Filter.Spatial.INTERSECTS:
                   if (e.geometry) {
                     var i = this.value;
-                    "GeoGlobe.LngLatBounds" == this.value.CLASS_NAME && (i = this.value.toGeometry()), e.geometry.intersects(i) && (t = !0);
+                    "GeoGlobe.LngLatBounds" === this.value.CLASS_NAME && (i = this.value.toGeometry()), e.geometry.intersects(i) && (t = !0);
                   }
                   break;
                 default:
@@ -12416,7 +12418,7 @@ import * as Cesium from "cesium";
               var i = e.priv;
               t.callback &&
                 (i.status >= 200 && i.status < 300
-                  ? ("delete" != e.requestType && (e.features = this.parseFeatures(i)), (e.code = GeoGlobe.Protocol.Response.SUCCESS))
+                  ? ("delete" !== e.requestType && (e.features = this.parseFeatures(i)), (e.code = GeoGlobe.Protocol.Response.SUCCESS))
                   : (e.code = GeoGlobe.Protocol.Response.FAILURE),
                 t.callback.call(t.scope, e));
             },
@@ -12576,7 +12578,7 @@ import * as Cesium from "cesium";
                 if (i.status >= 200 && i.status < 300) {
                   var r = this.parseResponse(i, t.readOptions);
                   r && !1 !== r.success
-                    ? (t.readOptions && "object" == t.readOptions.output ? GeoGlobe.Util.extend(e, r) : (e.features = r),
+                    ? (t.readOptions && "object" === t.readOptions.output ? GeoGlobe.Util.extend(e, r) : (e.features = r),
                       (e.code = GeoGlobe.Protocol.Response.SUCCESS))
                     : ((e.code = GeoGlobe.Protocol.Response.FAILURE), (e.error = r));
                 } else e.code = GeoGlobe.Protocol.Response.FAILURE;
@@ -12668,13 +12670,13 @@ import * as Cesium from "cesium";
               GeoGlobe.Protocol.WFS.v1.prototype.initialize.apply(this, arguments),
                 this.outputFormat &&
                   !this.readFormat &&
-                  ("gml2" == this.outputFormat.toLowerCase()
+                  ("gml2" === this.outputFormat.toLowerCase()
                     ? (this.readFormat = new GeoGlobe.Format.GML.v2({
                         featureType: this.featureType,
                         featureNS: this.featureNS,
                         geometryName: this.geometryName,
                       }))
-                    : "json" == this.outputFormat.toLowerCase() && (this.readFormat = new GeoGlobe.Format.GeoJSON()));
+                    : "json" === this.outputFormat.toLowerCase() && (this.readFormat = new GeoGlobe.Format.GeoJSON()));
             },
             CLASS_NAME: "GeoGlobe.Protocol.WFS.v1_1_0",
           })),
@@ -12901,7 +12903,7 @@ import * as Cesium from "cesium";
               if (e.xml) t = e.xml;
               else {
                 var i = new XMLSerializer();
-                if (1 == e.nodeType) {
+                if (1 === e.nodeType) {
                   var r = document.implementation.createDocument("", "", null);
                   r.importNode && (e = r.importNode(e, !0)), r.appendChild(e), (t = i.serializeToString(r));
                 } else t = i.serializeToString(e);
@@ -12910,7 +12912,7 @@ import * as Cesium from "cesium";
             },
             createElementNS: function (e, t) {
               return this.xmldom
-                ? "string" == typeof e
+                ? "string" === typeof e
                   ? this.xmldom.createNode(1, t, e)
                   : this.xmldom.createNode(1, t, "")
                 : document.createElementNS(e, t);
@@ -12919,14 +12921,14 @@ import * as Cesium from "cesium";
               return this.xmldom ? this.xmldom.createDocumentFragment() : document.createDocumentFragment();
             },
             createTextNode: function (e) {
-              return "string" != typeof e && (e = String(e)), this.xmldom ? this.xmldom.createTextNode(e) : document.createTextNode(e);
+              return "string" !== typeof e && (e = String(e)), this.xmldom ? this.xmldom.createTextNode(e) : document.createTextNode(e);
             },
             getElementsByTagNameNS: function (e, t, i) {
               var r = [];
               if (e.getElementsByTagNameNS) r = e.getElementsByTagNameNS(t, i);
               else
                 for (var n, o, a = e.getElementsByTagName("*"), s = 0, x = a.length; s < x; ++s)
-                  (o = (n = a[s]).prefix ? n.prefix + ":" + i : i), ("*" != i && o != n.nodeName) || ("*" != t && t != n.namespaceURI) || r.push(n);
+                  (o = (n = a[s]).prefix ? n.prefix + ":" + i : i), ("*" !== i && o !== n.nodeName) || ("*" !== t && t !== n.namespaceURI) || r.push(n);
               return r;
             },
             getAttributeNodeNS: function (e, t, i) {
@@ -12934,7 +12936,7 @@ import * as Cesium from "cesium";
               if (e.getAttributeNodeNS) r = e.getAttributeNodeNS(t, i);
               else
                 for (var n, o = e.attributes, a = 0, s = o.length; a < s; ++a)
-                  if ((n = o[a]).namespaceURI == t && (n.prefix ? n.prefix + ":" + i : i) == n.nodeName) {
+                  if ((n = o[a]).namespaceURI === t && (n.prefix ? n.prefix + ":" + i : i) === n.nodeName) {
                     r = n;
                     break;
                   }
@@ -13011,12 +13013,12 @@ import * as Cesium from "cesium";
               var n = this.createElementNS(i, e);
               t.attributes && this.setAttributes(n, t.attributes);
               var o = t.value;
-              return null != o && n.appendChild(this.createTextNode(o)), n;
+              return null !== o && n.appendChild(this.createTextNode(o)), n;
             },
             setAttributes: function (e, t) {
               var i, r;
               for (var n in t)
-                null != t[n] &&
+                null !== t[n] &&
                   t[n].toString &&
                   ((i = t[n].toString()), (r = this.namespaces[n.substring(0, n.indexOf(":"))] || null), this.setAttributeNS(e, r, n, i));
             },
@@ -13031,7 +13033,7 @@ import * as Cesium from "cesium";
             },
             readChildNodes: function (e, t) {
               t || (t = {});
-              for (var i, r = e.childNodes, n = 0, o = r.length; n < o; ++n) 1 == (i = r[n]).nodeType && this.readNode(i, t);
+              for (var i, r = e.childNodes, n = 0, o = r.length; n < o; ++n) 1 === (i = r[n]).nodeType && this.readNode(i, t);
               return t;
             },
             writeNode: function (e, t, i) {
@@ -13158,7 +13160,7 @@ import * as Cesium from "cesium";
             getParser: function (e) {
               e = e || this.defaultVersion;
               var t = this.profile ? "_" + this.profile : "";
-              if (!this.parser || this.parser.VERSION != e) {
+              if (!this.parser || this.parser.VERSION !== e) {
                 var i = GeoGlobe.Format[this.name]["v" + e.replace(/\./g, "_") + t];
                 if (!i && ("" !== t && this.allowFallback && ((t = ""), (i = GeoGlobe.Format[this.name]["v" + e.replace(/\./g, "_")])), !i))
                   throw "Can't find a " + this.name + " parser for version " + e + t;
@@ -13173,7 +13175,7 @@ import * as Cesium from "cesium";
               return !1 === this.stringifyOutput ? r : GeoGlobe.Format.XML.prototype.write.apply(this, [r]);
             },
             read: function (e, t) {
-              "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e]));
+              "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e]));
               var i = e.documentElement,
                 r = this.getVersion(i);
               this.parser = this.getParser(r);
@@ -13207,7 +13209,7 @@ import * as Cesium from "cesium";
                 GeoGlobe.Format.XML.prototype.initialize.apply(this, [e]);
             },
             read: function (e) {
-              "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e]));
+              "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e]));
               for (var t = this.getElementsByTagNameNS(e.documentElement, this.gmlns, this.featureName), i = [], r = 0; r < t.length; r++) {
                 var n = this.parseFeature(t[r]);
                 n && i.push(n);
@@ -13242,7 +13244,7 @@ import * as Cesium from "cesium";
                   featureNS: e.firstChild.namespaceURI,
                   featureNSPrefix: e.firstChild.prefix,
                 });
-              for (var d, g = e.firstChild; g && (1 != g.nodeType || !(d = g.getAttribute("fid") || g.getAttribute("id"))); ) g = g.nextSibling;
+              for (var d, g = e.firstChild; g && (1 !== g.nodeType || !(d = g.getAttribute("fid") || g.getAttribute("id"))); ) g = g.nextSibling;
               return (f.fid = d), f;
             },
             parseGeometry: {
@@ -13252,17 +13254,17 @@ import * as Cesium from "cesium";
                 if (
                   ((t = this.getElementsByTagNameNS(e, this.gmlns, "pos")).length > 0 &&
                     (i = t[0].firstChild.nodeValue.replace(this.regExes.trimSpace, "").split(this.regExes.splitSpace)),
-                  0 == i.length &&
+                  0 === i.length &&
                     (t = this.getElementsByTagNameNS(e, this.gmlns, "coordinates")).length > 0 &&
                     (i = t[0].firstChild.nodeValue.replace(this.regExes.removeSpace, "").split(",")),
-                  0 == i.length && (t = this.getElementsByTagNameNS(e, this.gmlns, "coord")).length > 0)
+                  0 === i.length && (t = this.getElementsByTagNameNS(e, this.gmlns, "coord")).length > 0)
                 ) {
                   var r = this.getElementsByTagNameNS(t[0], this.gmlns, "X"),
                     n = this.getElementsByTagNameNS(t[0], this.gmlns, "Y");
                   r.length > 0 && n.length > 0 && (i = [r[0].firstChild.nodeValue, n[0].firstChild.nodeValue]);
                 }
                 return (
-                  2 == i.length && (i[2] = null),
+                  2 === i.length && (i[2] = null),
                   this.xy ? new GeoGlobe.Geometry.Point(i[0], i[1], i[2]) : new GeoGlobe.Geometry.Point(i[1], i[0], i[2])
                 );
               },
@@ -13290,20 +13292,20 @@ import * as Cesium from "cesium";
                   )
                     (a = r[(o = c * l)]),
                       (s = r[o + 1]),
-                      (x = 2 == l ? null : r[o + 2]),
+                      (x = 2 === l ? null : r[o + 2]),
                       this.xy ? n.push(new GeoGlobe.Geometry.Point(a, s, x)) : n.push(new GeoGlobe.Geometry.Point(s, a, x));
                 }
-                if (0 == r.length && (i = this.getElementsByTagNameNS(e, this.gmlns, "coordinates")).length > 0) {
+                if (0 === r.length && (i = this.getElementsByTagNameNS(e, this.gmlns, "coordinates")).length > 0) {
                   var u = this.getChildValue(i[0])
                     .replace(this.regExes.trimSpace, "")
                     .replace(this.regExes.trimComma, ",")
                     .split(this.regExes.splitSpace);
                   for (c = 0; c < u.length; ++c)
-                    2 == (r = u[c].split(",")).length && (r[2] = null),
+                    2 === (r = u[c].split(",")).length && (r[2] = null),
                       this.xy ? n.push(new GeoGlobe.Geometry.Point(r[0], r[1], r[2])) : n.push(new GeoGlobe.Geometry.Point(r[1], r[0], r[2]));
                 }
                 var h = null;
-                return 0 != n.length && (h = t ? new GeoGlobe.Geometry.LinearRing(n) : new GeoGlobe.Geometry.LineString(n)), h;
+                return 0 !== n.length && (h = t ? new GeoGlobe.Geometry.LinearRing(n) : new GeoGlobe.Geometry.LineString(n)), h;
               },
               multilinestring: function (e) {
                 var t = this.getElementsByTagNameNS(e, this.gmlns, "LineString"),
@@ -13331,7 +13333,7 @@ import * as Cesium from "cesium";
                   var n = [];
                   if (
                     (r.length > 0 && (n = r[0].firstChild.nodeValue.replace(this.regExes.trimSpace, "").split(this.regExes.splitSpace)),
-                    2 == n.length && (n[2] = null),
+                    2 === n.length && (n[2] = null),
                     this.xy)
                   )
                     var o = new GeoGlobe.Geometry.Point(n[0], n[1], n[2]);
@@ -13342,7 +13344,7 @@ import * as Cesium from "cesium";
                   if (
                     ((n = []),
                     a.length > 0 && (n = a[0].firstChild.nodeValue.replace(this.regExes.trimSpace, "").split(this.regExes.splitSpace)),
-                    2 == n.length && (n[2] = null),
+                    2 === n.length && (n[2] = null),
                     this.xy)
                   )
                     var s = new GeoGlobe.Geometry.Point(n[0], n[1], n[2]);
@@ -13364,7 +13366,7 @@ import * as Cesium from "cesium";
                   r = null,
                   n = null;
                 if (
-                  (i.length > 0 && 2 == (t = i[0].firstChild.nodeValue.split(" ")).length && ((r = t[0].split(",")), (n = t[1].split(","))),
+                  (i.length > 0 && 2 === (t = i[0].firstChild.nodeValue.split(" ")).length && ((r = t[0].split(",")), (n = t[1].split(","))),
                   null !== r && null !== n)
                 ) {
                   var o = new GeoGlobe.LngLat(
@@ -13381,11 +13383,11 @@ import * as Cesium from "cesium";
             },
             parseAttributes: function (e) {
               for (var t, i, r, n, o, a, s, x = {}, l = e.firstChild; l; ) {
-                if (1 == l.nodeType) {
+                if (1 === l.nodeType) {
                   for (t = l.childNodes, i = 0; i < t.length; ++i)
-                    1 == (r = t[i]).nodeType &&
-                      (1 == (n = r.childNodes).length
-                        ? (3 != (o = n[0]).nodeType && 4 != o.nodeType) ||
+                    1 === (r = t[i]).nodeType &&
+                      (1 === (n = r.childNodes).length
+                        ? (3 !== (o = n[0]).nodeType && 4 !== o.nodeType) ||
                           ((a = r.prefix ? r.nodeName.split(":")[1] : r.nodeName), (s = o.nodeValue.replace(this.regExes.trimSpace, "")), (x[a] = s))
                         : (x[r.nodeName.split(":").pop()] = null));
                   break;
@@ -13453,7 +13455,7 @@ import * as Cesium from "cesium";
               },
               polygon: function (e) {
                 for (var t, i, r, n = this.createElementNS(this.gmlns, "gml:Polygon"), o = e.components, a = 0; a < o.length; ++a)
-                  (r = 0 == a ? "outerBoundaryIs" : "innerBoundaryIs"),
+                  (r = 0 === a ? "outerBoundaryIs" : "innerBoundaryIs"),
                     (t = this.createElementNS(this.gmlns, "gml:" + r)),
                     (i = this.buildGeometry.linearring.apply(this, [o[a]])),
                     t.appendChild(i),
@@ -13513,10 +13515,10 @@ import * as Cesium from "cesium";
               GeoGlobe.Format.XML.prototype.initialize.apply(this, [e]),
                 this.setGeometryTypes(),
                 e && e.featureNS && this.setNamespace("feature", e.featureNS),
-                (this.singleFeatureType = !e || "string" == typeof e.featureType);
+                (this.singleFeatureType = !e || "string" === typeof e.featureType);
             },
             read: function (e) {
-              "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 == e.nodeType && (e = e.documentElement);
+              "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 === e.nodeType && (e = e.documentElement);
               var t,
                 i = [];
               if (
@@ -13527,7 +13529,7 @@ import * as Cesium from "cesium";
                   },
                   !0
                 ),
-                0 == i.length)
+                0 === i.length)
               )
                 if ((t = this.getElementsByTagNameNS(e, this.namespaces.gml, "featureMember")).length)
                   for (var r = 0, n = t.length; r < n; ++r)
@@ -13556,7 +13558,7 @@ import * as Cesium from "cesium";
                   ((this.featureType = null), delete this.namespaceAlias[this.featureNS], delete this.namespaces.feature, (this.featureNS = null)),
                 this.featureNS ||
                   e.prefix in this.namespaces ||
-                  e.parentNode.namespaceURI != this.namespaces.gml ||
+                  e.parentNode.namespaceURI !== this.namespaces.gml ||
                   !this.regExes.featureMember.test(e.parentNode.nodeName) ||
                   ((this.featureType = e.nodeName.split(":").pop()),
                   this.setNamespace("feature", e.namespaceURI),
@@ -13699,7 +13701,7 @@ import * as Cesium from "cesium";
                           }
                     } else i = "_typeName";
                   else
-                    0 == e.childNodes.length || (1 == e.childNodes.length && 3 == e.firstChild.nodeType)
+                    0 === e.childNodes.length || (1 === e.childNodes.length && 3 === e.firstChild.nodeType)
                       ? this.extractAttributes && (i = "_attribute")
                       : (i = "_geometry");
                   i && this.readers.feature[i].apply(this, [e, t]);
@@ -13798,7 +13800,7 @@ import * as Cesium from "cesium";
                   });
                   for (var i in (e.geometry && this.writeNode("feature:_geometry", e.geometry, t), e.attributes)) {
                     var r = e.attributes[i];
-                    null != r &&
+                    null !== r &&
                       this.writeNode(
                         "feature:_attribute",
                         {
@@ -13896,14 +13898,14 @@ import * as Cesium from "cesium";
                   },
                   coordinates: function (e) {
                     for (var t, i = e.length, r = new Array(i), n = 0; n < i; ++n)
-                      (t = e[n]), this.xy ? (r[n] = t.x + "," + t.y) : (r[n] = t.y + "," + t.x), null != t.z && (r[n] += "," + t.z);
+                      (t = e[n]), this.xy ? (r[n] = t.x + "," + t.y) : (r[n] = t.y + "," + t.x), null !== t.z && (r[n] += "," + t.z);
                     return this.createElementNSPlus("gml:coordinates", {
                       attributes: {
                         decimal: ".",
                         cs: ",",
                         ts: " ",
                       },
-                      value: 1 == i ? r[0] : r.join(" "),
+                      value: 1 === i ? r[0] : r.join(" "),
                     });
                   },
                   LineString: function (e) {
@@ -14021,7 +14023,7 @@ import * as Cesium from "cesium";
                     )
                       (i = o[l]),
                         (r = o[l + 1]),
-                        (n = 2 == a ? void 0 : o[l + 2]),
+                        (n = 2 === a ? void 0 : o[l + 2]),
                         this.xy ? (x[l / a] = new GeoGlobe.Geometry.Point(i, r, n)) : (x[l / a] = new GeoGlobe.Geometry.Point(r, i, n));
                     t.points = x;
                   },
@@ -14290,11 +14292,11 @@ import * as Cesium from "cesium";
               return this.parseData(e, t);
             },
             parseData: function (e, t) {
-              "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e]));
+              "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e]));
               for (var i = ["Link", "NetworkLink", "Style", "StyleMap", "Placemark"], r = 0, n = i.length; r < n; ++r) {
                 var o = i[r],
                   a = this.getElementsByTagNameNS(e, "*", o);
-                if (0 != a.length)
+                if (0 !== a.length)
                   switch (o.toLowerCase()) {
                     case "link":
                     case "networklink":
@@ -14365,8 +14367,8 @@ import * as Cesium from "cesium";
                     case "polystyle":
                       (s = this.parseProperty(i, "*", "color")),
                         (I = this.parseKmlColor(s)) && ((r.fillOpacity = I.opacity), (r.fillColor = I.color)),
-                        "0" == this.parseProperty(i, "*", "fill") && (r.fillColor = "none"),
-                        "0" == this.parseProperty(i, "*", "outline") && (r.strokeWidth = "0");
+                        "0" === this.parseProperty(i, "*", "fill") && (r.fillColor = "none"),
+                        "0" === this.parseProperty(i, "*", "outline") && (r.strokeWidth = "0");
                       break;
                     case "iconstyle":
                       var x = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(
@@ -14405,17 +14407,17 @@ import * as Cesium from "cesium";
                         b = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(v.getAttribute("x"));
                         var C = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(v.getAttribute("y")),
                           y = v.getAttribute("xunits");
-                        "pixels" == y
+                        "pixels" === y
                           ? (r.graphicXOffset = -b * x)
-                          : "insetPixels" == y
+                          : "insetPixels" === y
                           ? (r.graphicXOffset = b * x - l)
-                          : "fraction" == y && (r.graphicXOffset = -l * b);
+                          : "fraction" === y && (r.graphicXOffset = -l * b);
                         var _ = v.getAttribute("yunits");
-                        "pixels" == _
+                        "pixels" === _
                           ? (r.graphicYOffset = C * x - c + 1)
-                          : "insetPixels" == _
+                          : "insetPixels" === _
                           ? (r.graphicYOffset = -C * x + 1)
-                          : "fraction" == _ && (r.graphicYOffset = -c * (1 - C) + 1);
+                          : "fraction" === _ && (r.graphicYOffset = -c * (1 - C) + 1);
                       }
                       (r.graphicWidth = l), (r.graphicHeight = c);
                       break;
@@ -14438,7 +14440,7 @@ import * as Cesium from "cesium";
                   var l = o[s],
                     c = this.parseProperty(l, "*", "key"),
                     u = this.parseProperty(l, "*", "styleUrl");
-                  u && "normal" == c && (this.styles[(t.styleBaseUrl || "") + "#" + a] = this.styles[(t.styleBaseUrl || "") + u]);
+                  u && "normal" === c && (this.styles[(t.styleBaseUrl || "") + "#" + a] = this.styles[(t.styleBaseUrl || "") + u]);
                 }
             },
             parseFeatures: function (e, t) {
@@ -14554,7 +14556,7 @@ import * as Cesium from "cesium";
               this.extractAttributes && (n = this.parseAttributes(e));
               var l = new GeoGlobe.Feature(r, n),
                 c = e.getAttribute("id") || e.getAttribute("name");
-              return null != c && (l.fid = c), l;
+              return null !== c && (l.fid = c), l;
             },
             getStyle: function (e, t) {
               var i = GeoGlobe.Util.removeTail(e),
@@ -14578,7 +14580,7 @@ import * as Cesium from "cesium";
                   i = (r = r.replace(this.regExes.removeSpace, "")).split(",");
                 }
                 if (!(i.length > 1)) throw "Bad coordinate string: " + r;
-                return 2 == i.length && (i[2] = null), new GeoGlobe.Geometry.Point(i[0], i[1], i[2]);
+                return 2 === i.length && (i[2] = null), new GeoGlobe.Geometry.Point(i[0], i[1], i[2]);
               },
               linestring: function (e, t) {
                 var i = this.getElementsByTagNameNS(e, this.internalns, "coordinates"),
@@ -14595,7 +14597,7 @@ import * as Cesium from "cesium";
                     ++l
                   ) {
                     if (!((n = a[l].split(",")).length > 1)) throw "Bad LineString point coordinates: " + a[l];
-                    2 == n.length && (n[2] = null), (x[l] = new GeoGlobe.Geometry.Point(n[0], n[1], n[2]));
+                    2 === n.length && (n[2] = null), (x[l] = new GeoGlobe.Geometry.Point(n[0], n[1], n[2]));
                   }
                   if (!s) throw "Bad LineString coordinates: " + o;
                   r = t ? new GeoGlobe.Geometry.LinearRing(x) : new GeoGlobe.Geometry.LineString(x);
@@ -14615,7 +14617,7 @@ import * as Cesium from "cesium";
               },
               multigeometry: function (e) {
                 for (var t, i = [], r = e.childNodes, n = 0, o = r.length; n < o; ++n)
-                  if (1 == (t = r[n]).nodeType) {
+                  if (1 === (t = r[n]).nodeType) {
                     var a,
                       s = t.prefix ? t.nodeName.split(":")[1] : t.nodeName;
                     (a = this.parseGeometry[s.toLowerCase()]) && i.push(a.apply(this, [t]));
@@ -14630,7 +14632,7 @@ import * as Cesium from "cesium";
                 n = e.getElementsByTagName("ExtendedData");
               n.length && (r = this.parseExtendedData(n[0]));
               for (var o = e.childNodes, a = 0, s = o.length; a < s; ++a)
-                if (1 == (t = o[a]).nodeType && (i = t.childNodes).length >= 1 && i.length <= 3) {
+                if (1 === (t = o[a]).nodeType && (i = t.childNodes).length >= 1 && i.length <= 3) {
                   var x;
                   switch (i.length) {
                     case 1:
@@ -14639,13 +14641,13 @@ import * as Cesium from "cesium";
                     case 2:
                       var l = i[0],
                         c = i[1];
-                      x = 3 == l.nodeType || 4 == l.nodeType ? l : c;
+                      x = 3 === l.nodeType || 4 === l.nodeType ? l : c;
                       break;
                     case 3:
                     default:
                       x = i[1];
                   }
-                  if (3 == x.nodeType || 4 == x.nodeType) {
+                  if (3 === x.nodeType || 4 === x.nodeType) {
                     var u = t.prefix ? t.nodeName.split(":")[1] : t.nodeName,
                       h = GeoGlobe.Util.getXmlNodeValue(x);
                     h && ((h = h.replace(this.regExes.trimSpace, "")), (r[u] = h));
@@ -14717,7 +14719,7 @@ import * as Cesium from "cesium";
                 o = e.attributes.description || this.placemarksDesc;
               n.appendChild(this.createTextNode(o));
               var a = this.createElementNS(this.kmlns, "Placemark");
-              null != e.fid && a.setAttribute("id", e.fid), a.appendChild(t), a.appendChild(n);
+              null !== e.fid && a.setAttribute("id", e.fid), a.appendChild(t), a.appendChild(n);
               var s = this.buildGeometryNode(e.geometry);
               if ((a.appendChild(s), e.attributes)) {
                 var x = this.buildExtendedData(e.attributes);
@@ -14753,7 +14755,7 @@ import * as Cesium from "cesium";
               },
               polygon: function (e) {
                 for (var t, i, r, n = this.createElementNS(this.kmlns, "Polygon"), o = e.components, a = 0, s = o.length; a < s; ++a)
-                  (r = 0 == a ? "outerBoundaryIs" : "innerBoundaryIs"),
+                  (r = 0 === a ? "outerBoundaryIs" : "innerBoundaryIs"),
                     (t = this.createElementNS(this.kmlns, r)),
                     (i = this.buildGeometry.linearring.apply(this, [o[a]])),
                     t.appendChild(i),
@@ -14789,11 +14791,11 @@ import * as Cesium from "cesium";
             buildExtendedData: function (e) {
               var t = this.createElementNS(this.kmlns, "ExtendedData");
               for (var i in e)
-                if (e[i] && "name" != i && "description" != i && "styleUrl" != i) {
+                if (e[i] && "name" !== i && "description" !== i && "styleUrl" !== i) {
                   var r = this.createElementNS(this.kmlns, "Data");
                   r.setAttribute("name", i);
                   var n = this.createElementNS(this.kmlns, "value");
-                  if ("object" == _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(e[i])) {
+                  if ("object" === _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(e[i])) {
                     if ((e[i].value && n.appendChild(this.createTextNode(e[i].value)), e[i].displayName)) {
                       var o = this.createElementNS(this.kmlns, "displayName");
                       o.appendChild(this.getXMLDoc().createCDATASection(e[i].displayName)), r.appendChild(o);
@@ -15160,7 +15162,7 @@ import * as Cesium from "cesium";
             errorProperty: "featureTypeList",
             defaultPrefix: "wfs",
             read: function (e) {
-              "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 == e.nodeType && (e = e.documentElement);
+              "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 === e.nodeType && (e = e.documentElement);
               var t = {};
               return this.readNode(e, t), t;
             },
@@ -15207,19 +15209,19 @@ import * as Cesium from "cesium";
                   },
                   Fees: function (e, t) {
                     var i = this.getChildValue(e);
-                    i && "none" != i.toLowerCase() && (t.fees = i);
+                    i && "none" !== i.toLowerCase() && (t.fees = i);
                   },
                   AccessConstraints: function (e, t) {
                     var i = this.getChildValue(e);
-                    i && "none" != i.toLowerCase() && (t.accessConstraints = i);
+                    i && "none" !== i.toLowerCase() && (t.accessConstraints = i);
                   },
                   OnlineResource: function (e, t) {
                     var i = this.getChildValue(e);
-                    i && "none" != i.toLowerCase() && (t.onlineResource = i);
+                    i && "none" !== i.toLowerCase() && (t.onlineResource = i);
                   },
                   Keywords: function (e, t) {
                     var i = this.getChildValue(e);
-                    i && "none" != i.toLowerCase() && (t.keywords = i.split(", "));
+                    i && "none" !== i.toLowerCase() && (t.keywords = i.split(", "));
                   },
                   Capability: function (e, t) {
                     (t.capability = {}), this.readChildNodes(e, t.capability);
@@ -15235,7 +15237,7 @@ import * as Cesium from "cesium";
                       this.readChildNodes(e, t.getfeature);
                   },
                   ResultFormat: function (e, t) {
-                    for (var i, r = e.childNodes, n = 0; n < r.length; n++) 1 == (i = r[n]).nodeType && t.formats.push(i.nodeName);
+                    for (var i, r = e.childNodes, n = 0; n < r.length; n++) 1 === (i = r[n]).nodeType && t.formats.push(i.nodeName);
                   },
                   DCPType: function (e, t) {
                     this.readChildNodes(e, t);
@@ -15411,13 +15413,13 @@ import * as Cesium from "cesium";
             },
             readRestriction: function (e, t) {
               for (var i, r, n, o = e.childNodes, a = 0, s = o.length; a < s; ++a)
-                1 == (i = o[a]).nodeType &&
+                1 === (i = o[a]).nodeType &&
                   ((r = i.nodeName.split(":").pop()),
                   (n = i.getAttribute("value")),
-                  t[r] ? ("string" == typeof t[r] && (t[r] = [t[r]]), t[r].push(n)) : (t[r] = n));
+                  t[r] ? ("string" === typeof t[r] && (t[r] = [t[r]]), t[r].push(n)) : (t[r] = n));
             },
             read: function (e) {
-              "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 == e.nodeType && (e = e.documentElement);
+              "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 === e.nodeType && (e = e.documentElement);
               var t = {};
               if ("ExceptionReport" === e.nodeName.split(":").pop()) {
                 var i = new GeoGlobe.Format.OGCExceptionReport();
@@ -15449,18 +15451,18 @@ import * as Cesium from "cesium";
                 this.parse[i] && (t = this.parse[i].apply(this, [r])),
                 this.internalProjection && this.externalProjection)
               )
-                if (t && "GeoGlobe.Feature" == t.CLASS_NAME) t.geometry.transform(this.externalProjection, this.internalProjection);
+                if (t && "GeoGlobe.Feature" === t.CLASS_NAME) t.geometry.transform(this.externalProjection, this.internalProjection);
                 else if (
                   t &&
-                  "geometrycollection" != i &&
-                  "object" == _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(t)
+                  "geometrycollection" !== i &&
+                  "object" === _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(t)
                 )
                   for (var o = 0, a = t.length; o < a; o++) t[o].geometry.transform(this.externalProjection, this.internalProjection);
               return t;
             },
             write: function (e) {
               var t, i, r;
-              e.constructor == Array ? ((t = e), (r = !0)) : ((t = [e]), (r = !1));
+              e.constructor === Array ? ((t = e), (r = !0)) : ((t = [e]), (r = !1));
               var n = [];
               r && n.push("GEOMETRYCOLLECTION(");
               for (var o = 0, a = t.length; o < a; ++o) r && o > 0 && n.push(","), (i = t[o].geometry), n.push(this.extractGeometry(i));
@@ -15470,7 +15472,7 @@ import * as Cesium from "cesium";
               var t = e.CLASS_NAME.split(".")[2].toLowerCase();
               return this.extract[t]
                 ? (this.internalProjection && this.externalProjection && (e = e.clone()).transform(this.internalProjection, this.externalProjection),
-                  ("collection" == t ? "GEOMETRYCOLLECTION" : t.toUpperCase()) + "(" + this.extract[t].apply(this, [e]) + ")")
+                  ("collection" === t ? "GEOMETRYCOLLECTION" : t.toUpperCase()) + "(" + this.extract[t].apply(this, [e]) + ")")
                 : null;
             },
             extract: {
@@ -15663,8 +15665,8 @@ import * as Cesium from "cesium";
                         t.push(n);
                         break;
                       case "RPAREN":
-                        for (; t.length > 0 && "LPAREN" != t[t.length - 1].type; ) i.push(t.pop());
-                        t.pop(), t.length > 0 && "SPATIAL" == t[t.length - 1].type && i.push(t.pop());
+                        for (; t.length > 0 && "LPAREN" !== t[t.length - 1].type; ) i.push(t.pop());
+                        t.pop(), t.length > 0 && "SPATIAL" === t[t.length - 1].type && i.push(t.pop());
                       case "COMMA":
                       case "END":
                         break;
@@ -15795,9 +15797,9 @@ import * as Cesium from "cesium";
                       r = [],
                       n = ["NOT", "GEOMETRY", "SPATIAL", "PROPERTY", "LPAREN"];
                     do {
-                      if (((e = (t = x(e, n)).remainder), (n = i[t.type]), "END" != t.type && !n)) throw new Error("No follows list for " + t.type);
+                      if (((e = (t = x(e, n)).remainder), (n = i[t.type]), "END" !== t.type && !n)) throw new Error("No follows list for " + t.type);
                       r.push(t);
-                    } while ("END" != t.type);
+                    } while ("END" !== t.type);
                     return r;
                   })(e)
                 );
@@ -15822,19 +15824,19 @@ import * as Cesium from "cesium";
                         throw new Error("Unknown spatial filter type: " + e.type);
                     }
                   case "GeoGlobe.Filter.Logical":
-                    if (e.type == GeoGlobe.Filter.Logical.NOT) return "NOT (" + this.write(e.filters[0]) + ")";
+                    if (e.type === GeoGlobe.Filter.Logical.NOT) return "NOT (" + this.write(e.filters[0]) + ")";
                     for (var t = "(", i = !0, r = 0; r < e.filters.length; r++)
                       i ? (i = !1) : (t += ") " + a[e.type] + " ("), (t += this.write(e.filters[r]));
                     return t + ")";
                   case "GeoGlobe.Filter.Comparison":
-                    return e.type == GeoGlobe.Filter.Comparison.BETWEEN
+                    return e.type === GeoGlobe.Filter.Comparison.BETWEEN
                       ? e.property + " BETWEEN " + this.write(e.lowerBoundary) + " AND " + this.write(e.upperBoundary)
                       : null !== e.value
                       ? e.property + " " + n[e.type] + " " + this.write(e.value)
                       : e.property + " " + n[e.type];
                   case void 0:
-                    if ("string" == typeof e) return "'" + e.replace(/'/g, "''") + "'";
-                    if ("number" == typeof e) return String(e);
+                    if ("string" === typeof e) return "'" + e.replace(/'/g, "''") + "'";
+                    if ("number" === typeof e) return String(e);
                   default:
                     throw new Error("Can't encode: " + e.CLASS_NAME + " " + e);
                 }
@@ -16110,7 +16112,7 @@ import * as Cesium from "cesium";
                 },
                 SortProperty: function (e) {
                   var t = this.createElementNSPlus("ogc:SortProperty");
-                  return this.writeNode("ogc:PropertyName", e, t), this.writeNode("ogc:SortOrder", "DESC" == e.order ? "DESC" : "ASC", t), t;
+                  return this.writeNode("ogc:PropertyName", e, t), this.writeNode("ogc:SortOrder", "DESC" === e.order ? "DESC" : "ASC", t), t;
                 },
                 SortOrder: function (e) {
                   return this.createElementNSPlus("ogc:SortOrder", {
@@ -16317,7 +16319,7 @@ import * as Cesium from "cesium";
                   },
                   SortProperty: function (e) {
                     var t = this.createElementNSPlus("ogc:SortProperty");
-                    return this.writeNode("ogc:PropertyName", e, t), this.writeNode("ogc:SortOrder", "DESC" == e.order ? "DESC" : "ASC", t), t;
+                    return this.writeNode("ogc:PropertyName", e, t), this.writeNode("ogc:SortOrder", "DESC" === e.order ? "DESC" : "ASC", t), t;
                   },
                   SortOrder: function (e) {
                     return this.createElementNSPlus("ogc:SortOrder", {
@@ -16389,8 +16391,8 @@ import * as Cesium from "cesium";
                 GeoGlobe.Util.applyDefaults(t, {
                   output: "features",
                 }),
-                "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])),
-                e && 9 == e.nodeType && (e = e.documentElement);
+                "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])),
+                e && 9 === e.nodeType && (e = e.documentElement);
               var i = {};
               return e && this.readNode(e, i, !0), i.features && "features" === t.output && (i = i.features), i;
             },
@@ -16423,7 +16425,7 @@ import * as Cesium from "cesium";
                       "xsi:schemaLocation": this.schemaLocationAttr(e),
                     },
                   });
-                  if ("string" == typeof this.featureType) this.writeNode("Query", e, t);
+                  if ("string" === typeof this.featureType) this.writeNode("Query", e, t);
                   else for (var i = 0, r = this.featureType.length; i < r; i++) (e.featureType = this.featureType[i]), this.writeNode("Query", e, t);
                   return t;
                 },
@@ -16802,8 +16804,8 @@ import * as Cesium from "cesium";
             pretty: !1,
             nativeJSON: !(
               !window.JSON ||
-              "function" != typeof JSON.parse ||
-              "function" != typeof _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_2___default.a
+              "function" !== typeof JSON.parse ||
+              "function" !== typeof _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_2___default.a
             ),
             read: function read(json, filter) {
               var object;
@@ -16817,10 +16819,10 @@ import * as Cesium from "cesium";
                         .replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, "]")
                         .replace(/(?:^|:|,)(?:\s*\[)+/g, "")
                     ) &&
-                    ((object = eval("(" + json + ")")), "function" == typeof filter)
+                    ((object = eval("(" + json + ")")), "function" === typeof filter)
                   ) {
                     function walk(e, t) {
-                      if (t && "object" == _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(t))
+                      if (t && "object" === _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(t))
                         for (var i in t) t.hasOwnProperty(i) && (t[i] = walk(i, t[i]));
                       return filter(e, t);
                     }
@@ -16857,9 +16859,9 @@ import * as Cesium from "cesium";
             },
             serialize: {
               object: function (e) {
-                if (null == e) return "null";
-                if (e.constructor == Date) return this.serialize.date.apply(this, [e]);
-                if (e.constructor == Array) return this.serialize.array.apply(this, [e]);
+                if (null === e) return "null";
+                if (e.constructor === Date) return this.serialize.date.apply(this, [e]);
+                if (e.constructor === Array) return this.serialize.array.apply(this, [e]);
                 var t,
                   i,
                   r,
@@ -16870,8 +16872,8 @@ import * as Cesium from "cesium";
                   e.hasOwnProperty(t) &&
                     ((i = GeoGlobe.Format.JSON.prototype.write.apply(this, [t, this.pretty])),
                     (r = GeoGlobe.Format.JSON.prototype.write.apply(this, [e[t], this.pretty])),
-                    null != i &&
-                      null != r &&
+                    null !== i &&
+                      null !== r &&
                       (o && n.push(","), n.push(this.writeNewline(), this.writeIndent(), i, ":", this.writeSpace(), r), (o = !0)));
                 return (this.level -= 1), n.push(this.writeNewline(), this.writeIndent(), "}"), n.join("");
               },
@@ -16880,7 +16882,7 @@ import * as Cesium from "cesium";
                   i = ["["];
                 this.level += 1;
                 for (var r = 0, n = e.length; r < n; ++r)
-                  null != (t = GeoGlobe.Format.JSON.prototype.write.apply(this, [e[r], this.pretty])) &&
+                  null !== (t = GeoGlobe.Format.JSON.prototype.write.apply(this, [e[r], this.pretty])) &&
                     (r > 0 && i.push(","), i.push(this.writeNewline(), this.writeIndent(), t));
                 return (this.level -= 1), i.push(this.writeNewline(), this.writeIndent(), "]"), i.join("");
               },
@@ -16938,8 +16940,8 @@ import * as Cesium from "cesium";
               t = t || "FeatureCollection";
               var r,
                 n = null;
-              if ((r = "string" == typeof e ? GeoGlobe.Format.JSON.prototype.read.apply(this, [e, i]) : e)) {
-                if ("string" != typeof r.type) GeoGlobe.Console.error("Bad GeoJSON - no type: " + e);
+              if ((r = "string" === typeof e ? GeoGlobe.Format.JSON.prototype.read.apply(this, [e, i]) : e)) {
+                if ("string" !== typeof r.type) GeoGlobe.Console.error("Bad GeoJSON - no type: " + e);
                 else if (this.isValidType(r, t))
                   switch (t) {
                     case "Geometry":
@@ -17001,7 +17003,7 @@ import * as Cesium from "cesium";
                   i = !0;
                   break;
                 default:
-                  e.type == t ? (i = !0) : GeoGlobe.Console.error("Cannot convert types from " + e.type + " to " + t);
+                  e.type === t ? (i = !0) : GeoGlobe.Console.error("Cannot convert types from " + e.type + " to " + t);
               }
               return i;
             },
@@ -17016,10 +17018,10 @@ import * as Cesium from "cesium";
               return (t = new GeoGlobe.Feature(i, r)), n && (t.bounds = GeoGlobe.LngLatBounds.fromArray(n)), e.id && (t.fid = e.id), t;
             },
             parseGeometry: function (e) {
-              if (null == e) return null;
+              if (null === e) return null;
               var t,
                 i = !1;
-              if ("GeometryCollection" == e.type) {
+              if ("GeometryCollection" === e.type) {
                 if (!GeoGlobe.Util.isArray(e.geometries)) throw "GeometryCollection must have geometries array: " + e;
                 for (var r = e.geometries.length, n = new Array(r), o = 0; o < r; ++o) n[o] = this.parseGeometry.apply(this, [e.geometries[o]]);
                 (t = new GeoGlobe.Geometry.Collection(n)), (i = !0);
@@ -17036,7 +17038,7 @@ import * as Cesium from "cesium";
             },
             parseCoords: {
               point: function (e) {
-                if (0 == this.ignoreExtraDims && 2 != e.length) throw "Only 2D points are supported: " + e;
+                if (0 === this.ignoreExtraDims && 2 !== e.length) throw "Only 2D points are supported: " + e;
                 return new GeoGlobe.Geometry.Point(e[0], e[1]);
               },
               multipoint: function (e) {
@@ -17095,7 +17097,7 @@ import * as Cesium from "cesium";
                 return new GeoGlobe.Geometry.MultiPolygon(t);
               },
               box: function (e) {
-                if (2 != e.length) throw "GeoJSON box coordinates must have 2 elements";
+                if (2 !== e.length) throw "GeoJSON box coordinates must have 2 elements";
                 return new GeoGlobe.Geometry.Polygon([
                   new GeoGlobe.Geometry.LinearRing([
                     new GeoGlobe.Geometry.Point(e[0][0], e[0][1]),
@@ -17121,7 +17123,7 @@ import * as Cesium from "cesium";
                   i.features[n] = this.extract.feature.apply(this, [o]);
                 }
               } else
-                0 == e.CLASS_NAME.indexOf("GeoGlobe.Geometry")
+                0 === e.CLASS_NAME.indexOf("GeoGlobe.Geometry")
                   ? (i = this.extract.geometry.apply(this, [e]))
                   : e instanceof GeoGlobe.Feature &&
                     ((i = this.extract.feature.apply(this, [e])), e.layer && e.layer.projection && (i.crs = this.createCRSObject(e)));
@@ -17133,7 +17135,7 @@ import * as Cesium from "cesium";
               if (t.match(/epsg:/i)) {
                 var r = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(t.substring(t.indexOf(":") + 1));
                 i =
-                  4326 == r
+                  4326 === r
                     ? {
                         type: "name",
                         properties: {
@@ -17157,14 +17159,14 @@ import * as Cesium from "cesium";
                     properties: e.attributes,
                     geometry: t,
                   };
-                return null != e.fid && (i.id = e.fid), i;
+                return null !== e.fid && (i.id = e.fid), i;
               },
               geometry: function (e) {
-                if (null == e) return null;
+                if (null === e) return null;
                 this.internalProjection && this.externalProjection && (e = e.clone()).transform(this.internalProjection, this.externalProjection);
                 var t = e.CLASS_NAME.split(".")[2],
                   i = this.extract[t.toLowerCase()].apply(this, [e]);
-                return "Collection" == t
+                return "Collection" === t
                   ? {
                       type: "GeometryCollection",
                       geometries: i,
@@ -17227,7 +17229,7 @@ import * as Cesium from "cesium";
               );
             },
             getCapabilities: function (e, t, i) {
-              "function" != typeof i &&
+              "function" !== typeof i &&
                 (i = function () {
                   alert("WMTS服务请求失败，请检查服务是否正常运行或请求地址是否正确。\n请求地址：" + e + "\n操作类型：GetCapabilities");
                 }),
@@ -17240,7 +17242,7 @@ import * as Cesium from "cesium";
                   scope: this,
                   async: !1,
                   success: function (e) {
-                    "function" == typeof t && t(e);
+                    "function" === typeof t && t(e);
                   },
                   failure: i,
                 });
@@ -17369,7 +17371,7 @@ import * as Cesium from "cesium";
               var t = [];
               for (var i in e) {
                 var r = e[i];
-                null != r && "function" != typeof r && t.push(i + "=" + r);
+                null !== r && "function" !== typeof r && t.push(i + "=" + r);
               }
               return t.join("&");
             },
@@ -17398,7 +17400,7 @@ import * as Cesium from "cesium";
               );
             },
             getCapabilities: function (e, t, i) {
-              "function" != typeof i &&
+              "function" !== typeof i &&
                 (i = function () {
                   alert("WMS服务请求失败，请检查服务是否正常运行或请求地址是否正确。\n请求地址：" + e + "\n操作类型：GetCapabilities");
                 }),
@@ -17412,7 +17414,7 @@ import * as Cesium from "cesium";
                   scope: this,
                   async: !1,
                   success: function (e) {
-                    "function" == typeof t && t(e);
+                    "function" === typeof t && t(e);
                   },
                   failure: i,
                 });
@@ -17428,8 +17430,8 @@ import * as Cesium from "cesium";
               if (!layerDef) throw new Error("Layer not found");
               var format = config.format;
               if (!format && layerDef.formats && layerDef.formats.length) {
-                for (var f = 0; f < layerDef.formats.length; f++) "image/png" == layerDef.formats[f] && (format = layerDef.formats[f]);
-                "image/png" != format && (format = layerDef.formats[0]);
+                for (var f = 0; f < layerDef.formats.length; f++) "image/png" === layerDef.formats[f] && (format = layerDef.formats[f]);
+                "image/png" !== format && (format = layerDef.formats[0]);
               }
               var styles = config.styles;
               !styles && layerDef.styles && layerDef.styles.length && (styles = layerDef.styles[0].name);
@@ -17521,7 +17523,7 @@ import * as Cesium from "cesium";
               var t = [];
               for (var i in e) {
                 var r = e[i];
-                null != r && "function" != typeof r && t.push(i + "=" + r);
+                null !== r && "function" !== typeof r && t.push(i + "=" + r);
               }
               return t.join("&");
             },
@@ -17551,7 +17553,7 @@ import * as Cesium from "cesium";
               );
             },
             getCapabilities: function (e, t, i) {
-              "function" != typeof i &&
+              "function" !== typeof i &&
                 (i = function () {
                   alert("VTS服务请求失败，请检查服务是否正常运行或请求地址是否正确。\n请求地址：" + e + "\n操作类型：GetCapabilities");
                 }),
@@ -17564,7 +17566,7 @@ import * as Cesium from "cesium";
                   scope: this,
                   async: !1,
                   success: function (e) {
-                    "function" == typeof t && t(e);
+                    "function" === typeof t && t(e);
                   },
                   failure: i,
                 });
@@ -17593,7 +17595,7 @@ import * as Cesium from "cesium";
               } else r.tileMatrixSetLinks.length >= 1 && (s = n.tileMatrixSets[r.tileMatrixSetLinks[0].tileMatrixSet]);
               if (!s) throw new Error("matrixSet not found");
               var c = [];
-              i.styleName && "" != i.styleName
+              i.styleName && "" !== i.styleName
                 ? (c[0] = i.styleName)
                 : this.GetStyleName(function (e) {
                     c = e;
@@ -17748,7 +17750,7 @@ import * as Cesium from "cesium";
             },
             GetStyle: function (e, t, i) {
               var r = this.url;
-              if ("" != e && null != e) {
+              if ("" !== e && null !== e) {
                 var n = {
                   REQUEST: "GetStyle",
                   SERVICE: "WMTS",
@@ -17778,7 +17780,7 @@ import * as Cesium from "cesium";
               var t = [];
               for (var i in e) {
                 var r = e[i];
-                null != r && "function" != typeof r && t.push(i + "=" + r);
+                null !== r && "function" !== typeof r && t.push(i + "=" + r);
               }
               return t.join("&");
             },
@@ -17797,9 +17799,9 @@ import * as Cesium from "cesium";
             },
             defaultPrefix: "wms",
             read: function (e) {
-              "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e]));
+              "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e]));
               var t = e;
-              e && 9 == e.nodeType && (e = e.documentElement);
+              e && 9 === e.nodeType && (e = e.documentElement);
               var i = {};
               if ((this.readNode(e, i), void 0 === i.service)) {
                 var r = new GeoGlobe.Format.OGCExceptionReport();
@@ -17885,11 +17887,11 @@ import * as Cesium from "cesium";
                 },
                 Fees: function (e, t) {
                   var i = this.getChildValue(e);
-                  i && "none" != i.toLowerCase() && (t.fees = i);
+                  i && "none" !== i.toLowerCase() && (t.fees = i);
                 },
                 AccessConstraints: function (e, t) {
                   var i = this.getChildValue(e);
-                  i && "none" != i.toLowerCase() && (t.accessConstraints = i);
+                  i && "none" !== i.toLowerCase() && (t.accessConstraints = i);
                 },
                 Capability: function (e, t) {
                   (t.capability = {
@@ -17967,9 +17969,9 @@ import * as Cesium from "cesium";
                       cascaded: null !== a ? _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(a) : u.cascaded || 0,
                       opaque: s ? "1" === s || "true" === s : u.opaque || !1,
                       noSubsets: null !== x ? "1" === x || "true" === x : u.noSubsets || !1,
-                      fixedWidth: null != l ? _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(l) : u.fixedWidth || 0,
+                      fixedWidth: null !== l ? _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(l) : u.fixedWidth || 0,
                       fixedHeight:
-                        null != c ? _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(c) : u.fixedHeight || 0,
+                        null !== c ? _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(c) : u.fixedHeight || 0,
                       minScale: u.minScale,
                       maxScale: u.maxScale,
                       attribution: u.attribution,
@@ -18072,10 +18074,10 @@ import * as Cesium from "cesium";
                   },
                   UserDefinedSymbolization: function (e, t) {
                     var i = {
-                      supportSLD: 1 == _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(e.getAttribute("SupportSLD")),
-                      userLayer: 1 == _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(e.getAttribute("UserLayer")),
-                      userStyle: 1 == _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(e.getAttribute("UserStyle")),
-                      remoteWFS: 1 == _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(e.getAttribute("RemoteWFS")),
+                      supportSLD: 1 === _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(e.getAttribute("SupportSLD")),
+                      userLayer: 1 === _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(e.getAttribute("UserLayer")),
+                      userStyle: 1 === _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(e.getAttribute("UserStyle")),
+                      remoteWFS: 1 === _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(e.getAttribute("RemoteWFS")),
                     };
                     t.userSymbols = i;
                   },
@@ -18096,11 +18098,11 @@ import * as Cesium from "cesium";
                       r = e.getAttribute("max"),
                       n = Math.pow(2, 0.5),
                       o = GeoGlobe.INCHES_PER_UNIT.m;
-                    0 != i &&
+                    0 !== i &&
                       (t.maxScale = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(
                         ((i / n) * o * GeoGlobe.DOTS_PER_INCH).toPrecision(13)
                       )),
-                      r != Number.POSITIVE_INFINITY &&
+                      r !== Number.POSITIVE_INFINITY &&
                         (t.minScale = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(
                           ((r / n) * o * GeoGlobe.DOTS_PER_INCH).toPrecision(13)
                         ));
@@ -18181,7 +18183,7 @@ import * as Cesium from "cesium";
                   },
                   Resolutions: function (e, t) {
                     for (var i = this.getChildValue(e).split(" "), r = 0, n = i.length; r < n; r++)
-                      "" != i[r] && t.resolutions.push(_babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(i[r]));
+                      "" !== i[r] && t.resolutions.push(_babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_12___default()(i[r]));
                   },
                   Width: function (e, t) {
                     t.width = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(this.getChildValue(e));
@@ -18276,9 +18278,9 @@ import * as Cesium from "cesium";
                 UserDefinedSymbolization: function (e, t) {
                   this.readers.wms.UserDefinedSymbolization.apply(this, [e, t]),
                     (t.userSymbols.inlineFeature =
-                      1 == _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(e.getAttribute("InlineFeature"))),
+                      1 === _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(e.getAttribute("InlineFeature"))),
                     (t.userSymbols.remoteWCS =
-                      1 == _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(e.getAttribute("RemoteWCS")));
+                      1 === _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(e.getAttribute("RemoteWCS")));
                 },
                 DescribeLayer: function (e, t) {
                   this.readers.wms.DescribeLayer.apply(this, [e, t]);
@@ -18416,7 +18418,7 @@ import * as Cesium from "cesium";
               this.yx = GeoGlobe.Util.extend(t, this.yx);
             },
             read: function (e) {
-              "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 == e.nodeType && (e = e.documentElement);
+              "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 === e.nodeType && (e = e.documentElement);
               var t = {};
               return this.readNode(e, t), (t.version = this.version), t;
             },
@@ -18670,7 +18672,7 @@ import * as Cesium from "cesium";
               this.yx = GeoGlobe.Util.extend(t, this.yx);
             },
             read: function (e) {
-              "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 == e.nodeType && (e = e.documentElement);
+              "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 === e.nodeType && (e = e.documentElement);
               var t = {};
               return this.readNode(e, t), (t.version = this.version), t;
             },
@@ -18834,7 +18836,7 @@ import * as Cesium from "cesium";
               GeoGlobe.Format.XML.prototype.initialize.apply(this, [e]);
             },
             read: function (e) {
-              "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 == e.nodeType && (e = e.documentElement);
+              "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 === e.nodeType && (e = e.documentElement);
               var t = {};
               return this.readNode(e, t), t;
             },
@@ -19027,7 +19029,7 @@ import * as Cesium from "cesium";
               );
             },
             read: function (e) {
-              "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 == e.nodeType && (e = e.documentElement);
+              "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 === e.nodeType && (e = e.documentElement);
               var t = {};
               return this.readNode(e, t), t;
             },
@@ -19135,7 +19137,7 @@ import * as Cesium from "cesium";
                       },
                     }),
                     i = e.value;
-                  return "string" == typeof i ? t.appendChild(this.getXMLDoc().createCDATASection(e.value)) : t.appendChild(i), t;
+                  return "string" === typeof i ? t.appendChild(this.getXMLDoc().createCDATASection(e.value)) : t.appendChild(i), t;
                 },
                 Reference: function (e) {
                   var t = this.createElementNSPlus("wps:Reference", {
@@ -19234,7 +19236,7 @@ import * as Cesium from "cesium";
                         case 4:
                           t.complexData.value += i.nodeValue;
                       }
-                  else for (i = e.firstChild; i; i = i.nextSibling) 1 == i.nodeType && (t.complexData.value = i);
+                  else for (i = e.firstChild; i; i = i.nextSibling) 1 === i.nodeType && (t.complexData.value = i);
                 },
                 BoundingBox: function (e, t) {
                   (t.boundingBoxData = {
@@ -19260,7 +19262,7 @@ import * as Cesium from "cesium";
             },
             defaultPrefix: "ogc",
             read: function (e) {
-              "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e]));
+              "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e]));
               var t = {
                 exceptionReport: null,
               };
@@ -19322,7 +19324,7 @@ import * as Cesium from "cesium";
                       var o = e[t.type];
                       if (void 0 !== o) {
                         var a = t.value;
-                        t.type == GeoGlobe.Filter.Comparison.LIKE &&
+                        t.type === GeoGlobe.Filter.Comparison.LIKE &&
                           ((a = a
                             .replace(/%/g, "\\%")
                             .replace(/\\\\\.(\*)?/g, function (e, t) {
@@ -19362,13 +19364,13 @@ import * as Cesium from "cesium";
             tagName: "NETWORK_Capabilities",
             read: function (e) {
               var t;
-              "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e]));
+              "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e]));
               var i = {};
-              return (t = e.nodeName != this.tagName ? e.getElementsByTagName(this.tagName) : [e]).length > 0 && this.runChildNodes(i, t[0]), i;
+              return (t = e.nodeName !== this.tagName ? e.getElementsByTagName(this.tagName) : [e]).length > 0 && this.runChildNodes(i, t[0]), i;
             },
             runChildNodes: function (e, t, i) {
               for (var r, n, o = t.childNodes, a = 0; a < o.length; ++a)
-                1 == (r = o[a]).nodeType && (n = i ? this["read_" + i + "_" + r.nodeName] : this["read_" + r.nodeName]) && n.apply(this, [e, r]);
+                1 === (r = o[a]).nodeType && (n = i ? this["read_" + i + "_" + r.nodeName] : this["read_" + r.nodeName]) && n.apply(this, [e, r]);
             },
             read_Service: function (e, t) {
               var i = {};
@@ -19497,19 +19499,19 @@ import * as Cesium from "cesium";
                   for (var tabort = oldniva - niva + 1, j = 0; j < tabort; j++) objname = objname.substring(0, objname.lastIndexOf("."));
                 objname += "." + tagnamn;
                 var pobject = objname.substring(0, objname.lastIndexOf("."));
-                "object" != eval("typeof " + pobject) && (preeval += pobject + "={value:" + pobject + "};\n");
+                "object" !== eval("typeof " + pobject) && (preeval += pobject + "={value:" + pobject + "};\n");
                 var objlast = objname.substring(objname.lastIndexOf(".") + 1),
                   already = !1;
-                for (k in eval(pobject)) k == objlast && (already = !0);
-                for (var onlywhites = !0, s = 0; s < rest.length; s += 3) "%" != rest.charAt(s) && (onlywhites = !1);
-                "" == rest || onlywhites
+                for (k in eval(pobject)) k === objlast && (already = !0);
+                for (var onlywhites = !0, s = 0; s < rest.length; s += 3) "%" !== rest.charAt(s) && (onlywhites = !1);
+                "" === rest || onlywhites
                   ? (rest = "{}")
-                  : rest / 1 != rest &&
+                  : rest / 1 !== rest &&
                     ((rest = "'" + rest.replace(/\'/g, "\\'") + "'"),
                     (rest = rest.replace(/\*\$\*\*\*/g, "</")),
                     (rest = rest.replace(/\*\$\*\*/g, "<")),
                     (rest = rest.replace(/\*\*\$\*/g, ">"))),
-                  "'" == rest.charAt(0) && (rest = "unescape(" + rest + ")"),
+                  "'" === rest.charAt(0) && (rest = "unescape(" + rest + ")"),
                   already && !eval(objname + ".sort") && (preeval += objname + "=[" + objname + "];\n");
                 var before = "=";
                 (after = ""), already && ((before = ".push("), (after = ")"));
@@ -19522,11 +19524,11 @@ import * as Cesium from "cesium";
               var r = "";
               for (var n in (e.sort ? (r += "[\n") : (r += "{\n"), e))
                 e.sort || (r += n + ":"),
-                  "object" == _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(e[n])
+                  "object" === _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(e[n])
                     ? (r += this.show_json_structure(e[n], !1, 1))
-                    : "function" == typeof e[n]
+                    : "function" === typeof e[n]
                     ? (r += e[n] + "")
-                    : "string" != typeof e[n]
+                    : "string" !== typeof e[n]
                     ? (r += e[n] + ",\n")
                     : (r += "'" + e[n].replace(/\'/g, "\\'").replace(/\n/g, "\\n").replace(/\t/g, "\\t").replace(/\r/g, "\\r") + "',\n");
               if ((e.sort ? (r += "],\n") : (r += "},\n"), !i)) {
@@ -19541,9 +19543,9 @@ import * as Cesium from "cesium";
                   for (var s = 0; s < a; s++) tabs += "\t";
                   (r += tabs + o[n] + "\n"), (o[n].indexOf("{") >= 0 || o[n].indexOf("[") >= 0) && a++;
                 }
-                "html" == t &&
+                "html" === t &&
                   (r = (r = r.replace(/</g, "&lt;").replace(/>/g, "&gt;")).replace(/\n/g, "<BR>").replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;")),
-                  "compact" == t && (r = r.replace(/\n/g, "").replace(/\t/g, ""));
+                  "compact" === t && (r = r.replace(/\n/g, "").replace(/\t/g, ""));
               }
               return r;
             },
@@ -19621,7 +19623,7 @@ import * as Cesium from "cesium";
               GeoGlobe.Format.XML.prototype.initialize.apply(this, [e]);
             },
             read: function (e) {
-              "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 == e.nodeType && (e = e.documentElement);
+              "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 === e.nodeType && (e = e.documentElement);
               var t = {};
               return this.readNode(e, t), t;
             },
@@ -19630,7 +19632,7 @@ import * as Cesium from "cesium";
                 GetRecordsResponse: function (e, t) {
                   (t.records = []), this.readChildNodes(e, t);
                   var i = this.getAttributeNS(e, "", "version");
-                  "" != i && (t.version = i);
+                  "" !== i && (t.version = i);
                 },
                 RequestId: function (e, t) {
                   t.RequestId = this.getChildValue(e);
@@ -19638,12 +19640,12 @@ import * as Cesium from "cesium";
                 SearchStatus: function (e, t) {
                   t.SearchStatus = {};
                   var i = this.getAttributeNS(e, "", "timestamp");
-                  "" != i && (t.SearchStatus.timestamp = i);
+                  "" !== i && (t.SearchStatus.timestamp = i);
                 },
                 SearchResults: function (e, t) {
                   this.readChildNodes(e, t);
                   for (var i = e.attributes, r = {}, n = 0, o = i.length; n < o; ++n)
-                    "numberOfRecordsMatched" == i[n].name || "numberOfRecordsReturned" == i[n].name || "nextRecord" == i[n].name
+                    "numberOfRecordsMatched" === i[n].name || "numberOfRecordsReturned" === i[n].name || "nextRecord" === i[n].name
                       ? (r[i[n].name] = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(i[n].nodeValue))
                       : (r[i[n].name] = i[n].nodeValue);
                   t.SearchResults = r;
@@ -19687,7 +19689,7 @@ import * as Cesium from "cesium";
                   var i = e.localName || e.nodeName.split(":").pop();
                   GeoGlobe.Util.isArray(t[i]) || (t[i] = []);
                   for (var r = {}, n = e.attributes, o = 0, a = n.length; o < a; ++o) r[n[o].name] = n[o].nodeValue;
-                  (r.value = this.getChildValue(e)), "" != r.value && t[i].push(r);
+                  (r.value = this.getChildValue(e)), "" !== r.value && t[i].push(r);
                 },
               },
               dct: {
@@ -19831,23 +19833,23 @@ import * as Cesium from "cesium";
                 o = 9;
               function a(e) {
                 var t = e.localName;
-                return null == t && (t = e.baseName), (null != t && "" != t) || (t = e.nodeName), t;
+                return null === t && (t = e.baseName), (null !== t && "" !== t) || (t = e.nodeName), t;
               }
               function s(e) {
-                return "string" == typeof e
+                return "string" === typeof e
                   ? e.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;")
                   : e;
               }
               function x(e, t, i, r) {
                 for (var n = 0; n < e.length; n++) {
                   var o = e[n];
-                  if ("string" == typeof o) {
-                    if (o == r) break;
+                  if ("string" === typeof o) {
+                    if (o === r) break;
                   } else if (o instanceof RegExp) {
                     if (o.test(r)) break;
-                  } else if ("function" == typeof o && o(t, i, r)) break;
+                  } else if ("function" === typeof o && o(t, i, r)) break;
                 }
-                return n != e.length;
+                return n !== e.length;
               }
               function l(t, i, r) {
                 switch (e.arrayAccessForm) {
@@ -19862,7 +19864,7 @@ import * as Cesium from "cesium";
                   r = t[5].split(".");
                 if ((i.setHours(t[3], t[4], r[0]), r.length > 1 && i.setMilliseconds(r[1]), t[6] && t[7])) {
                   var n = 60 * t[6] + Number(t[7]);
-                  (n = 0 + ("-" == (/\d\d-\d\d:\d\d$/.test(e) ? "-" : "+") ? -1 * n : n)), i.setMinutes(i.getMinutes() - n - i.getTimezoneOffset());
+                  (n = 0 + ("-" === (/\d\d-\d\d:\d\d$/.test(e) ? "-" : "+") ? -1 * n : n)), i.setMinutes(i.getMinutes() - n - i.getTimezoneOffset());
                 } else
                   -1 !== e.indexOf("Z", e.length - 1) &&
                     (i = new Date(
@@ -19871,27 +19873,27 @@ import * as Cesium from "cesium";
                 return i;
               }
               function u(i, r, n, o) {
-                return !(r == t && e.xmlElementsFilter.length > 0) || x(e.xmlElementsFilter, i, n, o);
+                return !(r === t && e.xmlElementsFilter.length > 0) || x(e.xmlElementsFilter, i, n, o);
               }
               function h(s, f) {
-                if (s.nodeType == o) {
+                if (s.nodeType === o) {
                   for (var d = new Object(), g = s.childNodes, p = 0; p < g.length; p++) {
-                    if ((m = g.item(p)).nodeType == t) d[(b = a(m))] = h(m, b);
+                    if ((m = g.item(p)).nodeType === t) d[(b = a(m))] = h(m, b);
                   }
                   return d;
                 }
-                if (s.nodeType == t) {
+                if (s.nodeType === t) {
                   (d = new Object()).__cnt = 0;
                   for (g = s.childNodes, p = 0; p < g.length; p++) {
                     var m,
                       b = a((m = g.item(p)));
-                    if (m.nodeType != n) {
+                    if (m.nodeType !== n) {
                       var v = f + "." + b;
                       u(d, m.nodeType, b, v) &&
                         (d.__cnt++,
-                        null == d[b]
+                        null === d[b]
                           ? ((d[b] = h(m, v)), l(d, b, v))
-                          : (null != d[b] && (d[b] instanceof Array || ((d[b] = [d[b]]), l(d, b, v))), (d[b][d[b].length] = h(m, v))));
+                          : (null !== d[b] && (d[b] instanceof Array || ((d[b] = [d[b]]), l(d, b, v))), (d[b][d[b].length] = h(m, v))));
                     }
                   }
                   for (var C = 0; C < s.attributes.length; C++) {
@@ -19900,13 +19902,13 @@ import * as Cesium from "cesium";
                   }
                   var _ = s.prefix;
                   return (
-                    null != _ && "" != _ && (d.__cnt++, (d.__prefix = _)),
-                    null != d["#text"] &&
+                    null !== _ && "" !== _ && (d.__cnt++, (d.__prefix = _)),
+                    null !== d["#text"] &&
                       ((d.__text = d["#text"]),
                       d.__text instanceof Array && (d.__text = d.__text.join("\n")),
                       e.stripWhitespaces && (d.__text = d.__text.trim()),
                       delete d["#text"],
-                      "property" == e.arrayAccessForm && delete d["#text_asArray"],
+                      "property" === e.arrayAccessForm && delete d["#text_asArray"],
                       (d.__text = (function (t, i, r) {
                         if (e.datetimeAccessFormPaths.length > 0) {
                           var n = r.split(".#")[0];
@@ -19914,35 +19916,35 @@ import * as Cesium from "cesium";
                         }
                         return t;
                       })(d.__text, b, f + "." + b))),
-                    null != d["#cdata-section"] &&
+                    null !== d["#cdata-section"] &&
                       ((d.__cdata = d["#cdata-section"]),
                       delete d["#cdata-section"],
-                      "property" == e.arrayAccessForm && delete d["#cdata-section_asArray"]),
-                    0 == d.__cnt && "text" == e.emptyNodeForm
+                      "property" === e.arrayAccessForm && delete d["#cdata-section_asArray"]),
+                    0 === d.__cnt && "text" === e.emptyNodeForm
                       ? (d = "")
-                      : 1 == d.__cnt && null != d.__text
+                      : 1 === d.__cnt && null !== d.__text
                       ? (d = d.__text)
-                      : 1 != d.__cnt || null == d.__cdata || e.keepCData
+                      : 1 !== d.__cnt || null === d.__cdata || e.keepCData
                       ? d.__cnt > 1 &&
-                        null != d.__text &&
+                        null !== d.__text &&
                         e.skipEmptyTextNodesForObj &&
-                        ((e.stripWhitespaces && "" == d.__text) || "" == d.__text.trim()) &&
+                        ((e.stripWhitespaces && "" === d.__text) || "" === d.__text.trim()) &&
                         delete d.__text
                       : (d = d.__cdata),
                     delete d.__cnt,
                     !e.enableToStringFunc ||
-                      (null == d.__text && null == d.__cdata) ||
+                      (null === d.__text && null === d.__cdata) ||
                       (d.toString = function () {
-                        return (null != this.__text ? this.__text : "") + (null != this.__cdata ? this.__cdata : "");
+                        return (null !== this.__text ? this.__text : "") + (null !== this.__cdata ? this.__cdata : "");
                       }),
                     d
                   );
                 }
-                if (s.nodeType == i || s.nodeType == r) return s.nodeValue;
+                if (s.nodeType === i || s.nodeType === r) return s.nodeValue;
               }
               function f(t, i, r, n) {
-                var o = "<" + (null != t && null != t.__prefix ? t.__prefix + ":" : "") + i;
-                if (null != r)
+                var o = "<" + (null !== t && null !== t.__prefix ? t.__prefix + ":" : "") + i;
+                if (null !== r)
                   for (var a = 0; a < r.length; a++) {
                     var x = r[a],
                       l = t[x];
@@ -19953,13 +19955,13 @@ import * as Cesium from "cesium";
                 return o + (n ? "/>" : ">");
               }
               function d(e, t) {
-                return "</" + (null != e.__prefix ? e.__prefix + ":" : "") + t + ">";
+                return "</" + (null !== e.__prefix ? e.__prefix + ":" : "") + t + ">";
               }
               function g(t, i) {
                 return (
-                  ("property" == e.arrayAccessForm && ((n = "_asArray"), -1 !== (r = i.toString()).indexOf(n, r.length - n.length))) ||
-                  0 == i.toString().indexOf(e.attributePrefix) ||
-                  0 == i.toString().indexOf("__") ||
+                  ("property" === e.arrayAccessForm && ((n = "_asArray"), -1 !== (r = i.toString()).indexOf(n, r.length - n.length))) ||
+                  0 === i.toString().indexOf(e.attributePrefix) ||
+                  0 === i.toString().indexOf("__") ||
                   t[i] instanceof Function
                 );
                 var r, n;
@@ -19972,7 +19974,7 @@ import * as Cesium from "cesium";
               function m(t) {
                 var i = [];
                 if (t instanceof Object)
-                  for (var r in t) -1 == r.toString().indexOf("__") && 0 == r.toString().indexOf(e.attributePrefix) && i.push(r);
+                  for (var r in t) -1 === r.toString().indexOf("__") && 0 === r.toString().indexOf(e.attributePrefix) && i.push(r);
                 return i;
               }
               function b(t) {
@@ -19983,10 +19985,10 @@ import * as Cesium from "cesium";
                   t instanceof Object
                     ? (n +=
                         ((r = ""),
-                        null != (i = t).__cdata && (r += "<![CDATA[" + i.__cdata + "]]>"),
-                        null != i.__text && (e.escapeMode ? (r += s(i.__text)) : (r += i.__text)),
+                        null !== (i = t).__cdata && (r += "<![CDATA[" + i.__cdata + "]]>"),
+                        null !== i.__text && (e.escapeMode ? (r += s(i.__text)) : (r += i.__text)),
                         r))
-                    : null != t && (e.escapeMode ? (n += s(t)) : (n += t)),
+                    : null !== t && (e.escapeMode ? (n += s(t)) : (n += t)),
                   n
                 );
               }
@@ -19995,7 +19997,7 @@ import * as Cesium from "cesium";
               }
               function C(e, t, i, r) {
                 var n = "";
-                if (0 == e.length) n += f(e, t, i, !0);
+                if (0 === e.length) n += f(e, t, i, !0);
                 else for (var o = 0; o < e.length; o++) (n += f(e[o], t, m(e[o]), !1)), (n += y(e[o], v(r, t))), (n += d(e[o], t));
                 return n;
               }
@@ -20008,17 +20010,17 @@ import * as Cesium from "cesium";
                   for (var s in t)
                     if (
                       !g(t, s) &&
-                      ("" == i ||
-                        ((r = t), (n = s), (o = v(i, s)), 0 == e.jsonPropertiesFilter.length || "" == o || x(e.jsonPropertiesFilter, r, n, o)))
+                      ("" === i ||
+                        ((r = t), (n = s), (o = v(i, s)), 0 === e.jsonPropertiesFilter.length || "" === o || x(e.jsonPropertiesFilter, r, n, o)))
                     ) {
                       var l = t[s],
                         c = m(l);
-                      if (null == l || null == l) a += f(l, s, c, !0);
+                      if (null === l || null === l) a += f(l, s, c, !0);
                       else if (l instanceof Object)
                         if (l instanceof Array) a += C(l, s, c, i);
                         else if (l instanceof Date) (a += f(l, s, c, !1)), (a += l.toISOString()), (a += d(l, s));
                         else {
-                          p(l) > 0 || null != l.__text || null != l.__cdata
+                          p(l) > 0 || null !== l.__text || null !== l.__cdata
                             ? ((a += f(l, s, c, !1)), (a += y(l, v(i, s))), (a += d(l, s)))
                             : (a += f(l, s, c, !0));
                         }
@@ -20040,31 +20042,31 @@ import * as Cesium from "cesium";
                       n = null;
                     }
                   try {
-                    (t = r.parseFromString(e, "text/xml")), null != n && t.getElementsByTagNameNS(n, "parsererror").length > 0 && (t = null);
+                    (t = r.parseFromString(e, "text/xml")), null !== n && t.getElementsByTagNameNS(n, "parsererror").length > 0 && (t = null);
                   } catch (e) {
                     t = null;
                   }
                 } else
-                  0 == e.indexOf("<?") && (e = e.substr(e.indexOf("?>") + 2)),
+                  0 === e.indexOf("<?") && (e = e.substr(e.indexOf("?>") + 2)),
                     ((t = new ActiveXObject("Microsoft.XMLDOM")).async = "false"),
                     t.loadXML(e);
                 return t;
               }),
                 (this.asArray = function (e) {
-                  return void 0 === e || null == e ? [] : e instanceof Array ? e : [e];
+                  return void 0 === e || null === e ? [] : e instanceof Array ? e : [e];
                 }),
                 (this.toXmlDateTime = function (e) {
-                  return e instanceof Date ? e.toISOString() : "number" == typeof e ? new Date(e).toISOString() : null;
+                  return e instanceof Date ? e.toISOString() : "number" === typeof e ? new Date(e).toISOString() : null;
                 }),
                 (this.asDateTime = function (e) {
-                  return "string" == typeof e ? c(e) : e;
+                  return "string" === typeof e ? c(e) : e;
                 }),
                 (this.xml2json = function (e) {
                   return h(e);
                 }),
                 (this.xml_str2json = function (e) {
                   var t = this.parseXmlString(e);
-                  return null != t ? this.xml2json(t) : null;
+                  return null !== t ? this.xml2json(t) : null;
                 }),
                 (this.json2xml_str = function (e) {
                   return y(e, "");
@@ -20154,7 +20156,7 @@ import * as Cesium from "cesium";
                   scope: this,
                   success: function (e) {
                     var i = this._format.read(e.responseText);
-                    if ("string" != typeof i.exceptionInfo) {
+                    if ("string" !== typeof i.exceptionInfo) {
                       var r = new GeoGlobe.Query.RoutesResult(i),
                         n = r.routes,
                         o = new GeoGlobe.Format.GeoJSON().write(n),
@@ -20180,7 +20182,7 @@ import * as Cesium from "cesium";
                   scope: this,
                   success: function (e) {
                     var i = this._format.read(e.responseText);
-                    "string" != typeof i.exceptionInfo ? ((i = new GeoGlobe.Query.RouteInfoResult(i)), t(i)) : t(i);
+                    "string" !== typeof i.exceptionInfo ? ((i = new GeoGlobe.Query.RouteInfoResult(i)), t(i)) : t(i);
                   },
                   failure: i,
                 });
@@ -20194,7 +20196,7 @@ import * as Cesium from "cesium";
             read: function (e) {
               var t = {},
                 i = [];
-              if (("string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 == e.nodeType)) {
+              if (("string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e])), e && 9 === e.nodeType)) {
                 i = [];
                 var r = GeoGlobe.Format.XML.prototype.getChildEl.apply(this, [e]).nodeName;
                 if ("ServiceExceptionReport" === r) {
@@ -20248,7 +20250,7 @@ import * as Cesium from "cesium";
                   var i = GeoGlobe.Format.XML.prototype.getElementsByTagNameNS(e, "*", "LineString")[0];
                   if (i) {
                     var r = GeoGlobe.Format.XML.prototype.getChildValue.apply(this, [i]);
-                    if ("string" == typeof r && r.length > 0) {
+                    if ("string" === typeof r && r.length > 0) {
                       for (var n = r.split(" "), o = [], a = 0, s = n.length; a < s; a++) {
                         var x = n[a].split(",");
                         o.push(new GeoGlobe.Geometry.Point(new Number(x[0]), new Number(x[1])));
@@ -20315,7 +20317,7 @@ import * as Cesium from "cesium";
                   var i = GeoGlobe.Format.XML.prototype.getElementsByTagNameNS(e, "*", "LineString")[0];
                   if (i) {
                     var r = GeoGlobe.Format.XML.prototype.getChildValue.apply(this, [i]);
-                    if ("string" == typeof r && r.length > 0) {
+                    if ("string" === typeof r && r.length > 0) {
                       for (var n = r.split(" "), o = [], a = 0, s = n.length; a < s; a++) {
                         var x = n[a].split(",");
                         o.push(new GeoGlobe.Geometry.Point(new Number(x[0]), new Number(x[1])));
@@ -20418,7 +20420,7 @@ import * as Cesium from "cesium";
               (this.name = e), (this.url = t), GeoGlobe.Util.extend(this, i);
             },
             getCapabilities: function (e, t) {
-              "function" != typeof t &&
+              "function" !== typeof t &&
                 (t = function () {
                   alert("公交服务请求失败，请检查服务是否正常运行或请求地址是否正确。\n请求地址：" + this.url + "\n操作类型：GetCapabilities");
                 }),
@@ -20430,7 +20432,7 @@ import * as Cesium from "cesium";
                   scope: this,
                   async: !1,
                   success: function (t) {
-                    "function" == typeof e && e(t);
+                    "function" === typeof e && e(t);
                   },
                   failure: t,
                 });
@@ -20748,7 +20750,7 @@ import * as Cesium from "cesium";
               if (null === e.parameterInfo || void 0 === e.parameterInfo || "" === e.parameterInfo) throw "Error!Not parameterInfo for bus query.";
               (r.networkName = e.networkName), (r.PARAMETERINFO = "");
               for (var n = 0; n < e.parameterInfo.length; n++)
-                (r.PARAMETERINFO += e.parameterInfo[n].toString()), n != e.parameterInfo.length - 1 && (r.PARAMETERINFO += "_");
+                (r.PARAMETERINFO += e.parameterInfo[n].toString()), n !== e.parameterInfo.length - 1 && (r.PARAMETERINFO += "_");
               null !== e.service && void 0 !== e.service && (r.SERVICE = e.service),
                 null !== e.version && void 0 !== e.version && (r.VERSION = e.version),
                 GeoGlobe.Request.GET({
@@ -21002,7 +21004,7 @@ import * as Cesium from "cesium";
                     SEARCHTYPE: 2,
                   },
                   function (e) {
-                    if (0 != e.length) {
+                    if (0 !== e.length) {
                       var o = e[0].geometry.x + " " + e[0].geometry.y;
                       r.queryKeyWord(
                         {
@@ -21012,7 +21014,7 @@ import * as Cesium from "cesium";
                           SEARCHTYPE: 2,
                         },
                         function (e) {
-                          if (0 != e.length) {
+                          if (0 !== e.length) {
                             var t = e[0].geometry.x + " " + e[0].geometry.y;
                             n = r._queryTransferScheme(o, t, i);
                           } else alert("没有查询到终点");
@@ -21035,7 +21037,7 @@ import * as Cesium from "cesium";
                     var s = new GeoGlobe.Format.BusCapabilities().read(a);
                     if (s.capability) {
                       var x = s.capability.networks[0];
-                      if (((r.networkName = x), "string" == typeof e && "string" == typeof t)) n = r._queryByName(e, t, i);
+                      if (((r.networkName = x), "string" === typeof e && "string" === typeof t)) n = r._queryByName(e, t, i);
                       else {
                         var l = e.lng + " " + e.lat,
                           c = t.lng + " " + t.lat;
@@ -21305,9 +21307,9 @@ import * as Cesium from "cesium";
             _read_trueName: function (e) {
               var t = [];
               if (e.priv && e.priv.responseText) {
-                if (null == this.format) return null;
+                if (null === this.format) return null;
                 var i = this.format.getXMLDoc().getElementsByTagName("trueName");
-                if (null == i || 0 == i.length) return null;
+                if (null === i || 0 === i.length) return null;
                 for (var r = 0; r < i.length; r++) t.push(i[r].text);
                 return t;
               }
@@ -21439,7 +21441,7 @@ import * as Cesium from "cesium";
                 for (var r = {}, n = [], o = e[i].childNodes, a = 0; a < o.length; a++) {
                   var s = {};
                   (s.layerName = o[a].parentNode.nodeName),
-                    "Microsoft Internet Explorer" == navigator.appName
+                    "Microsoft Internet Explorer" === navigator.appName
                       ? (s.result = this._analysis_StatisticsResult_results_result_IE(o[a]))
                       : (s.result = this._analysis_StatisticsResult_results_result_google(o[a])),
                     n.push(s);
@@ -21451,7 +21453,7 @@ import * as Cesium from "cesium";
             _analysis_StatisticsResult_results_result_IE: function (e) {
               var t = {},
                 i = 0;
-              "Key" == e.childNodes[0].nodeName && ((t.Key = e.childNodes[0].text), (i = 1));
+              "Key" === e.childNodes[0].nodeName && ((t.Key = e.childNodes[0].text), (i = 1));
               for (var r = [], n = []; i < e.childNodes.length; i++) {
                 var o = {},
                   a = {};
@@ -21462,7 +21464,7 @@ import * as Cesium from "cesium";
             _analysis_StatisticsResult_results_result_google: function (e) {
               var t = {},
                 i = 0;
-              "Key" == e.childNodes[0].nodeName && ((t.Key = e.childNodes[0].innerHTML), (i = 1));
+              "Key" === e.childNodes[0].nodeName && ((t.Key = e.childNodes[0].innerHTML), (i = 1));
               for (var r = [], n = []; i < e.childNodes.length; i++) {
                 var o = {},
                   a = {};
@@ -21530,7 +21532,7 @@ import * as Cesium from "cesium";
             wfsns: "http://www.opengis.net/wfs",
             featureCollection: "FeatureCollection",
             read: function (e) {
-              "string" == typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e]));
+              "string" === typeof e && (e = GeoGlobe.Format.XML.prototype.read.apply(this, [e]));
               var t = e.documentElement;
               return {
                 numberOfFeatures: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_7___default()(t.getAttribute("numberOfFeatures")),
@@ -21563,13 +21565,13 @@ import * as Cesium from "cesium";
             },
             getCategoryByName: function (e, t, i) {
               var r = this.getCommonParams();
-              "string" == typeof e && 0 !== e.length && (r.categoryName = e),
+              "string" === typeof e && 0 !== e.length && (r.categoryName = e),
                 (i = i || this.failFn),
                 GeoGlobe.Function.bind(this._requestCategory, this)(r, t, i);
             },
             getCategoryByCode: function (e, t, i) {
               var r = this.getCommonParams();
-              "number" == typeof e && (r.categoryCode = e), GeoGlobe.Function.bind(this._requestCategory, this)(r, t, i);
+              "number" === typeof e && (r.categoryCode = e), GeoGlobe.Function.bind(this._requestCategory, this)(r, t, i);
             },
             getAllCategory: function (e, t) {
               var i = this.getCommonParams();
@@ -21651,10 +21653,10 @@ import * as Cesium from "cesium";
                   (n.isBrief = e[i].isBrief),
                   (n.score = e[i].score),
                   e[i].addressComponent.street && (o = e[i].addressComponent.street),
-                  0 == n.isBrief && (n.addressComponent = this._analysis_GeoCodeResult_results_result_address(e[i].addressComponent, n.resultType)),
+                  0 === n.isBrief && (n.addressComponent = this._analysis_GeoCodeResult_results_result_address(e[i].addressComponent, n.resultType)),
                   (n.poiArray = this._analysispoiArray(e[i].poiArray)),
                   e[i].location && (n.location = e[i].location),
-                  0 == n.precise && (n.referenceAddressArray = e[i].referenceAddressArray),
+                  0 === n.precise && (n.referenceAddressArray = e[i].referenceAddressArray),
                   o && (n.street_path = o),
                   t.push(n);
               }
@@ -21687,7 +21689,7 @@ import * as Cesium from "cesium";
                     a = null;
                   o.rings || o.paths
                     ? ((a = this._getGeometry(o)), (i.geometry = a))
-                    : "number" == typeof o.x && "number" == typeof o.y && (i.geometry = this._getGeometry(o));
+                    : "number" === typeof o.x && "number" === typeof o.y && (i.geometry = this._getGeometry(o));
                 }
                 e.subordinate && (i.subordinate = e.subordinate),
                   e.zipCode && (i.zipCode = e.zipCode),
@@ -21699,7 +21701,7 @@ import * as Cesium from "cesium";
               for (var t = [], i = 0, r = e.length; i < r; i++) {
                 var n = {};
                 for (var o in e[i]) n[o] = e[i][o];
-                if ("" != n.geometry && null != n.geometry) {
+                if ("" !== n.geometry && null !== n.geometry) {
                   var a = this.format.read(n.geometry);
                   n.geometry = this._getGeometry(a);
                 }
@@ -21710,7 +21712,7 @@ import * as Cesium from "cesium";
             _analysisLocation: function (e) {},
             _getGeometry: function (e) {
               for (var t in e) {
-                if ("spatialReference" == t) return;
+                if ("spatialReference" === t) return;
                 return (e =
                   e.hasOwnProperty("x") && e.hasOwnProperty("y")
                     ? new GeoGlobe.Geometry.Point(e.x, e.y)
@@ -21755,7 +21757,7 @@ import * as Cesium from "cesium";
               },
             },
             failFn: function (e) {
-              "string" == typeof e && alert(e), alert("对不起，查询请求失败！请检查地址匹配服务是否正常运行。\n当前服务地址为：" + this.url);
+              "string" === typeof e && alert(e), alert("对不起，查询请求失败！请检查地址匹配服务是否正常运行。\n当前服务地址为：" + this.url);
             },
             CLASS_NAME: "GeoGlobe.Query.GeoCodingQuery.v1",
           })),
@@ -21764,22 +21766,22 @@ import * as Cesium from "cesium";
               var r = this.getCommonParams({
                 request: "GeoCoder",
               });
-              if ("string" == typeof e.address) r.address = e.address;
+              if ("string" === typeof e.address) r.address = e.address;
               else if (GeoGlobe.Util.isArray(e.address)) {
                 for (var n = "", o = 0; o < e.address.length; o++) n += e.address[o] + ",";
                 (n = n.substr(0, n.length - 1)), (r.address = n);
-              } else if (null == e.address || null == e.address) throw "address是必选参数！";
-              if (("number" == typeof e.categoryCode && (r.categoryCode = e.categoryCode), e.extent instanceof GeoGlobe.LngLatBounds))
+              } else if (null === e.address || null === e.address) throw "address是必选参数！";
+              if (("number" === typeof e.categoryCode && (r.categoryCode = e.categoryCode), e.extent instanceof GeoGlobe.LngLatBounds))
                 r.bbox = e.extent.toBBOX(null, !0);
               else if (e.extent instanceof GeoGlobe.Geometry.Polygon) {
                 for (var a = e.extent, s = [], x = ((o = 0), a.components.length); o < x; o++)
                   for (var l = a.components[o].components, c = 0; c < l.length; c++) s.push(l[c].toShortString());
                 r.bbox = s.join(",");
               }
-              "boolean" == typeof e.fuzzyMatch && (r.fuzzyMatch = e.fuzzyMatch),
-                "string" == typeof e.resultType && (r.resultType = e.resultType),
-                "number" == typeof e.maxCount && (r.maxCount = e.maxCount),
-                "number" == typeof e.startPosition && (r.startPosition = e.startPosition),
+              "boolean" === typeof e.fuzzyMatch && (r.fuzzyMatch = e.fuzzyMatch),
+                "string" === typeof e.resultType && (r.resultType = e.resultType),
+                "number" === typeof e.maxCount && (r.maxCount = e.maxCount),
+                "number" === typeof e.startPosition && (r.startPosition = e.startPosition),
                 GeoGlobe.loadURL(
                   this.url,
                   r,
@@ -21787,7 +21789,7 @@ import * as Cesium from "cesium";
                   function (e) {
                     try {
                       var i = this.format.read(e.responseText);
-                      if ("result" == r.resultType) var n = this._parseQueryResultToFeature(i);
+                      if ("result" === r.resultType) var n = this._parseQueryResultToFeature(i);
                       else n = this._analysis_GeoCodeResult(i);
                     } catch (i) {
                       return void t(e.responseText);
@@ -21803,11 +21805,11 @@ import * as Cesium from "cesium";
               });
               if (!e.lonlat) throw "address是必选参数！请填写正确的数据类型！";
               (r.latlng = e.lonlat.lat + "," + e.lonlat.lng),
-                "number" == typeof e.tolerance && (r.tolerance = e.tolerance),
-                "string" == typeof e.unit && (r.unit = e.unit),
-                "string" == typeof e.resultType && (r.resultType = e.resultType),
-                "number" == typeof e.maxCount && (r.maxCount = e.maxCount),
-                "number" == typeof e.startPosition && (r.startPosition = e.startPosition),
+                "number" === typeof e.tolerance && (r.tolerance = e.tolerance),
+                "string" === typeof e.unit && (r.unit = e.unit),
+                "string" === typeof e.resultType && (r.resultType = e.resultType),
+                "number" === typeof e.maxCount && (r.maxCount = e.maxCount),
+                "number" === typeof e.startPosition && (r.startPosition = e.startPosition),
                 GeoGlobe.loadURL(
                   this.url,
                   r,
@@ -21815,7 +21817,7 @@ import * as Cesium from "cesium";
                   function (e) {
                     try {
                       var i = this.format.read(e.responseText);
-                      if ("result" == r.resultType) var n = this._parseQueryResultToFeature(i);
+                      if ("result" === r.resultType) var n = this._parseQueryResultToFeature(i);
                       else n = this._analysis_GeoCodeResult(i);
                     } catch (i) {
                       return void t(e.responseText);
@@ -21839,10 +21841,10 @@ import * as Cesium from "cesium";
                 this.addressesToLocations(
                   e,
                   GeoGlobe.Function.bind(function (r) {
-                    if ("OK" == r.status) {
+                    if ("OK" === r.status) {
                       e.resultType = "result";
                       var n = r.results[0].count;
-                      (null != e.maxCount && null != e.maxCount) || (e.maxCount = 3),
+                      (null !== e.maxCount && null !== e.maxCount) || (e.maxCount = 3),
                         (e.startPosition = (e.startPosition - 1) * e.maxCount + 1),
                         this.addressesToLocations(
                           e,
@@ -21870,10 +21872,10 @@ import * as Cesium from "cesium";
                 this.locationToAddresses(
                   e,
                   GeoGlobe.Function.bind(function (r) {
-                    if ("OK" == r.status) {
+                    if ("OK" === r.status) {
                       e.resultType = "result";
                       var n = r.results[0].count;
-                      (null != e.maxCount && null != e.maxCount) || (e.maxCount = 3),
+                      (null !== e.maxCount && null !== e.maxCount) || (e.maxCount = 3),
                         (e.startPosition = (e.startPosition - 1) * e.maxCount + 1),
                         this.locationToAddresses(
                           e,
@@ -21889,7 +21891,7 @@ import * as Cesium from "cesium";
             },
             _parseQueryResultToFeature: function (e) {
               var t = [];
-              if ("OK" == e.status && e.results)
+              if ("OK" === e.status && e.results)
                 for (var i = 0; i < e.results.length; i++) {
                   var r = e.results[i].result;
                   if (r)
@@ -21961,9 +21963,9 @@ import * as Cesium from "cesium";
               });
               if (
                 ((r.reverseMatch = !1),
-                "string" == typeof e.address && (r.keyword = e.address),
-                "number" == typeof e.categoryCode && (r.categoryCode = e.categoryCode),
-                !((null != e.address && null != e.address) || (null != e.categoryCode && null != e.categoryCode)))
+                "string" === typeof e.address && (r.keyword = e.address),
+                "number" === typeof e.categoryCode && (r.categoryCode = e.categoryCode),
+                !((null !== e.address && null !== e.address) || (null !== e.categoryCode && null !== e.categoryCode)))
               )
                 throw "address是必选参数！";
               if (e.extent instanceof GeoGlobe.LngLatBounds) r.bbox = e.extent.toBBOX(null, !0);
@@ -21977,17 +21979,17 @@ import * as Cesium from "cesium";
                   u = GeoGlobe.Format.XML.prototype.write.apply(this.filterFormat, [c]);
                 r.filter = u;
               }
-              "string" == typeof e.resultType && (r.resultType = e.resultType),
-                "statistics" == e.resultType && (r.statisticsLevel = e.statisticsLevel),
-                "number" == typeof e.maxCount && (r.maxCount = e.maxCount),
-                "number" == typeof e.startPosition && (r.startPosition = e.startPosition),
-                "boolean" == typeof e.semanticAnalysis && (r.semanticAnalysis = e.semanticAnalysis),
-                "boolean" == typeof e.customWeight && (r.customWeight = e.customWeight),
+              "string" === typeof e.resultType && (r.resultType = e.resultType),
+                "statistics" === e.resultType && (r.statisticsLevel = e.statisticsLevel),
+                "number" === typeof e.maxCount && (r.maxCount = e.maxCount),
+                "number" === typeof e.startPosition && (r.startPosition = e.startPosition),
+                "boolean" === typeof e.semanticAnalysis && (r.semanticAnalysis = e.semanticAnalysis),
+                "boolean" === typeof e.customWeight && (r.customWeight = e.customWeight),
                 this._setGeoCoderCommonProperty(r, e),
                 this._getCodingRequest(r, t, i);
             },
             _getCodingRequest: function (e, t, i) {
-              if ("get" == this.method)
+              if ("get" === this.method)
                 GeoGlobe.loadURL(
                   this.url,
                   e,
@@ -21995,7 +21997,7 @@ import * as Cesium from "cesium";
                   function (i) {
                     try {
                       var r = this.format.read(i.responseText);
-                      if ("result" == e.resultType) var n = this._parseQueryResultToFeature(r);
+                      if ("result" === e.resultType) var n = this._parseQueryResultToFeature(r);
                       else n = this._analysis_GeoCodeResult(r);
                     } catch (e) {
                       return void t(i.responseText);
@@ -22024,7 +22026,7 @@ import * as Cesium from "cesium";
               }
             },
             _setGeoCoderCommonProperty: function (e, t) {
-              "string" == typeof t.sortFields && (e.sortFields = t.sortFields), "string" == typeof t.scoreFilter && (e.scoreFilter = t.scoreFilter);
+              "string" === typeof t.sortFields && (e.sortFields = t.sortFields), "string" === typeof t.scoreFilter && (e.scoreFilter = t.scoreFilter);
             },
             locationToAddresses: function (e, t, i) {
               var r = this.getCommonParams({
@@ -22032,13 +22034,13 @@ import * as Cesium from "cesium";
               });
               if (((r.reverseMatch = !0), !e.lonlat)) throw "address是必选参数！请填写正确的数据类型！";
               (r.keyword = e.lonlat.lat + "," + e.lonlat.lng),
-                "number" == typeof e.tolerance && (r.tolerance = e.tolerance),
-                "string" == typeof e.unit && (r.unit = e.unit),
-                "string" == typeof e.resultType && (r.resultType = e.resultType),
-                "statistics" == e.resultType && (r.statisticsLevel = e.statisticsLevel),
-                "number" == typeof e.maxCount && (r.maxCount = e.maxCount),
-                "number" == typeof e.startPosition && (r.startPosition = e.startPosition),
-                "boolean" == typeof e.customWeight && (r.customWeight = e.customWeight),
+                "number" === typeof e.tolerance && (r.tolerance = e.tolerance),
+                "string" === typeof e.unit && (r.unit = e.unit),
+                "string" === typeof e.resultType && (r.resultType = e.resultType),
+                "statistics" === e.resultType && (r.statisticsLevel = e.statisticsLevel),
+                "number" === typeof e.maxCount && (r.maxCount = e.maxCount),
+                "number" === typeof e.startPosition && (r.startPosition = e.startPosition),
+                "boolean" === typeof e.customWeight && (r.customWeight = e.customWeight),
                 this._setGeoCoderCommonProperty(r, e),
                 this._getCodingRequest(r, t, i);
             },
@@ -22050,9 +22052,9 @@ import * as Cesium from "cesium";
               if (((r.reverseMatch = !1), GeoGlobe.Util.isArray(e.address))) {
                 for (var n = "", o = 0; o < e.address.length; o++) n += e.address[o] + ",";
                 (n = n.substr(0, n.length - 1)), (r.keywords = n);
-              } else if (null == e.address || null == e.address) throw "address是必选参数！";
+              } else if (null === e.address || null === e.address) throw "address是必选参数！";
               if (
-                ("number" == typeof e.singleKeywordResultCount && (r.singleKeywordResultCount = e.singleKeywordResultCount),
+                ("number" === typeof e.singleKeywordResultCount && (r.singleKeywordResultCount = e.singleKeywordResultCount),
                 e.filter instanceof GeoGlobe.Filter)
               ) {
                 var a = this.filterFormat.write(e.filter),
@@ -22072,9 +22074,9 @@ import * as Cesium from "cesium";
                 for (var n = "", o = 0; o < e.lonlats.length; o++) n += e.lonlats[o].lat + "," + e.lonlats[o].lng + ";";
                 (n = n.substr(0, n.length - 1)), (r.keywords = n);
               }
-              "number" == typeof e.tolerance && (r.tolerance = e.tolerance),
-                "string" == typeof e.unit && (r.unit = e.unit),
-                "number" == typeof e.singleKeywordResultCount && (r.singleKeywordResultCount = e.singleKeywordResultCount),
+              "number" === typeof e.tolerance && (r.tolerance = e.tolerance),
+                "string" === typeof e.unit && (r.unit = e.unit),
+                "number" === typeof e.singleKeywordResultCount && (r.singleKeywordResultCount = e.singleKeywordResultCount),
                 this._setGeoCoderCommonProperty(r, e),
                 this._getCodingRequest(r, t, i);
             },
@@ -22104,10 +22106,10 @@ import * as Cesium from "cesium";
                 this.addressesToLocations(
                   e,
                   GeoGlobe.Function.bind(function (r) {
-                    if ("OK" == r.status) {
+                    if ("OK" === r.status) {
                       e.resultType = "result";
                       var n = r.results[0].count;
-                      (null != e.maxCount && null != e.maxCount) || (e.maxCount = 3),
+                      (null !== e.maxCount && null !== e.maxCount) || (e.maxCount = 3),
                         (e.startPosition = (e.startPosition - 1) * e.maxCount + 1),
                         this.addressesToLocations(
                           e,
@@ -22135,10 +22137,10 @@ import * as Cesium from "cesium";
                 this.locationToAddresses(
                   e,
                   GeoGlobe.Function.bind(function (r) {
-                    if ("OK" == r.status) {
+                    if ("OK" === r.status) {
                       e.resultType = "result";
                       var n = r.results[0].count;
-                      (null != e.maxCount && null != e.maxCount) || (e.maxCount = 3),
+                      (null !== e.maxCount && null !== e.maxCount) || (e.maxCount = 3),
                         (e.startPosition = (e.startPosition - 1) * e.maxCount + 1),
                         this.locationToAddresses(
                           e,
@@ -22172,7 +22174,7 @@ import * as Cesium from "cesium";
             },
             _parseQueryResultToFeature: function (e) {
               var t = [];
-              if ("OK" == e.status && e.results)
+              if ("OK" === e.status && e.results)
                 for (var i = 0; i < e.results.length; i++) {
                   var r = e.results[i].result;
                   if (r)
@@ -22433,7 +22435,7 @@ import * as Cesium from "cesium";
             _getInsertFeatureString: function (e, t) {
               var i = "";
               for (var r in e.attributes)
-                "OID" != r &&
+                "OID" !== r &&
                   (i += GeoGlobe.String.format("<${tag}><![CDATA[${value}]]></${tag}>", {
                     value: e.attributes[r] ? e.attributes[r] : "",
                     tag: r,
@@ -22463,7 +22465,7 @@ import * as Cesium from "cesium";
             _getUpdatePropertyString: function (e) {
               var t = "";
               for (var i in e.data)
-                "OID" != i &&
+                "OID" !== i &&
                   e.data[i] &&
                   (t +=
                     "<wfs:Property><wfs:Name><![CDATA[" +
@@ -22574,7 +22576,7 @@ import * as Cesium from "cesium";
                   e,
                   this,
                   function (i) {
-                    if ("xml" == e.FORMAT) {
+                    if ("xml" === e.FORMAT) {
                       var r = {},
                         n = i.responseXML;
                       GeoGlobe.Function.bind(this.xmltoJson, this);
@@ -22582,7 +22584,7 @@ import * as Cesium from "cesium";
                       r.attributes = o.CTS_TransResult["cts:Coordinate"].attributes.dim;
                       for (var a = o.CTS_TransResult["cts:Coordinate"].text.split(","), s = [], x = 0; x < a.length; x++) s.push(a[x]);
                       r.coordvalue = s;
-                    } else if ("json" == e.FORMAT) {
+                    } else if ("json" === e.FORMAT) {
                       (r = {}), (o = i.responseText);
                       var l = new GeoGlobe.Format.JSON().read(o);
                       (r.attributes = l.CTS_TransResult.dim), (r.coordvalue = l.CTS_TransResult.Coordinate);
@@ -22594,7 +22596,7 @@ import * as Cesium from "cesium";
             },
             xmltoJson: function (e) {
               var t = {};
-              if (1 == e.nodeType) {
+              if (1 === e.nodeType) {
                 if (e.attributes.length > 0) {
                   t.attributes = {};
                   for (var i = 0; i < e.attributes.length; i++) {
@@ -22602,7 +22604,7 @@ import * as Cesium from "cesium";
                     t.attributes[r.nodeName] = r.nodeValue;
                   }
                 }
-              } else 3 == e.nodeType && (t = e.nodeValue);
+              } else 3 === e.nodeType && (t = e.nodeValue);
               if (e.hasChildNodes())
                 for (var n = 0; n < e.childNodes.length; n++) {
                   var o = e.childNodes.item(n),
@@ -22633,7 +22635,7 @@ import * as Cesium from "cesium";
                   e,
                   this,
                   function (i) {
-                    if ("xml" == e.FORMAT) {
+                    if ("xml" === e.FORMAT) {
                       var r = {},
                         n = i.responseXML;
                       GeoGlobe.Function.bind(this.xmltoJson, this);
@@ -22641,7 +22643,7 @@ import * as Cesium from "cesium";
                       r.attributes = o.CTS_AffineTransResult["cts:Coordinate"].attributes.dim;
                       for (var a = o.CTS_AffineTransResult["cts:Coordinate"].text.split(","), s = [], x = 0; x < a.length; x++) s.push(a[x]);
                       r.coordvalue = s;
-                    } else if ("json" == e.FORMAT) {
+                    } else if ("json" === e.FORMAT) {
                       (r = {}), (o = i.responseText);
                       var l = new GeoGlobe.Format.JSON().read(o);
                       (r.attributes = l.CTS_AffineTransResult.dim), (r.coordvalue = l.CTS_AffineTransResult.Coordinate);
@@ -22712,7 +22714,7 @@ import * as Cesium from "cesium";
             },
             xmlToJson: function (e) {
               var t = {};
-              if (1 == e.nodeType) {
+              if (1 === e.nodeType) {
                 if (e.attributes.length > 0) {
                   t.attributes = {};
                   for (var i = 0; i < e.attributes.length; i++) {
@@ -22720,7 +22722,7 @@ import * as Cesium from "cesium";
                     t.attributes[r.nodeName] = r.nodeValue;
                   }
                 }
-              } else 3 == e.nodeType && (t = e.nodeValue);
+              } else 3 === e.nodeType && (t = e.nodeValue);
               if (e.hasChildNodes())
                 for (var n = 0; n < e.childNodes.length; n++) {
                   var o = e.childNodes.item(n),
@@ -22759,10 +22761,10 @@ import * as Cesium from "cesium";
               var t = [];
               for (var i in e) {
                 var r = e[i];
-                if (null != r && "function" != typeof r) {
+                if (null !== r && "function" !== typeof r) {
                   var n;
-                  if ("object" == _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(r) && r.constructor == Array) {
-                    for (var o, a = [], s = 0, x = r.length; s < x; s++) (o = r[s]), a.push(encodeURIComponent(null == o ? "" : o));
+                  if ("object" === _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(r) && r.constructor === Array) {
+                    for (var o, a = [], s = 0, x = r.length; s < x; s++) (o = r[s]), a.push(encodeURIComponent(null === o ? "" : o));
                     n = a.join(",");
                   } else n = r;
                   t.push(encodeURIComponent(i) + "=" + n);
@@ -22815,7 +22817,7 @@ import * as Cesium from "cesium";
                       (o.Bounding = a.BoundingBox);
                     var x = "",
                       l = s.TileMatrixSet[0].TileMatrix;
-                    if (l.length > 0) for (var c = 0, u = l.length; c < u && c != u; c++) x += l[c].ScaleDenominator.text + ",";
+                    if (l.length > 0) for (var c = 0, u = l.length; c < u && c !== u; c++) x += l[c].ScaleDenominator.text + ",";
                     (o.Scales = x.substr(0, x.length - 1)), (o.zoomOffset = l[0].Identifier.text), e(o, r);
                   },
                   t
@@ -22823,7 +22825,7 @@ import * as Cesium from "cesium";
             },
             xmlToJson: function (e) {
               var t = {};
-              if (1 == e.nodeType) {
+              if (1 === e.nodeType) {
                 if (e.attributes.length > 0) {
                   t.attributes = {};
                   for (var i = 0; i < e.attributes.length; i++) {
@@ -22831,7 +22833,7 @@ import * as Cesium from "cesium";
                     t.attributes[r.nodeName] = r.nodeValue;
                   }
                 }
-              } else 3 == e.nodeType && (t = e.nodeValue);
+              } else 3 === e.nodeType && (t = e.nodeValue);
               if (e.hasChildNodes())
                 for (var n = 0; n < e.childNodes.length; n++) {
                   var o = e.childNodes.item(n),
@@ -22888,10 +22890,10 @@ import * as Cesium from "cesium";
               var t = [];
               for (var i in e) {
                 var r = e[i];
-                if (null != r && "function" != typeof r) {
+                if (null !== r && "function" !== typeof r) {
                   var n;
-                  if ("object" == _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(r) && r.constructor == Array) {
-                    for (var o, a = [], s = 0, x = r.length; s < x; s++) (o = r[s]), a.push(encodeURIComponent(null == o ? "" : o));
+                  if ("object" === _babel_runtime_corejs2_helpers_typeof__WEBPACK_IMPORTED_MODULE_11___default()(r) && r.constructor === Array) {
+                    for (var o, a = [], s = 0, x = r.length; s < x; s++) (o = r[s]), a.push(encodeURIComponent(null === o ? "" : o));
                     n = a.join(",");
                   } else n = r;
                   t.push(encodeURIComponent(i) + "=" + n);
@@ -22988,7 +22990,7 @@ import * as Cesium from "cesium";
             startAnalysis: function (e, t, i) {
               var r = new GeoGlobe.Format.GeoJSON().read(e),
                 n = this._getFeaturesCenter(r);
-              switch (((i && -1 != GeoGlobe.Util.indexOf(["m", "km", "degree"], i)) || (i = "m"), i)) {
+              switch (((i && -1 !== GeoGlobe.Util.indexOf(["m", "km", "degree"], i)) || (i = "m"), i)) {
                 case "km":
                   t *= 1e3;
                 case "m":
@@ -23000,7 +23002,7 @@ import * as Cesium from "cesium";
                 data: o,
                 scope: this,
                 success: function (e) {
-                  if ("" != e.responseText && null != e.responseText) {
+                  if ("" !== e.responseText && null !== e.responseText) {
                     var t = this._parserResult(e),
                       i = new GeoGlobe.Format.GeoJSON().write(t),
                       r = new GeoGlobe.Format.JSON().read(i);
@@ -23052,7 +23054,7 @@ import * as Cesium from "cesium";
                 data: t,
                 scope: this,
                 success: function (t) {
-                  "" != t.responseText && null != t.responseText ? this.successFn(t, e) : this.failFn();
+                  "" !== t.responseText && null !== t.responseText ? this.successFn(t, e) : this.failFn();
                 },
                 failure: this.failFn,
               });
@@ -23089,7 +23091,7 @@ import * as Cesium from "cesium";
                 data: t,
                 scope: this,
                 success: function (e) {
-                  "" != e.responseText && null != e.responseText ? this.successFn(e) : this.failFn();
+                  "" !== e.responseText && null !== e.responseText ? this.successFn(e) : this.failFn();
                 },
                 failure: this.failFn,
               });
@@ -23128,7 +23130,7 @@ import * as Cesium from "cesium";
                 data: t,
                 scope: this,
                 success: function (t) {
-                  "" != t.responseText && null != t.responseText ? this.successFn(t, e) : this.failFn();
+                  "" !== t.responseText && null !== t.responseText ? this.successFn(t, e) : this.failFn();
                 },
                 failure: this.failFn,
               });
@@ -23152,7 +23154,7 @@ import * as Cesium from "cesium";
       try {
         i = i || new Function("return this")();
       } catch (e) {
-        "object" == typeof window && (i = window);
+        "object" === typeof window && (i = window);
       }
       e.exports = i;
     },
@@ -23165,7 +23167,7 @@ import * as Cesium from "cesium";
         return [
           function (i) {
             var r = e(this),
-              n = null == i ? void 0 : i[t];
+              n = null === i ? void 0 : i[t];
             return void 0 !== n ? n.call(i, r) : new RegExp(i)[t](String(r));
           },
           function (e) {
@@ -23185,7 +23187,7 @@ import * as Cesium from "cesium";
       e.exports =
         Object.is ||
         function (e, t) {
-          return e === t ? 0 !== e || 1 / e == 1 / t : e != e && t != t;
+          return e === t ? 0 !== e || 1 / e === 1 / t : e !== e && t !== t;
         };
     },
     function (e, t, i) {
@@ -23198,7 +23200,7 @@ import * as Cesium from "cesium";
         return [
           function (i) {
             var r = e(this),
-              n = null == i ? void 0 : i[t];
+              n = null === i ? void 0 : i[t];
             return void 0 !== n ? n.call(i, r) : new RegExp(i)[t](String(r));
           },
           function (e) {
@@ -23866,7 +23868,7 @@ import * as Cesium from "cesium";
           "getViewerById",
           "GeoMultiScreenWidget",
           "left-right",
-          "ImagerySplitDirection",
+          "SplitDirection",
           "LEFT",
           "RIGHT",
           "top-bottom",
@@ -25373,15 +25375,15 @@ import * as Cesium from "cesium";
           "uniform sampler2D u_texture_1;\n",
           "   int mode = int(v_texcoord_0.z);\n",
           "   vec4 color = vec4(0.0);\n",
-          "   if (mode == 0){\n",
+          "   if (mode === 0){\n",
           "           color = texture2D(u_texture_1, v_texcoord_0.xy);\n",
           "           color = texture2D(u_texture_0, v_texcoord_0.xy);\n",
           "       }\n",
-          "   else if (mode == 1){\n",
+          "   else if (mode === 1){\n",
           "       color.rg *= 1.4;\n",
-          "   else if (mode == 2){\n",
+          "   else if (mode === 2){\n",
           "       color = v_colorFact;\n",
-          "   if (color.a == 1.0){\n",
+          "   if (color.a === 1.0){\n",
           "       color.a = mc;\n",
           "       if (color.a > 0.995){\n",
           "   vec4 fact = czm_gammaCorrect(v_colorFact);\n",
@@ -25709,13 +25711,13 @@ import * as Cesium from "cesium";
           "           clippingPlane = getClippingPlane(clippingPlanes, j, clippingPlanesMatrix);\n",
           "           clipNormal = clippingPlane.xyz;\n",
           "           clipPosition = -clippingPlane.w * clipNormal;\n",
-          "           clipAmount = czm_branchFreeTernary(j == 0, amount, min(amount, clipAmount));\n",
+          "           clipAmount = czm_branchFreeTernary(j === 0, amount, min(amount, clipAmount));\n",
           "           if (amount > 0.0)\n",
           "           {\n",
           "               clippingPlane = getClippingPlane(clippingPlanes, j, clippingPlanesMatrix);\n",
           "               clipNormal = clippingPlane.xyz;\n",
           "               amount = dot(clipNormal, (position.xyz - clipPosition)) / pixelWidth;\n",
-          "               clipAmount = czm_branchFreeTernary(j == 0, amount, min(amount, clipAmount));\n",
+          "               clipAmount = czm_branchFreeTernary(j === 0, amount, min(amount, clipAmount));\n",
           "               {\n",
           "                   bDiscard = false;\n",
           "                   break;\n",
@@ -25739,7 +25741,7 @@ import * as Cesium from "cesium";
           "} \n",
           "    vec3 clipPosition = vec3(0.0);\n",
           "        int j = i;\n",
-          "        clipAmount = czm_branchFreeTernary(j == 0, amount, min(amount, clipAmount));\n",
+          "        clipAmount = czm_branchFreeTernary(j === 0, amount, min(amount, clipAmount));\n",
           "           amount = dot(clipNormal, (position.xyz - clipPosition)) / pixelWidth;\n",
           "               j++;\n",
           "               if (amount > 0.0)\n",
@@ -25912,10 +25914,10 @@ import * as Cesium from "cesium";
           "topic",
           "vec4(",
           "_makeColorShader",
-          "if (visualSenseStyle_enabledMixColor == 1.0) { \n",
+          "if (visualSenseStyle_enabledMixColor === 1.0) { \n",
           "gl_FragColor *= ",
           "_minValue",
-          " == ",
+          " === ",
           ".0) \n",
           "if (",
           ".0 && ",
@@ -25953,7 +25955,7 @@ import * as Cesium from "cesium";
           "_luminanceAtZenithConditions",
           "conditions",
           "makeFragmentColorShader",
-          "if (visualSenseStyle_enabledLuminanceAtZenith == 1.0) { \n",
+          "if (visualSenseStyle_enabledLuminanceAtZenith === 1.0) { \n",
           "luminanceValue = heightLightValue; \n",
           "makeShader",
           "makeLightBandShader",
@@ -26179,7 +26181,7 @@ import * as Cesium from "cesium";
           "reject",
           "isFloor",
           "arrayToHeightmapTerrainData",
-          "otherwise",
+          "catch",
           "_allElevationLayers",
           "each",
           "requestElevationLayerTileGeometry",
@@ -26575,7 +26577,7 @@ import * as Cesium from "cesium";
           "        attribute vec3 a_position;\n        attribute vec2 a_texcoord_0;\n        uniform mat4 u_animationMatrix;\n        varying vec2 v_texcoord_0;\n        ",
           "        void main()\n        {\n            vec4 p = vec4(a_position, 1.0);\n            v_texcoord_0 = a_texcoord_0;\n            gl_Position = czm_modelViewProjection * u_animationMatrix * p;\n        }\n        ",
           "        uniform sampler2D u_colorTexture_0;\n        uniform vec4 u_gamma;\n        varying vec2 v_texcoord_0;\n        ",
-          "        float computeW(vec4 color){\n            float w = color.w;\n            if (w == 1.0){\n                //w = min(min(color.r, color.g), color.b);\n                w = sin(color.r * color.g * color.b * 1.5707963);\n            }\n            w = pow(w, u_gamma.w * 10.0);\n            return w;\n        }\n        void main()\n        {\n            vec4 color_0 = texture2D(u_colorTexture_0, v_texcoord_0);\n            color_0.w = computeW(color_0);\n            color_0.rgb *= u_gamma.xyz;\n            gl_FragColor = color_0;\n        }\n        ",
+          "        float computeW(vec4 color){\n            float w = color.w;\n            if (w === 1.0){\n                //w = min(min(color.r, color.g), color.b);\n                w = sin(color.r * color.g * color.b * 1.5707963);\n            }\n            w = pow(w, u_gamma.w * 10.0);\n            return w;\n        }\n        void main()\n        {\n            vec4 color_0 = texture2D(u_colorTexture_0, v_texcoord_0);\n            color_0.w = computeW(color_0);\n            color_0.rgb *= u_gamma.xyz;\n            gl_FragColor = color_0;\n        }\n        ",
           "topCylinderColor",
           "bottomCylinderColor",
           "createPrestrainPrimitive",
@@ -26757,7 +26759,7 @@ import * as Cesium from "cesium";
           "uniform sampler2D videoMapTexture;\n",
           "uniform vec4 u_videoColor;\n",
           "    float visibility = step(position.z, texture2D(shadowMap, position.xy).r);\n",
-          "    return (visibility == 1.0);\n",
+          "    return (visibility === 1.0);\n",
           "    vec4 videoPosition = videoMapMatrix * positionEC;\n",
           "    videoPosition /= videoPosition.w;\n",
           "        vec4 videoColor = u_videoColor;\n",
@@ -27153,8 +27155,8 @@ import * as Cesium from "cesium";
           "_fElapse",
           "_frameTime",
           "_flowAngle",
-          "attribute vec3 position;\n\t\t\t\t\t\t\t\t\t\t\tattribute vec2 st;\n\t\t\t\t\t\t\t\t\t\t\tuniform mat4 u_modelViewProjectionMatrix;\n\t\t\t\t\t\t\t\t\t\t\tuniform mat4 u_modelViewMatrix;\n\t\t\t\t\t\t\t\t\t\t\tuniform mat4 u_invWorldViewMatrix;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec2 u_texCoordOffset;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec2 u_texCoordScale;\n\t\t\t\t\t\t\t\t\t\t\tuniform float u_frameTime;\n\t\t\t\t\t\t\t\t\t\t\tuniform int u_clampToGroud;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec3 u_camPos;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec3 u_scale;\n\t\t\t\t\t\t\t\t\t\t\tvarying vec3 eyeDir;\n\t\t\t\t\t\t\t\t\t\t\tvarying vec2 texCoord;\n\t\t\t\t\t\t\t\t\t\t\tvarying float myTime;\n\t\t\t\t\t\t\t\t\t\t\tvarying vec4 projectionCoord;\n\t\t\t\t\t\t\t\t\t\t\tvoid main(void)\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t//gl_Position = ftransform();\n\t\t\t\t\t\t\t\t\t\t\t\tgl_Position = u_modelViewProjectionMatrix * vec4(position.xyz,1.0);\n\t\t\t\t\t\t\t\t\t\t\t\tif (u_clampToGroud == 1)\n\t\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\teyeDir = (u_camPos - position.xyz) * u_scale;\n\t\t\t\t\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec4 pos = u_modelViewMatrix * vec4(position.xyz,1.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\teyeDir = vec3(u_invWorldViewMatrix*vec4(pos.xyz,0.0));\n\t\t\t\t\t\t\t\t\t\t\t\t\tprojectionCoord = gl_Position;\n\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t\ttexCoord = (st+u_texCoordOffset)*u_texCoordScale;\n\t\t\t\t\t\t\t\t\t\t\t\tmyTime = 0.01 * u_frameTime;\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t",
-          "uniform sampler2D u_normalMap;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform sampler2D u_refractMap;\n\t\t\t\t\t\t\t\t\t\t\t\t//uniform samplerCube u_cubeMap;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform sampler2D u_reflectMap;\n\t\t\t\t\t\t\t\t\t\t\t\t//uniform sampler2D u_flowMap;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec4 u_waterColor;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec4 u_refractColor;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform int u_useRefractTex;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec4 u_reflectColor;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform int u_reflection;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec2 u_flowDir;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying vec3 eyeDir;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying vec2 texCoord;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying float myTime;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying vec4 projectionCoord;\n\t\t\t\t\t\t\t\t\t\t\t\tvoid main (void)\n\t\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\t// texScale determines the amount of tiles generated.\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat texScale = 35.0;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// texScale2 determines the repeat of the water texture (the normalmap) itself\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat texScale2 = 10.0;\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat myangle;\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat transp;\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 myNormal;\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 mytexFlowCoord = texCoord * texScale;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// ff is the factor that blends the tiles.\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 ff = abs(2.0*(fract(mytexFlowCoord)) - 1.0) -0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// take a third power, to make the area with more or less equal contribution\n\t\t\t\t\t\t\t\t\t\t\t\t\t// of more tile bigger\n\t\t\t\t\t\t\t\t\t\t\t\t\tff = 0.5-4.0*ff*ff*ff;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// ffscale is a scaling factor that compensates for the effect that\n\t\t\t\t\t\t\t\t\t\t\t\t\t// adding normal vectors together tends to get them closer to the average normal\n\t\t\t\t\t\t\t\t\t\t\t\t\t// which is a visible effect. For more or less random waves, this factor\n\t\t\t\t\t\t\t\t\t\t\t\t\t// compensates for it\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 ffscale = sqrt(ff*ff + (1.0-ff)*(1.0-ff));\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 Tcoord = texCoord  * texScale2;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// offset makes the water move\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 offset = vec2(myTime,0.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// I scale the texFlowCoord and floor the value to create the tiling\n\t\t\t\t\t\t\t\t\t\t\t\t\t// This could have be replace by an extremely lo-res texture lookup\n\t\t\t\t\t\t\t\t\t\t\t\t\t// using NEAREST pixel.\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 sample = vec3(u_flowDir, 1.0);//texture2D( u_flowMap, floor(mytexFlowCoord)/ texScale).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// flowdir is supposed to go from -1 to 1 and the line below\n\t\t\t\t\t\t\t\t\t\t\t\t\t// used to be sample.xy * 2.0 - 1.0, but saves a multiply by\n\t\t\t\t\t\t\t\t\t\t\t\t\t// moving this factor two to the sample.b\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 flowdir = sample.xy -0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// sample.b is used for the inverse length of the wave\n\t\t\t\t\t\t\t\t\t\t\t\t\t// could be premultiplied in sample.xy, but this is easier for editing flowtexture\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir *= sample.b;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// build the rotation matrix that scales and rotates the complete tile\n\t\t\t\t\t\t\t\t\t\t\t\t\tmat2 rotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// this is the normal for tile A\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalT0 = texture2D(u_normalMap, rotmat * Tcoord - offset).rg;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// for the next tile (B) I shift by half the tile size in the x-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tsample = vec3(u_flowDir, 1.0);//texture2D( u_flowMap, floor((mytexFlowCoord + vec2(0.5,0)))/ texScale ).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir = sample.b * (sample.xy - 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\trotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// and the normal for tile B...\n\t\t\t\t\t\t\t\t\t\t\t\t\t// multiply the offset by some number close to 1 to give it a different speed\n\t\t\t\t\t\t\t\t\t\t\t\t\t// The result is that after blending the water starts to animate and look\n\t\t\t\t\t\t\t\t\t\t\t\t\t// realistic, instead of just sliding in some direction.\n\t\t\t\t\t\t\t\t\t\t\t\t\t// This is also why I took the third power of ff above, so the area where the\n\t\t\t\t\t\t\t\t\t\t\t\t\t// water animates is as big as possible\n\t\t\t\t\t\t\t\t\t\t\t\t\t// adding a small arbitrary constant isn't really needed, but helps to show\n\t\t\t\t\t\t\t\t\t\t\t\t\t// a bit less tiling in the beginning of the program. After a few seconds, the\n\t\t\t\t\t\t\t\t\t\t\t\t\t// tiling cannot be seen anymore so this constant could be removed.\n\t\t\t\t\t\t\t\t\t\t\t\t\t// For the quick demo I leave them in. In a simulation that keeps running for\n\t\t\t\t\t\t\t\t\t\t\t\t\t// some time, you could just as well remove these small constant offsets\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalT1 = texture2D(u_normalMap, rotmat * Tcoord - offset*1.06+0.62).rg;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// blend them together using the ff factor\n\t\t\t\t\t\t\t\t\t\t\t\t\t// use ff.x because this tile is shifted in the x-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalTAB = ff.x * NormalT0 + (1.0-ff.x) * NormalT1;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// the scaling of NormalTab and NormalTCD is moved to a single scale of\n\t\t\t\t\t\t\t\t\t\t\t\t\t// NormalT later in the program, which is mathematically identical to\n\t\t\t\t\t\t\t\t\t\t\t\t\t// NormalTAB = (NormalTAB - 0.5) / ffscale.x + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// tile C is shifted in the y-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tsample = vec3(u_flowDir, 1.0);//texture2D( u_flowMap, floor((mytexFlowCoord + vec2(0.0,0.5)))/ texScale ).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir = sample.b * (sample.xy - 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\trotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT0 = texture2D(u_normalMap, rotmat * Tcoord - offset*1.33+0.27).rg;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// tile D is shifted in both x- and y-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tsample = vec3(u_flowDir, 1.0);//texture2D( u_flowMap, floor((mytexFlowCoord + vec2(0.5,0.5)))/ texScale ).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir = sample.b * (sample.xy - 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\trotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT1 = texture2D(u_normalMap, rotmat * Tcoord - offset*1.24).rg ;\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalTCD = ff.x * NormalT0 + (1.0-ff.x) * NormalT1;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// NormalTCD = (NormalTCD - 0.5) / ffscale.x + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// now blend the two values togetherv\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalT = ff.y * NormalTAB + (1.0-ff.y) * NormalTCD;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// this line below used to be here for scaling the result\n\t\t\t\t\t\t\t\t\t\t\t\t\t//NormalT = (NormalT - 0.5) / ffscale.y + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// below the new, direct scaling of NormalT\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT = (NormalT - 0.5) / (ffscale.y * ffscale.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// scaling by 0.3 is arbritrary, and could be done by just\n\t\t\t\t\t\t\t\t\t\t\t\t\t// changing the values in the normal map\n\t\t\t\t\t\t\t\t\t\t\t\t\t// without this factor, the waves look very strong\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT *= 0.3;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// to make the water more transparent\n\t\t\t\t\t\t\t\t\t\t\t\t\ttransp = 1.0;//texture2D( u_flowMap, texFlowCoord ).a;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// and scale the normals with the transparency\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT *= transp*transp;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// assume normal of plane is 0,0,1 and produce the normalized sum of adding NormalT to it\n\t\t\t\t\t\t\t\t\t\t\t\t\tmyNormal = vec3(NormalT,sqrt(1.0-NormalT.x*NormalT.x - NormalT.y*NormalT.y));\n\t\t\t\t\t\t\t\t\t\t\t\t\t// 获取反射颜色。\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 envColor = u_reflectColor.rgb;//vec3(0.5647, 0.6941, 0.8235);\n\t\t\t\t\t\t\t\t\t\t\t\t\tif (u_reflection == 1)\n\t\t\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t//vec3 reflectDir = reflect(eyeDir, myNormal);\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t//vec3 envColor = vec3(textureCube(u_cubeMap, -reflectDir));\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t// 如果要实现反射真实场景，需要把场景渲染5遍构建一个无底的立方体纹理。\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t// 目前使用一张反射纹理近似模拟。\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 final = projectionCoord.xy / projectionCoord.w;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tfinal = final * 0.5 + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tfinal.y = 1.0 - final.y;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tenvColor = texture2D(u_reflectMap, final + myNormal.xy/texScale2*transp).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t\t\t// very ugly version of fresnel effect\n\t\t\t\t\t\t\t\t\t\t\t\t\t// but it gives a nice transparent water, but not too transparent\n\t\t\t\t\t\t\t\t\t\t\t\t\tmyangle = dot(myNormal,normalize(eyeDir));\n\t\t\t\t\t\t\t\t\t\t\t\t\tmyangle = 0.95-0.6*myangle*myangle;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// blend in the color of the plane below the water\n\t\t\t\t\t\t\t\t\t\t\t\t\t// add in a little distortion of the colormap for the effect of a refracted\n\t\t\t\t\t\t\t\t\t\t\t\t\t// view of the image below the surface.\n\t\t\t\t\t\t\t\t\t\t\t\t\t// (this isn't really tested, just a last minute addition\n\t\t\t\t\t\t\t\t\t\t\t\t\t// and perhaps should be coded differently\n\t\t\t\t\t\t\t\t\t\t\t\t\t// the correct way, would be to use the refract routine, use the alpha channel for depth of\n\t\t\t\t\t\t\t\t\t\t\t\t\t// the water (and make the water disappear when depth = 0), add some watercolor to the colormap\n\t\t\t\t\t\t\t\t\t\t\t\t\t// depending on the depth, and use the calculated refractdir and the depth to find the right\n\t\t\t\t\t\t\t\t\t\t\t\t\t// pixel in the colormap.... who knows, something for the next version\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 base = u_refractColor.rgb;//vec3(0.3, 0.4, 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\tif (u_useRefractTex == 1)\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tbase = texture2D(u_refractMap,(texCoord + myNormal.xy/texScale2*0.03*transp)*32.0).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tbase = mix(base, u_waterColor.rgb, u_waterColor.a);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// 光照计算\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 lightDir = czm_sunDirectionEC;//normalize(vec3(0.0, 0.0, 1.0)); // 光照方向需要从外面传入\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 reflectVec = reflect(-lightDir, myNormal);\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat diffuse = max(0.0, dot(myNormal, lightDir));\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat spec = max(dot(reflectVec, normalize(-eyeDir)), 0.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\tspec = pow(spec, 128.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\t//float lightIntensity = 0.7 * diffuse + 0.3 * spec;\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat lightIntensity = 0.3 * spec;\n\t\t\t\t\t\t\t\t\t\t\t\t\tgl_FragColor = vec4(mix(base, envColor, myangle*transp), 1.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\tgl_FragColor += vec4(0.8)*lightIntensity;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// note that smaller waves appear to move slower than bigger waves\n\t\t\t\t\t\t\t\t\t\t\t\t\t// one could use the tiles and give each tile a different speed if that\n\t\t\t\t\t\t\t\t\t\t\t\t\t// is what you want\n\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t\t",
+          "attribute vec3 position;\n\t\t\t\t\t\t\t\t\t\t\tattribute vec2 st;\n\t\t\t\t\t\t\t\t\t\t\tuniform mat4 u_modelViewProjectionMatrix;\n\t\t\t\t\t\t\t\t\t\t\tuniform mat4 u_modelViewMatrix;\n\t\t\t\t\t\t\t\t\t\t\tuniform mat4 u_invWorldViewMatrix;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec2 u_texCoordOffset;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec2 u_texCoordScale;\n\t\t\t\t\t\t\t\t\t\t\tuniform float u_frameTime;\n\t\t\t\t\t\t\t\t\t\t\tuniform int u_clampToGroud;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec3 u_camPos;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec3 u_scale;\n\t\t\t\t\t\t\t\t\t\t\tvarying vec3 eyeDir;\n\t\t\t\t\t\t\t\t\t\t\tvarying vec2 texCoord;\n\t\t\t\t\t\t\t\t\t\t\tvarying float myTime;\n\t\t\t\t\t\t\t\t\t\t\tvarying vec4 projectionCoord;\n\t\t\t\t\t\t\t\t\t\t\tvoid main(void)\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t//gl_Position = ftransform();\n\t\t\t\t\t\t\t\t\t\t\t\tgl_Position = u_modelViewProjectionMatrix * vec4(position.xyz,1.0);\n\t\t\t\t\t\t\t\t\t\t\t\tif (u_clampToGroud === 1)\n\t\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\teyeDir = (u_camPos - position.xyz) * u_scale;\n\t\t\t\t\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec4 pos = u_modelViewMatrix * vec4(position.xyz,1.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\teyeDir = vec3(u_invWorldViewMatrix*vec4(pos.xyz,0.0));\n\t\t\t\t\t\t\t\t\t\t\t\t\tprojectionCoord = gl_Position;\n\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t\ttexCoord = (st+u_texCoordOffset)*u_texCoordScale;\n\t\t\t\t\t\t\t\t\t\t\t\tmyTime = 0.01 * u_frameTime;\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t",
+          "uniform sampler2D u_normalMap;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform sampler2D u_refractMap;\n\t\t\t\t\t\t\t\t\t\t\t\t//uniform samplerCube u_cubeMap;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform sampler2D u_reflectMap;\n\t\t\t\t\t\t\t\t\t\t\t\t//uniform sampler2D u_flowMap;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec4 u_waterColor;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec4 u_refractColor;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform int u_useRefractTex;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec4 u_reflectColor;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform int u_reflection;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec2 u_flowDir;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying vec3 eyeDir;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying vec2 texCoord;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying float myTime;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying vec4 projectionCoord;\n\t\t\t\t\t\t\t\t\t\t\t\tvoid main (void)\n\t\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\t// texScale determines the amount of tiles generated.\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat texScale = 35.0;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// texScale2 determines the repeat of the water texture (the normalmap) itself\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat texScale2 = 10.0;\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat myangle;\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat transp;\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 myNormal;\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 mytexFlowCoord = texCoord * texScale;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// ff is the factor that blends the tiles.\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 ff = abs(2.0*(fract(mytexFlowCoord)) - 1.0) -0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// take a third power, to make the area with more or less equal contribution\n\t\t\t\t\t\t\t\t\t\t\t\t\t// of more tile bigger\n\t\t\t\t\t\t\t\t\t\t\t\t\tff = 0.5-4.0*ff*ff*ff;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// ffscale is a scaling factor that compensates for the effect that\n\t\t\t\t\t\t\t\t\t\t\t\t\t// adding normal vectors together tends to get them closer to the average normal\n\t\t\t\t\t\t\t\t\t\t\t\t\t// which is a visible effect. For more or less random waves, this factor\n\t\t\t\t\t\t\t\t\t\t\t\t\t// compensates for it\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 ffscale = sqrt(ff*ff + (1.0-ff)*(1.0-ff));\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 Tcoord = texCoord  * texScale2;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// offset makes the water move\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 offset = vec2(myTime,0.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// I scale the texFlowCoord and floor the value to create the tiling\n\t\t\t\t\t\t\t\t\t\t\t\t\t// This could have be replace by an extremely lo-res texture lookup\n\t\t\t\t\t\t\t\t\t\t\t\t\t// using NEAREST pixel.\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 sample = vec3(u_flowDir, 1.0);//texture2D( u_flowMap, floor(mytexFlowCoord)/ texScale).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// flowdir is supposed to go from -1 to 1 and the line below\n\t\t\t\t\t\t\t\t\t\t\t\t\t// used to be sample.xy * 2.0 - 1.0, but saves a multiply by\n\t\t\t\t\t\t\t\t\t\t\t\t\t// moving this factor two to the sample.b\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 flowdir = sample.xy -0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// sample.b is used for the inverse length of the wave\n\t\t\t\t\t\t\t\t\t\t\t\t\t// could be premultiplied in sample.xy, but this is easier for editing flowtexture\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir *= sample.b;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// build the rotation matrix that scales and rotates the complete tile\n\t\t\t\t\t\t\t\t\t\t\t\t\tmat2 rotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// this is the normal for tile A\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalT0 = texture2D(u_normalMap, rotmat * Tcoord - offset).rg;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// for the next tile (B) I shift by half the tile size in the x-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tsample = vec3(u_flowDir, 1.0);//texture2D( u_flowMap, floor((mytexFlowCoord + vec2(0.5,0)))/ texScale ).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir = sample.b * (sample.xy - 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\trotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// and the normal for tile B...\n\t\t\t\t\t\t\t\t\t\t\t\t\t// multiply the offset by some number close to 1 to give it a different speed\n\t\t\t\t\t\t\t\t\t\t\t\t\t// The result is that after blending the water starts to animate and look\n\t\t\t\t\t\t\t\t\t\t\t\t\t// realistic, instead of just sliding in some direction.\n\t\t\t\t\t\t\t\t\t\t\t\t\t// This is also why I took the third power of ff above, so the area where the\n\t\t\t\t\t\t\t\t\t\t\t\t\t// water animates is as big as possible\n\t\t\t\t\t\t\t\t\t\t\t\t\t// adding a small arbitrary constant isn't really needed, but helps to show\n\t\t\t\t\t\t\t\t\t\t\t\t\t// a bit less tiling in the beginning of the program. After a few seconds, the\n\t\t\t\t\t\t\t\t\t\t\t\t\t// tiling cannot be seen anymore so this constant could be removed.\n\t\t\t\t\t\t\t\t\t\t\t\t\t// For the quick demo I leave them in. In a simulation that keeps running for\n\t\t\t\t\t\t\t\t\t\t\t\t\t// some time, you could just as well remove these small constant offsets\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalT1 = texture2D(u_normalMap, rotmat * Tcoord - offset*1.06+0.62).rg;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// blend them together using the ff factor\n\t\t\t\t\t\t\t\t\t\t\t\t\t// use ff.x because this tile is shifted in the x-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalTAB = ff.x * NormalT0 + (1.0-ff.x) * NormalT1;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// the scaling of NormalTab and NormalTCD is moved to a single scale of\n\t\t\t\t\t\t\t\t\t\t\t\t\t// NormalT later in the program, which is mathematically identical to\n\t\t\t\t\t\t\t\t\t\t\t\t\t// NormalTAB = (NormalTAB - 0.5) / ffscale.x + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// tile C is shifted in the y-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tsample = vec3(u_flowDir, 1.0);//texture2D( u_flowMap, floor((mytexFlowCoord + vec2(0.0,0.5)))/ texScale ).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir = sample.b * (sample.xy - 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\trotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT0 = texture2D(u_normalMap, rotmat * Tcoord - offset*1.33+0.27).rg;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// tile D is shifted in both x- and y-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tsample = vec3(u_flowDir, 1.0);//texture2D( u_flowMap, floor((mytexFlowCoord + vec2(0.5,0.5)))/ texScale ).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir = sample.b * (sample.xy - 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\trotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT1 = texture2D(u_normalMap, rotmat * Tcoord - offset*1.24).rg ;\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalTCD = ff.x * NormalT0 + (1.0-ff.x) * NormalT1;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// NormalTCD = (NormalTCD - 0.5) / ffscale.x + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// now blend the two values togetherv\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalT = ff.y * NormalTAB + (1.0-ff.y) * NormalTCD;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// this line below used to be here for scaling the result\n\t\t\t\t\t\t\t\t\t\t\t\t\t//NormalT = (NormalT - 0.5) / ffscale.y + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// below the new, direct scaling of NormalT\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT = (NormalT - 0.5) / (ffscale.y * ffscale.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// scaling by 0.3 is arbritrary, and could be done by just\n\t\t\t\t\t\t\t\t\t\t\t\t\t// changing the values in the normal map\n\t\t\t\t\t\t\t\t\t\t\t\t\t// without this factor, the waves look very strong\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT *= 0.3;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// to make the water more transparent\n\t\t\t\t\t\t\t\t\t\t\t\t\ttransp = 1.0;//texture2D( u_flowMap, texFlowCoord ).a;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// and scale the normals with the transparency\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT *= transp*transp;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// assume normal of plane is 0,0,1 and produce the normalized sum of adding NormalT to it\n\t\t\t\t\t\t\t\t\t\t\t\t\tmyNormal = vec3(NormalT,sqrt(1.0-NormalT.x*NormalT.x - NormalT.y*NormalT.y));\n\t\t\t\t\t\t\t\t\t\t\t\t\t// 获取反射颜色。\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 envColor = u_reflectColor.rgb;//vec3(0.5647, 0.6941, 0.8235);\n\t\t\t\t\t\t\t\t\t\t\t\t\tif (u_reflection === 1)\n\t\t\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t//vec3 reflectDir = reflect(eyeDir, myNormal);\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t//vec3 envColor = vec3(textureCube(u_cubeMap, -reflectDir));\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t// 如果要实现反射真实场景，需要把场景渲染5遍构建一个无底的立方体纹理。\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t// 目前使用一张反射纹理近似模拟。\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 final = projectionCoord.xy / projectionCoord.w;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tfinal = final * 0.5 + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tfinal.y = 1.0 - final.y;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tenvColor = texture2D(u_reflectMap, final + myNormal.xy/texScale2*transp).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t\t\t// very ugly version of fresnel effect\n\t\t\t\t\t\t\t\t\t\t\t\t\t// but it gives a nice transparent water, but not too transparent\n\t\t\t\t\t\t\t\t\t\t\t\t\tmyangle = dot(myNormal,normalize(eyeDir));\n\t\t\t\t\t\t\t\t\t\t\t\t\tmyangle = 0.95-0.6*myangle*myangle;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// blend in the color of the plane below the water\n\t\t\t\t\t\t\t\t\t\t\t\t\t// add in a little distortion of the colormap for the effect of a refracted\n\t\t\t\t\t\t\t\t\t\t\t\t\t// view of the image below the surface.\n\t\t\t\t\t\t\t\t\t\t\t\t\t// (this isn't really tested, just a last minute addition\n\t\t\t\t\t\t\t\t\t\t\t\t\t// and perhaps should be coded differently\n\t\t\t\t\t\t\t\t\t\t\t\t\t// the correct way, would be to use the refract routine, use the alpha channel for depth of\n\t\t\t\t\t\t\t\t\t\t\t\t\t// the water (and make the water disappear when depth = 0), add some watercolor to the colormap\n\t\t\t\t\t\t\t\t\t\t\t\t\t// depending on the depth, and use the calculated refractdir and the depth to find the right\n\t\t\t\t\t\t\t\t\t\t\t\t\t// pixel in the colormap.... who knows, something for the next version\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 base = u_refractColor.rgb;//vec3(0.3, 0.4, 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\tif (u_useRefractTex === 1)\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tbase = texture2D(u_refractMap,(texCoord + myNormal.xy/texScale2*0.03*transp)*32.0).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tbase = mix(base, u_waterColor.rgb, u_waterColor.a);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// 光照计算\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 lightDir = czm_sunDirectionEC;//normalize(vec3(0.0, 0.0, 1.0)); // 光照方向需要从外面传入\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 reflectVec = reflect(-lightDir, myNormal);\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat diffuse = max(0.0, dot(myNormal, lightDir));\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat spec = max(dot(reflectVec, normalize(-eyeDir)), 0.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\tspec = pow(spec, 128.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\t//float lightIntensity = 0.7 * diffuse + 0.3 * spec;\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat lightIntensity = 0.3 * spec;\n\t\t\t\t\t\t\t\t\t\t\t\t\tgl_FragColor = vec4(mix(base, envColor, myangle*transp), 1.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\tgl_FragColor += vec4(0.8)*lightIntensity;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// note that smaller waves appear to move slower than bigger waves\n\t\t\t\t\t\t\t\t\t\t\t\t\t// one could use the tiles and give each tile a different speed if that\n\t\t\t\t\t\t\t\t\t\t\t\t\t// is what you want\n\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t\t",
           "_uniformMap",
           "getColorTexture",
           "_reflectColor",
@@ -27238,7 +27240,7 @@ import * as Cesium from "cesium";
         return i;
       }
       !(function (e) {
-        ("undefined" == typeof define ? "undefined" : w()(define)) === P("0x8") && define[P("0xd")] ? define(e) : e();
+        ("undefined" === typeof define ? "undefined" : w()(define)) === P("0x8") && define[P("0xd")] ? define(e) : e();
       })(function () {
         var e = (function () {
             try {
@@ -27248,7 +27250,7 @@ import * as Cesium from "cesium";
             }
           })(),
           t = Object[P("0xf")];
-        (e && null != t) ||
+        (e && null !== t) ||
           (t = function (e) {
             return e;
           });
@@ -27970,7 +27972,7 @@ import * as Cesium from "cesium";
           (g = Math[P("0x7d")](g, e.maximumMovementRatio)), (p = Math[P("0x7d")](p, e[P("0x2e")]));
           var m = d * g * Math.PI * 2,
             b = d * p * Math.PI;
-          n || c[P("0xd8")](-m), a || (1 == e[P("0xd9")] && (c.constrainedAxis = void 0), c[P("0xda")](b)), (c[P("0xc7")] = h);
+          n || c[P("0xd8")](-m), a || (1 === e[P("0xd9")] && (c.constrainedAxis = void 0), c[P("0xda")](b)), (c[P("0xc7")] = h);
         }
         var lt = a[P("0x6e")](a[P("0xa1")]),
           ct = a[P("0x6e")](a[P("0xa1")]),
@@ -28438,7 +28440,7 @@ import * as Cesium from "cesium";
             N(this, Qt),
             (function (e, t) {
               if (!e) throw new ReferenceError(P("0x6"));
-              return !t || (w()(t) !== P("0x7") && "function" != typeof t) ? e : t;
+              return !t || (w()(t) !== P("0x7") && "function" !== typeof t) ? e : t;
             })(this, (Qt[P("0xc")] || Object[P("0xf9")](Qt))[P("0xfa")](this, e))
           );
         }
@@ -28593,7 +28595,7 @@ import * as Cesium from "cesium";
             if (!t || !e) return null;
             for (var i = 0; i < t[P("0x0")]; i++) {
               var r = t[i];
-              if (e == r[P("0x131")]) return r[P("0x132")];
+              if (e === r[P("0x131")]) return r[P("0x132")];
             }
           }
           function n(i, r) {
@@ -28621,13 +28623,13 @@ import * as Cesium from "cesium";
             x.equals(s) || (i = !1);
             var l = t[P("0x7f")],
               c = e[P("0x7f")];
-            l != c && (i = !1);
+            l !== c && (i = !1);
             var u = t.pitch,
               h = e.pitch;
-            u != h && (i = !1);
+            u !== h && (i = !1);
             var f = t[P("0x81")],
               d = e[P("0x81")];
-            if ((f != d && (i = !1), i)) return console[P("0x133")]("停止"), !1;
+            if ((f !== d && (i = !1), i)) return console[P("0x133")]("停止"), !1;
             t.setView({
               destination: n.clone(),
               orientation: {
@@ -28643,12 +28645,12 @@ import * as Cesium from "cesium";
             !(function (e, t) {
               for (var i = 0; i < t[P("0x0")]; i++) {
                 var r = t[i];
-                e != r && o(e[P("0x7e")], r[P("0x7e")]);
+                e !== r && o(e[P("0x7e")], r[P("0x7e")]);
               }
             })(e, t);
           }),
             (i[P("0x5")][P("0x134")] = function (e) {
-              for (var t = this[P("0x12d")], i = null, r = 0; r < t[P("0x0")]; r++) if ((i = t[r])[P("0x131")].id == e) return i;
+              for (var t = this[P("0x12d")], i = null, r = 0; r < t[P("0x0")]; r++) if ((i = t[r])[P("0x131")].id === e) return i;
               return i;
             }),
             (i[P("0x5")].destroy = function () {
@@ -28704,9 +28706,9 @@ import * as Cesium from "cesium";
               var t = this[P("0x13c")],
                 i = this[P("0x13f")];
               (i[P("0x14c")] = P("0x14d")),
-                e == P("0x13a") &&
+                e === P("0x13a") &&
                   ((i[P("0x14c")] += P("0x14e")), (t.scene[P("0x14f")] = -1), (i[P("0x150")][P("0x149")] = 0), (i.style[P("0x151")] = P("0x152"))),
-                e == P("0x136") &&
+                e === P("0x136") &&
                   ((i[P("0x14c")] += P("0x153")),
                   (t[P("0x10f")][P("0x14f")] = 1),
                   (i[P("0x150")][P("0x151")] = 0),
@@ -28714,12 +28716,12 @@ import * as Cesium from "cesium";
             }),
             (i[P("0x5")][P("0x154")] = function (e) {
               var t = this[P("0x13c")];
-              if (this[P("0x155")] == P("0x136")) {
+              if (this[P("0x155")] === P("0x136")) {
                 var i = e[P("0x64")].x;
                 if ((r = (slider[P("0x156")] + i) / slider[P("0x157")][P("0x158")]) < 0 || 1 < r) return;
                 (slider[P("0x150")][P("0x149")] = 100 * r + "%"), (t[P("0x10f")][P("0x159")] = r);
               }
-              if (this.splitMode == P("0x13a")) {
+              if (this.splitMode === P("0x13a")) {
                 var r;
                 if (((i = e[P("0x64")].y), (r = (slider[P("0x15a")] + i) / slider[P("0x157")][P("0x15b")]) < 0 || 1 < r)) return;
                 (slider[P("0x150")][P("0x151")] = 100 * r + "%"), (slider[P("0x150")][P("0x149")] = 0), (t[P("0x10f")].imagerySplitPosition = 1 - r);
@@ -28731,12 +28733,12 @@ import * as Cesium from "cesium";
               if (!this[P("0x13f")]) {
                 var o = function (e) {
                   if (s) {
-                    if (n.splitMode == P("0x136")) {
+                    if (n.splitMode === P("0x136")) {
                       var i = e[P("0x64")].x;
                       if ((o = (r.offsetLeft + i) / r[P("0x157")][P("0x158")]) < 0 || 1 < o) return;
                       (r[P("0x150")][P("0x149")] = 100 * o + "%"), (t.scene[P("0x159")] = o);
                     }
-                    if (n.splitMode == P("0x13a")) {
+                    if (n.splitMode === P("0x13a")) {
                       var o;
                       if (((i = e.endPosition.y), (o = (r[P("0x15a")] + i) / r[P("0x157")][P("0x15b")]) < 0 || 1 < o)) return;
                       (r[P("0x150")][P("0x151")] = 100 * o + "%"), (r[P("0x150")][P("0x149")] = 0), (t.scene[P("0x159")] = 1 - o);
@@ -28778,8 +28780,8 @@ import * as Cesium from "cesium";
                 t = this[P("0x141")],
                 i = this[P("0x13f")],
                 r = this[P("0x13c")].scene;
-              t == P("0x136") && ((e = (i[P("0x156")] + 0) / i[P("0x157")][P("0x158")]), (r[P("0x159")] = e)),
-                t == P("0x13a") && ((e = (i.offsetTop + 0) / i.parentElement[P("0x15b")]), (r.imagerySplitPosition = 1 - e));
+              t === P("0x136") && ((e = (i[P("0x156")] + 0) / i[P("0x157")][P("0x158")]), (r[P("0x159")] = e)),
+                t === P("0x13a") && ((e = (i.offsetTop + 0) / i.parentElement[P("0x15b")]), (r.imagerySplitPosition = 1 - e));
             }),
             (i.prototype.destroy = function () {
               var e = this[P("0x13f")];
@@ -28795,8 +28797,8 @@ import * as Cesium from "cesium";
                   var t,
                     i = this[P("0x13f")],
                     r = this[P("0x13c")];
-                  this.splitMode == P("0x136") && ((t = (i.offsetLeft + 0) / i[P("0x157")][P("0x158")]), (r.scene[P("0x159")] = t)),
-                    "top-bottom" == this[P("0x155")] && ((t = (i.offsetTop + 0) / i[P("0x157")][P("0x15b")]), (r[P("0x10f")][P("0x159")] = 1 - t));
+                  this.splitMode === P("0x136") && ((t = (i.offsetLeft + 0) / i[P("0x157")][P("0x158")]), (r.scene[P("0x159")] = t)),
+                    "top-bottom" === this[P("0x155")] && ((t = (i.offsetTop + 0) / i[P("0x157")][P("0x15b")]), (r[P("0x10f")][P("0x159")] = 1 - t));
                 },
               },
               isEnable: {
@@ -28843,7 +28845,7 @@ import * as Cesium from "cesium";
               (this.callback = i || null);
           });
           function i(e, t) {
-            for (var i = 0; i < t.length; i++) t.get(i)[P("0x176")] == e && (t.remove(t[P("0x187")](i)), i--);
+            for (var i = 0; i < t.length; i++) t.get(i)[P("0x176")] === e && (t.remove(t[P("0x187")](i)), i--);
           }
           (t[P("0x5")].activate = function () {
             if (!this[P("0x16f")]) {
@@ -29023,7 +29025,7 @@ import * as Cesium from "cesium";
                 i(P("0x193"), this[P("0x17d")]),
                 i(P("0x177"), this[P("0x17d")]),
                 (function (e, t) {
-                  for (var i = t[P("0x190")], r = 0; r < i[P("0x0")]; r++) i[r][P("0x176")] == e && (t.remove(i[r]), r--);
+                  for (var i = t[P("0x190")], r = 0; r < i[P("0x0")]; r++) i[r][P("0x176")] === e && (t.remove(i[r]), r--);
                 })(P("0x177"), this[P("0x13b")][P("0x194")]);
             });
         })(window[P("0xfd")]),
@@ -29040,7 +29042,7 @@ import * as Cesium from "cesium";
               (this[P("0x191")] = i || null);
           });
           function i(e, t) {
-            for (var i = 0; i < t[P("0x0")]; i++) t[P("0x187")](i).name == e && (t.remove(t[P("0x187")](i)), i--);
+            for (var i = 0; i < t[P("0x0")]; i++) t[P("0x187")](i).name === e && (t.remove(t[P("0x187")](i)), i--);
           }
           (t.prototype[P("0x198")] = function () {
             if (!this[P("0x16f")]) {
@@ -29058,7 +29060,7 @@ import * as Cesium from "cesium";
                       x = e[P("0x23")][P("0x113")](s[P("0x112")]),
                       l = e[P("0x23")][P("0x113")](s[P("0x114")]),
                       c = s[P("0x8b")];
-                    0 == n[P("0x0")] &&
+                    0 === n[P("0x0")] &&
                       (n.push(x),
                       n[P("0x17c")](l),
                       n[P("0x17c")](c),
@@ -29087,7 +29089,7 @@ import * as Cesium from "cesium";
                       l = e[P("0x23")][P("0x113")](x[P("0x112")]),
                       c = e[P("0x23")][P("0x113")](x[P("0x114")]),
                       u = x[P("0x8b")];
-                    9 == n[P("0x0")] &&
+                    9 === n[P("0x0")] &&
                       ((n[3] = l),
                       (n[4] = c),
                       (n[5] = u),
@@ -29142,7 +29144,7 @@ import * as Cesium from "cesium";
               (this.callback = i || null);
           });
           function i(e, t) {
-            for (var i = 0; i < t.length; i++) t[P("0x187")](i).name == e && (t[P("0x17f")](t.get(i)), i--);
+            for (var i = 0; i < t.length; i++) t[P("0x187")](i).name === e && (t[P("0x17f")](t.get(i)), i--);
           }
           (t[P("0x5")][P("0x198")] = function () {
             if (!this[P("0x16f")]) {
@@ -29224,7 +29226,7 @@ import * as Cesium from "cesium";
               (this[P("0x1a9")] = 0);
           });
           function i(e, t) {
-            for (var i = 0; i < t[P("0x0")]; i++) t[P("0x187")](i)[P("0x176")] == e && (t[P("0x17f")](t[P("0x187")](i)), i--);
+            for (var i = 0; i < t[P("0x0")]; i++) t[P("0x187")](i)[P("0x176")] === e && (t[P("0x17f")](t[P("0x187")](i)), i--);
           }
           (t[P("0x5")].activate = function () {
             if (!this[P("0x16f")]) {
@@ -29258,7 +29260,7 @@ import * as Cesium from "cesium";
                       n[P("0x17c")](c),
                       n[P("0x17c")](u),
                       n.push(h),
-                      3 == n[P("0x0")] &&
+                      3 === n[P("0x0")] &&
                         (((t = r[P("0x17d")].add(new e[P("0x199")]())).name = P("0x1ab")),
                         t.add({
                           polyline: {},
@@ -29310,7 +29312,7 @@ import * as Cesium from "cesium";
             }
           }),
             (t.prototype[P("0x188")] = function (t) {
-              if (0 != this[P("0x172")][P("0x0")]) {
+              if (0 !== this[P("0x172")][P("0x0")]) {
                 var i = this[P("0x172")],
                   r = this[P("0x1ac")],
                   n = this[P("0x1aa")],
@@ -29382,7 +29384,7 @@ import * as Cesium from "cesium";
               (this[P("0x191")] = i || null);
           });
           function i(e, t) {
-            for (var i = 0; i < t.length; i++) t[P("0x187")](i)[P("0x176")] == e && (t[P("0x17f")](t[P("0x187")](i)), i--);
+            for (var i = 0; i < t.length; i++) t[P("0x187")](i)[P("0x176")] === e && (t[P("0x17f")](t[P("0x187")](i)), i--);
           }
           function r(t) {
             return [
@@ -29452,7 +29454,7 @@ import * as Cesium from "cesium";
                   var o = t[P("0x0")],
                     a = [],
                     s = [];
-                  1 == o ? (a = [t[o - 1]]) : (s = i.lineLoop ? ((a = [t[o - 2], t[o - 1]]), [t[0], t[o - 1]]) : ((a = [t[o - 2], t[o - 1]]), [])),
+                  1 === o ? (a = [t[o - 1]]) : (s = i.lineLoop ? ((a = [t[o - 2], t[o - 1]]), [t[0], t[o - 1]]) : ((a = [t[o - 2], t[o - 1]]), [])),
                     i.lineClampGround
                       ? (i[P("0x17d")][P("0x17f")](i[P("0x1bc")]),
                         i[P("0x17d")][P("0x17f")](i.concatGroundPrimitive),
@@ -29561,15 +29563,15 @@ import * as Cesium from "cesium";
             polygonalPoint: null,
           };
           if (!((i = (this.points = e).length) < 2)) {
-            if (2 == i) return e;
+            if (2 === i) return e;
             var i,
               r,
               n,
               o = this.points[0],
               a = this[P("0x1d0")][1],
               s = this[P("0x1d0")][2];
-            3 == (i = e[P("0x0")]) ? (this[P("0x1cf")] = R[P("0x1cd")][P("0x1d1")](o, a, s)) : (this.tempPoint4 = this.points[3]),
-              3 == i || 4 == i ? (this.connPoint = W[P("0x1d2")].mid(o, a)) : (this[P("0x1ce")] = this.points[4]),
+            3 === (i = e[P("0x0")]) ? (this[P("0x1cf")] = R[P("0x1cd")][P("0x1d1")](o, a, s)) : (this.tempPoint4 = this.points[3]),
+              3 === i || 4 === i ? (this.connPoint = W[P("0x1d2")].mid(o, a)) : (this[P("0x1ce")] = this.points[4]),
               (n = W[P("0x1d2")][P("0x1d3")](o, a, s)
                 ? ((r = R[P("0x1cd")].getArrowPoints(o, this[P("0x1ce")], this[P("0x1cf")], !1)),
                   R[P("0x1cd")].getArrowPoints(this.connPoint, a, s, !0))
@@ -29734,7 +29736,7 @@ import * as Cesium from "cesium";
             polygonalPoint: null,
           };
           if (!((d = (t[P("0x1d8")] = e)[P("0x0")]) < 2)) {
-            if (2 == e.length) return (t.polygonalPoint = e), t;
+            if (2 === e.length) return (t.polygonalPoint = e), t;
             var i = e,
               r = i[0],
               n = i[1];
@@ -29809,7 +29811,7 @@ import * as Cesium from "cesium";
             r = [];
           return (
             (r = e[P("0x1f2")](function (e) {
-              if (e[0] != t[0] && e[1] != t[1]) return e;
+              if (e[0] !== t[0] && e[1] !== t[1]) return e;
               i = !0;
             })),
             i && r[P("0x17c")](t),
@@ -29871,7 +29873,7 @@ import * as Cesium from "cesium";
                 i = this,
                 r = new D[P("0x15f")](t[P("0x48")]);
               function n(e, r) {
-                if (1 != i[P("0x1f9")]) {
+                if (1 !== i[P("0x1f9")]) {
                   var n = t[P("0xa4")](r);
                   n && n[P("0x182")] && n[P("0x182")][e] && n[P("0x182")][e](r);
                 }
@@ -29883,9 +29885,9 @@ import * as Cesium from "cesium";
                   n("leftDoubleClick", e[P("0x8c")]);
                 }, D.ScreenSpaceEventType.LEFT_DOUBLE_CLICK),
                 r[P("0x160")](function (r) {
-                  if (1 != i[P("0x1f9")]) {
+                  if (1 !== i[P("0x1f9")]) {
                     var n = t.pick(r[P("0x64")]);
-                    !e || (n && e == n[P("0x182")]) || ((e.isDestroyed && e[P("0xf3")]()) || e.mouseOut(r.endPosition), (e = null)),
+                    !e || (n && e === n[P("0x182")]) || ((e.isDestroyed && e[P("0xf3")]()) || e.mouseOut(r.endPosition), (e = null)),
                       n && n[P("0x182")] && ((n = n[P("0x182")])[P("0x1fa")] && (e = n), n.mouseMove && n[P("0x1fb")](r[P("0x64")]));
                   }
                 }, D[P("0x161")].MOUSE_MOVE),
@@ -29927,7 +29929,7 @@ import * as Cesium from "cesium";
                 this[P("0x203")](void 0);
               }),
               (i[P("0x5")][P("0x203")] = function (e) {
-                this[P("0x20e")] && !this[P("0x20e")][P("0xf3")]() && this[P("0x20e")] != e && this[P("0x20e")][P("0x203")](!1),
+                this[P("0x20e")] && !this[P("0x20e")][P("0xf3")]() && this[P("0x20e")] !== e && this[P("0x20e")][P("0x203")](!1),
                   (this._highlightedSurface = e);
               }),
               (i[P("0x5")][P("0x20a")] = function () {
@@ -30053,7 +30055,7 @@ import * as Cesium from "cesium";
                   return (this._primitive = this[P("0x222")] && this[P("0x222")][P("0xf4")]()), D[P("0x22b")](this);
                 }),
                 (u[P("0x5")][P("0x22c")] = function (e, t) {
-                  (this[P("0x228")] && this[P("0x228")][P("0x84")](e) && this[P("0x22d")] == t) ||
+                  (this[P("0x228")] && this[P("0x228")][P("0x84")](e) && this[P("0x22d")] === t) ||
                     ((this[P("0x219")] = !0), (this[P("0x228")] = e), (this.strokeWidth = t));
                 }),
                 u);
@@ -30244,18 +30246,18 @@ import * as Cesium from "cesium";
               return t;
             }
             function A(e, t) {
-              if (null == e || (w()(e) === P("0x2b6") ? P("0x2b6") : k(e)) != P("0x7")) return e;
-              if (e.constructor != Object && e[P("0x2b7")] != Array) return e;
+              if (null === e || (w()(e) === P("0x2b6") ? P("0x2b6") : k(e)) !== P("0x7")) return e;
+              if (e.constructor !== Object && e[P("0x2b7")] !== Array) return e;
               if (
-                e.constructor == Date ||
-                e[P("0x2b7")] == RegExp ||
-                e[P("0x2b7")] == Function ||
-                e.constructor == String ||
-                e.constructor == Number ||
-                e.constructor == Boolean
+                e.constructor === Date ||
+                e[P("0x2b7")] === RegExp ||
+                e[P("0x2b7")] === Function ||
+                e.constructor === String ||
+                e.constructor === Number ||
+                e.constructor === Boolean
               )
                 return new e[P("0x2b7")](e);
-              for (var i in ((t = t || new e[P("0x2b7")]()), e)) t[i] = w()(t[i]) == P("0x2b6") ? A(e[i], null) : t[i];
+              for (var i in ((t = t || new e[P("0x2b7")]()), e)) t[i] = w()(t[i]) === P("0x2b6") ? A(e[i], null) : t[i];
               return t;
             }
             function I(e, t) {
@@ -30309,7 +30311,7 @@ import * as Cesium from "cesium";
                     s.enableRotate = e;
                   }
                   function o() {
-                    for (var e = 0, t = a._orderedBillboards[P("0x0")]; e < t && a._orderedBillboards[e] != r; ++e);
+                    for (var e = 0, t = a._orderedBillboards[P("0x0")]; e < t && a._orderedBillboards[e] !== r; ++e);
                     return e;
                   }
                   var a = this,
@@ -30326,7 +30328,7 @@ import * as Cesium from "cesium";
                         n
                           ? (function (e) {
                               r[P("0x8c")] = e;
-                              for (var t = 0, n = a[P("0x245")].length; t < n && a._orderedBillboards[t] != r; ++t);
+                              for (var t = 0, n = a[P("0x245")].length; t < n && a._orderedBillboards[t] !== r; ++t);
                               i[P("0x250")][P("0x251")] && i[P("0x250")][P("0x251")](o(), e);
                             })(n)
                           : s(n);
@@ -30403,10 +30405,10 @@ import * as Cesium from "cesium";
                   c = new i.BillboardGroup(this, p),
                   u = new D[P("0x15f")](o[P("0x48")]);
                 u[P("0x160")](function (t) {
-                  if (null != t[P("0x8c")]) {
+                  if (null !== t[P("0x8c")]) {
                     var i = o.camera[P("0xa2")](t[P("0x8c")], e);
                     i &&
-                      (0 == x[P("0x0")] && (x[P("0x17c")](i[P("0x6e")]()), c[P("0x25a")](x[0])),
+                      (0 === x[P("0x0")] && (x[P("0x17c")](i[P("0x6e")]()), c[P("0x25a")](x[0])),
                       2 <= x[P("0x0")] && ((r[P("0x19f")] = x), (r[P("0x219")] = !0)),
                       x.push(i),
                       c[P("0x25a")](i));
@@ -30414,8 +30416,8 @@ import * as Cesium from "cesium";
                 }, D[P("0x161")][P("0x17e")]),
                   u[P("0x160")](function (t) {
                     var i = t[P("0x64")];
-                    if (null != i)
-                      if (0 == x[P("0x0")]) s.showAt(i, P("0x265"));
+                    if (null !== i)
+                      if (0 === x[P("0x0")]) s.showAt(i, P("0x265"));
                       else {
                         var n = o[P("0x7e")][P("0xa2")](i, e);
                         n &&
@@ -30429,9 +30431,9 @@ import * as Cesium from "cesium";
                   }, D[P("0x161")].MOUSE_MOVE),
                   u[P("0x160")](function (i) {
                     var r = i[P("0x8c")];
-                    if (null != r) {
+                    if (null !== r) {
                       if (x[P("0x0")] < 4) return;
-                      o[P("0x7e")][P("0xa2")](r, e) && (n.stopDrawing(), w()(t.callback) == P("0x8")) && (x.length, t.callback(x));
+                      o[P("0x7e")][P("0xa2")](r, e) && (n.stopDrawing(), w()(t.callback) === P("0x8")) && (x.length, t.callback(x));
                     }
                   }, D[P("0x161")][P("0x269")]);
               }),
@@ -30456,13 +30458,13 @@ import * as Cesium from "cesium";
                   (this.minPoints = 2),
                   (this.poly = s),
                   u[P("0x160")](function (t) {
-                    if (null != t[P("0x8c")]) {
+                    if (null !== t[P("0x8c")]) {
                       var i = n[P("0x7e")][P("0xa2")](t[P("0x8c")], e),
                         r = D[P("0x13")][P("0x175")](i),
                         o = [D[P("0x23")][P("0x113")](r.longitude), D[P("0x23")][P("0x113")](r[P("0x114")])];
                       if (i) {
                         if (
-                          (0 == l[P("0x0")] && (x[P("0x17c")](i[P("0x6e")]()), c[P("0x25a")](x[0])),
+                          (0 === l[P("0x0")] && (x[P("0x17c")](i[P("0x6e")]()), c[P("0x25a")](x[0])),
                           l[P("0x0")] < 3 && l[P("0x17c")](o),
                           2 <= l[P("0x0")])
                         ) {
@@ -30476,8 +30478,8 @@ import * as Cesium from "cesium";
                   }, D[P("0x161")][P("0x17e")]),
                   u[P("0x160")](function (t) {
                     var i = t[P("0x64")];
-                    if (null != i)
-                      if (0 == x[P("0x0")]) a[P("0x205")](i, P("0x271"));
+                    if (null !== i)
+                      if (0 === x[P("0x0")]) a[P("0x205")](i, P("0x271"));
                       else {
                         var r = n[P("0x7e")].pickEllipsoid(i, e),
                           o = D.Cartographic[P("0x175")](r),
@@ -30488,13 +30490,13 @@ import * as Cesium from "cesium";
                             (r.y += 1 + Math.random()),
                             x.push(r),
                             3 <= l[P("0x0")] && (l[P("0x25c")](), l[P("0x17c")](c)),
-                            2 == l[P("0x0")] && l.push(c),
+                            2 === l[P("0x0")] && l.push(c),
                             2 < x[P("0x0")])
                           ) {
                             var u = R[P("0x1cd")][P("0x1ea")](l);
                             (s[P("0x19f")] = u ? u.polygonalPoint : null), (s[P("0x236")] = u ? u[P("0x1d8")] : null), (s[P("0x219")] = !0);
                           }
-                          var h = 3 == x[P("0x0")] ? "<p>双击可结束绘制</p>" : P("0x272");
+                          var h = 3 === x[P("0x0")] ? "<p>双击可结束绘制</p>" : P("0x272");
                           a[P("0x205")](i, h);
                         }
                       }
@@ -30508,15 +30510,15 @@ import * as Cesium from "cesium";
                   n = this.positions,
                   o = this.minPoints,
                   a = this[P("0x273")];
-                if (((i = this[P("0x132")]), null == t)) {
+                if (((i = this[P("0x132")]), null === t)) {
                   if (this[P("0x26f")]) {
-                    if ((this.stopDrawing(), w()(i[P("0x191")]) != P("0x8"))) return;
+                    if ((this.stopDrawing(), w()(i[P("0x191")]) !== P("0x8"))) return;
                     n[P("0x0")], i[P("0x191")](a[P("0x19f")], a[P("0x236")]), (this[P("0x26f")] = !1);
                   }
-                } else if (null != (r = t[P("0x8c")])) {
+                } else if (null !== (r = t[P("0x8c")])) {
                   if (n[P("0x0")] < o + 2) return;
                   scene[P("0x7e")][P("0xa2")](r, e) &&
-                    (this[P("0x20c")](), w()(i.callback) == P("0x8")) &&
+                    (this[P("0x20c")](), w()(i.callback) === P("0x8")) &&
                     (n.length, i[P("0x191")](a[P("0x19f")], a[P("0x236")]));
                 }
               }),
@@ -30542,13 +30544,13 @@ import * as Cesium from "cesium";
                 (this[P("0x273")] = n),
                   (this.positions = l),
                   h.setInputAction(function (t) {
-                    if (null != t[P("0x8c")]) {
+                    if (null !== t[P("0x8c")]) {
                       var i = a[P("0x7e")][P("0xa2")](t[P("0x8c")], e),
                         r = D[P("0x13")][P("0x175")](i),
                         o = [D[P("0x23")].toDegrees(r[P("0x112")]), D[P("0x23")].toDegrees(r[P("0x114")])];
                       if (i) {
                         if (
-                          (0 == c[P("0x0")] && (l[P("0x17c")](i[P("0x6e")]()), u[P("0x25a")](l[0])),
+                          (0 === c[P("0x0")] && (l[P("0x17c")](i[P("0x6e")]()), u[P("0x25a")](l[0])),
                           c[P("0x0")] < 3 && c[P("0x17c")](o),
                           2 <= c[P("0x0")])
                         ) {
@@ -30561,8 +30563,8 @@ import * as Cesium from "cesium";
                   }, D[P("0x161")][P("0x17e")]),
                   h[P("0x160")](function (t) {
                     var i = t[P("0x64")];
-                    if (null != i)
-                      if (0 == l.length) x[P("0x205")](i, "<p>点击以增加第一个控制点</p>");
+                    if (null !== i)
+                      if (0 === l.length) x[P("0x205")](i, "<p>点击以增加第一个控制点</p>");
                       else {
                         var r = a[P("0x7e")][P("0xa2")](i, e),
                           o = D.Cartographic.fromCartesian(r),
@@ -30572,14 +30574,14 @@ import * as Cesium from "cesium";
                             (l[P("0x25c")](),
                             (r.y += 1 + Math.random()),
                             l[P("0x17c")](r),
-                            3 == c[P("0x0")] && (c[P("0x25c")](), c[P("0x17c")](s)),
-                            2 == c[P("0x0")] && c[P("0x17c")](s),
+                            3 === c[P("0x0")] && (c[P("0x25c")](), c[P("0x17c")](s)),
+                            2 === c[P("0x0")] && c[P("0x17c")](s),
                             2 <= l.length)
                           ) {
                             var u = R[P("0x1cd")].doubleArrow(c);
                             (n[P("0x19f")] = u ? u[P("0x1d9")] : null), (n.custom = u ? u[P("0x1d8")] : null), (n[P("0x219")] = !0);
                           }
-                          var h = 3 == l[P("0x0")] ? P("0x274") : P("0x272");
+                          var h = 3 === l[P("0x0")] ? P("0x274") : P("0x272");
                           x[P("0x205")](i, h);
                         }
                       }
@@ -30591,7 +30593,7 @@ import * as Cesium from "cesium";
               (i.prototype[P("0x275")] = function (t) {
                 (t = G(t, o)),
                   this.startDrawing(function () {
-                    null != l && a[P("0x17f")](l), c[P("0x17f")](), u[P("0xf4")](), s.setVisible(!1);
+                    null !== l && a[P("0x17f")](l), c[P("0x17f")](), u[P("0xf4")](), s.setVisible(!1);
                   });
                 var r = this,
                   n = this._scene,
@@ -30602,10 +30604,10 @@ import * as Cesium from "cesium";
                   c = null,
                   u = new D[P("0x15f")](n[P("0x48")]);
                 u.setInputAction(function (o) {
-                  if (null != o.position) {
+                  if (null !== o.position) {
                     var s = n[P("0x7e")][P("0xa2")](o[P("0x8c")], e);
                     if (s)
-                      if (null == l) {
+                      if (null === l) {
                         var u = D.Cartographic[P("0x175")](s),
                           h = D[P("0x23")][P("0x113")](u[P("0x112")]),
                           f = D[P("0x23")][P("0x113")](u[P("0x114")]);
@@ -30622,7 +30624,7 @@ import * as Cesium from "cesium";
                         c[P("0x243")](g);
                       } else
                         r.stopDrawing(),
-                          w()(t[P("0x191")]) == P("0x8") &&
+                          w()(t[P("0x191")]) === P("0x8") &&
                             ((u = D[P("0x13")][P("0x175")](s)),
                             (h = D.Math[P("0x113")](u.longitude)),
                             (f = D[P("0x23")][P("0x113")](u[P("0x114")])),
@@ -30631,8 +30633,8 @@ import * as Cesium from "cesium";
                 }, D[P("0x161")].LEFT_DOWN),
                   u[P("0x160")](function (t) {
                     var i = t[P("0x64")];
-                    if (null != i)
-                      if (null == l) s.showAt(i, "<p>点击开始绘制</p>");
+                    if (null !== i)
+                      if (null === l) s.showAt(i, "<p>点击开始绘制</p>");
                       else {
                         var r = n[P("0x7e")][P("0xa2")](i, e);
                         if (r) {
@@ -30651,7 +30653,7 @@ import * as Cesium from "cesium";
                 var r = this;
                 function n(e) {
                   r[P("0x42")],
-                    (this[P("0x27c")] && this._highlighted == e) ||
+                    (this[P("0x27c")] && this._highlighted === e) ||
                       (!0 !== this[P("0x204")] &&
                         ((this[P("0x27c")] = e)
                           ? (r.setHighlighted(this),
@@ -30662,12 +30664,12 @@ import * as Cesium from "cesium";
                           : this[P("0x22c")](void 0, void 0)));
                 }
                 function o(n) {
-                  if (this[P("0x204")] != n)
+                  if (this[P("0x204")] !== n)
                     if ((r[P("0x20d")](), n)) {
                       r[P("0x20f")](this);
                       var o = r[P("0x42")],
                         a = this;
-                      if (null == this[P("0x280")]) {
+                      if (null === this[P("0x280")]) {
                         function s(e, t) {
                           var i = e - 1 < 0 ? t.length - 1 : e - 1;
                           i < u[P("0x25f")]() && (u[P("0x25e")](i)[P("0x8c")] = l(i)),
@@ -30742,7 +30744,7 @@ import * as Cesium from "cesium";
                       }
                       this[P("0x204")] = !0;
                     } else
-                      null != this._markers &&
+                      null !== this._markers &&
                         (this[P("0x280")].remove(),
                         this[P("0x288")][P("0x17f")](),
                         (this._markers = null),
@@ -30809,9 +30811,9 @@ import * as Cesium from "cesium";
                     var o = r[P("0x42")];
                     r[P("0x202")](e),
                       (e.setEditMode = function (n) {
-                        if (this[P("0x204")] != n)
+                        if (this[P("0x204")] !== n)
                           if ((r[P("0x20d")](), n)) {
-                            if ((r[P("0x20f")](this), null == this[P("0x280")])) {
+                            if ((r[P("0x20f")](this), null === this[P("0x280")])) {
                               var a = new i[P("0x242")](r, m);
                               t[P("0x284")][P("0x17c")](a);
                               var s = {
@@ -30848,7 +30850,7 @@ import * as Cesium from "cesium";
                             }
                             this[P("0x204")] = !0;
                           } else
-                            null != this[P("0x280")] && (this[P("0x280")][P("0x17f")](), (this[P("0x280")] = null), this[P("0x289")][P("0xf4")]()),
+                            null !== this[P("0x280")] && (this[P("0x280")][P("0x17f")](), (this[P("0x280")] = null), this[P("0x289")][P("0xf4")]()),
                               (this._editMode = !1);
                       }),
                       (e[P("0x203")] = n),
@@ -30861,9 +30863,9 @@ import * as Cesium from "cesium";
                     var o = r._scene;
                     r[P("0x202")](e),
                       (e[P("0x211")] = function (n) {
-                        if (this._editMode != n)
+                        if (this._editMode !== n)
                           if ((r[P("0x20d")](), n)) {
-                            if ((r[P("0x20f")](this), null == this[P("0x280")])) {
+                            if ((r[P("0x20f")](this), null === this[P("0x280")])) {
                               var a = new i[P("0x242")](r, m);
                               t[P("0x284")][P("0x17c")](a);
                               var s = {
@@ -30900,7 +30902,7 @@ import * as Cesium from "cesium";
                             }
                             this[P("0x204")] = !0;
                           } else
-                            null != this[P("0x280")] && (this[P("0x280")][P("0x17f")](), (this[P("0x280")] = null), this[P("0x289")][P("0xf4")]()),
+                            null !== this[P("0x280")] && (this[P("0x280")][P("0x17f")](), (this[P("0x280")] = null), this[P("0x289")][P("0xf4")]()),
                               (this._editMode = !1);
                       }),
                       (e[P("0x203")] = n),
@@ -30914,9 +30916,9 @@ import * as Cesium from "cesium";
                       r.registerEditableShape(e),
                         (e.asynchronous = !1),
                         (e[P("0x211")] = function (n) {
-                          if (this._editMode != n)
+                          if (this._editMode !== n)
                             if ((r[P("0x20d")](), n)) {
-                              if ((r[P("0x20f")](this), null == this[P("0x280")])) {
+                              if ((r[P("0x20f")](this), null === this[P("0x280")])) {
                                 var a = new i[P("0x242")](r, m);
                                 t[P("0x284")][P("0x17c")](a);
                                 var s = {
@@ -30924,7 +30926,7 @@ import * as Cesium from "cesium";
                                     onDrag: function (t, i) {
                                       var r = C(i),
                                         n = C(a.getBillboard((t + 1) % 2).position),
-                                        o = 0 == t ? y(r, n) : y(n, r);
+                                        o = 0 === t ? y(r, n) : y(n, r);
                                       e[P("0x230")](o), a[P("0x25d")](v(e.extent));
                                     },
                                     onDragEnd: function () {
@@ -30949,7 +30951,7 @@ import * as Cesium from "cesium";
                               }
                               this[P("0x204")] = !0;
                             } else
-                              null != this[P("0x280")] &&
+                              null !== this[P("0x280")] &&
                                 (this[P("0x280")][P("0x17f")](), (this._markers = null), this._globeClickhandler[P("0xf4")]()),
                                 (this[P("0x204")] = !1);
                         }),
@@ -31040,7 +31042,7 @@ import * as Cesium from "cesium";
               }),
               (i.DrawWidget = function (e, t) {
                 var i = this;
-                "extentCreated" == t &&
+                "extentCreated" === t &&
                   e[P("0x275")]({
                     callback: function (e) {
                       i.executeListeners({
@@ -31049,7 +31051,7 @@ import * as Cesium from "cesium";
                       });
                     },
                   }),
-                  t == P("0x2a2") &&
+                  t === P("0x2a2") &&
                     e.startDrawingPolygon({
                       callback: function (e, t) {
                         i[P("0x27a")]({
@@ -31059,7 +31061,7 @@ import * as Cesium from "cesium";
                         });
                       },
                     }),
-                  t == P("0x2a4") &&
+                  t === P("0x2a4") &&
                     e.startDrawingTailedAttack({
                       callback: function (e, t) {
                         i[P("0x27a")]({
@@ -31075,7 +31077,7 @@ import * as Cesium from "cesium";
                 var e = drawHelper._scene,
                   i = t[P("0x17d")][P("0x0")],
                   r = t[P("0x284")][P("0x0")];
-                if (0 != i && t[P("0x17d")][i - 1][P("0x204")]) {
+                if (0 !== i && t[P("0x17d")][i - 1][P("0x204")]) {
                   for (var n = 0; n < 1; n++) {
                     var o = t[P("0x17d")][i - 1];
                     o[P("0x289")][P("0xf4")](), e[P("0x17d")][P("0x17f")](o);
@@ -31123,13 +31125,13 @@ import * as Cesium from "cesium";
           return W[P("0x1d2")][P("0x2bb")](r, n, o, a);
         }),
         (W.PlotUtils[P("0x2bb")] = function (e, t, i, r) {
-          if (e[1] == t[1]) {
+          if (e[1] === t[1]) {
             var n = (r[0] - i[0]) / (r[1] - i[1]),
               o = n * (e[1] - i[1]) + i[0],
               a = e[1];
             return [o, a];
           }
-          if (i[1] != r[1])
+          if (i[1] !== r[1])
             return (
               (s = (t[0] - e[0]) / (t[1] - e[1])),
               (n = (r[0] - i[0]) / (r[1] - i[1])),
@@ -31305,10 +31307,10 @@ import * as Cesium from "cesium";
         }),
         (W[P("0x1d2")][P("0x2c8")] = function (e) {
           if (e <= 1) return 1;
-          if (2 == e) return 2;
-          if (3 == e) return 6;
-          if (4 == e) return 24;
-          if (5 == e) return 120;
+          if (2 === e) return 2;
+          if (3 === e) return 6;
+          if (4 === e) return 24;
+          if (5 === e) return 120;
           for (var t = 1, i = 1; i <= e; i++) t *= i;
           return t;
         }),
@@ -31328,11 +31330,11 @@ import * as Cesium from "cesium";
           return t[P("0x17c")](e[e[P("0x0")] - 1]), t;
         }),
         (W[P("0x1d2")][P("0x2c9")] = function (e, t) {
-          return 0 == e
+          return 0 === e
             ? Math[P("0x2ae")](t - 1, 2) / 2
-            : 1 == e
+            : 1 === e
             ? (-2 * Math[P("0x2ae")](t, 2) + 2 * t + 1) / 2
-            : 2 == e
+            : 2 === e
             ? Math[P("0x2ae")](t, 2) / 2
             : 0;
         }),
@@ -31357,10 +31359,10 @@ import * as Cesium from "cesium";
               (this[P("0xd3")] = t[P("0xd3")] ? t[P("0xd3")] : 1);
           });
           function i(e, t) {
-            for (var i = 0; i < t.length; i++) t[P("0x187")](i)[P("0x2cc")] == e && (t[P("0x17f")](t[P("0x187")](i)), i--);
+            for (var i = 0; i < t.length; i++) t[P("0x187")](i)[P("0x2cc")] === e && (t[P("0x17f")](t[P("0x187")](i)), i--);
           }
           function r(e, t) {
-            for (var i = t[P("0x190")], r = 0; r < i[P("0x0")]; r++) i[r][P("0x2cc")] == e && (t[P("0x17f")](i[r]), r--);
+            for (var i = t[P("0x190")], r = 0; r < i[P("0x0")]; r++) i[r][P("0x2cc")] === e && (t[P("0x17f")](i[r]), r--);
           }
           function n(t, i, r, n) {
             var o = t.add(new e[P("0x1a5")]());
@@ -31386,13 +31388,13 @@ import * as Cesium from "cesium";
                 (this[P("0x1aa")] = t),
                 (this[P("0x173")] = i),
                 this.handler[P("0x160")](function (i) {
-                  if (((n.lastP = i), 1 == n[P("0xd3")]))
+                  if (((n.lastP = i), 1 === n[P("0xd3")]))
                     var a = n.camera[P("0x86")](i[P("0x8c")]),
                       s = n[P("0x10f")][P("0xa3")][P("0xa4")](a, n[P("0x10f")]);
                   else s = n[P("0x10f")][P("0x174")](i.position);
                   s &&
                     (o[P("0x17c")](s),
-                    1 == o[P("0x0")] &&
+                    1 === o[P("0x0")] &&
                       (((t = n[P("0x17d")][P("0x6d")](new e.PolylineCollection())).name = "MeasureAreaWidget_draw_polyline"),
                       (t[P("0x2cc")] = P("0x2ca") + "_" + n[P("0x1a9")]),
                       t[P("0x6d")]({
@@ -31419,7 +31421,7 @@ import * as Cesium from "cesium";
                 }, e[P("0x161")].LEFT_CLICK),
                 this[P("0x16f")][P("0x160")](function (r) {
                   if (!/Android|webOS|iPhone|ipad|iPod|BlackBerry/i[P("0x270")](navigator.userAgent)) {
-                    if (1 == n[P("0xd3")])
+                    if (1 === n[P("0xd3")])
                       var a = n[P("0x7e")][P("0x86")](r[P("0x64")]),
                         s = n.scene[P("0xa3")][P("0xa4")](a, n[P("0x10f")]);
                     else s = n[P("0x10f")][P("0x174")](r[P("0x64")]);
@@ -31473,11 +31475,11 @@ import * as Cesium from "cesium";
                   i(this[P("0x2cb")][e], this[P("0x17d")]), r(this[P("0x2cb")][e], this[P("0x13b")][P("0x194")]);
             }),
             (t.prototype[P("0x2d1")] = function (t) {
-              if (null != this[P("0x172")] && 0 != this[P("0x172")][P("0x0")]) {
+              if (null !== this[P("0x172")] && 0 !== this[P("0x172")][P("0x0")]) {
                 if (
                   (this[P("0x173")] && (this.primitives[P("0x17f")](this[P("0x173")]), (this[P("0x173")] = null)),
                   (t = t || this[P("0x18b")]),
-                  1 == this[P("0xd3")])
+                  1 === this[P("0xd3")])
                 )
                   var i = this[P("0x7e")][P("0x86")](t.position),
                     r = this[P("0x10f")][P("0xa3")][P("0xa4")](i, this[P("0x10f")]);
@@ -31546,10 +31548,10 @@ import * as Cesium from "cesium";
               (this.mode = e[P("0xd3")] ? e[P("0xd3")] : 1);
           });
           function i(e, t) {
-            for (var i = t[P("0x190")], r = 0; r < i.length; r++) i[r][P("0x2cc")] == e && (t[P("0x17f")](i[r]), r--);
+            for (var i = t[P("0x190")], r = 0; r < i.length; r++) i[r][P("0x2cc")] === e && (t[P("0x17f")](i[r]), r--);
           }
           function r(e, t) {
-            for (var i = 0; i < t.length; i++) t[P("0x187")](i)[P("0x2cc")] == e && (t[P("0x17f")](t[P("0x187")](i)), i--);
+            for (var i = 0; i < t.length; i++) t[P("0x187")](i)[P("0x2cc")] === e && (t[P("0x17f")](t[P("0x187")](i)), i--);
           }
           (t.prototype.activate = function () {
             this[P("0x1a9")]++,
@@ -31578,12 +31580,12 @@ import * as Cesium from "cesium";
                 disableDepthTestDistance: Number[P("0x31")],
               }),
               this[P("0x16f")][P("0x160")](function (x) {
-                if (2 == n[P("0xd3")]) {
+                if (2 === n[P("0xd3")]) {
                   var l = n[P("0x10f")][P("0xa4")](x[P("0x8c")]);
                   if (!l) return;
                   if (!(l[P("0x182")] instanceof e[P("0x2e1")])) return void console[P("0x2e2")]("请点击模型");
                   var c = n[P("0x10f")].pickPosition(x[P("0x8c")]);
-                } else if (1 == n[P("0xd3")]) {
+                } else if (1 === n[P("0xd3")]) {
                   var u = n[P("0x7e")][P("0x86")](x[P("0x8c")]);
                   c = n[P("0x10f")].globe.pick(u, n[P("0x10f")]);
                 }
@@ -31636,7 +31638,7 @@ import * as Cesium from "cesium";
                 }
               }, e[P("0x161")][P("0x17e")]),
               this.handler[P("0x160")](function (a) {
-                if (2 == n[P("0xd3")]) var x = n[P("0x10f")][P("0x174")](a[P("0x64")]);
+                if (2 === n[P("0xd3")]) var x = n[P("0x10f")][P("0x174")](a[P("0x64")]);
                 else {
                   var l = n[P("0x7e")][P("0x86")](a[P("0x64")]);
                   x = n[P("0x10f")][P("0xa3")][P("0xa4")](l, n.scene);
@@ -31647,7 +31649,7 @@ import * as Cesium from "cesium";
                     h = e[P("0x23")][P("0x113")](c[P("0x114")]),
                     f = c[P("0x8b")];
                   if (!/Android|webOS|iPhone|ipad|iPod|BlackBerry/i[P("0x270")](navigator.userAgent)) {
-                    if (3 == o[P("0x0")]) {
+                    if (3 === o[P("0x0")]) {
                       var d = o[P("0x1d5")](),
                         g = o.slice();
                       d[P("0x17c")](u), d[P("0x17c")](h), d[P("0x17c")](f), (i[P("0x2eb")][P("0x19f")] = e[P("0x11")].fromDegreesArrayHeights(d));
@@ -31661,7 +31663,7 @@ import * as Cesium from "cesium";
                         (r[P("0x2eb")][P("0x19f")] = e[P("0x11")][P("0x19e")](g)),
                         n[P("0x2d1")](d, s);
                     }
-                    t && 0 != t.length
+                    t && 0 !== t.length
                       ? (t.get(t.length - 1).position = e[P("0x11")][P("0x1a1")](u, h, f))
                       : (((t = n[P("0x17d")][P("0x6d")](new e.LabelCollection())).name = "MeasureAzimuthWidget_draw_label"),
                         (t[P("0x2cc")] = P("0x2e5") + n[P("0x1a9")]),
@@ -31741,7 +31743,7 @@ import * as Cesium from "cesium";
               (this[P("0xd3")] = t[P("0xd3")] ? t[P("0xd3")] : 1);
           });
           function i(e, t) {
-            for (var i = 0; i < t[P("0x0")]; i++) t[P("0x187")](i)[P("0x2cc")] == e && (t[P("0x17f")](t[P("0x187")](i)), i--);
+            for (var i = 0; i < t[P("0x0")]; i++) t[P("0x187")](i)[P("0x2cc")] === e && (t[P("0x17f")](t[P("0x187")](i)), i--);
           }
           (t[P("0x5")][P("0x198")] = function () {
             this.count++,
@@ -31753,7 +31755,7 @@ import * as Cesium from "cesium";
               r = this,
               n = [];
             this[P("0x16f")][P("0x160")](function (o) {
-              if (2 == r.mode) {
+              if (2 === r.mode) {
                 var a = r[P("0x10f")][P("0xa4")](o.position);
                 if (!a) return;
                 if (!(a[P("0x182")] instanceof e[P("0x2e1")])) return void console[P("0x2e2")](P("0x2f5"));
@@ -31860,10 +31862,10 @@ import * as Cesium from "cesium";
               (this[P("0x2cb")] = []);
           });
           function i(e, t) {
-            for (var i = 0; i < t.length; i++) t[P("0x187")](i).tag == e && (t.remove(t.get(i)), i--);
+            for (var i = 0; i < t.length; i++) t[P("0x187")](i).tag === e && (t.remove(t.get(i)), i--);
           }
           function r(e, t) {
-            for (var i = t[P("0x190")], r = 0; r < i.length; r++) i[r][P("0x2cc")] == e && (t[P("0x17f")](i[r]), r--);
+            for (var i = t[P("0x190")], r = 0; r < i.length; r++) i[r][P("0x2cc")] === e && (t[P("0x17f")](i[r]), r--);
           }
           (t[P("0x5")][P("0x198")] = function () {
             var t = this;
@@ -31876,7 +31878,7 @@ import * as Cesium from "cesium";
               (this._polylines_ = i),
               (this[P("0x173")] = r),
               this[P("0x16f")][P("0x160")](function (r) {
-                if (((t[P("0x18b")] = r), 3 == t[P("0xd3")])) var a = t[P("0x10f")][P("0x174")](r[P("0x8c")]);
+                if (((t[P("0x18b")] = r), 3 === t[P("0xd3")])) var a = t[P("0x10f")][P("0x174")](r[P("0x8c")]);
                 else {
                   var s = t[P("0x7e")][P("0x86")](r[P("0x8c")]);
                   a = t[P("0x10f")][P("0xa3")][P("0xa4")](s, t[P("0x10f")]);
@@ -31889,7 +31891,7 @@ import * as Cesium from "cesium";
                   o.push(l),
                     o[P("0x17c")](c),
                     o[P("0x17c")](u),
-                    3 == o[P("0x0")] &&
+                    3 === o[P("0x0")] &&
                       (((i = t[P("0x17d")][P("0x6d")](new e[P("0x199")]())).tag = P("0x2fd") + "_" + t[P("0x1a9")]),
                       (i[P("0x176")] = "MeasureDistanceWidget_draw_polyline"),
                       i[P("0x6d")]({
@@ -31914,7 +31916,7 @@ import * as Cesium from "cesium";
                 }
               }, e[P("0x161")][P("0x1ff")]),
               this[P("0x16f")][P("0x160")](function (n) {
-                if (3 == t[P("0xd3")]) var a = t[P("0x10f")].pickPosition(n.endPosition);
+                if (3 === t[P("0xd3")]) var a = t[P("0x10f")].pickPosition(n.endPosition);
                 else {
                   var s = t[P("0x7e")][P("0x86")](n[P("0x64")]);
                   a = t.scene[P("0xa3")][P("0xa4")](s, t[P("0x10f")]);
@@ -31930,7 +31932,7 @@ import * as Cesium from "cesium";
                     var h = o[P("0x1c6")]();
                     h[P("0x17c")](l), h[P("0x17c")](c), h.push(u), (i[P("0x187")](i[P("0x0")] - 1)[P("0x19f")] = e[P("0x11")][P("0x19e")](h));
                   }
-                  r && 0 != r[P("0x0")]
+                  r && 0 !== r[P("0x0")]
                     ? (r[P("0x187")](r.length - 1)[P("0x8c")] = e[P("0x11")][P("0x1a1")](l, c, u))
                     : (((r = t[P("0x17d")][P("0x6d")](new e[P("0x1a5")]())).name = P("0x301")),
                       (r[P("0x2cc")] = P("0x2fd") + "_" + t[P("0x1a9")]),
@@ -31946,7 +31948,7 @@ import * as Cesium from "cesium";
                 t[P("0x173")] = r;
               }, e[P("0x161")].MOUSE_MOVE),
               this[P("0x16f")][P("0x160")](function (i) {
-                if (((t.flag = !0), (i = t[P("0x18b")]), 3 == t[P("0xd3")])) var r = t[P("0x10f")][P("0x174")](i.position);
+                if (((t.flag = !0), (i = t[P("0x18b")]), 3 === t[P("0xd3")])) var r = t[P("0x10f")][P("0x174")](i.position);
                 else {
                   var o = t.camera[P("0x86")](i.position);
                   r = t[P("0x10f")][P("0xa3")][P("0xa4")](o, t[P("0x10f")]);
@@ -31977,7 +31979,7 @@ import * as Cesium from "cesium";
               }, e[P("0x161")][P("0x189")]);
           }),
             (t.prototype[P("0x2d1")] = function (t) {
-              if (null != this[P("0x172")] && 0 != this[P("0x172")][P("0x0")]) {
+              if (null !== this[P("0x172")] && 0 !== this[P("0x172")][P("0x0")]) {
                 if (/Android|webOS|iPhone|ipad|iPod|BlackBerry/i[P("0x270")](navigator[P("0x2cd")])) this[P("0x172")] = this[P("0x172")];
                 else if (!t) {
                   console[P("0x133")](P("0x1ad")), (t = this[P("0x18b")]);
@@ -31988,15 +31990,15 @@ import * as Cesium from "cesium";
                     o = e[P("0x23")][P("0x113")](n[P("0x112")]),
                     a = e[P("0x23")][P("0x113")](n[P("0x114")]),
                     s = n[P("0x8b")];
-                  this[P("0x172")][this[P("0x172")][P("0x0")] - 1] == s &&
-                  this._array_[this[P("0x172")][P("0x0")] - 2] == a &&
-                  this._array_[this._array_[P("0x0")] - 3] == o
+                  this[P("0x172")][this[P("0x172")][P("0x0")] - 1] === s &&
+                  this._array_[this[P("0x172")][P("0x0")] - 2] === a &&
+                  this._array_[this._array_[P("0x0")] - 3] === o
                     ? (this[P("0x172")] = this._array_)
                     : (this[P("0x172")][P("0x17c")](o), this._array_[P("0x17c")](a), this[P("0x172")][P("0x17c")](s));
                 }
                 this._labels_ && (this[P("0x17d")][P("0x17f")](this[P("0x173")]), (this._labels_ = null));
                 var x = this[P("0xd3")];
-                if (2 == this[P("0xd3")]) {
+                if (2 === this[P("0xd3")]) {
                   var l = (function (t, i) {
                     for (var r = [], n = 0; n < t[P("0x0")] / 3 - 1; n++) {
                       var o = 3 * n,
@@ -32051,10 +32053,10 @@ import * as Cesium from "cesium";
                   g,
                   p = e[P("0x11")][P("0x19e")](e[P("0x14")](l) ? l : this[P("0x172")]),
                   m = 0;
-                if ((new e[P("0x282")](), 1 == x || 3 == x)) {
+                if ((new e[P("0x282")](), 1 === x || 3 === x)) {
                   for (var b = 1; b < p[P("0x0")]; b++) m += e[P("0x11")][P("0x8e")](p[b - 1], p[b]);
                   c =
-                    0 == m
+                    0 === m
                       ? "起点"
                       : 0 < m && m < 1e3
                       ? this[P("0x2ff")]
@@ -32063,10 +32065,10 @@ import * as Cesium from "cesium";
                       : this[P("0x2ff")]
                       ? P("0x303") + (m / 1e3)[P("0x2af")](2) + "km"
                       : (m / 1e3).toFixed(2) + "km";
-                } else if (2 == x) {
+                } else if (2 === x) {
                   for (b = 1; b < p.length; b++) m += e[P("0x11")][P("0x8e")](p[b - 1], p[b]);
                   c =
-                    0 == m
+                    0 === m
                       ? "起点"
                       : 0 < m && m < 1e3
                       ? this[P("0x2ff")]
@@ -32091,7 +32093,7 @@ import * as Cesium from "cesium";
                   }),
                   (g[P("0x187")](g[P("0x0")] - 1)[P("0x8c")] = d[d[P("0x0")] - 1]),
                   3 < h[P("0x0")] &&
-                    h[P("0x306")][h.length - 3].name == P("0x307") &&
+                    h[P("0x306")][h.length - 3].name === P("0x307") &&
                     (h[P("0x306")][h[P("0x0")] - 3]._labels[0].backgroundColor = new e[P("0x16a")](0, 1, 0, 0.3));
               }
             }),
@@ -32151,7 +32153,7 @@ import * as Cesium from "cesium";
               (this.mode = t[P("0xd3")] ? t[P("0xd3")] : 1);
           });
           function i(e, t) {
-            for (var i = 0; i < t[P("0x0")]; i++) t[P("0x187")](i)[P("0x2cc")] == e && (t.remove(t[P("0x187")](i)), i--);
+            for (var i = 0; i < t[P("0x0")]; i++) t[P("0x187")](i)[P("0x2cc")] === e && (t.remove(t[P("0x187")](i)), i--);
           }
           (t[P("0x5")][P("0x198")] = function () {
             this[P("0x1a9")]++,
@@ -32163,7 +32165,7 @@ import * as Cesium from "cesium";
               r = this,
               n = [];
             this[P("0x16f")][P("0x160")](function (o) {
-              if (2 == r[P("0xd3")]) {
+              if (2 === r[P("0xd3")]) {
                 var a = r[P("0x10f")][P("0xa4")](o[P("0x8c")]);
                 if (!a) return;
                 if (!(a.primitive instanceof e.Cesium3DTileset)) return void console.warn(P("0x2f5"));
@@ -32269,7 +32271,7 @@ import * as Cesium from "cesium";
               (o[P("0x187")](o[P("0x0")] - 1)[P("0x8c")] = e[P("0x11")].fromDegrees(r[r.length - 3], r[r[P("0x0")] - 2], r[r[P("0x0")] - 1]));
           }
           function r(e, t) {
-            for (var i = 0; i < t[P("0x0")]; i++) t[P("0x187")](i)[P("0x2cc")] == e && (t[P("0x17f")](t[P("0x187")](i)), i--);
+            for (var i = 0; i < t[P("0x0")]; i++) t[P("0x187")](i)[P("0x2cc")] === e && (t[P("0x17f")](t[P("0x187")](i)), i--);
           }
           (t[P("0x5")].activate = function () {
             if ((this.count++, (this.handler = this[P("0x16f")] && this[P("0x16f")][P("0xf4")]()), !this[P("0x16f")])) {
@@ -32282,7 +32284,7 @@ import * as Cesium from "cesium";
                 (this[P("0x1aa")] = t),
                 (this[P("0x173")] = void 0),
                 this[P("0x16f")][P("0x160")](function (o) {
-                  if (2 == r[P("0xd3")]) var a = r[P("0x10f")][P("0x174")](o[P("0x8c")]);
+                  if (2 === r[P("0xd3")]) var a = r[P("0x10f")][P("0x174")](o[P("0x8c")]);
                   else {
                     var s = r[P("0x7e")].getPickRay(o[P("0x8c")]);
                     a = r.scene.globe.pick(s, r[P("0x10f")]);
@@ -32293,7 +32295,7 @@ import * as Cesium from "cesium";
                       c = e[P("0x23")].toDegrees(x[P("0x114")]),
                       u = x[P("0x8b")];
                     0 < n[P("0x0")] &&
-                      (9 == n[P("0x0")] &&
+                      (9 === n[P("0x0")] &&
                         ((n[3] = l),
                         (n[4] = c),
                         (n[5] = u),
@@ -32308,7 +32310,7 @@ import * as Cesium from "cesium";
                       }),
                       (r[P("0x172")] = n),
                       r.measureEnd()),
-                      0 == n.length &&
+                      0 === n.length &&
                         (n[P("0x17c")](l),
                         n[P("0x17c")](c),
                         n.push(u),
@@ -32418,7 +32420,7 @@ import * as Cesium from "cesium";
               (this[P("0x2cb")] = []);
           });
           function i(e, t) {
-            for (var i = 0; i < t.length; i++) t.get(i)[P("0x2cc")] == e && (t[P("0x17f")](t[P("0x187")](i)), i--);
+            for (var i = 0; i < t.length; i++) t.get(i)[P("0x2cc")] === e && (t[P("0x17f")](t[P("0x187")](i)), i--);
           }
           (t.prototype[P("0x198")] = function () {
             if ((this[P("0x1a9")]++, (this.handler = this[P("0x16f")] && this[P("0x16f")][P("0xf4")]()), !this[P("0x16f")])) {
@@ -32429,7 +32431,7 @@ import * as Cesium from "cesium";
                 n = [];
               (this[P("0x172")] = n),
                 this.handler[P("0x160")](function (o) {
-                  if (2 == r.mode) var a = r[P("0x42")][P("0x174")](o[P("0x8c")]);
+                  if (2 === r.mode) var a = r[P("0x42")][P("0x174")](o[P("0x8c")]);
                   else {
                     var s = r[P("0x317")][P("0x86")](o[P("0x8c")]);
                     a = r[P("0x42")][P("0xa3")][P("0xa4")](s, r[P("0x42")]);
@@ -32478,7 +32480,7 @@ import * as Cesium from "cesium";
                   }
                 }, e[P("0x161")].LEFT_CLICK),
                 this[P("0x16f")][P("0x160")](function (o) {
-                  if (2 == r[P("0xd3")]) var a = r[P("0x42")].pickPosition(o.endPosition);
+                  if (2 === r[P("0xd3")]) var a = r[P("0x42")].pickPosition(o.endPosition);
                   else {
                     var s = r[P("0x317")][P("0x86")](o.endPosition);
                     a = r[P("0x42")][P("0xa3")][P("0xa4")](s, r[P("0x42")]);
@@ -32489,11 +32491,11 @@ import * as Cesium from "cesium";
                       c = e[P("0x23")].toDegrees(x[P("0x114")]),
                       u = x[P("0x8b")];
                     if (!/Android|webOS|iPhone|ipad|iPod|BlackBerry/i[P("0x270")](navigator.userAgent)) {
-                      if (3 == n[P("0x0")]) {
+                      if (3 === n[P("0x0")]) {
                         var h = n[P("0x1d5")]();
                         h[P("0x17c")](l, c, u), r.measureEnd(h, t);
                       }
-                      i && 0 != i[P("0x0")]
+                      i && 0 !== i[P("0x0")]
                         ? (i[P("0x187")](i[P("0x0")] - 1).position = a)
                         : (((i = r[P("0x306")][P("0x6d")](new e[P("0x1a5")]()))[P("0x176")] = P("0x31f")),
                           (i[P("0x2cc")] = "MeasureSlopeWidget_" + r.count),
@@ -32557,7 +32559,7 @@ import * as Cesium from "cesium";
                     i < 1e3 ? i[P("0x2af")](2) : (i / 1e3)[P("0x2af")](2),
                     (a = Math.round(e[P("0x23")].toDegrees(Math[P("0x321")](i / t))) + "°");
                   var s = (function (e, t) {
-                    for (var i = 0; i < e[P("0x0")]; i++) if (e.get(i).name == t) return e[P("0x187")](i);
+                    for (var i = 0; i < e[P("0x0")]; i++) if (e.get(i).name === t) return e[P("0x187")](i);
                   })(r, P("0x322") + n);
                   s
                     ? ((s[P("0x187")](0)[P("0x31b")] = a), (s[P("0x187")](0).position = e[P("0x11")][P("0x1a1")](o[0], o[1], o[2])))
@@ -32583,7 +32585,7 @@ import * as Cesium from "cesium";
                 if (r && r.collection && r[P("0x2fc")][P("0x2cc")] && -1 < r[P("0x2fc")][P("0x2cc")][P("0x2d3")](P("0x316"))) {
                   var n = (function (e, t) {
                     for (var i = 0; i < e[P("0x0")]; i++)
-                      if (e[P("0x187")](i)[P("0x2cc")] == t && e[P("0x187")](i)[P("0x176")] == P("0x31c")) return e[P("0x187")](i);
+                      if (e[P("0x187")](i)[P("0x2cc")] === t && e[P("0x187")](i)[P("0x176")] === P("0x31c")) return e[P("0x187")](i);
                   })(t[P("0x306")], r.collection[P("0x2cc")]);
                   (n[P("0x187")](0).material[P("0x19d")][P("0x169")] = e[P("0x16a")][P("0x2d5")]),
                     (n.get(1)[P("0x19c")][P("0x19d")][P("0x169")] = e[P("0x16a")].YELLOW),
@@ -32627,7 +32629,7 @@ import * as Cesium from "cesium";
               (this[P("0x32c")] = []);
           });
           function i(e, t) {
-            for (var i = 0, r = 0; r < t[P("0x0")]; r++) if ((t[r] == e && i++, 2 == i)) return !0;
+            for (var i = 0, r = 0; r < t[P("0x0")]; r++) if ((t[r] === e && i++, 2 === i)) return !0;
           }
           function r(e, t, i, r, n, o, a) {
             var s = {},
@@ -32665,13 +32667,13 @@ import * as Cesium from "cesium";
             return (c[P("0x348")] = [e[P("0x23")][P("0x113")](g[P("0x112")]), e.Math[P("0x113")](g[P("0x114")])]), (c.vertexSerial = [a, s]), c;
           }
           function o(e, t) {
-            for (var i = t.values, r = 0; r < i[P("0x0")]; r++) i[r][P("0x2cc")] == e && (t[P("0x17f")](i[r]), r--);
+            for (var i = t.values, r = 0; r < i[P("0x0")]; r++) i[r][P("0x2cc")] === e && (t[P("0x17f")](i[r]), r--);
           }
           function a(e, t) {
-            for (var i = 0; i < t[P("0x0")]; i++) t[P("0x187")](i)[P("0x2cc")] == e && (t[P("0x17f")](t.get(i)), i--);
+            for (var i = 0; i < t[P("0x0")]; i++) t[P("0x187")](i)[P("0x2cc")] === e && (t[P("0x17f")](t.get(i)), i--);
           }
           function s(e, t, i) {
-            for (var r = 0; r < t[P("0x0")]; r++) t[r][P("0x2cc")] == e && i[P("0x17f")](t[r].primitive);
+            for (var r = 0; r < t[P("0x0")]; r++) t[r][P("0x2cc")] === e && i[P("0x17f")](t[r].primitive);
           }
           e[P("0xf")](t.prototype, {
             viewer: {
@@ -32712,13 +32714,13 @@ import * as Cesium from "cesium";
                   n = [];
                 (this[P("0x172")] = n),
                   this[P("0x16f")].setInputAction(function (i) {
-                    if (1 == r[P("0xd3")])
+                    if (1 === r[P("0xd3")])
                       var o = r[P("0x317")][P("0x86")](i[P("0x8c")]),
                         a = r._scene[P("0xa3")].pick(o, r[P("0x42")]);
                     else a = r[P("0x42")][P("0x174")](i[P("0x8c")]);
                     a &&
                       (n.push(a),
-                      1 == n.length &&
+                      1 === n.length &&
                         (((t = r[P("0x306")][P("0x6d")](new e[P("0x199")]()))[P("0x176")] = "MeasureVolumeWidget_draw_polyline"),
                         (t[P("0x2cc")] = P("0x330") + r[P("0x1a9")]),
                         t[P("0x6d")]({
@@ -32734,7 +32736,7 @@ import * as Cesium from "cesium";
                   }, e[P("0x161")].LEFT_CLICK),
                   this.handler[P("0x160")](function (o) {
                     if (!/Android|webOS|iPhone|ipad|iPod|BlackBerry/i[P("0x270")](navigator.userAgent)) {
-                      if (1 == r[P("0xd3")])
+                      if (1 === r[P("0xd3")])
                         var a = r[P("0x317")].getPickRay(o.endPosition),
                           s = r[P("0x42")][P("0xa3")].pick(a, r._scene);
                       else s = r[P("0x42")][P("0x174")](o[P("0x64")]);
@@ -32759,7 +32761,7 @@ import * as Cesium from "cesium";
                     }
                   }, e[P("0x161")].MOUSE_MOVE),
                   this[P("0x16f")][P("0x160")](function (o) {
-                    if (1 == r[P("0xd3")])
+                    if (1 === r[P("0xd3")])
                       var a = r[P("0x317")][P("0x86")](o[P("0x8c")]),
                         s = r[P("0x42")].globe.pick(a, r[P("0x42")]);
                     else s = r[P("0x42")][P("0x174")](o[P("0x8c")]);
@@ -32875,8 +32877,8 @@ import * as Cesium from "cesium";
             }),
             (t.prototype[P("0x2d1")] = function () {
               var t = this;
-              if (this[P("0x172")] && 0 != this[P("0x172")].length) {
-                1 == this[P("0xd3")] && (this._scene[P("0xa3")].depthTestAgainstTerrain = !0);
+              if (this[P("0x172")] && 0 !== this[P("0x172")].length) {
+                1 === this[P("0xd3")] && (this._scene[P("0xa3")].depthTestAgainstTerrain = !0);
                 for (var i = [], r = 0; r < this._array_.length; r++) {
                   var n = e[P("0x13")][P("0x175")](this[P("0x172")][r]),
                     o = e[P("0x23")][P("0x113")](n[P("0x112")]),
@@ -33025,7 +33027,7 @@ import * as Cesium from "cesium";
                   if (r)
                     if (r[P("0x2fc")] && r.collection[P("0x2cc")] && -1 < r[P("0x2fc")][P("0x2cc")][P("0x2d3")](P("0x325"))) {
                       var n = (function (e, t) {
-                        for (var i = 0; i < t[P("0x0")]; i++) if (t[i].tag == e) return t[i][P("0x182")];
+                        for (var i = 0; i < t[P("0x0")]; i++) if (t[i].tag === e) return t[i][P("0x182")];
                       })(r[P("0x2fc")][P("0x2cc")], t[P("0x32b")]);
                       n[P("0x354")](r[P("0x2fc")][P("0x2cc")])[P("0x169")] = e[P("0x184")].toValue(e.Color[P("0x2d5")].withAlpha(0.5));
                       for (var o = 0; o < r[P("0x2fc")][P("0x355")][P("0x0")]; o++)
@@ -33073,7 +33075,7 @@ import * as Cesium from "cesium";
                 (this[P("0x16f")] = new e[P("0x15f")](this[P("0x318")])),
                   (this[P("0x13c")][P("0x48")][P("0x150")].cursor = P("0x171")),
                   this[P("0x16f")][P("0x160")](function (t) {
-                    if (1 == i.mode)
+                    if (1 === i.mode)
                       var r = i._camera[P("0x86")](t[P("0x8c")]),
                         n = i[P("0x42")][P("0xa3")][P("0xa4")](r, i[P("0x42")]);
                     else n = i[P("0x42")].pickPosition(t[P("0x8c")]);
@@ -33129,10 +33131,10 @@ import * as Cesium from "cesium";
             }),
             (t[P("0x5")][P("0x35a")] = function () {
               !(function (e, t, i) {
-                for (var r = 0; r < i.length; r++) i[P("0x187")](r)[P("0x2cc")] == e && i[P("0x187")](r).name == t && (i[P("0x17f")](i.get(r)), r--);
+                for (var r = 0; r < i.length; r++) i[P("0x187")](r)[P("0x2cc")] === e && i[P("0x187")](r).name === t && (i[P("0x17f")](i.get(r)), r--);
               })("MeasureVolumeWidget_" + this[P("0x1a9")], P("0x33c"), this[P("0x306")]),
                 (function (e, t, i) {
-                  for (var r = i.values, n = 0; n < r.length; n++) r[n][P("0x2cc")] == e && r[n][P("0x176")] == t && (i[P("0x17f")](r[n]), n--);
+                  for (var r = i.values, n = 0; n < r.length; n++) r[n][P("0x2cc")] === e && r[n][P("0x176")] === t && (i[P("0x17f")](r[n]), n--);
                 })(P("0x330") + this[P("0x1a9")], P("0x35c"), this._viewer.entities);
               var t = this._interpolationPoints.features,
                 i = [],
@@ -33394,7 +33396,7 @@ import * as Cesium from "cesium";
             (i[P("0x5")][P("0x380")] = function (i) {
               this[P("0x38f")]();
               var r = (i = t(i, e[P("0x102")].EMPTY_OBJECT))[P("0x390")];
-              if (!r || 0 == r[P("0x0")]) return console[P("0x391")](P("0x392")), !1;
+              if (!r || 0 === r[P("0x0")]) return console[P("0x391")](P("0x392")), !1;
               var n,
                 o,
                 a,
@@ -33512,7 +33514,7 @@ import * as Cesium from "cesium";
             });
             for (var M = [], N = 0; N < T[P("0x0")] - 1; N++) {
               var L = [s[T[N]], s[T[N + 1]]];
-              M = N % 2 == 0 ? M.concat(u(L, a, n, !0)) : M[P("0x1c6")](u(L, a, o, !0));
+              M = N % 2 === 0 ? M.concat(u(L, a, n, !0)) : M[P("0x1c6")](u(L, a, o, !0));
             }
             return M;
           }
@@ -33574,7 +33576,7 @@ import * as Cesium from "cesium";
           }
           function f(e, t, i) {
             for (var r = 0; r < e[P("0x0")]; r++)
-              e[P("0x176")] == i &&
+              e[P("0x176")] === i &&
                 (t[P("0x8c")] && (e[P("0x187")](r)[P("0x8c")] = t[P("0x8c")]),
                 t[P("0x31b")] && (e[P("0x187")](r).text = t[P("0x31b")]),
                 void 0 !== t[P("0x3d8")] && (e.get(r).showBackground = t.showBackground),
@@ -33587,7 +33589,7 @@ import * as Cesium from "cesium";
                 t.outlineColor && (e.get(r).outlineColor = t[P("0x3df")]));
           }
           function d(e, t) {
-            for (var i = 0; i < t[P("0x0")]; i++) t.get(i).name == e && (t[P("0x17f")](t[P("0x187")](i)), i--);
+            for (var i = 0; i < t[P("0x0")]; i++) t.get(i).name === e && (t[P("0x17f")](t[P("0x187")](i)), i--);
           }
           (s[P("0x5")][P("0x198")] = function () {
             this.clear(), (this.canvas[P("0x150")].cursor = P("0x171"));
@@ -33633,7 +33635,7 @@ import * as Cesium from "cesium";
                       (y[P("0x3b9")] = 0),
                       setTimeout(function () {
                         !(function t(i) {
-                          if (i[P("0x3b9")] % (2 * i[P("0x3b7")]) == 0) {
+                          if (i[P("0x3b9")] % (2 * i[P("0x3b7")]) === 0) {
                             var n = {
                                 longitude: i[P("0x3ba")][i[P("0x3b9")]],
                                 latitude: i[P("0x3ba")][i.num + 1],
@@ -33656,7 +33658,7 @@ import * as Cesium from "cesium";
                       }, y.timeInterval);
                   else {
                     for (var a = [], c = 0; c < y.boundaryPositionArr[P("0x0")]; c++)
-                      if (c % 2 == 0) {
+                      if (c % 2 === 0) {
                         var u = {
                             longitude: y.boundaryPositionArr[c],
                             latitude: y[P("0x3ba")][c + 1],
@@ -33811,7 +33813,7 @@ import * as Cesium from "cesium";
               var r, n;
               t &&
                 i &&
-                (null == this._pointLightCamera
+                (null === this._pointLightCamera
                   ? ((this[P("0x3af")] = new e[P("0x3cb")](this[P("0x10f")])),
                     (this[P("0x3af")][P("0x8c")] = t),
                     (r = {
@@ -33842,7 +33844,7 @@ import * as Cesium from "cesium";
                 d(r, this[P("0x39e")]),
                 d(a, this[P("0x39e")]),
                 (function (e, t) {
-                  for (var i = 0; i < t.values[P("0x0")]; i++) t[P("0x190")][i][P("0x176")] == e && (t[P("0x17f")](t[P("0x190")][i]), i--);
+                  for (var i = 0; i < t.values[P("0x0")]; i++) t[P("0x190")][i][P("0x176")] === e && (t[P("0x17f")](t[P("0x190")][i]), i--);
                 })(n, this[P("0x13b")].entities);
             }),
             (s[P("0x5")][P("0xf4")] = function () {
@@ -34091,7 +34093,7 @@ import * as Cesium from "cesium";
             }),
             (i[P("0x5")].clearMark = function () {
               for (var e = 0; e < this.scene[P("0x17d")][P("0x0")]; e++)
-                this[P("0x10f")][P("0x17d")][P("0x187")](e)[P("0x176")] == t &&
+                this[P("0x10f")][P("0x17d")][P("0x187")](e)[P("0x176")] === t &&
                   (this[P("0x10f")][P("0x17d")][P("0x17f")](this[P("0x10f")][P("0x17d")][P("0x187")](e)), e--);
             }),
             (i[P("0x5")][P("0x418")] = function () {
@@ -34158,7 +34160,7 @@ import * as Cesium from "cesium";
             );
           }
           function x(e, t, i) {
-            for (var r = 0; r < e[P("0x0")]; r++) e.name == i && (e.get(r)[P("0x8c")] = t);
+            for (var r = 0; r < e[P("0x0")]; r++) e.name === i && (e.get(r)[P("0x8c")] = t);
           }
           function l(e, t) {
             u(e, t);
@@ -34177,17 +34179,17 @@ import * as Cesium from "cesium";
             );
           }
           function u(e, t) {
-            for (var i = 0; i < t.length; i++) t[P("0x187")](i).name == e && (t[P("0x17f")](t[P("0x187")](i)), i--);
+            for (var i = 0; i < t.length; i++) t[P("0x187")](i).name === e && (t[P("0x17f")](t[P("0x187")](i)), i--);
           }
           function h(e, t) {
             for (var i = 0; i < t._entities._array[P("0x0")]; i++)
-              t[P("0x430")][P("0x431")][i][P("0x176")] == e && (t[P("0x17f")](t[P("0x430")][P("0x431")][i]), i--);
+              t[P("0x430")][P("0x431")][i][P("0x176")] === e && (t[P("0x17f")](t[P("0x430")][P("0x431")][i]), i--);
           }
           (o[P("0x5")][P("0x198")] = function () {
             (this[P("0x10f")][P("0xa3")][P("0x32a")] = !1),
               this[P("0x42a")](),
               this[P("0x192")](),
-              1.52 == b()(e[P("0x373")]) && (this.scene.enableGeoSightline = !0),
+              1.52 === b()(e[P("0x373")]) && (this.scene.enableGeoSightline = !0),
               1.58 <= b()(e[P("0x373")]) && (this[P("0x10f")][P("0x42b")] = !1),
               (this.canvas[P("0x150")][P("0x170")] = "crosshair");
             var i = null,
@@ -34248,11 +34250,11 @@ import * as Cesium from "cesium";
                       (e.Cartesian3.lerp(this[P("0x425")], this.targetActualPosition, c * (1 / Math.floor(l)), t), (a[0][P("0x8c")] = t));
                     break;
                   }
-              if (0 == a.length) s = [this[P("0x425")], this[P("0x426")]];
+              if (0 === a.length) s = [this[P("0x425")], this[P("0x426")]];
               else {
                 var u = e.Cartesian3[P("0x8d")](e[P("0x11")][P("0x95")](a[0][P("0x8c")], this[P("0x425")], new e[P("0x11")]()), new e[P("0x11")]()),
                   h = e.Cartesian3.normalize(e[P("0x11")].subtract(a[0].position, this.targetActualPosition, new e[P("0x11")]()), new e[P("0x11")]());
-                if (u.x[P("0x2af")](8) == h.x[P("0x2af")](8) && u.y.toFixed(8) == h.y[P("0x2af")](8) && u.z[P("0x2af")](8) == h.z[P("0x2af")](8))
+                if (u.x[P("0x2af")](8) === h.x[P("0x2af")](8) && u.y.toFixed(8) === h.y[P("0x2af")](8) && u.z[P("0x2af")](8) === h.z[P("0x2af")](8))
                   s = [this[P("0x426")], this[P("0x425")]];
                 else {
                   (s = [this[P("0x425")], a[0][P("0x8c")]]), (x = [a[0][P("0x8c")], this[P("0x426")]]);
@@ -34591,7 +34593,7 @@ import * as Cesium from "cesium";
                   l++
                 ) {
                   var c = n[P("0x10f")].globe[P("0xef")][P("0xd6")](r[l]);
-                  if (((c.height = 0), x[P("0x17c")](c), l == r.length - 1))
+                  if (((c.height = 0), x[P("0x17c")](c), l === r.length - 1))
                     for (var u = 1; u <= t; u++) {
                       var h = B.Cartesian3[P("0x308")](r[l], r[0], u / t, new B.Cartesian3());
                       ((f = B[P("0x13")][P("0x175")](h))[P("0x8b")] = 0), x.push(f);
@@ -34688,7 +34690,7 @@ import * as Cesium from "cesium";
                 t[P("0x460")][P("0x17c")](e[P("0x23")].toDegrees(o[P("0x112")])),
                   t[P("0x460")][P("0x17c")](e[P("0x23")][P("0x113")](o.latitude)),
                   t[P("0x460")][P("0x17c")](o[P("0x8b")]),
-                  null == t._polylineCollection &&
+                  null === t._polylineCollection &&
                     ((t[P("0x304")] = t[P("0x13b")][P("0x10f")][P("0x17d")][P("0x6d")](new e.PolylineCollection())),
                     (t._polylineCollection[P("0x176")] = "draw_polyline"),
                     (t[P("0x45c")] = t[P("0x304")][P("0x6d")]({
@@ -34706,7 +34708,7 @@ import * as Cesium from "cesium";
                   t[P("0x45d")]++;
               }, e[P("0x161")][P("0x17e")]),
                 this[P("0x16f")][P("0x160")](function (e) {
-                  if (null != t[P("0x304")]) {
+                  if (null !== t[P("0x304")]) {
                     var i = t[P("0x13b")][P("0x7e")][P("0x86")](e.endPosition),
                       r = t.viewer[P("0x10f")][P("0xa3")][P("0xa4")](i, t[P("0x13b")].scene);
                     t[P("0x45f")][P("0x0")] > t[P("0x45d")] && t[P("0x45f")][P("0x25c")](),
@@ -34715,7 +34717,7 @@ import * as Cesium from "cesium";
                   }
                 }, e.ScreenSpaceEventType.MOUSE_MOVE),
                 this.handler.setInputAction(function (i) {
-                  if (null != t._polylineCollection) {
+                  if (null !== t._polylineCollection) {
                     var r = t[P("0x13b")][P("0x7e")][P("0x86")](i.position),
                       n = t[P("0x13b")][P("0x10f")][P("0xa3")][P("0xa4")](r, t[P("0x13b")].scene),
                       o = e[P("0x13")].fromCartesian(n);
@@ -34769,7 +34771,7 @@ import * as Cesium from "cesium";
                 l = t(o[P("0x464")][P("0x169")], e[P("0x16a")].RED[P("0x6e")]());
             }
             var c = "none";
-            if (o && o[P("0x466")] && ((c = o[P("0x466")]), -1 == ["elevation", P("0x467"), P("0x468"), P("0x2b4")][P("0x2d3")](c)))
+            if (o && o[P("0x466")] && ((c = o[P("0x466")]), -1 === ["elevation", P("0x467"), P("0x468"), P("0x2b4")][P("0x2d3")](c)))
               return alert("输入值可选elevation,slope,aspect,none中的一个！"), !1;
             var u,
               h = -414,
@@ -34791,7 +34793,7 @@ import * as Cesium from "cesium";
                             },
                           },
                           components: {
-                            diffuse: "contourMaterial.alpha == 0.0 ? elevationRampMaterial.diffuse : contourMaterial.diffuse",
+                            diffuse: "contourMaterial.alpha === 0.0 ? elevationRampMaterial.diffuse : contourMaterial.diffuse",
                             alpha: P("0x486"),
                           },
                         },
@@ -34814,7 +34816,7 @@ import * as Cesium from "cesium";
                             },
                           },
                           components: {
-                            diffuse: "contourMaterial.alpha == 0.0 ? slopeRampMaterial.diffuse : contourMaterial.diffuse",
+                            diffuse: "contourMaterial.alpha === 0.0 ? slopeRampMaterial.diffuse : contourMaterial.diffuse",
                             alpha: P("0x488"),
                           },
                         },
@@ -34835,7 +34837,7 @@ import * as Cesium from "cesium";
                             },
                           },
                           components: {
-                            diffuse: "contourMaterial.alpha == 0.0 ? aspectRampMaterial.diffuse : contourMaterial.diffuse",
+                            diffuse: "contourMaterial.alpha === 0.0 ? aspectRampMaterial.diffuse : contourMaterial.diffuse",
                             alpha: P("0x48a"),
                           },
                         },
@@ -34864,7 +34866,7 @@ import * as Cesium from "cesium";
                   e === P("0x469") ? (o = i) : e === P("0x467") ? (o = r) : "aspect" === e && (o = n);
                   var s = a[P("0x477")](0, 0, 100, 0);
                   return (
-                    7 == o[P("0x0")]
+                    7 === o[P("0x0")]
                       ? (s.addColorStop(o[0], P("0x478")),
                         s[P("0x479")](o[1], P("0x47a")),
                         s[P("0x479")](o[2], "#D33B7D"),
@@ -34926,7 +34928,7 @@ import * as Cesium from "cesium";
               this[P("0x492")][P("0x495")].addEventListener(r);
           }),
             (t.prototype[P("0x496")] = function (e) {
-              this.show != e && (this[P("0x48c")] = !0), (this[P("0x221")] = e);
+              this.show !== e && (this[P("0x48c")] = !0), (this[P("0x221")] = e);
             }),
             (t[P("0x5")][P("0x497")] = function (e) {
               return this[P("0x221")];
@@ -34966,7 +34968,7 @@ import * as Cesium from "cesium";
               }
             }),
             (t.prototype[P("0x49d")] = function (t) {
-              if (void 0 !== t && "number" == typeof t && t < this[P("0x48d")][P("0x0")]) {
+              if (void 0 !== t && "number" === typeof t && t < this[P("0x48d")][P("0x0")]) {
                 var i = this.polys[t];
                 if (void 0 === i) return;
                 var r = i[P("0x49b")];
@@ -35028,7 +35030,7 @@ import * as Cesium from "cesium";
                 this[P("0x4b2")](r);
                 for (var s = 0; s < o; s++) {
                   var x = n[s];
-                  if (void 0 !== x && 1 != x[P("0x496")]) {
+                  if (void 0 !== x && 1 !== x[P("0x496")]) {
                     x.showPlat = !0;
                     for (
                       var l = x[P("0x4b3")][P("0x1d5")](0),
@@ -35104,7 +35106,7 @@ import * as Cesium from "cesium";
             (t[P("0x5")].toUnplatModel = function (e, t) {
               for (var i = t, r = i[P("0x48f")][P("0x4b0")], n = r[P("0x0")], o = 0; o < n; o++) {
                 var a = r[o];
-                if (void 0 !== a && 0 != a[P("0x496")]) {
+                if (void 0 !== a && 0 !== a[P("0x496")]) {
                   a[P("0x496")] = !1;
                   var s = a[P("0x4b3")][P("0x1d5")](0);
                   this[P("0x4b7")](i, s, o, e);
@@ -35144,7 +35146,7 @@ import * as Cesium from "cesium";
                     for (var n = 0; n < g; n++) {
                       var o = e[P("0x11")][P("0x6e")](d[n], new e[P("0x11")]()),
                         a = e[P("0x13")].fromCartesian(o, i);
-                      0 != n
+                      0 !== n
                         ? (u > a[P("0x112")] ? (u = a[P("0x112")]) : c < a[P("0x112")] && (c = a[P("0x112")]),
                           h > a[P("0x114")] ? (h = a.latitude) : f < a[P("0x114")] && (f = a[P("0x114")]))
                         : ((c = u = a[P("0x112")]), (h = f = a[P("0x114")]));
@@ -35254,7 +35256,7 @@ import * as Cesium from "cesium";
                     o++
                   ) {
                     var k = U[o];
-                    0 != o
+                    0 !== o
                       ? (R > k[P("0x112")] ? (R = k[P("0x112")]) : O < k[P("0x112")] && (O = k[P("0x112")]),
                         D > k[P("0x114")] ? (D = k[P("0x114")]) : F < k[P("0x114")] && (F = k[P("0x114")]))
                       : ((R = O = k.longitude), (F = D = k[P("0x114")]));
@@ -35484,7 +35486,7 @@ import * as Cesium from "cesium";
                   if (r[P("0x4d3")](s, u)) {
                     if (r[P("0x4d3")](a, c)) return !0;
                     if (r.isEqualFloat(a, h)) return !0;
-                    if (a < c == h < a) return !0;
+                    if (a < c === h < a) return !0;
                   }
                 } else if (r[P("0x4d3")](s, u)) {
                   if (r[P("0x4d3")](a, c)) return !0;
@@ -35493,13 +35495,13 @@ import * as Cesium from "cesium";
                   if (r[P("0x4d3")](a, h)) return !0;
                   h < a && (u < s ? (d.b = !d.b) : (d.t = !d.t));
                 }
-                if (s < u != s < f) {
+                if (s < u !== s < f) {
                   var m = (h - c) / (f - u);
                   if (((m *= s - u), (m += c), r[P("0x4d3")](a, m))) return !0;
                   a < m && (d.z = !d.z);
                 }
               }
-              return d.t == d.b ? (d.t ? !d.z : d.z) : void 0;
+              return d.t === d.b ? (d.t ? !d.z : d.z) : void 0;
             }),
             (t[P("0x5")][P("0x4d3")] = function (t, i, r) {
               if ((e.defined(r) || (r = 1e-8), !e[P("0x14")](t))) return !1;
@@ -35673,13 +35675,13 @@ import * as Cesium from "cesium";
             );
           }
           function a(e, t, i) {
-            for (var r = 0; r < e[P("0x0")]; r++) e[P("0x176")] == i && (e.get(r)[P("0x8c")] = t);
+            for (var r = 0; r < e[P("0x0")]; r++) e[P("0x176")] === i && (e.get(r)[P("0x8c")] = t);
           }
           function s(e, t) {
             x(e, t);
           }
           function x(e, t) {
-            for (var i = 0; i < t[P("0x0")]; i++) t.get(i)[P("0x176")] == e && (t[P("0x17f")](t[P("0x187")](i)), i--);
+            for (var i = 0; i < t[P("0x0")]; i++) t.get(i)[P("0x176")] === e && (t[P("0x17f")](t[P("0x187")](i)), i--);
           }
           (r.prototype[P("0x198")] = function () {
             this[P("0x192")](), (this.canvas[P("0x150")][P("0x170")] = P("0x171"));
@@ -35778,7 +35780,7 @@ import * as Cesium from "cesium";
                 (this[P("0x191")] = i || null),
                 (this[P("0x4fa")] = 0),
                 (this[P("0x4fb")] = []),
-                null == this.scene.expandShadowMapList && (this[P("0x10f")][P("0x4fc")] = []),
+                null === this.scene.expandShadowMapList && (this[P("0x10f")][P("0x4fc")] = []),
                 b()(e[P("0x373")]) < 1.5
                   ? console.error(P("0x3b0") + e[P("0x373")] + ",可视域分析暂不支持该版本，请更换至1.50以上的版本!")
                   : ((this[P("0x4fd")] = void 0),
@@ -35818,15 +35820,15 @@ import * as Cesium from "cesium";
             );
           }
           function a(e, t, i) {
-            for (var r = 0; r < e[P("0x0")]; r++) e[P("0x176")] == i && (e[P("0x187")](r).position = t);
+            for (var r = 0; r < e[P("0x0")]; r++) e[P("0x176")] === i && (e[P("0x187")](r).position = t);
           }
           function s(e, t) {
             !(function (e, t) {
-              for (var i = 0; i < t.length; i++) t[P("0x187")](i)[P("0x176")] == e && (t[P("0x17f")](t[P("0x187")](i)), i--);
+              for (var i = 0; i < t.length; i++) t[P("0x187")](i)[P("0x176")] === e && (t[P("0x17f")](t[P("0x187")](i)), i--);
             })(e, t);
           }
           function x(e, t) {
-            for (var i = 0; i < t[P("0x0")]; i++) t[P("0x187")](i).id == e && (t[P("0x17f")](t[P("0x187")](i)), i--);
+            for (var i = 0; i < t[P("0x0")]; i++) t[P("0x187")](i).id === e && (t[P("0x17f")](t[P("0x187")](i)), i--);
           }
           (r[P("0x5")].activate = function () {
             var i = null,
@@ -35888,7 +35890,7 @@ import * as Cesium from "cesium";
                 o = t.frustumHead,
                 a = t.frustumPitch,
                 s = t[P("0x507")];
-              if (null != r && null != n && null != o && null != a && null != s) {
+              if (null !== r && null !== n && null !== o && null !== a && null !== s) {
                 var l = e[P("0x11")][P("0x1a1")](r[0], r[1], r[2]),
                   c = e[P("0x23")][P("0x119")](o),
                   u = e.Math.toRadians(a),
@@ -35966,7 +35968,7 @@ import * as Cesium from "cesium";
                 (this.callback = t || null);
             });
           function s(e, t) {
-            for (var i = 0, r = 0; r < t[P("0x0")]; r++) if ((t[r] == e && i++, 2 == i)) return !0;
+            for (var i = 0, r = 0; r < t[P("0x0")]; r++) if ((t[r] === e && i++, 2 === i)) return !0;
           }
           function x(e, t, i, r, n, o, a) {
             var s = {},
@@ -36016,7 +36018,7 @@ import * as Cesium from "cesium";
             });
           }
           function u(e, t) {
-            for (var i = 0; i < t.values[P("0x0")]; i++) t[P("0x190")][i][P("0x176")] == e && (t[P("0x17f")](t.values[i]), i--);
+            for (var i = 0; i < t.values[P("0x0")]; i++) t[P("0x190")][i][P("0x176")] === e && (t[P("0x17f")](t.values[i]), i--);
           }
           (a[P("0x5")][P("0x198")] = function () {
             this.canvas[P("0x150")][P("0x170")] = P("0x171");
@@ -36375,11 +36377,11 @@ import * as Cesium from "cesium";
               var t = this;
               t[P("0x16f")][P("0x160")](function (i) {
                 var r = t[P("0x10f")].pick(i[P("0x8c")]);
-                if (r && r.id && r.id[P("0x2cc")] == P("0x52d")) {
+                if (r && r.id && r.id[P("0x2cc")] === P("0x52d")) {
                   if (
                     (t[P("0x52e")](r),
                     t[P("0x522")] &&
-                      t._INTERSECTED_FLOOR != r &&
+                      t._INTERSECTED_FLOOR !== r &&
                       (t._INTERSECTED_FLOOR.primitive.getGeometryInstanceAttributes(t._INTERSECTED_FLOOR.id)[P("0x169")] =
                         e.ColorGeometryInstanceAttribute.toValue(t[P("0x3dd")])),
                     (t[P("0x522")] = r),
@@ -36387,21 +36389,21 @@ import * as Cesium from "cesium";
                   ) {
                     var n = t._INTERSECTED_FLOOR3[P("0x52f")][P("0x530")][0].id,
                       o = t[P("0x526")].getGeometryInstanceAttributes(n);
-                    o[P("0x169")][P("0x531")]() == e[P("0x184")][P("0x356")](t[P("0x520")]).toString() &&
+                    o[P("0x169")][P("0x531")]() === e[P("0x184")][P("0x356")](t[P("0x520")]).toString() &&
                       (o[P("0x169")] = e[P("0x184")][P("0x356")](t[P("0x3dd")]));
                   }
                   var a = t[P("0x522")].primitive[P("0x354")](t[P("0x522")].id);
-                  if (a.color.toString() == e[P("0x184")][P("0x356")](t[P("0x520")]).toString()) return;
+                  if (a.color.toString() === e[P("0x184")][P("0x356")](t[P("0x520")]).toString()) return;
                   a[P("0x169")] = e.ColorGeometryInstanceAttribute[P("0x356")](t[P("0x520")]);
                 }
               }, e[P("0x161")][P("0x17e")]),
                 t[P("0x16f")][P("0x160")](function (i) {
                   var r = t[P("0x10f")].pick(i[P("0x64")]);
-                  if (r && r.id && r.id[P("0x2cc")] == P("0x52d")) {
+                  if (r && r.id && r.id[P("0x2cc")] === P("0x52d")) {
                     if (
                       (t[P("0x532")](r),
                       t[P("0x523")] &&
-                        t[P("0x523")] != r &&
+                        t[P("0x523")] !== r &&
                         (t._INTERSECTED_FLOOR2[P("0x182")][P("0x354")](t[P("0x523")].id).color = e.ColorGeometryInstanceAttribute[P("0x356")](
                           t[P("0x3dd")]
                         )),
@@ -36409,11 +36411,11 @@ import * as Cesium from "cesium";
                       t[P("0x522")])
                     ) {
                       var n = t[P("0x522")].primitive.getGeometryInstanceAttributes(t[P("0x522")].id);
-                      n[P("0x169")][P("0x531")]() == e[P("0x184")].toValue(t[P("0x3dd")])[P("0x531")]() &&
+                      n[P("0x169")][P("0x531")]() === e[P("0x184")].toValue(t[P("0x3dd")])[P("0x531")]() &&
                         (n.color = e[P("0x184")][P("0x356")](t[P("0x520")]));
                     }
                     var o = t._INTERSECTED_FLOOR2.primitive[P("0x354")](t[P("0x523")].id);
-                    if (o.color[P("0x531")]() == e[P("0x184")][P("0x356")](t[P("0x521")])[P("0x531")]()) return;
+                    if (o.color[P("0x531")]() === e[P("0x184")][P("0x356")](t[P("0x521")])[P("0x531")]()) return;
                     o[P("0x169")] = e.ColorGeometryInstanceAttribute.toValue(t[P("0x521")]);
                   }
                 }, e[P("0x161")][P("0x163")]);
@@ -36421,7 +36423,7 @@ import * as Cesium from "cesium";
             (t[P("0x5")][P("0x533")] = function (t) {
               var i = null;
               if (this[P("0x440")] && this.data[P("0x180")] && this[P("0x49c")] && (i = this[P("0x524")][P("0x187")](t - 1))) {
-                if (this[P("0x526")] && this._INTERSECTED_FLOOR3 != i) {
+                if (this[P("0x526")] && this._INTERSECTED_FLOOR3 !== i) {
                   var r = this[P("0x526")][P("0x52f")][P("0x530")][0].id;
                   this[P("0x526")][P("0x354")](r)[P("0x169")] = e[P("0x184")][P("0x356")](this.fillColor);
                 }
@@ -36647,7 +36649,7 @@ import * as Cesium from "cesium";
               this[P("0x13b")].scene[P("0x564")][P("0x548")](this[P("0x104")], this);
             }),
             (t[P("0x5")][P("0x547")] = function () {
-              0 != this[P("0x13b")][P("0x194")][P("0x430")][P("0x0")]
+              0 !== this[P("0x13b")][P("0x194")][P("0x430")][P("0x0")]
                 ? (this[P("0x13b")][P("0x10f")][P("0x564")][P("0x548")](this[P("0x104")], this),
                   this[P("0x13b")][P("0x10f")].postRender.addEventListener(this[P("0x104")], this))
                 : this[P("0x13b")][P("0x10f")][P("0x564")][P("0x548")](this[P("0x104")], this);
@@ -36764,7 +36766,7 @@ import * as Cesium from "cesium";
                   });
                 this[P("0x56b")] = i[P("0x8c")][P("0x512")](this[P("0x13b")][P("0x571")][P("0x57a")]);
                 var r = this[P("0x10f")][P("0xa3")][P("0xef")];
-                if (null == this[P("0x56b")])
+                if (null === this[P("0x56b")])
                   (this[P("0x13b")][P("0x571")][P("0x57b")] = 0),
                     document[P("0x548")]("keydown", this.keydownOption),
                     this[P("0x13b")][P("0x10f")].postRender[P("0x548")](this[P("0x104")]);
@@ -36896,7 +36898,7 @@ import * as Cesium from "cesium";
               r = t[P("0xd6")](i),
               n = Math[P("0x3e8")](1e5 * e[P("0x23")].toDegrees(r.latitude)) / 1e5,
               o = Math[P("0x3e8")](1e5 * e.Math[P("0x113")](r.longitude)) / 1e5;
-            o == this[P("0x569")][1][0] && n == this[P("0x569")][1][1]
+            o === this[P("0x569")][1][0] && n === this[P("0x569")][1][1]
               ? (this[P("0x57e")][P("0x17c")](e[P("0x23")].toDegrees(this[P("0x13b")].camera[P("0x7f")])),
                 1e-12 <= this[P("0x583")] - e[P("0x23")].toDegrees(this.viewer[P("0x7e")].heading)
                   ? (this[P("0x13b")][P("0x7e")][P("0x584")](0),
@@ -36944,7 +36946,7 @@ import * as Cesium from "cesium";
                 });
             }),
             (t[P("0x5")].play = function () {
-              0 == this[P("0x13b")][P("0x194")][P("0x430")][P("0x0")] && this.drawMarker(),
+              0 === this[P("0x13b")][P("0x194")][P("0x430")][P("0x0")] && this.drawMarker(),
                 this[P("0x13b")][P("0x10f")].postRender[P("0x548")](this.animation, this),
                 this[P("0x13b")].camera[P("0x9c")]({
                   destination: e[P("0x11")][P("0x1a1")](this[P("0x569")][0][0], this[P("0x569")][0][1], this[P("0x569")][0][2]),
@@ -36959,7 +36961,7 @@ import * as Cesium from "cesium";
               this.viewer.scene[P("0x564")].removeEventListener(this[P("0x104")], this);
             }),
             (t.prototype[P("0x547")] = function () {
-              0 != this[P("0x13b")][P("0x194")]._entities[P("0x0")]
+              0 !== this[P("0x13b")][P("0x194")]._entities[P("0x0")]
                 ? (this[P("0x13b")][P("0x10f")][P("0x564")].removeEventListener(this[P("0x104")], this),
                   this[P("0x13b")][P("0x10f")][P("0x564")].addEventListener(this.animation, this))
                 : this[P("0x13b")][P("0x10f")][P("0x564")][P("0x548")](this[P("0x104")], this);
@@ -37047,7 +37049,7 @@ import * as Cesium from "cesium";
             if (this[P("0x59f")]) {
               var i = this[P("0x59f")][P("0x4ac")],
                 r = e[P("0x1b")].getTranslation(i, new e.Cartesian3());
-              if (0 != r.x || 0 != r.y || 0 != r.z) {
+              if (0 !== r.x || 0 !== r.y || 0 !== r.z) {
                 var n = e.Matrix3[P("0x5a0")](e[P("0x23")].toRadians(this._rotationXPerFrame)),
                   o = e[P("0x1a")][P("0x5a1")](e.Math[P("0x119")](this[P("0x58f")])),
                   a = e[P("0x1a")][P("0x5a2")](e[P("0x23")][P("0x119")](this[P("0x5a3")]));
@@ -37168,7 +37170,7 @@ import * as Cesium from "cesium";
           function i(e, t) {
             for (var i = 0; i < t[P("0x0")]; i++) {
               var r = t[i];
-              if (r[P("0x5b3")] == e) return r;
+              if (r[P("0x5b3")] === e) return r;
             }
           }
           (t[P("0x5")][P("0xf4")] = function () {
@@ -38545,7 +38547,7 @@ import * as Cesium from "cesium";
                 (t[P("0xd3")] = 0) < this._explode &&
                   e[P("0x23")][P("0x6de")](0, 1) > 1 - this._explode &&
                   ((t[P("0xd3")] = 1), (t[P("0x6e0")] *= 1.2), (t[P("0x6c4")] *= 0.2), (t[P("0x539")] *= 2)),
-                null != t.position
+                null !== t.position
               );
             }),
             (r[P("0x5")][P("0x6e1")] = function (e) {
@@ -38553,7 +38555,7 @@ import * as Cesium from "cesium";
             }),
             (r.prototype[P("0x5c8")] = function (t) {
               var i;
-              if (((i = this[P("0x6e3")][P("0x6e4")] ? t.time[P("0x6e5")] : e[P("0x5d0")]() / 1e3), 0 == this[P("0x6d1")])) this[P("0x6d1")] = i;
+              if (((i = this[P("0x6e3")][P("0x6e4")] ? t.time[P("0x6e5")] : e[P("0x5d0")]() / 1e3), 0 === this[P("0x6d1")])) this[P("0x6d1")] = i;
               else {
                 var r = i - this[P("0x6d1")];
                 r > this[P("0x6c6")] && (r = this[P("0x6c6")]), (this[P("0x5cf")] = r), (this[P("0x6d1")] = i);
@@ -38562,7 +38564,7 @@ import * as Cesium from "cesium";
             (r[P("0x5")].update = function (e) {
               this[P("0x5c8")](e);
               var t = this[P("0x6c9")];
-              if (!(t < 1 || t != this[P("0x6d7")][P("0x0")] || this[P("0x6be")][P("0x0")] < 1) && this[P("0x6cc")]) {
+              if (!(t < 1 || t !== this[P("0x6d7")][P("0x0")] || this[P("0x6be")][P("0x0")] < 1) && this[P("0x6cc")]) {
                 if (this[P("0x5b7")]) {
                   for (var i = 0; i < t; i++) {
                     var r = this[P("0x6d7")][i];
@@ -38829,14 +38831,14 @@ import * as Cesium from "cesium";
               P("0x718") +
               P("0x719") +
               P("0x71a") +
-              "       if (v_texIndex == 1.0){\n" +
+              "       if (v_texIndex === 1.0){\n" +
               P("0x71b") +
               "       }\n       else{\n" +
               P("0x71c") +
               P("0x71d") +
               P("0x614") +
               P("0x71e") +
-              "       if (v_texIndex == 1.0){\n" +
+              "       if (v_texIndex === 1.0){\n" +
               P("0x71b") +
               P("0x71d") +
               "       else{\n" +
@@ -39186,7 +39188,7 @@ import * as Cesium from "cesium";
               (t[P("0xd3")] = 0),
               (t[P("0x73a")] = e.Math[P("0x6de")](this[P("0x72c")].alpha, this[P("0x6c2")].alpha)),
               (t[P("0x73b")] = e.Math.randomBetween(this._minNormalFactor, this[P("0x732")])),
-              null != t[P("0x8c")]
+              null !== t[P("0x8c")]
             );
           }),
             (o[P("0x5")][P("0x73c")] = function (e) {
@@ -39194,7 +39196,7 @@ import * as Cesium from "cesium";
             }),
             (o[P("0x5")][P("0x5c8")] = function (t) {
               var i;
-              if (((i = this._clock[P("0x6e4")] ? t[P("0x6f2")].secondsOfDay : e[P("0x5d0")]() / 1e3), 0 == this[P("0x6d1")])) this[P("0x6d1")] = i;
+              if (((i = this._clock[P("0x6e4")] ? t[P("0x6f2")].secondsOfDay : e[P("0x5d0")]() / 1e3), 0 === this[P("0x6d1")])) this[P("0x6d1")] = i;
               else {
                 var r = i - this[P("0x6d1")];
                 r > this[P("0x6c6")] && (r = this[P("0x6c6")]), (this[P("0x5cf")] = r), (this._preTime = i);
@@ -39203,7 +39205,7 @@ import * as Cesium from "cesium";
             (o[P("0x5")][P("0xd2")] = function (e) {
               this[P("0x5c8")](e);
               var t = this._count;
-              if (!(t < 1 || t != this[P("0x72f")][P("0x0")] || this[P("0x6be")][P("0x0")] < 1) && this[P("0x6cc")]) {
+              if (!(t < 1 || t !== this[P("0x72f")][P("0x0")] || this[P("0x6be")][P("0x0")] < 1) && this[P("0x6cc")]) {
                 if (this._needUpdate) {
                   this[P("0x73d")] = this._door * t;
                   for (var i = 0; i < t; i++) {
@@ -39673,7 +39675,7 @@ import * as Cesium from "cesium";
                         d = e.Cartesian3[P("0x6e")](i),
                         g = e[P("0x11")][P("0x8e")](f, e[P("0x11")][P("0x6f")]),
                         p = e[P("0x11")].distance(d, e[P("0x11")][P("0x6f")]);
-                      if ((e[P("0x11")][P("0x8d")](f, f), e[P("0x11")][P("0x8d")](d, d), 0 == e.Cartesian3[P("0x8e")](f, d))) return o;
+                      if ((e[P("0x11")][P("0x8d")](f, f), e[P("0x11")][P("0x8d")](d, d), 0 === e.Cartesian3[P("0x8e")](f, d))) return o;
                       var m = e[P("0x11")][P("0xcb")](f, d);
                       o.push(t);
                       for (var b = 1; b < n - 1; b++) {
@@ -39742,7 +39744,7 @@ import * as Cesium from "cesium";
                 (e[P("0x0")] = 0);
             }),
             (t.prototype[P("0x543")] = function (e) {
-              this[P("0x756")] = "boolean" == typeof e ? e : !this.playing;
+              this[P("0x756")] = "boolean" === typeof e ? e : !this.playing;
               var t = this[P("0x762")];
               (e = this.playing),
                 t.forEach(function (t) {
@@ -39923,7 +39925,7 @@ import * as Cesium from "cesium";
                 var i = t[P("0x19f")];
                 if (i && void 0 !== i[P("0x0")] && !(i.length < 1)) {
                   var r = i[P("0x0")];
-                  (i[0][0] == i[r - 1][0] && i[0][1] == i[r - 1][1] && i[0][2] == i[r - 1][2]) || i[P("0x17c")]([i[0][0], i[0][1], i[0][2]]),
+                  (i[0][0] === i[r - 1][0] && i[0][1] === i[r - 1][1] && i[0][2] === i[r - 1][2]) || i[P("0x17c")]([i[0][0], i[0][1], i[0][2]]),
                     t[P("0x6bd")] || (t[P("0x6bd")] = 0.21),
                     t[P("0x6c3")] || (t.smoking = 0.15),
                     t[P("0xfc")] || (t[P("0xfc")] = 1),
@@ -39997,8 +39999,8 @@ import * as Cesium from "cesium";
               for (var i = t[P("0x76f")].length, r = 0; r < i; r++) t[P("0x76f")][r][P("0xd2")](e);
               if (
                 ((t[P("0x784")] &&
-                  t[P("0x784")][P("0x793")]._width == e[P("0x3cc")][P("0x782")] &&
-                  t[P("0x784")][P("0x793")]._height == e.context[P("0x783")]) ||
+                  t[P("0x784")][P("0x793")]._width === e[P("0x3cc")][P("0x782")] &&
+                  t[P("0x784")][P("0x793")]._height === e.context[P("0x783")]) ||
                   t._createAssignedFrameBuffer(e),
                 t._framebuffer)
               ) {
@@ -40447,7 +40449,7 @@ import * as Cesium from "cesium";
                 a,
                 s = 0 | e.length,
                 x = 0 | t[P("0x0")];
-              if (1 == s && 1 == x) return (a = (i = e[0]) - ((n = i + (r = -t[0])) - (o = n - i)) + (r - o)) ? [a, n] : [n];
+              if (1 === s && 1 === x) return (a = (i = e[0]) - ((n = i + (r = -t[0])) - (o = n - i)) + (r - o)) ? [a, n] : [n];
               var l,
                 c,
                 u = new Array(s + x),
@@ -40489,7 +40491,7 @@ import * as Cesium from "cesium";
                 a,
                 s = 0 | e[P("0x0")],
                 x = 0 | t[P("0x0")];
-              if (1 == s && 1 == x) return (a = (i = e[0]) - ((n = i + (r = t[0])) - (o = n - i)) + (r - o)) ? [a, n] : [n];
+              if (1 === s && 1 === x) return (a = (i = e[0]) - ((n = i + (r = t[0])) - (o = n - i)) + (r - o)) ? [a, n] : [n];
               var l,
                 c,
                 u = new Array(s + x),
@@ -40568,7 +40570,7 @@ import * as Cesium from "cesium";
               ++h
             )
               (u[0][h] = "1"), (u[e - 1][h] = "w" + h);
-            for (h = 0; h < e; ++h) 0 == (1 & h) ? s[P("0x17c")][P("0x346")](s, x(o(u, h))) : c[P("0x17c")][P("0x346")](c, x(o(u, h)));
+            for (h = 0; h < e; ++h) 0 === (1 & h) ? s[P("0x17c")][P("0x346")](s, x(o(u, h))) : c[P("0x17c")][P("0x346")](c, x(o(u, h)));
             var f = a(s),
               d = a(c),
               g = "exactInSphere" + e,
@@ -40692,7 +40694,7 @@ import * as Cesium from "cesium";
               h < e;
               ++h
             )
-              0 == (1 & h) ? x[P("0x17c")].apply(x, s(o(c, h))) : l[P("0x17c")][P("0x346")](l, s(o(c, h))), u[P("0x17c")]("m" + h);
+              0 === (1 & h) ? x[P("0x17c")].apply(x, s(o(c, h))) : l[P("0x17c")][P("0x346")](l, s(o(c, h))), u[P("0x17c")]("m" + h);
             var f = a(x),
               d = a(l),
               g = P("0x11e") + e + P("0x804"),
@@ -40871,7 +40873,7 @@ import * as Cesium from "cesium";
               f = !!x(l, P("0x817"), !1);
             if ((!u && !h) || 0 === e.length) return [];
             var g = i(e, t);
-            if (c || u != h || f) {
+            if (c || u !== h || f) {
               for (var p = r(e[P("0x0")], t[P("0x815")](a).sort(s)), m = 0; m < g.length; ++m) {
                 var b = g[m];
                 p[P("0x7dd")](b[0], b[1], b[2]);
@@ -40891,7 +40893,7 @@ import * as Cesium from "cesium";
           function r(i) {
             (i = i || {}), (this[P("0x818")] = []);
             var r = i[P("0x0")];
-            if (e[P("0x14")](r) && 3 == r)
+            if (e[P("0x14")](r) && 3 === r)
               for (var n = 0; n < 3; n++) {
                 var o = new t(i[n]);
                 this[P("0x818")][P("0x17c")](o);
@@ -40928,7 +40930,7 @@ import * as Cesium from "cesium";
             (r[P("0x3d0")] = function (i) {
               var n = new r(),
                 o = i[P("0x0")];
-              if (e[P("0x14")](o) && 3 == o)
+              if (e[P("0x14")](o) && 3 === o)
                 for (var a = 0; a < 3; a++) {
                   var s = t[P("0x3d0")](i[a]);
                   n._points[P("0x17c")](s);
@@ -40944,7 +40946,7 @@ import * as Cesium from "cesium";
             }),
             (r[P("0x5")].adjustOrder = function () {
               var t = this[P("0x818")];
-              if (3 == t.length) {
+              if (3 === t.length) {
                 var i = new e.Cartesian3(t[0][P("0x563")], t[0][P("0x54e")]),
                   r = new e[P("0x11")](t[1].lon, t[1][P("0x54e")]),
                   n = new e[P("0x11")](t[2][P("0x563")], t[2].lat),
@@ -40960,7 +40962,7 @@ import * as Cesium from "cesium";
             (r[P("0x5")][P("0x819")] = function (t, i) {
               var r = this[P("0x818")],
                 n = r[P("0x0")];
-              if (3 != n) return !1;
+              if (3 !== n) return !1;
               for (var o = 0; o < n; o++) {
                 var a = r[o],
                   s = e[P("0x11")][P("0x3d0")](a[P("0x563")], a[P("0x54e")], 0);
@@ -41020,7 +41022,7 @@ import * as Cesium from "cesium";
               i = n[P("0x0")];
               for (var o = 0; o < i; o++) {
                 var a = o + 1;
-                a == i && (a = 0);
+                a === i && (a = 0);
                 var s = n[o];
                 e.push([s[P("0x563")], s[P("0x54e")]]), t[P("0x17c")]([r + o, r + a]);
               }
@@ -41028,15 +41030,15 @@ import * as Cesium from "cesium";
             (o[P("0x5")][P("0x81d")] = function (e, t, i) {
               for (var r = i[P("0x0")], n = 0; n < r; n++) {
                 var o = i[n];
-                if (o[0] == e && o[1] == t) return !0;
-                if (o[0] == t && o[1] == e) return !0;
+                if (o[0] === e && o[1] === t) return !0;
+                if (o[0] === t && o[1] === e) return !0;
               }
               return !1;
             }),
             (o[P("0x5")]._checkCell = function (e, t) {
               for (var i = e[P("0x0")], r = 0; r < i; r++) {
                 var n = r + 1;
-                if ((n == i && (n = 0), !this[P("0x81d")](e[r], e[n], t))) return !1;
+                if ((n === i && (n = 0), !this[P("0x81d")](e[r], e[n], t))) return !1;
               }
               return !0;
             }),
@@ -41139,10 +41141,10 @@ import * as Cesium from "cesium";
               (this._polygons.length = 0), (this[P("0x82b")] = !1);
             }),
             (a[P("0x5")][P("0x833")] = function () {
-              this[P("0x822")] == a.Hide ? this[P("0x834")]() : this[P("0x835")]();
+              this[P("0x822")] === a.Hide ? this[P("0x834")]() : this[P("0x835")]();
             }),
             (a[P("0x5")][P("0x82c")] = function () {
-              this[P("0x822")] == a[P("0x829")] ? this[P("0x836")]() : this[P("0x837")]();
+              this[P("0x822")] === a[P("0x829")] ? this[P("0x836")]() : this[P("0x837")]();
             }),
             (a[P("0x5")]._enableHideAll = function () {
               var e = this[P("0x13c")][P("0x10f")][P("0x17d")];
@@ -41252,7 +41254,7 @@ import * as Cesium from "cesium";
               e[P("0x14")](t[P("0x365")]) && ((t.clippingPlanes = void 0), (t[P("0x852")] = !0));
             }),
             (a[P("0x5")][P("0x848")] = function (e) {
-              return this[P("0x822")] == a[P("0x829")] ? this[P("0x853")](e) : this[P("0x854")](e);
+              return this[P("0x822")] === a[P("0x829")] ? this[P("0x853")](e) : this[P("0x854")](e);
             }),
             (a[P("0x5")][P("0x853")] = function (t) {
               var i = this[P("0x855")](t);
@@ -41284,7 +41286,7 @@ import * as Cesium from "cesium";
                       P("0x861") +
                       P("0x862") +
                       P("0x863") +
-                      "        clipAmount = czm_branchFreeTernary(j == 0, amount, min(amount, clipAmount));\n" +
+                      "        clipAmount = czm_branchFreeTernary(j === 0, amount, min(amount, clipAmount));\n" +
                       P("0x864") +
                       P("0x865") +
                       P("0x866") +
@@ -41574,7 +41576,7 @@ import * as Cesium from "cesium";
                         (n[P("0x19a")] = 1024), (n[P("0x8b")] = 1024);
                         var o = n[P("0x476")]("2d");
                         return (
-                          e == P("0x449") &&
+                          e === P("0x449") &&
                             ((o[P("0x65b")] = (function (e) {
                               return P("0x8b1") + 255 * e.red + "," + 255 * e.green + "," + 255 * e[P("0x670")] + "," + 0.5 * e.alpha + ")";
                             })(t)),
@@ -41583,7 +41585,7 @@ import * as Cesium from "cesium";
                             o[P("0x659")](512, 512, 512 - (i / 2 + 2), 0, 2 * Math.PI, !0),
                             o.stroke(),
                             o[P("0x65a")]()),
-                          e == P("0x8b0") &&
+                          e === P("0x8b0") &&
                             (function (e, t, i, r, n, o) {
                               var a = Math.PI / 180;
                               (i = i || 0),
@@ -41598,7 +41600,7 @@ import * as Cesium from "cesium";
                                   u = d(s, 0.5 - l - 1),
                                   h = d(s, c),
                                   f = 1 - l / x - 0.3;
-                                0 == l && (f = 1),
+                                0 === l && (f = 1),
                                   e[P("0x658")](),
                                   (e.fillStyle = P("0x8b1") + t.red + "," + t[P("0x66f")] + "," + t[P("0x670")] + "," + f + ")"),
                                   e[P("0x8b5")](512, 512),
@@ -41642,7 +41644,7 @@ import * as Cesium from "cesium";
               var a,
                 s = o[P("0x476")]("2d");
               return (
-                t == P("0x449") &&
+                t === P("0x449") &&
                   ((s[P("0x65b")] =
                     ((a = i), P("0x8b1") + 255 * a[P("0x66e")] + "," + 255 * a[P("0x66f")] + "," + 255 * a.blue + "," + 0.5 * a[P("0x671")] + ")")),
                   (s[P("0x197")] = r),
@@ -41650,7 +41652,7 @@ import * as Cesium from "cesium";
                   s.arc(512, 512, 512 - (r / 2 + 2), 0, 2 * Math.PI, !0),
                   s[P("0x65e")](),
                   s[P("0x65a")]()),
-                "radar" == t &&
+                "radar" === t &&
                   (function (t, i, r, n, o, a) {
                     var s = Math.PI / 180;
                     (r = r || 0),
@@ -41665,7 +41667,7 @@ import * as Cesium from "cesium";
                         h = g(x, 0.5 - c - 1),
                         f = g(x, u),
                         d = 1 - c / l - 0.3;
-                      0 == c && (d = 1),
+                      0 === c && (d = 1),
                         t.beginPath(),
                         (t[P("0x484")] = P("0x8b1") + i[P("0x66e")] + "," + i[P("0x66f")] + "," + i.blue + "," + d + ")"),
                         t[P("0x8b5")](512, 512),
@@ -41762,7 +41764,7 @@ import * as Cesium from "cesium";
                 return this[P("0x5b9")];
               },
               set: function (e) {
-                this[P("0x5b9")] != e && ((this[P("0x5b9")] = e), this[P("0x8bf")](this[P("0x63c")] / this[P("0x5b9")]));
+                this[P("0x5b9")] !== e && ((this[P("0x5b9")] = e), this[P("0x8bf")](this[P("0x63c")] / this[P("0x5b9")]));
               },
             },
             lineWidth: {
@@ -41833,7 +41835,7 @@ import * as Cesium from "cesium";
             }),
             (t[P("0x5")][P("0x5c8")] = function () {
               var t = e[P("0x5d0")]() / 1e3;
-              if (0 == this._lastTime) (this[P("0x5bc")] = t), (this[P("0x6f2")] = 0);
+              if (0 === this._lastTime) (this[P("0x5bc")] = t), (this[P("0x6f2")] = 0);
               else {
                 var i = t - this[P("0x5bc")],
                   r = this.life;
@@ -42049,7 +42051,7 @@ import * as Cesium from "cesium";
                 return this[P("0x63c")];
               },
               set: function (t) {
-                e[P("0x14")](t) && 0 != t && t != this._radius && ((this[P("0x63c")] = t), (this[P("0x5bf")] = this[P("0x63c")] / this[P("0x5b9")]));
+                e[P("0x14")](t) && 0 !== t && t !== this._radius && ((this[P("0x63c")] = t), (this[P("0x5bf")] = this[P("0x63c")] / this[P("0x5b9")]));
               },
             },
             speed: {
@@ -42057,7 +42059,7 @@ import * as Cesium from "cesium";
                 return this._speed;
               },
               set: function (t) {
-                e[P("0x14")](t) && 0 != t && t != this[P("0x5b9")] && ((this[P("0x5b9")] = t), (this[P("0x5bf")] = this._radius / this[P("0x5b9")]));
+                e[P("0x14")](t) && 0 !== t && t !== this[P("0x5b9")] && ((this[P("0x5b9")] = t), (this[P("0x5bf")] = this._radius / this[P("0x5b9")]));
               },
             },
             color: {
@@ -42080,7 +42082,7 @@ import * as Cesium from "cesium";
             }),
             (t[P("0x5")][P("0x8fb")] = function (e) {
               var t = this;
-              t[P("0x8f2")] != e &&
+              t[P("0x8f2")] !== e &&
                 ((t[P("0x8f2")] = e),
                 (t._ready = !1),
                 (t[P("0x8fc")] = null),
@@ -42107,7 +42109,7 @@ import * as Cesium from "cesium";
             }),
             (t[P("0x5")][P("0x5c8")] = function () {
               var t = e[P("0x5d0")]() / 1e3;
-              if (0 == this[P("0x5bc")]) (this[P("0x5bc")] = t), (this._time = 0);
+              if (0 === this[P("0x5bc")]) (this[P("0x5bc")] = t), (this._time = 0);
               else {
                 var i = t - this._lastTime,
                   r = this[P("0x5bf")];
@@ -42122,7 +42124,7 @@ import * as Cesium from "cesium";
             }),
             (t[P("0x5")][P("0x8f9")] = function (t) {
               var i = this;
-              if (null != i[P("0x8f2")]) {
+              if (null !== i[P("0x8f2")]) {
                 if (i._texture) i[P("0x48b")] = !0;
                 else if (((i[P("0x48b")] = !1), !i._loading)) {
                   i._loading = !0;
@@ -42160,7 +42162,7 @@ import * as Cesium from "cesium";
               var a = e.Cartesian3[P("0xc8")](n, new e[P("0x11")]()),
                 s = e[P("0x11")][P("0xc8")](o, new e.Cartesian3()),
                 x = t[P("0x5b9")] * t._time;
-              if (null == t[P("0x8f2")])
+              if (null === t[P("0x8f2")])
                 (x /= 1.532),
                   (t._param0 = new e[P("0x12")](i.x, i.y, i.z)),
                   (t[P("0x8f5")] = new e.Cartesian4(r.x, r.y, r.z)),
@@ -42190,7 +42192,7 @@ import * as Cesium from "cesium";
                       (i[P("0x13c")][P("0x10f")][P("0x77c")].add(i[P("0x8f3")]), i._scanPostProcess.update(t.context, t[P("0x77d")]))
                     )
                   );
-                if (null == i[P("0x8f2")]) {
+                if (null === i[P("0x8f2")]) {
                   var n =
                     P("0x7a0") +
                     "uniform sampler2D depthTexture;\n" +
@@ -42490,9 +42492,9 @@ import * as Cesium from "cesium";
             if (!e[P("0x14")](this[P("0x92b")])) return (i += P("0x936") + t + ";\n") + "} \n";
             var r = "";
             return (
-              this[P("0x92b")] == P("0x469") && (r = "v_elevationPos.z"),
+              this[P("0x92b")] === P("0x469") && (r = "v_elevationPos.z"),
               (i +=
-                1 == (this[P("0x92f")] == this[P("0x937")])
+                1 === (this[P("0x92f")] === this[P("0x937")])
                   ? "if (" + r + P("0x938") + this._minValue + P("0x939")
                   : P("0x93a") + r + " >= " + this[P("0x937")] + P("0x93b") + r + " <= " + this[P("0x92f")] + P("0x939")),
               (i += "{ \n"),
@@ -42501,33 +42503,33 @@ import * as Cesium from "cesium";
             );
           }),
             (t.prototype[P("0x93c")] = function () {
-              if (!e[P("0x14")](this[P("0x92b")]) || this[P("0x92b")] != P("0x469")) return "";
+              if (!e[P("0x14")](this[P("0x92b")]) || this[P("0x92b")] !== P("0x469")) return "";
               var t = "",
                 i = "";
-              this[P("0x92b")] == P("0x469") && (i = "v_elevationPos.z");
-              var r = this[P("0x92f")] == this[P("0x937")],
+              this[P("0x92b")] === P("0x469") && (i = "v_elevationPos.z");
+              var r = this[P("0x92f")] === this[P("0x937")],
                 n = this[P("0x937")][P("0x531")]();
-              -1 == n[P("0x2d3")](".") && (n += ".0");
+              -1 === n[P("0x2d3")](".") && (n += ".0");
               var o = this._maxValue.toString();
-              -1 == o[P("0x2d3")](".") && (o += ".0");
+              -1 === o[P("0x2d3")](".") && (o += ".0");
               var a = this[P("0x92c")][P("0x531")]();
               return (
-                -1 == a[P("0x2d3")](".") && (a += ".0"),
+                -1 === a[P("0x2d3")](".") && (a += ".0"),
                 (t +=
-                  1 == r ? P("0x93a") + i + P("0x938") + n + P("0x93d") : P("0x93a") + i + P("0x93e") + n + P("0x93f") + i + " <= " + o + P("0x93d")),
+                  1 === r ? P("0x93a") + i + P("0x938") + n + P("0x93d") : P("0x93a") + i + P("0x93e") + n + P("0x93f") + i + " <= " + o + P("0x93d")),
                 (t += P("0x87c")),
                 (t += "luminanceValue = " + a + ";\n") + P("0x885")
               );
             }),
             (t.prototype.makeShader = function () {
               var e;
-              return this._topic == P("0x940") && (e = this[P("0x934")]()), this[P("0x931")] == P("0x941") && (e = this[P("0x93c")]()), e;
+              return this._topic === P("0x940") && (e = this[P("0x934")]()), this[P("0x931")] === P("0x941") && (e = this[P("0x93c")]()), e;
             }),
             (t[P("0x5")][P("0x942")] = function (t) {
-              if (this[P("0x931")] == P("0x941")) {
+              if (this[P("0x931")] === P("0x941")) {
                 if (!e[P("0x14")](this[P("0x92b")])) return this[P("0x92c")];
-                if (this._fieldName != P("0x469")) {
-                  if (this[P("0x92b")] == P("0x943")) return this._fieldValue;
+                if (this._fieldName !== P("0x469")) {
+                  if (this[P("0x92b")] === P("0x943")) return this._fieldValue;
                   var i = t[P("0x944")](this[P("0x92b")]);
                   return i >= this[P("0x937")] && i <= this[P("0x92f")] ? this._fieldValue : void 0;
                 }
@@ -42540,16 +42542,16 @@ import * as Cesium from "cesium";
               o = {};
             return (
               (o[P("0x932")] = t),
-              4 == i[P("0x0")]
+              4 === i[P("0x0")]
                 ? ((o[P("0x92d")] = n[0]),
                   (o.fieldName = n[1]),
-                  "$" == o[P("0x947")][P("0x7f3")](0, 1) && (o[P("0x947")] = o.fieldName[P("0x7f3")](1, o[P("0x947")][P("0x0")] - 1)),
+                  "$" === o[P("0x947")][P("0x7f3")](0, 1) && (o[P("0x947")] = o.fieldName[P("0x7f3")](1, o[P("0x947")][P("0x0")] - 1)),
                   (o.minValue = n[2]),
                   (o.maxValue = n[3]),
-                  i[1] == P("0x469") && (r[P("0x948")] = !0))
-                : 1 == i[P("0x0")]
+                  i[1] === P("0x469") && (r[P("0x948")] = !0))
+                : 1 === i[P("0x0")]
                 ? (o[P("0x92d")] = i[0])
-                : 2 == i[P("0x0")] && ((o[P("0x92d")] = n[0]), (o[P("0x947")] = n[1])),
+                : 2 === i[P("0x0")] && ((o[P("0x92d")] = n[0]), (o[P("0x947")] = n[1])),
               new e[P("0x92a")](o)
             );
           };
@@ -42672,13 +42674,13 @@ import * as Cesium from "cesium";
               return e + P("0x885");
             }),
             (i[P("0x5")][P("0x961")] = function () {
-              var e = "if (visualSenseStyle_enabledLightBand == 1.0) \n";
+              var e = "if (visualSenseStyle_enabledLightBand === 1.0) \n";
               return (e += "{\n"), (e += P("0x962")), (e += P("0x963")), (e += P("0x964")), (e += P("0x965")), (e += P("0x966")) + "}\n";
             }),
             (i.prototype[P("0x942")] = function (t, i) {
               for (var r = void 0, n = 0; n < this[P("0x95b")].length; n++) {
                 var o = this[P("0x95b")][n];
-                if (!r || o[P("0x92b")] != P("0x943")) {
+                if (!r || o[P("0x92b")] !== P("0x943")) {
                   var a = o[P("0x942")](t);
                   e[P("0x14")](a) && (r = a);
                 }
@@ -42847,7 +42849,7 @@ import * as Cesium from "cesium";
                 g = 2 * Math.PI,
                 m = Math[P("0x2ae")](10, -5.2),
                 b = function (e) {
-                  return null != e;
+                  return null !== e;
                 },
                 v = function (e, t, i, r, n, o) {
                   var a = t < 0 ? m : -m,
@@ -42940,7 +42942,7 @@ import * as Cesium from "cesium";
                           (A.field = i),
                             (function (t, i) {
                               function r(e) {
-                                return "#" == e[P("0x68e")](0) ? e[P("0x987")](1, 7) : e;
+                                return "#" === e[P("0x68e")](0) ? e[P("0x987")](1, 7) : e;
                               }
                               var n,
                                 o,
@@ -43143,7 +43145,7 @@ import * as Cesium from "cesium";
               (this[P("0x99f")] = t[P("0x99f")]),
               (this[P("0x9a0")] = e[P("0x102")](t[P("0x9a0")], 1)),
               (this[P("0x9a1")] = e.defaultValue(t.movingTargetZoomLevel, 14)),
-              (this.callback = "function" == typeof i ? i : function () {}),
+              (this.callback = "function" === typeof i ? i : function () {}),
               (this.scalable = !1),
               (this[P("0x9a2")] = !1),
               (this._latelyUpdateStamp = 0),
@@ -43315,7 +43317,7 @@ import * as Cesium from "cesium";
               (this[P("0xc6")] = new e.GeographicProjection(this[P("0x44")])),
               (this[P("0x9d5")] = [(this[P("0x9cd")][0] + this[P("0x9cd")][2]) / 2, (this[P("0x9cd")][1] + this[P("0x9cd")][3]) / 2]);
             var o,
-              a = 0 == r ? r : r - 1;
+              a = 0 === r ? r : r - 1;
             this[P("0x9d6")] = ((o = a), ((2 * Math.PI * 6378137) / 512 / Math[P("0x2ae")](2, o)) * 1405.5);
           });
           (t[P("0x5")] = new e[P("0x9d7")]()),
@@ -43407,7 +43409,7 @@ import * as Cesium from "cesium";
                 (e.Math[P("0x113")](i.latitude) + e[P("0x23")][P("0x113")](r[P("0x114")])) / 2,
               ]);
             var l,
-              c = 0 == o ? o : o - 1;
+              c = 0 === o ? o : o - 1;
             this._proposalHeight = ((l = c), ((2 * Math.PI * 6378137) / 512 / Math.pow(2, l)) * 1405.5);
           });
           (t[P("0x5")] = new e[P("0x68b")]()),
@@ -43613,7 +43615,7 @@ import * as Cesium from "cesium";
             (this[P("0x9fc")] = new e[P("0x766")]()),
               (this._modelFloorMasks = {}),
               (this[P("0x9fd")] = t.credit),
-              w()(this[P("0x9fd")]) == P("0x9fe") && (this[P("0x9fd")] = new e[P("0x9ff")](this[P("0x9fd")])),
+              w()(this[P("0x9fd")]) === P("0x9fe") && (this[P("0x9fd")] = new e[P("0x9ff")](this[P("0x9fd")])),
               (t[P("0xa00")] = e[P("0x102")](t[P("0xa00")], 32)),
               (t[P("0xa01")] = e[P("0x102")](t.heightMapHeight, 32)),
               (this._options = t),
@@ -43726,13 +43728,13 @@ import * as Cesium from "cesium";
             }),
             (t[P("0x5")][P("0xa21")] = function (e, t, i, r, n) {
               var o = i,
-                a = null != r ? this[P("0xa1d")](i) : 1,
+                a = null !== r ? this[P("0xa1d")](i) : 1,
                 s =
-                  ((e = null != r ? (e - (e % a)) / a : e),
-                  (t = null != r ? (t - (t % a)) / a : t),
-                  (i = null != r ? i - Math.log(a) / Math.log(2) : i),
+                  ((e = null !== r ? (e - (e % a)) / a : e),
+                  (t = null !== r ? (t - (t % a)) / a : t),
+                  (i = null !== r ? i - Math.log(a) / Math.log(2) : i),
                   this[P("0xa22")][P("0xa23")](e, t, i)),
-                x = this[P("0xa00")] * a == 256 && r ? 1 : 0;
+                x = this[P("0xa00")] * a === 256 && r ? 1 : 0;
               return (
                 n && (x = 0),
                 this[P("0xa0d")]
@@ -43767,7 +43769,7 @@ import * as Cesium from "cesium";
               return e[P("0x26b")].intersection(s, i, new e[P("0x26b")]());
             }),
             (t.prototype[P("0xa05")] = function (e, t, i) {
-              if (null == this[P("0xa02")]) return "";
+              if (null === this[P("0xa02")]) return "";
               var r = (e + t + i) % this[P("0xa02")][P("0x0")];
               return this[P("0xa02")][r];
             }),
@@ -43784,7 +43786,7 @@ import * as Cesium from "cesium";
                 }
                 return null;
               }
-              if (t.width == Math.PI) return null;
+              if (t.width === Math.PI) return null;
               for (var n = 0; n < viewer[P("0x10f")].globe[P("0xa2e")][P("0xa2f")][P("0x0")]; n++) {
                 var o = r(viewer[P("0x10f")][P("0xa3")]._surface[P("0xa2f")][n], t, i);
                 if (o) return o;
@@ -43849,7 +43851,7 @@ import * as Cesium from "cesium";
                   (c = this.requestTileHeightBuffer(t + 1, i + 1, r, n, !0, o)),
                   e[P("0x9ee")]
                     [P("0xa3b")]([u, x, l, c], function (e) {
-                      if (null != e[0].myReject && e[0][P("0xa3c")]) h[P("0xa3d")]();
+                      if (null !== e[0].myReject && e[0][P("0xa3c")]) h[P("0xa3d")]();
                       else {
                         for (var t = a[P("0xa00")] + 1, i = a[P("0xa01")] + 1, r = new Float32Array(t * i), n = e[0][P("0xa3e")], o = 0; o < t; o++)
                           for (var x = 0; x < i; x++) {
@@ -43859,9 +43861,9 @@ import * as Cesium from "cesium";
                             x === t - 1 && ((c = 0), (u = 1), n && ((u = 0), (c = t - 2))), o === i - 1 && ((l = 0), (u = 2));
                             var f = o * t + x,
                               d = l * a[P("0xa00")] + c;
-                            null === e[u] || (null != e[u].myReject && e[u].myReject) || (r[f] = e[u][d]);
+                            null === e[u] || (null !== e[u].myReject && e[u].myReject) || (r[f] = e[u][d]);
                           }
-                        (null != e[3][P("0xa3c")] && e[3].myReject) || (r[t * i - 1] = e[3][0]);
+                        (null !== e[3][P("0xa3c")] && e[3].myReject) || (r[t * i - 1] = e[3][0]);
                         var g = a[P("0xa3f")](r, t, i, 15);
                         (s.buffer = g), h[P("0x9f8")](s);
                       }
@@ -43875,13 +43877,13 @@ import * as Cesium from "cesium";
               var o = this,
                 a = [],
                 s = o[P("0xa22")].tileXYToNativeRectangle(t, i, r);
-              null != this[P("0xa41")] && 0 < this[P("0xa41")].length && 7 < r
+              null !== this[P("0xa41")] && 0 < this[P("0xa41")].length && 7 < r
                 ? [][P("0xa42")](function (e, x) {
                     if (x[P("0x221")]) {
                       var l = x[P("0x969")];
                       o[P("0xa29")](s, l)
                         ? (o[P("0xa0c")](!1), a[P("0x17c")](o[P("0xa43")](t, i, r, n, x)))
-                        : null != o[P("0xa2b")](s, l)
+                        : null !== o[P("0xa2b")](s, l)
                         ? (o.setFormatMPT(!1),
                           a[P("0x17c")](o.requestElevationLayerTileGeometry(t, i, r, n, x)),
                           a[P("0x17c")](o[P("0xa44")](t, i, r, n)))
@@ -43915,7 +43917,7 @@ import * as Cesium from "cesium";
                       x[P("0x9f8")](o.mergeBuffers(a.buffer, n[P("0x4b3")], s, a.requestedRectangle));
                     }
                   } else x[P("0xa3d")]();
-                }).otherwise(function () {
+                }).catch(function () {
                   x[P("0xa3d")]();
                 }),
                 x
@@ -43954,7 +43956,7 @@ import * as Cesium from "cesium";
                   (n = new e[P("0xa4d")]({
                     defer: !0,
                   }));
-                var s = 0 == n.defer;
+                var s = 0 === n.defer;
                 o = e.defaultValue(s, !1);
                 var x,
                   l = e[P("0x9ee")][P("0x9ef")]();
@@ -43975,7 +43977,7 @@ import * as Cesium from "cesium";
                     var f = [];
                     if (
                       (u[P("0x1e4")](function (t) {
-                        t[P("0x221")] && null != e[P("0x26b")][P("0x348")](c, t.rectangle, new e[P("0x26b")]()) && f[P("0x17c")](t);
+                        t[P("0x221")] && null !== e[P("0x26b")][P("0x348")](c, t.rectangle, new e[P("0x26b")]()) && f[P("0x17c")](t);
                       }),
                       0 < f[P("0x0")])
                     )
@@ -44056,7 +44058,7 @@ import * as Cesium from "cesium";
                               h = new e[P("0x13")](l, u);
                             i = 65535;
                             var f = t[P("0xa5a")](t, h, !0);
-                            null != f &&
+                            null !== f &&
                               f[P("0x490")] &&
                               f[P("0x490")][P("0xa5b")] &&
                               f[P("0x490")][P("0xa5b")].floor &&
@@ -44113,21 +44115,21 @@ import * as Cesium from "cesium";
                                       ? (c[h] =
                                           1 === e[1][h]
                                             ? c[h]
-                                            : 1 == e[1][P("0x9f6")]
+                                            : 1 === e[1][P("0x9f6")]
                                             ? c[h] + e[1].mtHeight
-                                            : 2 == e[1][P("0x9f6")]
+                                            : 2 === e[1][P("0x9f6")]
                                             ? Math[P("0x7d")](c[h], e[1][P("0x9f5")])
-                                            : 3 == e[1][P("0x9f6")]
+                                            : 3 === e[1][P("0x9f6")]
                                             ? Math[P("0xee")](c[h], e[1][P("0x9f5")])
                                             : e[1][P("0x9f5")])
                                       : (c[h] =
                                           1 === e[1][h]
                                             ? c[h]
-                                            : 1 == e[1][P("0x9f6")]
+                                            : 1 === e[1][P("0x9f6")]
                                             ? c[h] + e[1][h]
-                                            : 2 == e[1][P("0x9f6")]
+                                            : 2 === e[1][P("0x9f6")]
                                             ? Math[P("0x7d")](c[h], e[1][h])
-                                            : 3 == e[1][P("0x9f6")]
+                                            : 3 === e[1][P("0x9f6")]
                                             ? Math[P("0xee")](c[h], e[1][h])
                                             : e[1][h]);
                                   }
@@ -44229,15 +44231,15 @@ import * as Cesium from "cesium";
             }),
             (r[P("0x5")][P("0xa71")] = function (e) {
               var t = this;
-              if (null == e)
+              if (null === e)
                 return (
-                  null != this[P("0xa72")] && clearTimeout(this.timerId),
+                  null !== this[P("0xa72")] && clearTimeout(this.timerId),
                   void (this[P("0xa72")] = setTimeout(function () {
                     t[P("0xa71")](!0);
                   }, 5e3))
                 );
               for (var i = 0; i < this[P("0xa6a")][P("0x0")]; i++)
-                0 == this._workers[i][P("0xa6c")] && (this[P("0xa6a")][i][P("0xa73")](), this[P("0xa6a")][P("0x259")](i, 1), i--);
+                0 === this._workers[i][P("0xa6c")] && (this[P("0xa6a")][i][P("0xa73")](), this[P("0xa6a")][P("0x259")](i, 1), i--);
               this[P("0xa6a")][P("0x0")]
                 ? (this[P("0xa72")] = setTimeout(function () {
                     t[P("0xa71")](!0);
@@ -44251,7 +44253,7 @@ import * as Cesium from "cesium";
                 })(this[P("0xa6a")], function (e) {
                   return e.id === t.workerId;
                 });
-              null != i && (this[P("0xa6a")][i].jobQueueSize--, this[P("0xa71")]());
+              null !== i && (this[P("0xa6a")][i].jobQueueSize--, this[P("0xa71")]());
               var r = this[P("0xa6b")][t.deferedId];
               delete this._defered[t[P("0xa6f")]], r.resolve(t);
             }),
@@ -44339,7 +44341,7 @@ import * as Cesium from "cesium";
                           })(n);
                           e[P("0x14")](a) ? r[P("0x9f8")](a) : r[P("0xa3d")](void 0);
                         }
-                      } else (400 <= i[P("0xaa7")] || 0 == i[P("0xaa7")]) && r.reject(void 0);
+                      } else (400 <= i[P("0xaa7")] || 0 === i[P("0xaa7")]) && r.reject(void 0);
                   }),
                   r.promise
                 );
@@ -44400,7 +44402,7 @@ import * as Cesium from "cesium";
                 if ((e.defined(h) && (u = h[P("0xa95")](u)), (s = e[P("0x102")](s, !0)))) {
                   if (((l = i(u, s)), !e.defined(l))) return;
                 } else l = i(u);
-                if (this._tileType == t[P("0xa96")])
+                if (this._tileType === t[P("0xa96")])
                   return l.then(function (e) {
                     return (function (e, t, i, r, n) {
                       var o = 0,
@@ -44430,7 +44432,7 @@ import * as Cesium from "cesium";
                       var v = b[P("0xaaf")](0, m),
                         C = b[P("0xaaf")](m, 2 * m),
                         y = b[P("0xaaf")](2 * m, 3 * m);
-                      AttributeCompression.zigZagDeltaDecode(v, C, y), o % l != 0 && (o += l - (o % l));
+                      AttributeCompression.zigZagDeltaDecode(v, C, y), o % l !== 0 && (o += l - (o % l));
                       var _ = u[P("0xab0")](o, !0);
                       o += Uint32Array[P("0x4b5")];
                       var A = IndexDatatype[P("0xab1")](m, t, o, 3 * _);
@@ -44624,7 +44626,7 @@ import * as Cesium from "cesium";
           (t[P("0xa79")] = P("0xabd")), (t[P("0x5e9")] = P("0xabe")), (t.QUANTIZED_MESH = P("0xabf")), (t[P("0xa7c")] = P("0xac0"));
         })(window[P("0xfd")]),
         (k =
-          (void 0 === A.a ? "undefined" : w()(A.a)) === P("0x8") && "symbol" == w()(Symbol[P("0x1f3")])
+          (void 0 === A.a ? "undefined" : w()(A.a)) === P("0x8") && "symbol" === w()(Symbol[P("0x1f3")])
             ? function (e) {
                 return w()(e);
               }
@@ -44663,7 +44665,7 @@ import * as Cesium from "cesium";
             (i[P("0x5")]._loadGeoJSON = function (e) {
               var t = this;
               if ("object" === (w()(e) === P("0x2b6") ? P("0x2b6") : k(e))) this._loadGroundPrimitives(e);
-              else if ("string" == typeof e) {
+              else if ("string" === typeof e) {
                 var i = new window[P("0xacc")]();
                 i[P("0xaa0")](P("0xa9f"), e, !0),
                   (i[P("0xacd")] = !1),
@@ -44724,18 +44726,18 @@ import * as Cesium from "cesium";
                   i = null,
                   r = null;
                 t[P("0x16f")].setInputAction(function (n) {
-                  if (i && i.id && i.id[P("0x2cc")] == P("0xad7")) {
+                  if (i && i.id && i.id[P("0x2cc")] === P("0xad7")) {
                     if (r && r.id && i && i.id && i.id.description === r.id.description) return;
                     (i[P("0x182")][P("0x354")](i.id)[P("0x169")] = e.ColorGeometryInstanceAttribute[P("0x356")](t[P("0xac4")])), (i = void 0);
                   }
                   for (var o = void 0, a = t.viewer[P("0x10f")].drillPick(n[P("0x64")], 10), s = 0; s < a[P("0x0")]; s++)
-                    if (a[s] && a[s].id && a[s].id[P("0x2cc")] == P("0xad7")) {
+                    if (a[s] && a[s].id && a[s].id[P("0x2cc")] === P("0xad7")) {
                       o = a[s];
                       break;
                     }
                   if (
                     e[P("0x14")](o) &&
-                    ((!r && o && o.id && o.id[P("0x2cc")] == P("0xad7")) || (o && o.id && r && r.id && o.id[P("0xada")] !== r.id.description))
+                    ((!r && o && o.id && o.id[P("0x2cc")] === P("0xad7")) || (o && o.id && r && r.id && o.id[P("0xada")] !== r.id.description))
                   ) {
                     if (!t[P("0xadb")](o)) return;
                     (i = o)[P("0x182")][P("0x354")](o.id).color = e[P("0x184")][P("0x356")](t[P("0xac6")]);
@@ -44744,7 +44746,7 @@ import * as Cesium from "cesium";
                   t[P("0x16f")][P("0x160")](function (n) {
                     r && ((r[P("0x182")][P("0x354")](r.id)[P("0x169")] = e[P("0x184")].toValue(t[P("0xac4")])), (r = void 0));
                     for (var o = void 0, a = t.viewer[P("0x10f")][P("0xadc")](n[P("0x8c")], 10), s = 0; s < a[P("0x0")]; s++)
-                      if (a[s] && a[s].id && a[s].id[P("0x2cc")] == P("0xad7")) {
+                      if (a[s] && a[s].id && a[s].id[P("0x2cc")] === P("0xad7")) {
                         o = a[s];
                         break;
                       }
@@ -46037,7 +46039,7 @@ import * as Cesium from "cesium";
                     (r[P("0xb4a")] = e[P("0xb4a")]),
                     (r[P("0xb1f")] = e[P("0xb1f")]),
                     this[P("0x9c")](r),
-                    void ("function" == typeof e[P("0xb4b")] && e[P("0xb4b")]())
+                    void ("function" === typeof e[P("0xb4b")] && e[P("0xb4b")]())
                   );
                 }
                 var n = s(t[P("0x2a9")]);
@@ -46579,7 +46581,7 @@ import * as Cesium from "cesium";
                         pixelDatatype: e[P("0x787")].UNSIGNED_BYTE,
                       });
                     })
-                    .otherwise(function (e) {
+                    .catch(function (e) {
                       console[P("0x133")](P("0xb86"));
                     }));
             }),
@@ -46920,7 +46922,7 @@ import * as Cesium from "cesium";
                   var s;
                   if (
                     (s =
-                      null == i[P("0x10f")][P("0xa4")](a[P("0x8c")])
+                      null === i[P("0x10f")][P("0xa4")](a[P("0x8c")])
                         ? i[P("0x10f")].globe.pick(i.viewer[P("0x7e")][P("0x86")](a.position), i[P("0x10f")])
                         : i[P("0x10f")][P("0x174")](a[P("0x8c")]))
                   ) {
@@ -47195,7 +47197,7 @@ import * as Cesium from "cesium";
                     ) {
                       var w = A - I - 1,
                         G = _[w];
-                      (l[P("0xb3e")] = 0 != w ? G[P("0xb3e")] * t[P("0xc19")] : G[P("0xb3e")]), (l[P("0xc13")] = G[P("0xc13")]), a[P("0xc14")](l);
+                      (l[P("0xb3e")] = 0 !== w ? G[P("0xb3e")] * t[P("0xc19")] : G[P("0xb3e")]), (l[P("0xc13")] = G[P("0xc13")]), a[P("0xc14")](l);
                       var E = g[P("0xc08")];
                       v[P("0x797")](n, i), n[P("0xc1a")] && C[P("0x797")](n, i), a[P("0xc1b")](e[P("0x5e4")].GLOBE);
                       var S = G[P("0xc1c")][e[P("0x5e4")][P("0xc1d")]],
@@ -47260,7 +47262,7 @@ import * as Cesium from "cesium";
                       )
                         o(S[c], t, n, i);
                       if (
-                        (0 != w && ((l[P("0xb3e")] = G[P("0xb3e")]), a[P("0xc14")](l)),
+                        (0 !== w && ((l[P("0xb3e")] = G[P("0xb3e")]), a[P("0xc14")](l)),
                         a[P("0xc1b")](e.Pass.TRANSLUCENT),
                         ((S = G[P("0xc1c")][e[P("0x5e4")].TRANSLUCENT]).length = G[P("0xc1e")][e.Pass[P("0x73e")]]),
                         p(t, o, i, S),
@@ -47424,7 +47426,7 @@ import * as Cesium from "cesium";
                           if (r === e[P("0xbfa")][P("0xc41")] || r === e.CullingVolume[P("0xc4c")]) return r;
                           for (var n = e.CullingVolume.MASK_INSIDE, o = t[P("0xc03")], a = 0, s = o.length; a < s; ++a) {
                             var x = a < 31 ? 1 << a : 0;
-                            if (!(a < 31 && 0 == (r & x))) {
+                            if (!(a < 31 && 0 === (r & x))) {
                               var l = b(i[P("0x4cb")], e.Plane[P("0xb54")](o[a], m));
                               if (l === e[P("0xae1")][P("0xc48")]) return e[P("0xbfa")].MASK_OUTSIDE;
                               l === e[P("0xae1")][P("0xc4d")] && (n |= x);
@@ -47669,7 +47671,7 @@ import * as Cesium from "cesium";
               P("0x7ac") +
               "    return (2.0 * z_window - n_range - f_range) / (f_range - n_range);\n}\n" +
               P("0xc77") +
-              "    float visibility = step(position.z, texture2D(shadowMap, position.xy).r);\n    return (visibility == 1.0);\n}\n" +
+              "    float visibility = step(position.z, texture2D(shadowMap, position.xy).r);\n    return (visibility === 1.0);\n}\n" +
               P("0x708") +
               "{\n" +
               P("0x7b1") +
@@ -47822,7 +47824,7 @@ import * as Cesium from "cesium";
               "    return (2.0 * z_window - n_range - f_range) / (f_range - n_range);\n}\n" +
               P("0xc77") +
               P("0xc81") +
-              "    return (visibility == 1.0);\n}\nvoid main()\n{\n" +
+              "    return (visibility === 1.0);\n}\nvoid main()\n{\n" +
               P("0x7b1") +
               P("0x7b2") +
               P("0x7b3") +
@@ -47955,7 +47957,7 @@ import * as Cesium from "cesium";
               if (!this[P("0xc69")]) {
                 var t;
                 (t =
-                  1 == this[P("0xc67")][P("0xc9d")]
+                  1 === this[P("0xc67")][P("0xc9d")]
                     ? this[P("0xc6a")]
                       ? i._FS_Cone
                       : i[P("0xc7e")]
@@ -49239,10 +49241,10 @@ import * as Cesium from "cesium";
               }
             }),
             (c[P("0x5")][P("0xd4b")] = function (e) {
-              if (e) return this[P("0x75b")] == e[P("0x75b")];
+              if (e) return this[P("0x75b")] === e[P("0x75b")];
             }),
             (c[P("0x5")][P("0xd4c")] = function (e) {
-              return this[P("0x75b")] == e;
+              return this[P("0x75b")] === e;
             }),
             (c.prototype._createShadowMap = function () {
               if (!this[P("0xd35")]) return null;
@@ -49285,7 +49287,7 @@ import * as Cesium from "cesium";
                   return this[P("0xd36")];
                 },
                 set: function (e) {
-                  this[P("0xd36")] != e && ((this[P("0xd36")] = e), this._rebuildPostRender());
+                  this[P("0xd36")] !== e && ((this[P("0xd36")] = e), this._rebuildPostRender());
                 },
               },
               position: {
@@ -49415,7 +49417,7 @@ import * as Cesium from "cesium";
                   return this[P("0xd51")];
                 },
                 set: function (e) {
-                  if (this[P("0xd51")] != e) {
+                  if (this[P("0xd51")] !== e) {
                     for (var t = this[P("0x431")], i = t[P("0x0")], r = 0; r < i; r++) t[r][P("0xd20")]();
                     this[P("0xd51")] = e;
                   }
@@ -49844,7 +49846,7 @@ import * as Cesium from "cesium";
               return this._isPause;
             }),
             (i[P("0x5")][P("0xe2")] = function (e) {
-              (this[P("0xdb1")] = null == e ? 0 : e), (this._isDone = !1), (this._isPause = !1);
+              (this[P("0xdb1")] = null === e ? 0 : e), (this._isDone = !1), (this._isPause = !1);
             }),
             (i[P("0x5")][P("0xe4")] = function () {
               this[P("0xdb2")]();
@@ -50264,11 +50266,11 @@ import * as Cesium from "cesium";
           (t[P("0x5")][P("0xde5")] = function (t) {
             if (t[P("0x63")] && t.endPosition) {
               var n = e[P("0x10")].subtract(t.endPosition, t[P("0x63")], i);
-              if (0 != n.x) {
+              if (0 !== n.x) {
                 var o = (e[P("0x102")](this[P("0xdc0")], 5) * n.x) / 5;
                 this[P("0x7e")][P("0xe7")](this[P("0xdde")](), e[P("0x23")][P("0x119")](o) / r);
               }
-              0 != n.y &&
+              0 !== n.y &&
                 ((o = (e[P("0x102")](this[P("0xdc0")], 5) * n.y) / 5),
                 this[P("0x7e")][P("0xe7")](
                   e[P("0x11")].cross(this.camera.directionWC[P("0x6e")](), this.getTangentNormal(), a),
@@ -50396,7 +50398,7 @@ import * as Cesium from "cesium";
                 return this[P("0xdf9")];
               },
               set: function (e) {
-                null != e && null != this[P("0xdf9")] && this.release(), (this[P("0xdf9")] = e);
+                null !== e && null !== this[P("0xdf9")] && this.release(), (this[P("0xdf9")] = e);
               },
             },
             waterColor: {
@@ -50517,13 +50519,13 @@ import * as Cesium from "cesium";
                     (this.modelViewMatrix = e.Matrix4.multiply(t[P("0x7e")][P("0x5e0")], this[P("0x4ac")], this[P("0xe09")])),
                     (this[P("0xe0a")] = e.Matrix4[P("0x737")](t.camera[P("0xe05")][0][P("0xb5e")], this.modelViewMatrix, this.modeiViewProjection));
                   var g = e[P("0x560")][P("0x561")]();
-                  0 == this[P("0xdf5")] && (this[P("0xdf5")] = g[P("0x6e5")]);
+                  0 === this[P("0xdf5")] && (this[P("0xdf5")] = g[P("0x6e5")]);
                   var p = g.secondsOfDay;
                   if (
                     ((this[P("0xe0b")] = (p - this[P("0xdf5")]) / 1),
                     (this[P("0xe0c")] = this[P("0xe0b")] * this[P("0xdf3")]),
                     (this[P("0xe0d")] = (this[P("0xdf2")] * Math.PI) / 180),
-                    null == this[P("0x6ce")])
+                    null === this[P("0x6ce")])
                   ) {
                     var m = e[P("0x5dc")][P("0x5d7")]({
                         context: r,
@@ -50597,7 +50599,7 @@ import * as Cesium from "cesium";
                     }),
                       (this[P("0xe13")] = e.PolygonGeometry.createGeometry(this._waterPolygon));
                     for (var C = this[P("0xe13")][P("0xc1e")], y = this[P("0xe13")][P("0x18f")][P("0x8c")].values, _ = 0; _ < y[P("0x0")]; _++)
-                      _ % 3 == 0 && (y[_] = y[_] - n.x), _ % 3 == 1 && (y[_] = y[_] - n.y), _ % 3 == 2 && (y[_] = y[_] - n.z);
+                      _ % 3 === 0 && (y[_] = y[_] - n.x), _ % 3 === 1 && (y[_] = y[_] - n.y), _ % 3 === 2 && (y[_] = y[_] - n.z);
                     for (var A = [], I = 0; I < this[P("0xdee")][P("0x0")]; I++)
                       A[P("0x17c")](this._pointsToCartographic[I].x, this[P("0xdee")][I].y);
                     var w = new Float64Array(A),
@@ -50650,7 +50652,7 @@ import * as Cesium from "cesium";
                     })),
                       (this._drawCommand[P("0xe15")] = P("0xe15"));
                   }
-                  null !== this[P("0xdf4")] && 1 == this[P("0xdf8")] && t[P("0x5ca")][P("0x17c")](this[P("0x6ce")]);
+                  null !== this[P("0xdf4")] && 1 === this[P("0xdf8")] && t[P("0x5ca")][P("0x17c")](this[P("0x6ce")]);
                 }
               }
             }),
@@ -50744,7 +50746,7 @@ import * as Cesium from "cesium";
                 for (var N = M[P("0xe8")][P("0xbf0")](M[P("0xa5")], M[P("0xa6")], M.upWC), L = E.commandList, R = 0; R < L[P("0x0")]; R++) {
                   var O = L[R];
                   O instanceof e[P("0xe17")] ||
-                    ("water" != O[P("0xe15")] &&
+                    ("water" !== O[P("0xe15")] &&
                       O[P("0x5d4")] !== e[P("0x5e4")][P("0xc1d")] &&
                       t[P("0xd69")](O, N) &&
                       (T[P("0xc1b")](O[P("0x5d4")]), O.execute(S, this[P("0xdf7")])));
@@ -50986,7 +50988,7 @@ import * as Cesium from "cesium";
                 i = this;
               (i[P("0xe23")] = !0), i[P("0xe38")](e);
               var r = setInterval(function () {
-                3 < t && ((i[P("0xe23")] = !1), clearInterval(r)), t % 2 == 0 && i[P("0xe1e")] && i[P("0xe3b")](), t++;
+                3 < t && ((i[P("0xe23")] = !1), clearInterval(r)), t % 2 === 0 && i[P("0xe1e")] && i[P("0xe3b")](), t++;
               }, 600);
               return i;
             }),
@@ -51014,7 +51016,7 @@ import * as Cesium from "cesium";
                 r < t[P("0x0")];
                 r++
               )
-                t[r][P("0x968")] != i[i.length - 1] && i[P("0x17c")](t[r][P("0x968")]), 4 < i[P("0x0")] && (t[P("0x259")](r), r--);
+                t[r][P("0x968")] !== i[i.length - 1] && i[P("0x17c")](t[r][P("0x968")]), 4 < i[P("0x0")] && (t[P("0x259")](r), r--);
               return t;
             }),
             (i.prototype.addLabelAndIco = function (e) {
@@ -51325,7 +51327,7 @@ import * as Cesium from "cesium";
               return !(e.x < -10 || e.x > t[P("0x9b")] + 10 || e.y < -10 || e.y > t[P("0x9aa")] + 10);
             });
           var o = function (e) {
-              for (var t = 0, i = 0; i < e[P("0x0")]; i++) null != e.charAt(i)[P("0x126")](/[^\x00-\xff]/gi) ? (t += 2) : (t += 1);
+              for (var t = 0, i = 0; i < e[P("0x0")]; i++) null !== e.charAt(i)[P("0x126")](/[^\x00-\xff]/gi) ? (t += 2) : (t += 1);
               return t;
             },
             a = function (e) {
@@ -51388,7 +51390,7 @@ import * as Cesium from "cesium";
                     P("0xe90") +
                     P("0xe91") +
                     "};";
-                  if ("undefined" == typeof dcodeIO || !dcodeIO[P("0xe92")]) throw new Error(P("0xe93"));
+                  if ("undefined" === typeof dcodeIO || !dcodeIO[P("0xe92")]) throw new Error(P("0xe93"));
                   return dcodeIO[P("0xe92")][P("0xe94")](e, "GEOPOI", P("0xe95"))[P("0xd22")](P("0xe96"))[P("0xe97")];
                 })(),
                 r = (function () {
@@ -51422,7 +51424,7 @@ import * as Cesium from "cesium";
                     P("0xe9b") +
                     P("0xe90") +
                     "repeated PBPOI POIS = 4;};";
-                  if ("undefined" == typeof dcodeIO || !dcodeIO[P("0xe92")])
+                  if ("undefined" === typeof dcodeIO || !dcodeIO[P("0xe92")])
                     throw new Error("ProtoBuf.js is not present. Please see www/index.html for manual setup instructions.");
                   return dcodeIO[P("0xe92")][P("0xe94")](e, P("0xe96"), P("0xe9c")).build(P("0xe96")).PBPOITile;
                 })(),
@@ -51459,7 +51461,7 @@ import * as Cesium from "cesium";
                     P("0xe90") +
                     P("0xe91") +
                     "};";
-                  if (("undefined" == typeof dcodeIO ? "undefined" : w()(dcodeIO)) === P("0x2b6") || !dcodeIO[P("0xe92")])
+                  if (("undefined" === typeof dcodeIO ? "undefined" : w()(dcodeIO)) === P("0x2b6") || !dcodeIO[P("0xe92")])
                     throw new Error(P("0xe93"));
                   return dcodeIO[P("0xe92")][P("0xe94")](e, P("0xe96"), P("0xea1"))[P("0xd22")](P("0xe96"))[P("0xe97")];
                 })();
@@ -51527,9 +51529,9 @@ import * as Cesium from "cesium";
                   a += turf[P("0x8e")](m, b);
                 }
                 return (
-                  2 == i
+                  2 === i
                     ? (n = o < 1e3 ? o[P("0x2af")](2) + "m" : (o / 1e3).toFixed(2) + "km")
-                    : 1 == i && (n = a < 1 ? (1e3 * a)[P("0x2af")](2) + "m" : a[P("0x2af")](2) + "km"),
+                    : 1 === i && (n = a < 1 ? (1e3 * a)[P("0x2af")](2) + "m" : a[P("0x2af")](2) + "km"),
                   n
                 );
               }
@@ -51555,7 +51557,7 @@ import * as Cesium from "cesium";
             (t[P("0x5")].height = function (t) {
               if (t[P("0x2eb")]) {
                 var i = t[P("0x2eb")][P("0x19f")][P("0x512")]();
-                if (2 == (i = [i[0], i[1]]).length) {
+                if (2 === (i = [i[0], i[1]]).length) {
                   for (var r = [], n = 0; n < i[P("0x0")]; n++) {
                     var o = e[P("0x13")].fromCartesian(i[n]),
                       a = e[P("0x23")][P("0x113")](o.longitude),
@@ -51597,7 +51599,7 @@ import * as Cesium from "cesium";
             (t[P("0x5")].elevation = function (t) {
               if (t[P("0x2ec")]) {
                 var i = [t.position._value];
-                if (1 == i[P("0x0")]) {
+                if (1 === i[P("0x0")]) {
                   var r = e[P("0x13")][P("0x175")](i[0])[P("0x8b")];
                   P("0x30a"), r.toFixed(2), createResultLabel2(this.options, this.primitives, i);
                 }
@@ -51605,7 +51607,7 @@ import * as Cesium from "cesium";
             });
         })(window.Cesium),
         (k =
-          (void 0 === A.a ? "undefined" : w()(A.a)) === P("0x8") && "symbol" == w()(Symbol[P("0x1f3")])
+          (void 0 === A.a ? "undefined" : w()(A.a)) === P("0x8") && "symbol" === w()(Symbol[P("0x1f3")])
             ? function (e) {
                 return w()(e);
               }
@@ -51663,7 +51665,7 @@ import * as Cesium from "cesium";
               P("0xedc") in window
                 ? (this[P("0xedd")] = !e.defined(t[P("0xede")]) || t.useWebWorker)
                 : (e[P("0x14")](t[P("0xede")]) && !0 === t.useWebWorker && console.warn(P("0xedf")), (this[P("0xedd")] = !1)),
-              1 == this._useWebWorker && (this[P("0xeca")] = P("0x2b4")),
+              1 === this._useWebWorker && (this[P("0xeca")] = P("0x2b4")),
               (this[P("0xee0")] = function () {
                 return [];
               });
@@ -51766,7 +51768,7 @@ import * as Cesium from "cesium";
               r[P("0xe45")]();
           }
           function n(e, t, i, r) {
-            for (var n = r[P("0xefb")]; null != n && (n.xMvt != e || n[P("0xefc")] != t || n[P("0xefd")] != i); ) n = n[P("0xefe")];
+            for (var n = r[P("0xefb")]; null !== n && (n.xMvt !== e || n[P("0xefc")] !== t || n[P("0xefd")] !== i); ) n = n[P("0xefe")];
             return n;
           }
           function o(t, i) {
@@ -52031,7 +52033,7 @@ import * as Cesium from "cesium";
                 a = i[n - 1],
                 s = i[n],
                 x = i[n + 1];
-              t < a != t < x && e < ((s - o) * (t - a)) / (x - a) + o && (r = !r);
+              t < a !== t < x && e < ((s - o) * (t - a)) / (x - a) + o && (r = !r);
             }
             return r;
           }
@@ -52044,7 +52046,7 @@ import * as Cesium from "cesium";
               if (
                 d(e, t, l, c, u, h) &&
                 ((a = u - l),
-                0 == (o = c - h) && 0 === a
+                0 === (o = c - h) && 0 === a
                   ? (n = (e - l) * (e - l) + (t - c) * (t - c))
                   : ((n = o * e + a * t - (o * l + a * c)), (n *= n), (n /= o * o + a * a)),
                 n <= r)
@@ -52173,7 +52175,7 @@ import * as Cesium from "cesium";
                 m = e.defined(g) ? p()(g[a]) : a;
               if (!0 === this[P("0xedd")])
                 if ((h = n(i, r, m, this._tileQueueForCanvas)))
-                  h instanceof HTMLCanvasElement ? d[P("0x9f8")](h) : h == P("0xf25") && d[P("0x9f8")](this[P("0xedb")]);
+                  h instanceof HTMLCanvasElement ? d[P("0x9f8")](h) : h === P("0xf25") && d[P("0x9f8")](this[P("0xedb")]);
                 else {
                   var b = JSON[P("0xf0d")]([i, r, m]),
                     v = this[P("0xb7f")]
@@ -52198,7 +52200,7 @@ import * as Cesium from "cesium";
                   }
                 }
               else if ((h = n(i, r, m, this._tileQueueForCanvas)))
-                h instanceof HTMLCanvasElement ? d[P("0x9f8")](h) : h == P("0xf25") && d[P("0x9f8")](this[P("0xedb")]);
+                h instanceof HTMLCanvasElement ? d[P("0x9f8")](h) : h === P("0xf25") && d[P("0x9f8")](this[P("0xedb")]);
               else {
                 b = x()([i, r, m]);
                 var y = n(i, r, m, this[P("0xed4")]);
@@ -52352,7 +52354,7 @@ import * as Cesium from "cesium";
                         i[P("0xfa")](t));
                 });
               else {
-                if (8 != (this[P("0xee5")] = e)[P("0xea3")]) return void console[P("0x391")](P("0xf33"));
+                if (8 !== (this[P("0xee5")] = e)[P("0xea3")]) return void console[P("0x391")](P("0xf33"));
                 if (!e.sources) return void console[P("0x391")](P("0xf34"));
                 if (
                   (e.sprite && (this[P("0xed8")] = this[P("0xa94")] ? this[P("0xa94")][P("0xa95")](e[P("0xee6")]) : e.sprite),
@@ -52523,10 +52525,10 @@ import * as Cesium from "cesium";
               var t = [];
               for (var i in e) {
                 var r = e[i];
-                if (null != r && w()(r) != P("0x8")) {
+                if (null !== r && w()(r) !== P("0x8")) {
                   var n;
-                  if ((w()(r) === P("0x2b6") ? P("0x2b6") : k(r)) == P("0x7") && r.constructor == Array) {
-                    for (var o, a = [], s = 0, x = r[P("0x0")]; s < x; s++) (o = r[s]), a[P("0x17c")](null == o ? "" : o);
+                  if ((w()(r) === P("0x2b6") ? P("0x2b6") : k(r)) === P("0x7") && r.constructor === Array) {
+                    for (var o, a = [], s = 0, x = r[P("0x0")]; s < x; s++) (o = r[s]), a[P("0x17c")](null === o ? "" : o);
                     n = a[P("0x7ca")](",");
                   } else n = r;
                   t[P("0x17c")](i + "=" + n);
@@ -52544,7 +52546,7 @@ import * as Cesium from "cesium";
                 this[P("0xf4e")] &&
                   this._vtxf_cachedGltf[P("0x4df")] &&
                   (function (e) {
-                    if (e[P("0xf45")] && (!e[P("0xf45")] || -1 != e[P("0xf45")].indexOf(P("0xf46")))) {
+                    if (e[P("0xf45")] && (!e[P("0xf45")] || -1 !== e[P("0xf45")].indexOf(P("0xf46")))) {
                       var t = e[P("0xf45")][P("0x2d3")](P("0xf46")),
                         i = e[P("0xf47")][P("0x2d3")](P("0xf46"));
                       if (-1 !== t) {
@@ -52613,10 +52615,10 @@ import * as Cesium from "cesium";
           for (; o.length && (n = o.shift()); ) o[P("0x0")] || r === t ? (a = a[n] ? a[n] : (a[n] = {})) : (a[n] = r);
         }
         var n =
-          "undefined" != typeof Uint8Array &&
-          P("0x2b6") !== ("undefined" == typeof Uint16Array ? "undefined" : w()(Uint16Array)) &&
-          P("0x2b6") !== ("undefined" == typeof Uint32Array ? "undefined" : w()(Uint32Array)) &&
-          P("0x2b6") !== ("undefined" == typeof DataView ? "undefined" : w()(DataView));
+          "undefined" !== typeof Uint8Array &&
+          P("0x2b6") !== ("undefined" === typeof Uint16Array ? "undefined" : w()(Uint16Array)) &&
+          P("0x2b6") !== ("undefined" === typeof Uint32Array ? "undefined" : w()(Uint32Array)) &&
+          P("0x2b6") !== ("undefined" === typeof DataView ? "undefined" : w()(DataView));
         function o(t, i) {
           (this[P("0x286")] = P("0x49f") === w()(i) ? i : 0),
             (this.i = 0),
@@ -52651,7 +52653,7 @@ import * as Cesium from "cesium";
               (s = (s << t) | e), (a += t);
             else
               for (r = 0; r < t; ++r)
-                (s = (s << 1) | ((e >> (t - r - 1)) & 1)), 8 == ++a && ((a = 0), (n[o++] = u[s]), (s = 0), o === n[P("0x0")] && (n = this.f()));
+                (s = (s << 1) | ((e >> (t - r - 1)) & 1)), 8 === ++a && ((a = 0), (n[o++] = u[s]), (s = 0), o === n[P("0x0")] && (n = this.f()));
             (n[o] = s), (this[P("0x4b3")] = n), (this.i = a), (this[P("0x286")] = o);
           }),
           (o[P("0x5")].finish = function () {
@@ -52704,7 +52706,7 @@ import * as Cesium from "cesium";
               (t[P("0xf54")] && (this.w = t[P("0xf54")]),
               P("0x49f") === w()(t[P("0xf55")]) && (this.h = t.compressionType),
               t[P("0xf56")] && (this.a = n && t[P("0xf56")] instanceof Array ? new Uint8Array(t[P("0xf56")]) : t[P("0xf56")]),
-              "number" == typeof t.outputIndex && (this.b = t[P("0xf57")])),
+              "number" === typeof t.outputIndex && (this.b = t[P("0xf57")])),
             this.a || (this.a = new (n ? Uint8Array : Array)(32768));
         }
         (h.prototype[P("0xf52")] = function (e) {
@@ -53405,7 +53407,7 @@ import * as Cesium from "cesium";
             default:
               e(Error(P("0xf63")));
           }
-          0 != ((r << 8) + n) % 31 && e(Error(P("0xf64") + (((r << 8) + n) % 31))),
+          0 !== ((r << 8) + n) % 31 && e(Error(P("0xf64") + (((r << 8) + n) % 31))),
             32 & n && e(Error(P("0xf65"))),
             (this.B = new E(t, {
               index: this.c,
@@ -53476,7 +53478,7 @@ import * as Cesium from "cesium";
               a = this[P("0xf53")],
               s = this.a;
             return (
-              e && ("number" == typeof e.v && (o = e.v), P("0x49f") === w()(e.G) && (o += e.G)),
+              e && ("number" === typeof e.v && (o = e.v), P("0x49f") === w()(e.G) && (o += e.G)),
               (i = o < 2 ? ((r = (((a.length - this.c) / this.u[2] / 2) * 258) | 0) < s[P("0x0")] ? s.length + r : s[P("0x0")] << 1) : s.length * o),
               n ? (t = new Uint8Array(i)).set(s) : (t = s),
               (this.a = t)

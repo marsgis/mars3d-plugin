@@ -1,5 +1,5 @@
-import * as Cesium from "cesium";
-import * as mars3d from "mars3d";
+import * as mars3d from "mars3d"
+const Cesium = mars3d.Cesium
 
 /**
  * 天地图 地形服务
@@ -17,29 +17,29 @@ import * as mars3d from "mars3d";
 export class TdtTerrainProvider extends Cesium.GeoTerrainProvider {
   constructor(options = {}) {
     if (!options.urls) {
-      let baseurl = options.url || "https://t{s}.tianditu.gov.cn/DataServer";
-      let token = options.key || mars3d.Token.tianditu;
+      const baseurl = options.url || "https://t{s}.tianditu.gov.cn/DataServer"
+      const token = options.key || mars3d.Token.tianditu
 
-      let subdomains;
+      let subdomains
       if (Array.isArray(options.subdomains)) {
-        subdomains = options.subdomains.slice();
+        subdomains = options.subdomains.slice()
       } else if (Cesium.defined(options.subdomains) && options.subdomains.length > 0) {
-        subdomains = options.subdomains.split("");
+        subdomains = options.subdomains.split("")
       } else {
-        subdomains = ["0", "1", "2", "3", "4", "5", "6", "7"];
+        subdomains = ["0", "1", "2", "3", "4", "5", "6", "7"]
       }
 
-      let urls = [];
+      const urls = []
       subdomains.forEach((element) => {
-        let url = mars3d.Util.template(baseurl, { s: element }) + "?T=elv_c&tk=" + token;
-        urls.push(url);
-      });
+        const url = mars3d.Util.template(baseurl, { s: element }) + "?T=elv_c&tk=" + token
+        urls.push(url)
+      })
 
-      options.urls = urls;
+      options.urls = urls
     }
-    super(options);
+    super(options)
   }
 }
-mars3d.LayerUtil.registerTerrainProvider("tdt", TdtTerrainProvider);
+mars3d.LayerUtil.registerTerrainProvider("tdt", TdtTerrainProvider)
 
-mars3d.provider.TdtTerrainProvider = TdtTerrainProvider;
+mars3d.provider.TdtTerrainProvider = TdtTerrainProvider

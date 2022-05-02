@@ -1,7 +1,6 @@
-import * as Cesium from "cesium";
-import * as mars3d from "mars3d";
-
-let BaseLayer = mars3d.layer.BaseLayer;
+import * as mars3d from "mars3d"
+const Cesium = mars3d.Cesium
+const BaseLayer = mars3d.layer.BaseLayer
 
 /**
  * 天地图 三维地名服务图层
@@ -30,32 +29,32 @@ let BaseLayer = mars3d.layer.BaseLayer;
  */
 export class TdtDmLayer extends BaseLayer {
   get layer() {
-    return this.wtfs;
+    return this.wtfs
   }
 
-  //对象添加到地图上的创建钩子方法
+  // 对象添加到地图上的创建钩子方法
   _addedHook() {
     // 服务域名
-    let tdtUrl = this.options.url || "https://t{s}.tianditu.gov.cn/mapservice/GetTiles";
-    let token = this.options.key || mars3d.Token.tianditu;
+    const tdtUrl = this.options.url || "https://t{s}.tianditu.gov.cn/mapservice/GetTiles"
+    const token = this.options.key || mars3d.Token.tianditu
 
     // 服务负载子域
-    let subdomains;
+    let subdomains
     if (Array.isArray(this.options.subdomains)) {
-      subdomains = this.options.subdomains.slice();
+      subdomains = this.options.subdomains.slice()
     } else if (Cesium.defined(this.options.subdomains) && this.options.subdomains.length > 0) {
-      subdomains = this.options.subdomains.split("");
+      subdomains = this.options.subdomains.split("")
     } else {
-      subdomains = ["0", "1", "2", "3", "4", "5", "6", "7"];
+      subdomains = ["0", "1", "2", "3", "4", "5", "6", "7"]
     }
 
     if (!Cesium.GeoWTFS) {
-      console.error("请确认正确引入天地图官方提供的cesiumTdt.js文件，并确认无冲突！");
-      return;
+      console.error("请确认正确引入天地图官方提供的cesiumTdt.js文件，并确认无冲突！")
+      return
     }
 
     // 叠加三维地名服务
-    let wtfs = new Cesium.GeoWTFS({
+    const wtfs = new Cesium.GeoWTFS({
       ...this.options,
       viewer: this._map.viewer,
       subdomains: subdomains,
@@ -64,14 +63,14 @@ export class TdtDmLayer extends BaseLayer {
           minX: -180,
           minY: -90,
           maxX: 180,
-          maxY: 90,
+          maxY: 90
         },
         minLevel: 1,
-        maxLevel: 20,
+        maxLevel: 20
       },
-      aotuCollide: true, //是否开启避让
-      collisionPadding: [5, 10, 8, 5], //开启避让时，标注碰撞增加内边距，上、右、下、左
-      serverFirstStyle: true, //服务端样式优先
+      aotuCollide: true, // 是否开启避让
+      collisionPadding: [5, 10, 8, 5], // 开启避让时，标注碰撞增加内边距，上、右、下、左
+      serverFirstStyle: true, // 服务端样式优先
       labelGraphics: {
         font: "28px sans-serif",
         fontSize: 28,
@@ -86,7 +85,7 @@ export class TdtDmLayer extends BaseLayer {
         horizontalOrigin: Cesium.HorizontalOrigin.MIDDLE,
         verticalOrigin: Cesium.VerticalOrigin.TOP,
         eyeOffset: Cesium.Cartesian3.ZERO,
-        pixelOffset: new Cesium.Cartesian2(0, 8),
+        pixelOffset: new Cesium.Cartesian2(0, 8)
       },
       billboardGraphics: {
         horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
@@ -98,14 +97,14 @@ export class TdtDmLayer extends BaseLayer {
         rotation: 0,
         scale: 1,
         width: 18,
-        height: 18,
-      },
-    });
+        height: 18
+      }
+    })
 
-    //三维地名服务，使用wtfs服务
+    // 三维地名服务，使用wtfs服务
     wtfs.getTileUrl = function () {
-      return tdtUrl + "?lxys={z},{x},{y}&tk=" + token;
-    };
+      return tdtUrl + "?lxys={z},{x},{y}&tk=" + token
+    }
 
     wtfs.initTDT([
       { x: 6, y: 1, level: 2, boundBox: { minX: 90, minY: 0, maxX: 135, maxY: 45 } },
@@ -126,21 +125,21 @@ export class TdtDmLayer extends BaseLayer {
       { x: 2, y: 0, level: 2, boundBox: { minX: -90, minY: 45, maxX: -45, maxY: 90 } },
       { x: 0, y: 1, level: 2, boundBox: { minX: -180, minY: 0, maxX: -135, maxY: 45 } },
       { x: 1, y: 0, level: 2, boundBox: { minX: -135, minY: 45, maxX: -90, maxY: 90 } },
-      { x: 0, y: 0, level: 2, boundBox: { minX: -180, minY: 45, maxX: -135, maxY: 90 } },
-    ]);
+      { x: 0, y: 0, level: 2, boundBox: { minX: -180, minY: 45, maxX: -135, maxY: 90 } }
+    ])
 
-    this.wtfs = wtfs;
+    this.wtfs = wtfs
   }
 
-  //对象从地图上移除的创建钩子方法
+  // 对象从地图上移除的创建钩子方法
   _removedHook() {
     if (this.wtfs) {
-      this.wtfs.destroy();
-      this.wtfs = null;
+      this.wtfs.destroy()
+      this.wtfs = null
     }
   }
 }
-mars3d.layer.TdtDmLayer = TdtDmLayer;
+mars3d.layer.TdtDmLayer = TdtDmLayer
 
-//注册下
-mars3d.layer.register("tdt_dm", TdtDmLayer);
+// 注册下
+mars3d.layer.register("tdt_dm", TdtDmLayer)

@@ -1,12 +1,10 @@
 {
-	"name": "mars3d-plugin-tdt",
-	"version": "3.1.23",
-	"description": "Mars3D平台插件, 支持对 天地图三维地名服务和地形服务加载使用",
+	"name": "mars3d-plugin-supermap",
+	"version": "3.3.0",
+	"description": "Mars3D平台插件,结合supermap超图库使用的功能插件",
 	"main": "src/index.js",
 	"dependencies": {
-		"mars3d": "^3.2.0",
-		"cesium": "^1.89",
-		"bytebuffer": "^5.0.1"
+		"mars3d": "^3.3.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.14.3",
@@ -33,7 +31,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/marsgis/mars3d-plugin.git"
+		"url": "https://github.com/marsgis/mars3d-plugin-plugin-plugin-plugin-plugin.git"
 	},
 	"bugs": {
 		"url": "https://github.com/marsgis/mars3d-plugin/issues",
@@ -46,7 +44,8 @@
 		"webgl",
 		"gis",
 		"3dgis",
-		"webgis"
+		"webgis",
+		"heatmap"
 	],
 	"author": "火星科技",
 	"license": "Apache-2.0",
