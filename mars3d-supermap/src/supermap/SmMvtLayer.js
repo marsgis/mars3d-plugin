@@ -16,7 +16,7 @@ const BaseLayer = mars3d.layer.BaseLayer
  * @param {Object} [options.多个参数] 参考[supermap官方API]{@link http://support.supermap.com.cn:8090/webgl/docs/Documentation/Scene.html#addVectorTilesLayer}
  *
  *
- * @param {String|Number} [options.id = uuid()] 图层id标识
+ * @param {String|Number} [options.id = createGuid()] 图层id标识
  * @param {String|Number} [options.pid = -1] 图层父级的id，一般图层管理中使用
  * @param {String} [options.name = ''] 图层名称
  * @param {Boolean} [options.show = true] 图层是否显示
@@ -131,15 +131,16 @@ export class SmMvtLayer extends BaseLayer {
   // 定位至数据区域
   flyTo(options = {}) {
     if (this.options.center) {
-      this._map.setCameraView(this.options.center, options)
+      return this._map.setCameraView(this.options.center, options)
     } else if (this.options.extent) {
-      this._map.flyToExtent(this.options.extent, options)
+      return this._map.flyToExtent(this.options.extent, options)
     } else if (this._mvtLayer) {
-      this._map.camera.flyTo({
+      return this._map.camera.flyTo({
         ...options,
         destination: this._mvtLayer.rectangle
       })
     }
+    return Promise.resolve(false)
   }
 }
 mars3d.layer.SmMvtLayer = SmMvtLayer

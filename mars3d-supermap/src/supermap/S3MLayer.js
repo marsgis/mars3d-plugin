@@ -15,7 +15,7 @@ const BaseLayer = mars3d.layer.BaseLayer
  * @param {Object} [options.position] 模型新的中心点位置（移动模型）
  * @param {Number} options.position.alt 获取或设置底部高程。（单位：米）
  *
- * @param {String|Number} [options.id = uuid()] 图层id标识
+ * @param {String|Number} [options.id = createGuid()] 图层id标识
  * @param {String|Number} [options.pid = -1] 图层父级的id，一般图层管理中使用
  * @param {String} [options.name = ''] 图层名称
  * @param {Boolean} [options.show = true] 图层是否显示
@@ -88,6 +88,10 @@ export class S3MLayer extends BaseLayer {
    * @private
    */
   _mountedHook() {
+    if (!this._map.scene.open) {
+      throw new Error("请引入 超图版本Cesium库 或 超图S3M插件 ")
+    }
+
     // 场景添加S3M图层服务
     let promise
     if (this.options.layername) {
@@ -131,7 +135,7 @@ export class S3MLayer extends BaseLayer {
         this.fire(mars3d.EventType.load, { layers: this._layerArr })
       },
       (error) => {
-        this._readyPromise.reject(error)
+        this._readyPromise && this._readyPromise.reject(error)
       }
     )
 
@@ -196,7 +200,7 @@ export class S3MLayer extends BaseLayer {
    * 遍历每一个子图层并将其作为参数传递给回调函数
    *
    * @param {Function} method 回调方法
-   * @param {Object} context  侦听器的上下文(this关键字将指向的对象)。
+   * @param {Object} [context] 侦听器的上下文(this关键字将指向的对象)。
    * @return {GroupLayer} 当前对象本身,可以链式调用
    */
   eachLayer(method, context) {
@@ -223,9 +227,9 @@ export class S3MLayer extends BaseLayer {
   // 定位至数据区域
   flyTo(options = {}) {
     if (this.options.center) {
-      this._map.setCameraView(this.options.center, options)
+      return this._map.setCameraView(this.options.center, options)
     } else if (this.options.extent) {
-      this._map.flyToExtent(this.options.extent, options)
+      return this._map.flyToExtent(this.options.extent, options)
     }
   }
 }

@@ -8,10 +8,13 @@ import { Loader } from "./loader"
 import { WidgetEventType } from "./WidgetEventType"
 
 const jQuery = window.jQuery
+if (!jQuery) {
+  throw new Error("请引入 jQuery 库")
+}
 
 // 内部参数
 let thismap
-const basePath = ""
+let basePath = ""
 let widgetsdata = []
 let defoptions
 let cacheVersion
@@ -70,6 +73,7 @@ mars3d.widget.init(map, widgetCfg, './')
  */
 export function init(map, widgetcfg = {}, _basePath = "") {
   thismap = map
+  basePath = _basePath
 
   widgetsdata = []
   defoptions = mars3d.Util.merge(
@@ -288,6 +292,9 @@ mars3d.widget.activate({
   uri: "widgets/bookmark/widget.js",
   autoDisable: true,
   testdata:'测试数据1987', //传数据进widget内部，widget内部使用this.config.testdata获取到传的数据
+  success:function(thisWidget){
+    //创建完成的回调方法
+  }
 });
  */
 export function activate(item, noDisableOther) {
@@ -735,7 +742,7 @@ export function off(types, fn, context) {
  *
  * @param {WidgetEventType} type 事件类型
  * @param {Object} data 传输的数据或对象，可在事件回调方法中event对象中获取进行使用
- * @param {BaseClass|Object} [propagate=null] 将事件传播给父类 (用addEventParent设置)
+ * @param {BaseClass|Object} [propagate] 将事件传播给父类 (用addEventParent设置)
  * @return {void}  无
  */
 export function fire(type, data, propagate) {
@@ -759,7 +766,7 @@ export function once(types, fn, context) {
  * 是否有绑定指定的事件
  *
  * @param {WidgetEventType} type 事件类型
- * @param {BaseClass} [propagate=null] 是否判断指定的父类 (用addEventParent设置的)
+ * @param {BaseClass} [propagate] 是否判断指定的父类 (用addEventParent设置的)
  * @return {Boolean} 是否存在
  */
 export function listens(type, propagate) {

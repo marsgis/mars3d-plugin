@@ -56,7 +56,7 @@ const BaseTileLayer = mars3d.layer.BaseTileLayer
  * @param {Number} [options.tileHeight=256] 图像图块的像素高度。
  * @param {Object} [options.customTags] 允许替换网址模板中的自定义关键字。该对象必须具有字符串作为键，并且必须具有值。
  *
- * @param {String|Number} [options.id = uuid()] 图层id标识
+ * @param {String|Number} [options.id = createGuid()] 图层id标识
  * @param {String|Number} [options.pid = -1] 图层父级的id，一般图层管理中使用
  * @param {String} [options.name = ''] 图层名称
  * @param {Boolean} [options.show = true] 图层是否显示

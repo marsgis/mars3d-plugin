@@ -4,7 +4,14 @@ import { eventTarget, getCacheVersion, getDefWindowOptions } from "./widgetManag
 import { WidgetEventType } from "./WidgetEventType"
 
 const jQuery = window.jQuery
+if (!jQuery) {
+  throw new Error("请引入 jQuery 库")
+}
+
 const layer = window.layer // 请引入layer弹窗插件
+if (!layer) {
+  throw new Error("请引入 layer.js弹窗 库")
+}
 const BaseClass = mars3d.BaseClass
 
 let _resources_cache = []
@@ -20,7 +27,7 @@ let _resources_cache = []
  * @property {Boolean} [autoDisable=true] 激活其他新插件时，是否自动释放本插件
  * @property {Boolean} [disableOther=true] 激活本插件时，是否释放其它已激活的插件
  * @property {String} [group] 配置group后，同group下的widget互斥，打开任意一个会自动释放其他的
- * @property {object} [windowOptions] 存在弹窗的插件的弹窗相关参数配置，更多参数请参考 [layer弹窗API]{@link https://www.layui.com/doc/modules/layer.html} 包括：
+ * @property {object} [windowOptions] 存在弹窗的插件的弹窗相关参数配置，更多参数请参考 [layer弹窗API]{@linkhttps://layui.gitee.io/v2/docs/modules/layer.html} 包括：
  * @property {Number|String} [windowOptions.width] 窗口宽度，可以是 像素数字(像素值) 或者 字符串(屏幕宽度百分比)，示例：200 或 "20%"
  * @property {Number|String} [windowOptions.height] 窗口高度，可以是 像素数字(像素值) 或者 字符串(屏幕高度百分比)，示例：600 或 "50%"
  * @property {String|Object} [windowOptions.position='auto'] 窗口所在位置坐标，配置字符串可选值：auto垂直水平居中，t顶部,b底部,r右边缘,l左边缘,lt左上角,lb左下角,rt右上角,rb右下角；也可以配置对象：

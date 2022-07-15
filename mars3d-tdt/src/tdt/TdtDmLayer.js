@@ -10,7 +10,7 @@ const BaseLayer = mars3d.layer.BaseLayer
  * @param {String} [options.subdomains='01234567'] 服务负载子域
  * @param {String} [options.key=mars3d.Token.tianditu] 天地图服务token令牌
  *
- * @param {String|Number} [options.id = uuid()] 图层id标识
+ * @param {String|Number} [options.id = createGuid()] 图层id标识
  * @param {String|Number} [options.pid = -1] 图层父级的id，一般图层管理中使用
  * @param {String} [options.name = ''] 图层名称
  * @param {Boolean} [options.show = true] 图层是否显示
