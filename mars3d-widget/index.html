@@ -67,7 +67,7 @@
       }
 
       //读取 config.json 配置文件
-      var configUrl = 'https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/config/config.json'
+      var configUrl = '//mars3d.cn/config/config.json'
       mars3d.Resource.fetchJson({ url: configUrl }).then(function (json) {
         initMap(json.map3d) //构建地图
       })
