@@ -4,7 +4,7 @@
 	"description": "Mars3D平台插件,结合supermap超图库使用的功能插件",
 	"main": "src/index.js",
 	"dependencies": {
-		"mars3d": "^3.4.0"
+		"mars3d": "~3.4.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.14.3",
