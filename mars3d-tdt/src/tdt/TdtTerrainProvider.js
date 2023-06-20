@@ -5,10 +5,10 @@ const Cesium = mars3d.Cesium
  * 天地图 地形服务
  * 【需要引入 mars3d-tdt 插件库】
  *
- * @param {Object} [options] 参数对象，包括以下：
- * @param {String} [options.url='https://t{s}.tianditu.gov.cn/DataServer'] 天地图服务地址
- * @param {String} [options.subdomains='01234567'] 服务负载子域
- * @param {String} [options.key=mars3d.Token.tianditu] 天地图服务token令牌
+ * @param {object} [options] 参数对象，包括以下：
+ * @param {string} [options.url='https://t{s}.tianditu.gov.cn/DataServer'] 天地图服务地址
+ * @param {string} [options.subdomains='01234567'] 服务负载子域
+ * @param {string} [options.key=mars3d.Token.tianditu] 天地图服务token令牌
  *
  * @export
  * @class TdtTerrainProvider
@@ -17,7 +17,7 @@ const Cesium = mars3d.Cesium
 export class TdtTerrainProvider extends Cesium.GeoTerrainProvider {
   constructor(options = {}) {
     if (!options.urls) {
-      const baseurl = options.url || "https://t{s}.tianditu.gov.cn/DataServer"
+      const baseurl = options.url || "https://t{s}.tianditu.gov.cn/mapservice/swdx"
       const token = options.key || mars3d.Token.tianditu
 
       let subdomains
@@ -38,6 +38,8 @@ export class TdtTerrainProvider extends Cesium.GeoTerrainProvider {
       options.urls = urls
     }
     super(options)
+
+    this._layers = [] // 兼容  Boolean(scene.terrainProvider._layers)
   }
 }
 mars3d.LayerUtil.registerTerrainProvider("tdt", TdtTerrainProvider)

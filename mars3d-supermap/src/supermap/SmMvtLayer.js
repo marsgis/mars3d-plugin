@@ -7,28 +7,28 @@ const BaseLayer = mars3d.layer.BaseLayer
  * 超图MVT矢量瓦片图层,
  * 【需要引入  mars3d-supermap 插件库】
  *
- * @param {Object} [options] 参数对象，包括以下：
- * @param {String} options.url 适用于通过SuperMap桌面软件生成mvt数据,经iServer发布为rest风格的地图服务，只需提供服务地址。
- * @param {String} options.layer 图层名称,适用于第三方发布的WMTS服务。
- * @param {Number} [options.canvasWidth] 用来绘制矢量的纹理边长。默认是512，越大越精细，越小性能越高。
- * @param {String} [options.format='mvt'] 适用于第三方发布的WMTS服务。
- * @param {Object} [options.mapboxStyle] 使用的mapBox风格。
- * @param {Object} [options.多个参数] 参考[supermap官方API]{@link http://support.supermap.com.cn:8090/webgl/docs/Documentation/Scene.html#addVectorTilesLayer}
+ * @param {object} [options] 参数对象，包括以下：
+ * @param {string} options.url 适用于通过SuperMap桌面软件生成mvt数据,经iServer发布为rest风格的地图服务，只需提供服务地址。
+ * @param {string} options.layer 图层名称,适用于第三方发布的WMTS服务。
+ * @param {number} [options.canvasWidth] 用来绘制矢量的纹理边长。默认是512，越大越精细，越小性能越高。
+ * @param {string} [options.format='mvt'] 适用于第三方发布的WMTS服务。
+ * @param {object} [options.mapboxStyle] 使用的mapBox风格。
+ * @param {object} [options.多个参数] 参考[supermap官方API]{@link http://support.supermap.com.cn:8090/webgl/docs/Documentation/Scene.html#addVectorTilesLayer}
  *
  *
- * @param {String|Number} [options.id = createGuid()] 图层id标识
- * @param {String|Number} [options.pid = -1] 图层父级的id，一般图层管理中使用
- * @param {String} [options.name = ''] 图层名称
- * @param {Boolean} [options.show = true] 图层是否显示
- * @param {BaseClass|Boolean} [options.eventParent]  指定的事件冒泡对象，默认为map对象，false时不冒泡
- * @param {Object} [options.center] 图层自定义定位视角 {@link Map#setCameraView}
- * @param {Number} options.center.lng 经度值, 180 - 180
- * @param {Number} options.center.lat 纬度值, -90 - 90
- * @param {Number} [options.center.alt] 高度值
- * @param {Number} [options.center.heading] 方向角度值，绕垂直于地心的轴旋转角度, 0-360
- * @param {Number} [options.center.pitch] 俯仰角度值，绕纬度线旋转角度, 0-360
- * @param {Number} [options.center.roll] 翻滚角度值，绕经度线旋转角度, 0-360
- * @param {Boolean} [options.flyTo] 加载完成数据后是否自动飞行定位到数据所在的区域。
+ * @param {string|number} [options.id = createGuid()] 图层id标识
+ * @param {string|number} [options.pid = -1] 图层父级的id，一般图层管理中使用
+ * @param {string} [options.name = ''] 图层名称
+ * @param {boolean} [options.show = true] 图层是否显示
+ * @param {BaseClass|boolean} [options.eventParent]  指定的事件冒泡对象，默认为map对象，false时不冒泡
+ * @param {object} [options.center] 图层自定义定位视角 {@link Map#setCameraView}
+ * @param {number} options.center.lng 经度值, 180 - 180
+ * @param {number} options.center.lat 纬度值, -90 - 90
+ * @param {number} [options.center.alt] 高度值
+ * @param {number} [options.center.heading] 方向角度值，绕垂直于地心的轴旋转角度, 0至360
+ * @param {number} [options.center.pitch] 俯仰角度值，绕纬度线旋转角度, -90至90
+ * @param {number} [options.center.roll] 翻滚角度值，绕经度线旋转角度, -90至90
+ * @param {boolean} [options.flyTo] 加载完成数据后是否自动飞行定位到数据所在的区域。
  * @export
  * @class SmMvtLayer
  * @extends {BaseLayer}
@@ -52,13 +52,17 @@ export class SmMvtLayer extends BaseLayer {
    */
   _mountedHook() {
     // options参考API文档：http://support.supermap.com.cn:8090/webgl/docs/Documentation/Scene.html
-    this._mvtLayer = this._map.scene.addVectorTilesMap(this.options)
-    this._mvtLayer.readyPromise.then(function (data) {
-      // setPaintProperty(layerId, name, value, options)
-      // for(var layerId in that.options.style){
-      //     that._mvtLayer.setPaintProperty(layerId, "fill-color", "rgba(255,0,0,0.8)");
-      // }
+    this._mvtLayer = this._map.scene.addVectorTilesMap({
+      viewer: this._map.viewer,
+      canvasWidth: 512,
+      ...this.options
     })
+    // this._mvtLayer.readyPromise.then(function (data) {
+    //   // setPaintProperty(layerId, name, value, options)
+    //   // for(var layerId in that.options.style){
+    //   //     that._mvtLayer.setPaintProperty(layerId, "fill-color", "rgba(255,0,0,0.8)");
+    //   // }
+    // })
 
     const scene = this._map.scene
     const handler = new Cesium.ScreenSpaceEventHandler(scene.canvas)
@@ -119,7 +123,7 @@ export class SmMvtLayer extends BaseLayer {
 
   /**
    * 设置透明度
-   * @param {Number} value 透明度
+   * @param {number} value 透明度
    * @return {void}  无
    */
   setOpacity(value) {

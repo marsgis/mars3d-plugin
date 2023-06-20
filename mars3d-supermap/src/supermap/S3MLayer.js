@@ -7,27 +7,27 @@ const BaseLayer = mars3d.layer.BaseLayer
  * 超图S3M三维模型图层,
  * 【需要引入  mars3d-supermap 插件库】
  *
- * @param {Object} [options] 参数对象，包括以下：
- * @param {String} options.url supermap的S3M服务地址,示例："url": "http://www.supermapol.com/realspace/services/3D-Olympic/rest/realspace"
- * @param {String} [options.layername] 指定图层名称,未指定时，打开iserver场景服务下所有图层
- * @param {String} [options.sceneName] 工作空间中有多个场景，需要指定场景名称；设置为undefined，默认打开第一个
- * @param {Object} [options.s3mOptions] [S3M支持的参数]{@link http://support.supermap.com.cn:8090/webgl/docs/Documentation/S3MTilesLayer.html?classFilter=S3MTilesLayer} ,示例： {"selectEnabled":false},
- * @param {Object} [options.position] 模型新的中心点位置（移动模型）
- * @param {Number} options.position.alt 获取或设置底部高程。（单位：米）
+ * @param {object} [options] 参数对象，包括以下：
+ * @param {string} options.url supermap的S3M服务地址,示例："url": "http://www.supermapol.com/realspace/services/3D-Olympic/rest/realspace"
+ * @param {string} [options.layername] 指定图层名称,未指定时，打开iserver场景服务下所有图层
+ * @param {string} [options.sceneName] 工作空间中有多个场景，需要指定场景名称；设置为undefined，默认打开第一个
+ * @param {object} [options.s3mOptions] [S3M支持的参数]{@link http://support.supermap.com.cn:8090/webgl/docs/Documentation/S3MTilesLayer.html?classFilter=S3MTilesLayer} ,示例： {"selectEnabled":false},
+ * @param {object} [options.position] 模型新的中心点位置（移动模型）
+ * @param {number} options.position.alt 获取或设置底部高程。（单位：米）
  *
- * @param {String|Number} [options.id = createGuid()] 图层id标识
- * @param {String|Number} [options.pid = -1] 图层父级的id，一般图层管理中使用
- * @param {String} [options.name = ''] 图层名称
- * @param {Boolean} [options.show = true] 图层是否显示
- * @param {BaseClass|Boolean} [options.eventParent]  指定的事件冒泡对象，默认为map对象，false时不冒泡
- * @param {Object} [options.center] 图层自定义定位视角 {@link Map#setCameraView}
- * @param {Number} options.center.lng 经度值, 180 - 180
- * @param {Number} options.center.lat 纬度值, -90 - 90
- * @param {Number} [options.center.alt] 高度值
- * @param {Number} [options.center.heading] 方向角度值，绕垂直于地心的轴旋转角度, 0-360
- * @param {Number} [options.center.pitch] 俯仰角度值，绕纬度线旋转角度, 0-360
- * @param {Number} [options.center.roll] 翻滚角度值，绕经度线旋转角度, 0-360
- * @param {Boolean} [options.flyTo] 加载完成数据后是否自动飞行定位到数据所在的区域。
+ * @param {string|number} [options.id = createGuid()] 图层id标识
+ * @param {string|number} [options.pid = -1] 图层父级的id，一般图层管理中使用
+ * @param {string} [options.name = ''] 图层名称
+ * @param {boolean} [options.show = true] 图层是否显示
+ * @param {BaseClass|boolean} [options.eventParent]  指定的事件冒泡对象，默认为map对象，false时不冒泡
+ * @param {object} [options.center] 图层自定义定位视角 {@link Map#setCameraView}
+ * @param {number} options.center.lng 经度值, 180 - 180
+ * @param {number} options.center.lat 纬度值, -90 - 90
+ * @param {number} [options.center.alt] 高度值
+ * @param {number} [options.center.heading] 方向角度值，绕垂直于地心的轴旋转角度, 0至360
+ * @param {number} [options.center.pitch] 俯仰角度值，绕纬度线旋转角度, -90至90
+ * @param {number} [options.center.roll] 翻滚角度值，绕经度线旋转角度, -90至90
+ * @param {boolean} [options.flyTo] 加载完成数据后是否自动飞行定位到数据所在的区域。
  * @export
  * @class S3MLayer
  * @extends {BaseLayer}
@@ -35,7 +35,7 @@ const BaseLayer = mars3d.layer.BaseLayer
 export class S3MLayer extends BaseLayer {
   /**
    * 模型对应的Cesium.S3MTilesLayer图层组
-   * @type {Object[]}
+   * @type {object[]}
    * @readonly
    * @see http://support.supermap.com.cn:8090/webgl/docs/Documentation/S3MTilesLayer.html
    */
@@ -45,7 +45,7 @@ export class S3MLayer extends BaseLayer {
 
   /**
    * 设置S3M图层本身支持的参数
-   * @type {Object}
+   * @type {object}
    * @see [S3M支持的参数]{@link http://support.supermap.com.cn:8090/webgl/docs/Documentation/S3MTilesLayer.html?classFilter=S3MTilesLayer}
    */
   get s3mOptions() {
@@ -92,17 +92,19 @@ export class S3MLayer extends BaseLayer {
       throw new Error("请引入 超图版本Cesium库 或 超图S3M插件 ")
     }
 
+    const centerOld = this._map.getCameraView()
+
     // 场景添加S3M图层服务
     let promise
     if (this.options.layername) {
       promise = this._map.scene.addS3MTilesLayerByScp(this.options.url, {
         name: this.options.layername,
-        autoSetVie: this.options.flyTo,
+        autoSetView: this.options.flyTo,
         cullEnabled: this.options.cullEnabled
       })
     } else {
       promise = this._map.scene.open(this.options.url, this.options.sceneName, {
-        autoSetVie: this.options.flyTo
+        autoSetView: this.options.flyTo
       })
     }
 
@@ -130,12 +132,17 @@ export class S3MLayer extends BaseLayer {
 
         if (this.options.flyTo) {
           this.flyToByAnimationEnd()
+        } else if (this.options.flyTo === false) {
+          this._map.setCameraView(centerOld, { duration: 0 })
         }
+
         this._readyPromise.resolve(this)
         this.fire(mars3d.EventType.load, { layers: this._layerArr })
       },
       (error) => {
-        this._readyPromise && this._readyPromise.reject(error)
+        if (this._readyPromise?.reject) {
+          this._readyPromise.reject(error)
+        }
       }
     )
 
@@ -200,7 +207,7 @@ export class S3MLayer extends BaseLayer {
    * 遍历每一个子图层并将其作为参数传递给回调函数
    *
    * @param {Function} method 回调方法
-   * @param {Object} [context] 侦听器的上下文(this关键字将指向的对象)。
+   * @param {object} [context] 侦听器的上下文(this关键字将指向的对象)。
    * @return {GroupLayer} 当前对象本身,可以链式调用
    */
   eachLayer(method, context) {
@@ -215,7 +222,7 @@ export class S3MLayer extends BaseLayer {
 
   /**
    * 设置透明度
-   * @param {Number} value 透明度
+   * @param {number} value 透明度
    * @return {void}  无
    */
   setOpacity(value) {

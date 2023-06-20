@@ -5,24 +5,24 @@ const BaseLayer = mars3d.layer.BaseLayer
 /**
  * 天地图 三维地名服务图层
  * 【需要引入 mars3d-tdt 插件库】
- * @param {Object} [options] 参数对象，包括以下：
- * @param {String} [options.url='https://t{s}.tianditu.gov.cn/mapservice/GetTiles'] 天地图服务地址
- * @param {String} [options.subdomains='01234567'] 服务负载子域
- * @param {String} [options.key=mars3d.Token.tianditu] 天地图服务token令牌
+ * @param {object} [options] 参数对象，包括以下：
+ * @param {string} [options.url='https://t{s}.tianditu.gov.cn/mapservice/GetTiles'] 天地图服务地址
+ * @param {string} [options.subdomains='01234567'] 服务负载子域
+ * @param {string} [options.key=mars3d.Token.tianditu] 天地图服务token令牌
  *
- * @param {String|Number} [options.id = createGuid()] 图层id标识
- * @param {String|Number} [options.pid = -1] 图层父级的id，一般图层管理中使用
- * @param {String} [options.name = ''] 图层名称
- * @param {Boolean} [options.show = true] 图层是否显示
- * @param {BaseClass|Boolean} [options.eventParent]  指定的事件冒泡对象，默认为map对象，false时不冒泡
- * @param {Object} [options.center] 图层自定义定位视角 {@link Map#setCameraView}
- * @param {Number} options.center.lng 经度值, 180 - 180
- * @param {Number} options.center.lat 纬度值, -90 - 90
- * @param {Number} [options.center.alt] 高度值
- * @param {Number} [options.center.heading] 方向角度值，绕垂直于地心的轴旋转角度, 0-360
- * @param {Number} [options.center.pitch] 俯仰角度值，绕纬度线旋转角度, 0-360
- * @param {Number} [options.center.roll] 翻滚角度值，绕经度线旋转角度, 0-360
- * @param {Boolean} [options.flyTo] 加载完成数据后是否自动飞行定位到数据所在的区域。
+ * @param {string|number} [options.id = createGuid()] 图层id标识
+ * @param {string|number} [options.pid = -1] 图层父级的id，一般图层管理中使用
+ * @param {string} [options.name = ''] 图层名称
+ * @param {boolean} [options.show = true] 图层是否显示
+ * @param {BaseClass|boolean} [options.eventParent]  指定的事件冒泡对象，默认为map对象，false时不冒泡
+ * @param {object} [options.center] 图层自定义定位视角 {@link Map#setCameraView}
+ * @param {number} options.center.lng 经度值, 180 - 180
+ * @param {number} options.center.lat 纬度值, -90 - 90
+ * @param {number} [options.center.alt] 高度值
+ * @param {number} [options.center.heading] 方向角度值，绕垂直于地心的轴旋转角度, 0至360
+ * @param {number} [options.center.pitch] 俯仰角度值，绕纬度线旋转角度, -90至90
+ * @param {number} [options.center.roll] 翻滚角度值，绕经度线旋转角度, -90至90
+ * @param {boolean} [options.flyTo] 加载完成数据后是否自动飞行定位到数据所在的区域。
  * @export
  * @class TdtDmLayer
  * @extends {BaseLayer}

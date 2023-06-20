@@ -25041,9 +25041,9 @@ if(!Cesium.when){
         "_updateBoundingVolume",
         "round",
         "BoundingSphere",
-        "attribute vec3 aPoint;\n",
-        "attribute vec3 aNormal;\n",
-        "attribute float aT;\n",
+        "in vec3 aPoint;\n",
+        "in vec3 aNormal;\n",
+        "in float aT;\n",
         "uniform mat3 u_normalMatrix;\n",
         "varying vec3 v_normalEC;\n",
         "varying vec3 v_positionEC;\n",
@@ -25102,7 +25102,7 @@ if(!Cesium.when){
         "   vec3 color = NdotL * lightColor * (diffuseContribution + specularContribution);\n",
         "   color += u_emissiveFactor;\n",
         "   color = LINEARtoSRGB(color);\n",
-        "   gl_FragColor = vec4(color, baseColorWithAlpha.a);\n",
+        "   out_FragColor = vec4(color, baseColorWithAlpha.a);\n",
         "    float k = (roughness + 1.0) * (roughness + 1.0) / 8.0;\n",
         "    return linearIn;\n",
         "   if (v_t > 0.5){discard;}\n",
@@ -25169,12 +25169,12 @@ if(!Cesium.when){
         "green",
         "blue",
         "alpha",
-        ");\n                    // gl_FragColor = vec4(u_color.rgb, alpha*u_color.a);\n                    gl_FragColor = vec4(color.rgb, alpha*color.a);\n                }\n                ",
+        ");\n                    // out_FragColor = vec4(u_color.rgb, alpha*u_color.a);\n                    out_FragColor = vec4(color.rgb, alpha*color.a);\n                }\n                ",
         "particles primitive",
         "_particlesImageUrl",
-        "\n            varying vec3 v_positionEC;\n            varying vec3 v_normalEC;\n            varying vec2 v_st;\n            //varying vec4 v_color;\n            //uniform sampler2D u_image;\n            //uniform vec4 u_color;\n            void main()\n            {\n                vec3 positionToEyeEC = -v_positionEC;\n                vec3 normalEC = normalize(v_normalEC);\n                normalEC = faceforward(normalEC, vec3(0.0, 0.0, 1.0), -normalEC);\n\n                float dt = fract(czm_frameNumber / 90.0);\n                vec2 st = fract(vec2(1.0) + v_st - vec2(dt, dt));\n                //vec4 imageColor = texture2D(u_image, st);\n\n                czm_materialInput materialInput;\n                materialInput.normalEC = normalEC;\n                materialInput.positionToEyeEC = positionToEyeEC;\n                materialInput.st = st;\n                czm_material material = czm_getMaterial(materialInput);\n\n\n                vec3 diffuse = material.diffuse;\n                float alpha = material.alpha;\n\n                //diffuse *= v_color.rgb;\n                //alpha *= v_color.a;\n                \n                vec4 ucolor = vec4(",
-        ");\n                diffuse *= ucolor.rgb;\n                alpha *= ucolor.a;\n\n                 //diffuse *= u_color.rgb;\n                 //alpha *= u_color.a;\n\n                gl_FragColor = vec4(diffuse, alpha * pow(1.0 - v_st.t, 2.0));\n            }\n            ",
-        "\n            attribute vec3 position3DHigh;\n            attribute vec3 position3DLow;\n            attribute vec3 normal;\n            attribute vec2 st;\n            attribute float batchId;\n\n            varying vec3 v_positionEC;\n            varying vec3 v_normalEC;\n            varying vec2 v_st;\n\n            void main()\n            {\n                vec4 p = czm_computePosition();\n\n                v_positionEC = (czm_modelViewRelativeToEye * p).xyz;      // position in eye coordinates\n                v_normalEC = czm_normal * normal;                         // normal in eye coordinates\n                v_st = st;\n\n                gl_Position = czm_modelViewProjectionRelativeToEye * p;\n            }\n            ",
+        "\n            varying vec3 v_positionEC;\n            varying vec3 v_normalEC;\n            varying vec2 v_st;\n            //varying vec4 v_color;\n            //uniform sampler2D u_image;\n            //uniform vec4 u_color;\n            void main()\n            {\n                vec3 positionToEyeEC = -v_positionEC;\n                vec3 normalEC = normalize(v_normalEC);\n                normalEC = faceforward(normalEC, vec3(0.0, 0.0, 1.0), -normalEC);\n\n                float dt = fract(czm_frameNumber / 90.0);\n                vec2 st = fract(vec2(1.0) + v_st - vec2(dt, dt));\n                //vec4 imageColor = texture(u_image, st);\n\n                czm_materialInput materialInput;\n                materialInput.normalEC = normalEC;\n                materialInput.positionToEyeEC = positionToEyeEC;\n                materialInput.st = st;\n                czm_material material = czm_getMaterial(materialInput);\n\n\n                vec3 diffuse = material.diffuse;\n                float alpha = material.alpha;\n\n                //diffuse *= v_color.rgb;\n                //alpha *= v_color.a;\n                \n                vec4 ucolor = vec4(",
+        ");\n                diffuse *= ucolor.rgb;\n                alpha *= ucolor.a;\n\n                 //diffuse *= u_color.rgb;\n                 //alpha *= u_color.a;\n\n                out_FragColor = vec4(diffuse, alpha * pow(1.0 - v_st.t, 2.0));\n            }\n            ",
+        "\n            in vec3 position3DHigh;\n            in vec3 position3DLow;\n            in vec3 normal;\n            in vec2 st;\n            in float batchId;\n\n            varying vec3 v_positionEC;\n            varying vec3 v_normalEC;\n            varying vec2 v_st;\n\n            void main()\n            {\n                vec4 p = czm_computePosition();\n\n                v_positionEC = (czm_modelViewRelativeToEye * p).xyz;      // position in eye coordinates\n                v_normalEC = czm_normal * normal;                         // normal in eye coordinates\n                v_st = st;\n\n                gl_Position = czm_modelViewProjectionRelativeToEye * p;\n            }\n            ",
         "DEFAULT_CYLINDER_COLOR",
         "GOLD",
         "GeoHeatMap",
@@ -25307,10 +25307,10 @@ if(!Cesium.when){
         "u_texture_0",
         "u_texture_1",
         "_updateCommandModelMatrix",
-        "attribute vec2 aPlane;\n",
-        "attribute vec4 aDirection;\n",
-        "attribute vec4 aSpeedScaleLifeTime;\n",
-        "attribute vec2 aTexcoord;\n",
+        "in vec2 aPlane;\n",
+        "in vec4 aDirection;\n",
+        "in vec4 aSpeedScaleLifeTime;\n",
+        "in vec2 aTexcoord;\n",
         "uniform float u_endScale;\n",
         "varying vec3 v_texcoord_0;\n",
         "varying vec4 v_colorFact;\n",
@@ -25338,8 +25338,8 @@ if(!Cesium.when){
         "   int mode = int(v_texcoord_0.z);\n",
         "   vec4 color = vec4(0.0);\n",
         "   if (mode === 0){\n",
-        "           color = texture2D(u_texture_1, v_texcoord_0.xy);\n",
-        "           color = texture2D(u_texture_0, v_texcoord_0.xy);\n",
+        "           color = texture(u_texture_1, v_texcoord_0.xy);\n",
+        "           color = texture(u_texture_0, v_texcoord_0.xy);\n",
         "       }\n",
         "   else if (mode === 1){\n",
         "       color.rg *= 1.4;\n",
@@ -25351,7 +25351,7 @@ if(!Cesium.when){
         "   vec4 fact = czm_gammaCorrect(v_colorFact);\n",
         "   color *= fact;\n",
         "   if (color.a < 0.1){discard;}\n",
-        "   gl_FragColor = color;\n",
+        "   out_FragColor = color;\n",
         "_normalFact",
         "_alphaFact",
         "GeoLineSmokeEffect",
@@ -25379,7 +25379,7 @@ if(!Cesium.when){
         "_updateCommandShaderProgramOpaque",
         "IndexDatatype",
         "u_startColor",
-        "attribute vec4 aPosition;\n",
+        "in vec4 aPosition;\n",
         "uniform vec4 u_endColor;\n",
         "uniform float u_imageSize;\n",
         "   vec3 v = position;\n",
@@ -25389,7 +25389,7 @@ if(!Cesium.when){
         "   vec4 positionEC = computePosition(aPosition.xyz, aPlane, aDirection.xyz, u_imageSize, baseScale, speed, time);\n",
         "   v_texcoord_0.xy = aTexcoord;\n",
         "   v_texcoord_0.z = t;\n",
-        "   color = texture2D(u_texture_0, v_texcoord_0.xy);\n",
+        "   color = texture(u_texture_0, v_texcoord_0.xy);\n",
         "   vec4 fact = v_colorFact;\n",
         "   if (v_texcoord_0.z > 0.9){color.a *= 0.1;}\n",
         "uniform vec4 u_startColor;\n",
@@ -25488,17 +25488,17 @@ if(!Cesium.when){
         "vec2 getGroundTexCoord(in vec3 position){\n",
         "    float y = czm_planeDistance(u_yPlane, position) / u_xyRange.y;\n",
         "    return vec2(x * 4.0, y * 4.0);\n",
-        "    vec4 color = texture2D(colorTexture, v_textureCoordinates);\n",
-        "    vec4 currD = texture2D(depthTexture, v_textureCoordinates);\n",
+        "    vec4 color = texture(colorTexture, v_textureCoordinates);\n",
+        "    vec4 currD = texture(depthTexture, v_textureCoordinates);\n",
         "    if(currD.r>=1.0){\n",
-        "        gl_FragColor = color;\n",
+        "        out_FragColor = color;\n",
         "        return;\n",
-        "    vec4 assigned = texture2D(u_assignedTexture, v_textureCoordinates);\n",
+        "    vec4 assigned = texture(u_assignedTexture, v_textureCoordinates);\n",
         "    }\n",
         "    float depth = getDepth(currD);\n",
         "    float z = czm_planeDistance(u_zPlane, position.xyz);\n",
         "    vec2 gndTexCoord = getGroundTexCoord(position.xyz);\n",
-        "    vec4 colorGround = texture2D(u_groundTexture, gndTexCoord);\n",
+        "    vec4 colorGround = texture(u_groundTexture, gndTexCoord);\n",
         "    for (int i = 0; i < ",
         "        if (i >= u_count){\n",
         "            break;\n",
@@ -25698,7 +25698,7 @@ if(!Cesium.when){
         ".rgb; \n",
         "    float clippingPlanesEdgeWidth = ",
         "    if (clipDistance > 0.0 && clipDistance < clippingPlanesEdgeWidth) \n",
-        "        gl_FragColor = clippingPlanesEdgeColor;\n",
+        "        out_FragColor = clippingPlanesEdgeColor;\n",
         "    } \n",
         "} \n",
         "    vec3 clipPosition = vec3(0.0);\n",
@@ -25769,8 +25769,8 @@ if(!Cesium.when){
         "_updateScanCirclePostProcess",
         "uniform mat4 u_invViewMatrix;\n",
         "uniform vec3 u_center;\n",
-        "   vec4 color = texture2D(colorTexture, v_textureCoordinates);\n",
-        "   vec4 currD = texture2D(depthTexture, v_textureCoordinates);\n",
+        "   vec4 color = texture(colorTexture, v_textureCoordinates);\n",
+        "   vec4 currD = texture(depthTexture, v_textureCoordinates);\n",
         "   if(currD.r >= 1.0){\n",
         "       return;\n",
         "   float zd = czm_unpackDepth(currD);\n",
@@ -25825,7 +25825,7 @@ if(!Cesium.when){
         "only-if-cache",
         "_param2",
         "uniform vec4 u_param3;\n",
-        "       gl_FragColor = color;\n",
+        "       out_FragColor = color;\n",
         "   position = u_invViewMatrix * position;\n",
         "   float z0 = dot(u_param3.xyz, position.xyz) + u_param3.w;\n",
         "   if(z0 < -800.0 || z0 > 800.0){\n",
@@ -25834,7 +25834,7 @@ if(!Cesium.when){
         "   float z2 = distance(u_param0.xyz, p);\n",
         "   float z3 = u_param2.x * 0.75;\n",
         "   if(z2 < z3){\n",
-        "   gl_FragColor = mix(color, u_color, (z2 - z3) * 0.8 / (u_param2.x * 0.25));\n",
+        "   out_FragColor = mix(color, u_color, (z2 - z3) * 0.8 / (u_param2.x * 0.25));\n",
         "uniform vec4 u_param2;\n",
         "uniform vec4 u_param4;\n",
         "   float z0 = dot(u_param0.xyz, position.xyz) + u_param0.w;\n",
@@ -25847,7 +25847,7 @@ if(!Cesium.when){
         "   if(z3 < 0.0){\n",
         "   float z4 = dot(u_param4.xyz, position.xyz) + u_param4.w;\n",
         "   float a = max(sColor.r, max(sColor.g, sColor.b));\n",
-        "   gl_FragColor = mix(color, sColor, a * 0.8);\n",
+        "   out_FragColor = mix(color, sColor, a * 0.8);\n",
         "_angle",
         "angle",
         "emit",
@@ -25877,7 +25877,7 @@ if(!Cesium.when){
         "vec4(",
         "_makeColorShader",
         "if (visualSenseStyle_enabledMixColor === 1.0) { \n",
-        "gl_FragColor *= ",
+        "out_FragColor *= ",
         "_minValue",
         " === ",
         ".0) \n",
@@ -25925,7 +25925,7 @@ if(!Cesium.when){
         "float vtxf_h = clamp(v_elevationPos.z / 300.0, 0.0, 1.0);\n",
         "vtxf_a13 = abs(vtxf_a13 - 0.5) * 2.0;\n",
         "float vtxf_diff = step(0.005, abs(vtxf_h - vtxf_a13));\n",
-        "gl_FragColor.rgb += gl_FragColor.rgb * (1.0 - vtxf_diff);\n",
+        "out_FragColor.rgb += out_FragColor.rgb * (1.0 - vtxf_diff);\n",
         "GeoWind",
         "level",
         "rectangle",
@@ -26536,10 +26536,10 @@ if(!Cesium.when){
         "_createShaderProgram",
         "cull",
         "_card",
-        "        attribute vec3 a_position;\n        attribute vec2 a_texcoord_0;\n        uniform mat4 u_animationMatrix;\n        varying vec2 v_texcoord_0;\n        ",
+        "        in vec3 a_position;\n        in vec2 a_texcoord_0;\n        uniform mat4 u_animationMatrix;\n        varying vec2 v_texcoord_0;\n        ",
         "        void main()\n        {\n            vec4 p = vec4(a_position, 1.0);\n            v_texcoord_0 = a_texcoord_0;\n            gl_Position = czm_modelViewProjection * u_animationMatrix * p;\n        }\n        ",
         "        uniform sampler2D u_colorTexture_0;\n        uniform vec4 u_gamma;\n        varying vec2 v_texcoord_0;\n        ",
-        "        float computeW(vec4 color){\n            float w = color.w;\n            if (w === 1.0){\n                //w = min(min(color.r, color.g), color.b);\n                w = sin(color.r * color.g * color.b * 1.5707963);\n            }\n            w = pow(w, u_gamma.w * 10.0);\n            return w;\n        }\n        void main()\n        {\n            vec4 color_0 = texture2D(u_colorTexture_0, v_texcoord_0);\n            color_0.w = computeW(color_0);\n            color_0.rgb *= u_gamma.xyz;\n            gl_FragColor = color_0;\n        }\n        ",
+        "        float computeW(vec4 color){\n            float w = color.w;\n            if (w === 1.0){\n                //w = min(min(color.r, color.g), color.b);\n                w = sin(color.r * color.g * color.b * 1.5707963);\n            }\n            w = pow(w, u_gamma.w * 10.0);\n            return w;\n        }\n        void main()\n        {\n            vec4 color_0 = texture(u_colorTexture_0, v_texcoord_0);\n            color_0.w = computeW(color_0);\n            color_0.rgb *= u_gamma.xyz;\n            out_FragColor = color_0;\n        }\n        ",
         "topCylinderColor",
         "bottomCylinderColor",
         "createPrestrainPrimitive",
@@ -26557,7 +26557,7 @@ if(!Cesium.when){
         "POSITION_AND_NORMAL",
         "data:image/png;base64,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0p8zAAA6E2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS41LWMwMTQgNzkuMTUxNDgxLCAyMDEzLzAzLzEzLTEyOjA5OjE1ICAgICAgICAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgICAgICAgICAgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIgogICAgICAgICAgICB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIKICAgICAgICAgICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIj4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpPC94bXA6Q3JlYXRvclRvb2w+CiAgICAgICAgIDx4bXA6Q3JlYXRlRGF0ZT4yMDE5LTA2LTExVDA5OjQ2OjU3KzA4OjAwPC94bXA6Q3JlYXRlRGF0ZT4KICAgICAgICAgPHhtcDpNb2RpZnlEYXRlPjIwMTktMDYtMTFUMTA6MTY6NTMrMDg6MDA8L3htcDpNb2RpZnlEYXRlPgogICAgICAgICA8eG1wOk1ldGFkYXRhRGF0ZT4yMDE5LTA2LTExVDEwOjE2OjUzKzA4OjAwPC94bXA6TWV0YWRhdGFEYXRlPgogICAgICAgICA8ZGM6Zm9ybWF0PmltYWdlL3BuZzwvZGM6Zm9ybWF0PgogICAgICAgICA8cGhvdG9zaG9wOkNvbG9yTW9kZT4zPC9waG90b3Nob3A6Q29sb3JNb2RlPgogICAgICAgICA8cGhvdG9zaG9wOklDQ1Byb2ZpbGU+c1JHQiBJRUM2MTk2Ni0yLjE8L3Bob3Rvc2hvcDpJQ0NQcm9maWxlPgogICAgICAgICA8eG1wTU06SW5zdGFuY2VJRD54bXAuaWlkOjNkNWU2OTU5LTZiOTMtZTQ0Mi1hNmFkLWVhMmExOWQxZGI0MTwveG1wTU06SW5zdGFuY2VJRD4KICAgICAgICAgPHhtcE1NOkRvY3VtZW50SUQ+eG1wLmRpZDo5ODQ4MzQ2Ny03Mjg5LTUzNGQtOTUyOC05MGY3MWU0MTEwMmU8L3htcE1NOkRvY3VtZW50SUQ+CiAgICAgICAgIDx4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ+eG1wLmRpZDo5ODQ4MzQ2Ny03Mjg5LTUzNGQtOTUyOC05MGY3MWU0MTEwMmU8L3htcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD4KICAgICAgICAgPHhtcE1NOkhpc3Rvcnk+CiAgICAgICAgICAgIDxyZGY6U2VxPgogICAgICAgICAgICAgICA8cmRmOmxpIHJkZjpwYXJzZVR5cGU9IlJlc291cmNlIj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OmFjdGlvbj5jcmVhdGVkPC9zdEV2dDphY3Rpb24+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDppbnN0YW5jZUlEPnhtcC5paWQ6OTg0ODM0NjctNzI4OS01MzRkLTk1MjgtOTBmNzFlNDExMDJlPC9zdEV2dDppbnN0YW5jZUlEPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6d2hlbj4yMDE5LTA2LTExVDA5OjQ2OjU3KzA4OjAwPC9zdEV2dDp3aGVuPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6c29mdHdhcmVBZ2VudD5BZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpPC9zdEV2dDpzb2Z0d2FyZUFnZW50PgogICAgICAgICAgICAgICA8L3JkZjpsaT4KICAgICAgICAgICAgICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSJSZXNvdXJjZSI+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDphY3Rpb24+c2F2ZWQ8L3N0RXZ0OmFjdGlvbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0Omluc3RhbmNlSUQ+eG1wLmlpZDozZDVlNjk1OS02YjkzLWU0NDItYTZhZC1lYTJhMTlkMWRiNDE8L3N0RXZ0Omluc3RhbmNlSUQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDp3aGVuPjIwMTktMDYtMTFUMTA6MTY6NTMrMDg6MDA8L3N0RXZ0OndoZW4+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpzb2Z0d2FyZUFnZW50PkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cyk8L3N0RXZ0OnNvZnR3YXJlQWdlbnQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpjaGFuZ2VkPi88L3N0RXZ0OmNoYW5nZWQ+CiAgICAgICAgICAgICAgIDwvcmRmOmxpPgogICAgICAgICAgICA8L3JkZjpTZXE+CiAgICAgICAgIDwveG1wTU06SGlzdG9yeT4KICAgICAgICAgPHRpZmY6T3JpZW50YXRpb24+MTwvdGlmZjpPcmllbnRhdGlvbj4KICAgICAgICAgPHRpZmY6WFJlc29sdXRpb24+NzIwMDAwLzEwMDAwPC90aWZmOlhSZXNvbHV0aW9uPgogICAgICAgICA8dGlmZjpZUmVzb2x1dGlvbj43MjAwMDAvMTAwMDA8L3RpZmY6WVJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOlJlc29sdXRpb25Vbml0PjI8L3RpZmY6UmVzb2x1dGlvblVuaXQ+CiAgICAgICAgIDxleGlmOkNvbG9yU3BhY2U+MTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+NjQ8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+NjQ8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAKPD94cGFja2V0IGVuZD0idyI/Pu16zW8AAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAEbhJREFUeNrsW3t0VPWd//x+9955ZDKTyeRNnrxCXEGEgAqyQXqEWmtdtbj0gVsaaVfWB6tSjh5r67J2j0qhPrrWcnqaLisKVK0bLdsKIiBGBOVhSYiERwghk5AQ8pqZ3Dv3/r77x/yGjrOZyUSC7jnu95zfyeP+Ht/f5/5+3/dlRIQvM3F8yenzACAPwDIAc0cwZhyABwBUXGrm1Es4dz6AbwGYB+BvAPzrCMZ6AHwfwE0A3gewGcChS8EkuwQy4DYA1QBKAZwDsA/AWwB2AwiN4GRWArgRwLUACgB0A3gNwDP/VwH4HoD7ANgB/BnAbwHUj9Lc2QDuBPB3AHwAXgHw41GZmYguts0mov1EdISIVozCfMO1hUT0ARE1EdGdFzvfxTKzjoi6ieipz2Hj8W0JEZ0moneJKOPzBiCfiE4Q0SEiKv0CNh/bXiaiEBF97bOM/ywyYB6APwFYB+DeEYzzAZgG4DKp5nwAFPlMABgA0Azg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",
         "varying vec3 v_positionMC;\n\t\t\t\tvarying vec3 v_positionEC;\n\t\t\t\tvarying vec2 v_st;\n\t\t\t\t\n\t\t\t\tvoid main()\n\t\t\t\t{\n\t\t\t\t\tczm_materialInput materialInput;\n\t\t\t\t\tvec3 normalEC = normalize(czm_normal3D * czm_geodeticSurfaceNormal(v_positionMC, vec3(0.0), vec3(1.0)));\n\t\t\t\t#ifdef FACE_FORWARD\n\t\t\t\t\tnormalEC = faceforward(normalEC, vec3(0.0, 0.0, 1.0), -normalEC);\n\t\t\t\t#endif\n\t\t\t\t\tmaterialInput.s = v_st.s;\n\t\t\t\t\tmaterialInput.st = v_st;\n\t\t\t\t\tmaterialInput.str = vec3(v_st, 0.0);\n\t\t\t\t\tmaterialInput.normalEC = normalEC;\n\t\t\t\t\tmaterialInput.tangentToEyeMatrix = czm_eastNorthUpToEyeCoordinates(v_positionMC, materialInput.normalEC);\n\t\t\t\t\tvec3 positionToEyeEC = -v_positionEC;\n\t\t\t\t\tmaterialInput.positionToEyeEC = positionToEyeEC;\n\t\t\t\t\tczm_material material = czm_getMaterial(materialInput);\n\t\t\t\t#ifdef FLAT\n\t\t\t\t\tgl_FragColor = vec4(material.diffuse + material.emission, material.alpha);\n\t\t\t\t#else\n\t\t\t\t\tgl_FragColor = czm_phong(normalize(positionToEyeEC), material",
-        ");\n\t\t\t\t\tif(gl_FragColor.r==1.0&&gl_FragColor.g==1.0&&gl_FragColor.b==1.0&&gl_FragColor.a==1.0){\n\t\t\t\t\t\tgl_FragColor.a = 0.0;\n\t\t\t\t\t}\n\t\t\t\t#endif\n\t\t\t\t}\n\t\t\t",
+        ");\n\t\t\t\t\tif(out_FragColor.r==1.0&&out_FragColor.g==1.0&&out_FragColor.b==1.0&&out_FragColor.a==1.0){\n\t\t\t\t\t\tgl_FragColor.a = 0.0;\n\t\t\t\t\t}\n\t\t\t\t#endif\n\t\t\t\t}\n\t\t\t",
         "GeoLocateRatate",
         "GeoRayPick",
         "isOnly",
@@ -26715,20 +26715,20 @@ if(!Cesium.when){
         "    if (any(lessThan(videoPosition.xyz, vec3(0.0))) || any(greaterThan(videoPosition.xyz, vec3(1.0))))\n",
         "    bool visibility = videoVisibility(videoMapTexture, videoPosition);\n",
         "    if(visibility){\n",
-        "        vec4 videoColor = texture2D(videoTexture, videoPosition.xy);\n",
+        "        vec4 videoColor = texture(videoTexture, videoPosition.xy);\n",
         "    }else{\n",
         "_FS_Cone_Fill",
         "uniform sampler2D videoMapTexture;\n",
         "uniform vec4 u_videoColor;\n",
-        "    float visibility = step(position.z, texture2D(shadowMap, position.xy).r);\n",
+        "    float visibility = step(position.z, texture(shadowMap, position.xy).r);\n",
         "    return (visibility === 1.0);\n",
         "    vec4 videoPosition = videoMapMatrix * positionEC;\n",
         "    videoPosition /= videoPosition.w;\n",
         "        vec4 videoColor = u_videoColor;\n",
-        "        gl_FragColor = vec4(mix(color.rgb, videoColor.rgb, mixNum), 1.0);\n",
+        "        out_FragColor = vec4(mix(color.rgb, videoColor.rgb, mixNum), 1.0);\n",
         "_FS_Sphere",
         "        mat4 viewScene = videoViewMatrix;\n",
-        "            gl_FragColor = color;\n",
+        "            out_FragColor = color;\n",
         "            return;\n",
         "_FS_Sphere_Fill",
         "        vec4 positionWC = viewScene * positionEC;\n",
@@ -26847,13 +26847,13 @@ if(!Cesium.when){
         "    normal_vertex = aPosition.xyz;\n",
         "#extension GL_EXT_frag_depth : enable\n",
         "#extension GL_OES_standard_derivatives : enable\n",
-        "    gl_FragDepthEXT = min(fWindowZ * gl_FragCoord.w, 1.0);\n",
+        "    gl_FragDepth = min(fWindowZ * gl_FragCoord.w, 1.0);\n",
         "    vec3 normal = cross(vec3(dFdx(normal_vertex.x), dFdx(normal_vertex.y), dFdx(normal_vertex.z)), vec3(dFdy(normal_vertex.x), dFdy(normal_vertex.y), dFdy(normal_vertex.z)));\n",
         "    normal = normalize(normal);\n",
         "    vec3 lightDirection = normalize(czm_sunPositionWC - vec3(eyePosition));\n",
         "    vec4 diffuse = vColor * LIGHT_COLOR * nDotL;\n",
         "    vec4 ambient = vColor * LIGHT_COLOR;\n",
-        "    gl_FragColor = clamp(diffuse + ambient, vec4(0.0), vec4(1.0));\n",
+        "    out_FragColor = clamp(diffuse + ambient, vec4(0.0), vec4(1.0));\n",
         "_createVACone",
         "_fovX",
         "_createBoundingVolume",
@@ -27000,9 +27000,9 @@ if(!Cesium.when){
         "    vec4 posInCamera = clipToEye(v_textureCoordinates, depth);\n",
         "    float d = length(posInCamera.xyz);\n",
         "    if (d > u_filterFar)\n",
-        "       gl_FragColor = vec4(mix(color.rgb, vec3(0.8, 0.85, 0.85), 1.0 - u_filterFar / d), 1.0);\n",
+        "       out_FragColor = vec4(mix(color.rgb, vec3(0.8, 0.85, 0.85), 1.0 - u_filterFar / d), 1.0);\n",
         "    else \n",
-        "       gl_FragColor = vec4(color.rgb, 1.0);\n",
+        "       out_FragColor = vec4(color.rgb, 1.0);\n",
         "enableFilter",
         "_isSupported",
         "GeoWalkerAnimationCamera",
@@ -27117,8 +27117,8 @@ if(!Cesium.when){
         "_fElapse",
         "_frameTime",
         "_flowAngle",
-        "attribute vec3 position;\n\t\t\t\t\t\t\t\t\t\t\tattribute vec2 st;\n\t\t\t\t\t\t\t\t\t\t\tuniform mat4 u_modelViewProjectionMatrix;\n\t\t\t\t\t\t\t\t\t\t\tuniform mat4 u_modelViewMatrix;\n\t\t\t\t\t\t\t\t\t\t\tuniform mat4 u_invWorldViewMatrix;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec2 u_texCoordOffset;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec2 u_texCoordScale;\n\t\t\t\t\t\t\t\t\t\t\tuniform float u_frameTime;\n\t\t\t\t\t\t\t\t\t\t\tuniform int u_clampToGroud;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec3 u_camPos;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec3 u_scale;\n\t\t\t\t\t\t\t\t\t\t\tvarying vec3 eyeDir;\n\t\t\t\t\t\t\t\t\t\t\tvarying vec2 texCoord;\n\t\t\t\t\t\t\t\t\t\t\tvarying float myTime;\n\t\t\t\t\t\t\t\t\t\t\tvarying vec4 projectionCoord;\n\t\t\t\t\t\t\t\t\t\t\tvoid main(void)\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t//gl_Position = ftransform();\n\t\t\t\t\t\t\t\t\t\t\t\tgl_Position = u_modelViewProjectionMatrix * vec4(position.xyz,1.0);\n\t\t\t\t\t\t\t\t\t\t\t\tif (u_clampToGroud === 1)\n\t\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\teyeDir = (u_camPos - position.xyz) * u_scale;\n\t\t\t\t\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec4 pos = u_modelViewMatrix * vec4(position.xyz,1.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\teyeDir = vec3(u_invWorldViewMatrix*vec4(pos.xyz,0.0));\n\t\t\t\t\t\t\t\t\t\t\t\t\tprojectionCoord = gl_Position;\n\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t\ttexCoord = (st+u_texCoordOffset)*u_texCoordScale;\n\t\t\t\t\t\t\t\t\t\t\t\tmyTime = 0.01 * u_frameTime;\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t",
-        "uniform sampler2D u_normalMap;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform sampler2D u_refractMap;\n\t\t\t\t\t\t\t\t\t\t\t\t//uniform samplerCube u_cubeMap;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform sampler2D u_reflectMap;\n\t\t\t\t\t\t\t\t\t\t\t\t//uniform sampler2D u_flowMap;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec4 u_waterColor;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec4 u_refractColor;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform int u_useRefractTex;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec4 u_reflectColor;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform int u_reflection;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec2 u_flowDir;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying vec3 eyeDir;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying vec2 texCoord;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying float myTime;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying vec4 projectionCoord;\n\t\t\t\t\t\t\t\t\t\t\t\tvoid main (void)\n\t\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\t// texScale determines the amount of tiles generated.\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat texScale = 35.0;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// texScale2 determines the repeat of the water texture (the normalmap) itself\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat texScale2 = 10.0;\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat myangle;\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat transp;\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 myNormal;\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 mytexFlowCoord = texCoord * texScale;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// ff is the factor that blends the tiles.\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 ff = abs(2.0*(fract(mytexFlowCoord)) - 1.0) -0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// take a third power, to make the area with more or less equal contribution\n\t\t\t\t\t\t\t\t\t\t\t\t\t// of more tile bigger\n\t\t\t\t\t\t\t\t\t\t\t\t\tff = 0.5-4.0*ff*ff*ff;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// ffscale is a scaling factor that compensates for the effect that\n\t\t\t\t\t\t\t\t\t\t\t\t\t// adding normal vectors together tends to get them closer to the average normal\n\t\t\t\t\t\t\t\t\t\t\t\t\t// which is a visible effect. For more or less random waves, this factor\n\t\t\t\t\t\t\t\t\t\t\t\t\t// compensates for it\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 ffscale = sqrt(ff*ff + (1.0-ff)*(1.0-ff));\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 Tcoord = texCoord  * texScale2;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// offset makes the water move\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 offset = vec2(myTime,0.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// I scale the texFlowCoord and floor the value to create the tiling\n\t\t\t\t\t\t\t\t\t\t\t\t\t// This could have be replace by an extremely lo-res texture lookup\n\t\t\t\t\t\t\t\t\t\t\t\t\t// using NEAREST pixel.\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 sample = vec3(u_flowDir, 1.0);//texture2D( u_flowMap, floor(mytexFlowCoord)/ texScale).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// flowdir is supposed to go from -1 to 1 and the line below\n\t\t\t\t\t\t\t\t\t\t\t\t\t// used to be sample.xy * 2.0 - 1.0, but saves a multiply by\n\t\t\t\t\t\t\t\t\t\t\t\t\t// moving this factor two to the sample.b\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 flowdir = sample.xy -0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// sample.b is used for the inverse length of the wave\n\t\t\t\t\t\t\t\t\t\t\t\t\t// could be premultiplied in sample.xy, but this is easier for editing flowtexture\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir *= sample.b;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// build the rotation matrix that scales and rotates the complete tile\n\t\t\t\t\t\t\t\t\t\t\t\t\tmat2 rotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// this is the normal for tile A\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalT0 = texture2D(u_normalMap, rotmat * Tcoord - offset).rg;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// for the next tile (B) I shift by half the tile size in the x-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tsample = vec3(u_flowDir, 1.0);//texture2D( u_flowMap, floor((mytexFlowCoord + vec2(0.5,0)))/ texScale ).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir = sample.b * (sample.xy - 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\trotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// and the normal for tile B...\n\t\t\t\t\t\t\t\t\t\t\t\t\t// multiply the offset by some number close to 1 to give it a different speed\n\t\t\t\t\t\t\t\t\t\t\t\t\t// The result is that after blending the water starts to animate and look\n\t\t\t\t\t\t\t\t\t\t\t\t\t// realistic, instead of just sliding in some direction.\n\t\t\t\t\t\t\t\t\t\t\t\t\t// This is also why I took the third power of ff above, so the area where the\n\t\t\t\t\t\t\t\t\t\t\t\t\t// water animates is as big as possible\n\t\t\t\t\t\t\t\t\t\t\t\t\t// adding a small arbitrary constant isn't really needed, but helps to show\n\t\t\t\t\t\t\t\t\t\t\t\t\t// a bit less tiling in the beginning of the program. After a few seconds, the\n\t\t\t\t\t\t\t\t\t\t\t\t\t// tiling cannot be seen anymore so this constant could be removed.\n\t\t\t\t\t\t\t\t\t\t\t\t\t// For the quick demo I leave them in. In a simulation that keeps running for\n\t\t\t\t\t\t\t\t\t\t\t\t\t// some time, you could just as well remove these small constant offsets\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalT1 = texture2D(u_normalMap, rotmat * Tcoord - offset*1.06+0.62).rg;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// blend them together using the ff factor\n\t\t\t\t\t\t\t\t\t\t\t\t\t// use ff.x because this tile is shifted in the x-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalTAB = ff.x * NormalT0 + (1.0-ff.x) * NormalT1;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// the scaling of NormalTab and NormalTCD is moved to a single scale of\n\t\t\t\t\t\t\t\t\t\t\t\t\t// NormalT later in the program, which is mathematically identical to\n\t\t\t\t\t\t\t\t\t\t\t\t\t// NormalTAB = (NormalTAB - 0.5) / ffscale.x + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// tile C is shifted in the y-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tsample = vec3(u_flowDir, 1.0);//texture2D( u_flowMap, floor((mytexFlowCoord + vec2(0.0,0.5)))/ texScale ).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir = sample.b * (sample.xy - 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\trotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT0 = texture2D(u_normalMap, rotmat * Tcoord - offset*1.33+0.27).rg;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// tile D is shifted in both x- and y-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tsample = vec3(u_flowDir, 1.0);//texture2D( u_flowMap, floor((mytexFlowCoord + vec2(0.5,0.5)))/ texScale ).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir = sample.b * (sample.xy - 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\trotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT1 = texture2D(u_normalMap, rotmat * Tcoord - offset*1.24).rg ;\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalTCD = ff.x * NormalT0 + (1.0-ff.x) * NormalT1;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// NormalTCD = (NormalTCD - 0.5) / ffscale.x + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// now blend the two values togetherv\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalT = ff.y * NormalTAB + (1.0-ff.y) * NormalTCD;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// this line below used to be here for scaling the result\n\t\t\t\t\t\t\t\t\t\t\t\t\t//NormalT = (NormalT - 0.5) / ffscale.y + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// below the new, direct scaling of NormalT\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT = (NormalT - 0.5) / (ffscale.y * ffscale.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// scaling by 0.3 is arbritrary, and could be done by just\n\t\t\t\t\t\t\t\t\t\t\t\t\t// changing the values in the normal map\n\t\t\t\t\t\t\t\t\t\t\t\t\t// without this factor, the waves look very strong\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT *= 0.3;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// to make the water more transparent\n\t\t\t\t\t\t\t\t\t\t\t\t\ttransp = 1.0;//texture2D( u_flowMap, texFlowCoord ).a;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// and scale the normals with the transparency\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT *= transp*transp;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// assume normal of plane is 0,0,1 and produce the normalized sum of adding NormalT to it\n\t\t\t\t\t\t\t\t\t\t\t\t\tmyNormal = vec3(NormalT,sqrt(1.0-NormalT.x*NormalT.x - NormalT.y*NormalT.y));\n\t\t\t\t\t\t\t\t\t\t\t\t\t// 获取反射颜色。\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 envColor = u_reflectColor.rgb;//vec3(0.5647, 0.6941, 0.8235);\n\t\t\t\t\t\t\t\t\t\t\t\t\tif (u_reflection === 1)\n\t\t\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t//vec3 reflectDir = reflect(eyeDir, myNormal);\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t//vec3 envColor = vec3(textureCube(u_cubeMap, -reflectDir));\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t// 如果要实现反射真实场景，需要把场景渲染5遍构建一个无底的立方体纹理。\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t// 目前使用一张反射纹理近似模拟。\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 final = projectionCoord.xy / projectionCoord.w;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tfinal = final * 0.5 + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tfinal.y = 1.0 - final.y;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tenvColor = texture2D(u_reflectMap, final + myNormal.xy/texScale2*transp).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t\t\t// very ugly version of fresnel effect\n\t\t\t\t\t\t\t\t\t\t\t\t\t// but it gives a nice transparent water, but not too transparent\n\t\t\t\t\t\t\t\t\t\t\t\t\tmyangle = dot(myNormal,normalize(eyeDir));\n\t\t\t\t\t\t\t\t\t\t\t\t\tmyangle = 0.95-0.6*myangle*myangle;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// blend in the color of the plane below the water\n\t\t\t\t\t\t\t\t\t\t\t\t\t// add in a little distortion of the colormap for the effect of a refracted\n\t\t\t\t\t\t\t\t\t\t\t\t\t// view of the image below the surface.\n\t\t\t\t\t\t\t\t\t\t\t\t\t// (this isn't really tested, just a last minute addition\n\t\t\t\t\t\t\t\t\t\t\t\t\t// and perhaps should be coded differently\n\t\t\t\t\t\t\t\t\t\t\t\t\t// the correct way, would be to use the refract routine, use the alpha channel for depth of\n\t\t\t\t\t\t\t\t\t\t\t\t\t// the water (and make the water disappear when depth = 0), add some watercolor to the colormap\n\t\t\t\t\t\t\t\t\t\t\t\t\t// depending on the depth, and use the calculated refractdir and the depth to find the right\n\t\t\t\t\t\t\t\t\t\t\t\t\t// pixel in the colormap.... who knows, something for the next version\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 base = u_refractColor.rgb;//vec3(0.3, 0.4, 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\tif (u_useRefractTex === 1)\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tbase = texture2D(u_refractMap,(texCoord + myNormal.xy/texScale2*0.03*transp)*32.0).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tbase = mix(base, u_waterColor.rgb, u_waterColor.a);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// 光照计算\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 lightDir = czm_sunDirectionEC;//normalize(vec3(0.0, 0.0, 1.0)); // 光照方向需要从外面传入\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 reflectVec = reflect(-lightDir, myNormal);\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat diffuse = max(0.0, dot(myNormal, lightDir));\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat spec = max(dot(reflectVec, normalize(-eyeDir)), 0.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\tspec = pow(spec, 128.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\t//float lightIntensity = 0.7 * diffuse + 0.3 * spec;\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat lightIntensity = 0.3 * spec;\n\t\t\t\t\t\t\t\t\t\t\t\t\tgl_FragColor = vec4(mix(base, envColor, myangle*transp), 1.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\tgl_FragColor += vec4(0.8)*lightIntensity;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// note that smaller waves appear to move slower than bigger waves\n\t\t\t\t\t\t\t\t\t\t\t\t\t// one could use the tiles and give each tile a different speed if that\n\t\t\t\t\t\t\t\t\t\t\t\t\t// is what you want\n\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t\t",
+        "in vec3 position;\n\t\t\t\t\t\t\t\t\t\t\tattribute vec2 st;\n\t\t\t\t\t\t\t\t\t\t\tuniform mat4 u_modelViewProjectionMatrix;\n\t\t\t\t\t\t\t\t\t\t\tuniform mat4 u_modelViewMatrix;\n\t\t\t\t\t\t\t\t\t\t\tuniform mat4 u_invWorldViewMatrix;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec2 u_texCoordOffset;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec2 u_texCoordScale;\n\t\t\t\t\t\t\t\t\t\t\tuniform float u_frameTime;\n\t\t\t\t\t\t\t\t\t\t\tuniform int u_clampToGroud;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec3 u_camPos;\n\t\t\t\t\t\t\t\t\t\t\tuniform vec3 u_scale;\n\t\t\t\t\t\t\t\t\t\t\tvarying vec3 eyeDir;\n\t\t\t\t\t\t\t\t\t\t\tvarying vec2 texCoord;\n\t\t\t\t\t\t\t\t\t\t\tvarying float myTime;\n\t\t\t\t\t\t\t\t\t\t\tvarying vec4 projectionCoord;\n\t\t\t\t\t\t\t\t\t\t\tvoid main(void)\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t//gl_Position = ftransform();\n\t\t\t\t\t\t\t\t\t\t\t\tgl_Position = u_modelViewProjectionMatrix * vec4(position.xyz,1.0);\n\t\t\t\t\t\t\t\t\t\t\t\tif (u_clampToGroud === 1)\n\t\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\teyeDir = (u_camPos - position.xyz) * u_scale;\n\t\t\t\t\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec4 pos = u_modelViewMatrix * vec4(position.xyz,1.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\teyeDir = vec3(u_invWorldViewMatrix*vec4(pos.xyz,0.0));\n\t\t\t\t\t\t\t\t\t\t\t\t\tprojectionCoord = gl_Position;\n\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t\ttexCoord = (st+u_texCoordOffset)*u_texCoordScale;\n\t\t\t\t\t\t\t\t\t\t\t\tmyTime = 0.01 * u_frameTime;\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t",
+        "uniform sampler2D u_normalMap;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform sampler2D u_refractMap;\n\t\t\t\t\t\t\t\t\t\t\t\t//uniform samplerCube u_cubeMap;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform sampler2D u_reflectMap;\n\t\t\t\t\t\t\t\t\t\t\t\t//uniform sampler2D u_flowMap;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec4 u_waterColor;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec4 u_refractColor;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform int u_useRefractTex;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec4 u_reflectColor;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform int u_reflection;\n\t\t\t\t\t\t\t\t\t\t\t\tuniform vec2 u_flowDir;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying vec3 eyeDir;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying vec2 texCoord;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying float myTime;\n\t\t\t\t\t\t\t\t\t\t\t\tvarying vec4 projectionCoord;\n\t\t\t\t\t\t\t\t\t\t\t\tvoid main (void)\n\t\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\t// texScale determines the amount of tiles generated.\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat texScale = 35.0;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// texScale2 determines the repeat of the water texture (the normalmap) itself\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat texScale2 = 10.0;\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat myangle;\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat transp;\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 myNormal;\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 mytexFlowCoord = texCoord * texScale;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// ff is the factor that blends the tiles.\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 ff = abs(2.0*(fract(mytexFlowCoord)) - 1.0) -0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// take a third power, to make the area with more or less equal contribution\n\t\t\t\t\t\t\t\t\t\t\t\t\t// of more tile bigger\n\t\t\t\t\t\t\t\t\t\t\t\t\tff = 0.5-4.0*ff*ff*ff;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// ffscale is a scaling factor that compensates for the effect that\n\t\t\t\t\t\t\t\t\t\t\t\t\t// adding normal vectors together tends to get them closer to the average normal\n\t\t\t\t\t\t\t\t\t\t\t\t\t// which is a visible effect. For more or less random waves, this factor\n\t\t\t\t\t\t\t\t\t\t\t\t\t// compensates for it\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 ffscale = sqrt(ff*ff + (1.0-ff)*(1.0-ff));\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 Tcoord = texCoord  * texScale2;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// offset makes the water move\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 offset = vec2(myTime,0.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// I scale the texFlowCoord and floor the value to create the tiling\n\t\t\t\t\t\t\t\t\t\t\t\t\t// This could have be replace by an extremely lo-res texture lookup\n\t\t\t\t\t\t\t\t\t\t\t\t\t// using NEAREST pixel.\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 sample = vec3(u_flowDir, 1.0);//texture( u_flowMap, floor(mytexFlowCoord)/ texScale).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// flowdir is supposed to go from -1 to 1 and the line below\n\t\t\t\t\t\t\t\t\t\t\t\t\t// used to be sample.xy * 2.0 - 1.0, but saves a multiply by\n\t\t\t\t\t\t\t\t\t\t\t\t\t// moving this factor two to the sample.b\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 flowdir = sample.xy -0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// sample.b is used for the inverse length of the wave\n\t\t\t\t\t\t\t\t\t\t\t\t\t// could be premultiplied in sample.xy, but this is easier for editing flowtexture\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir *= sample.b;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// build the rotation matrix that scales and rotates the complete tile\n\t\t\t\t\t\t\t\t\t\t\t\t\tmat2 rotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// this is the normal for tile A\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalT0 = texture(u_normalMap, rotmat * Tcoord - offset).rg;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// for the next tile (B) I shift by half the tile size in the x-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tsample = vec3(u_flowDir, 1.0);//texture( u_flowMap, floor((mytexFlowCoord + vec2(0.5,0)))/ texScale ).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir = sample.b * (sample.xy - 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\trotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// and the normal for tile B...\n\t\t\t\t\t\t\t\t\t\t\t\t\t// multiply the offset by some number close to 1 to give it a different speed\n\t\t\t\t\t\t\t\t\t\t\t\t\t// The result is that after blending the water starts to animate and look\n\t\t\t\t\t\t\t\t\t\t\t\t\t// realistic, instead of just sliding in some direction.\n\t\t\t\t\t\t\t\t\t\t\t\t\t// This is also why I took the third power of ff above, so the area where the\n\t\t\t\t\t\t\t\t\t\t\t\t\t// water animates is as big as possible\n\t\t\t\t\t\t\t\t\t\t\t\t\t// adding a small arbitrary constant isn't really needed, but helps to show\n\t\t\t\t\t\t\t\t\t\t\t\t\t// a bit less tiling in the beginning of the program. After a few seconds, the\n\t\t\t\t\t\t\t\t\t\t\t\t\t// tiling cannot be seen anymore so this constant could be removed.\n\t\t\t\t\t\t\t\t\t\t\t\t\t// For the quick demo I leave them in. In a simulation that keeps running for\n\t\t\t\t\t\t\t\t\t\t\t\t\t// some time, you could just as well remove these small constant offsets\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalT1 = texture(u_normalMap, rotmat * Tcoord - offset*1.06+0.62).rg;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// blend them together using the ff factor\n\t\t\t\t\t\t\t\t\t\t\t\t\t// use ff.x because this tile is shifted in the x-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalTAB = ff.x * NormalT0 + (1.0-ff.x) * NormalT1;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// the scaling of NormalTab and NormalTCD is moved to a single scale of\n\t\t\t\t\t\t\t\t\t\t\t\t\t// NormalT later in the program, which is mathematically identical to\n\t\t\t\t\t\t\t\t\t\t\t\t\t// NormalTAB = (NormalTAB - 0.5) / ffscale.x + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// tile C is shifted in the y-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tsample = vec3(u_flowDir, 1.0);//texture( u_flowMap, floor((mytexFlowCoord + vec2(0.0,0.5)))/ texScale ).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir = sample.b * (sample.xy - 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\trotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT0 = texture(u_normalMap, rotmat * Tcoord - offset*1.33+0.27).rg;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// tile D is shifted in both x- and y-direction\n\t\t\t\t\t\t\t\t\t\t\t\t\tsample = vec3(u_flowDir, 1.0);//texture( u_flowMap, floor((mytexFlowCoord + vec2(0.5,0.5)))/ texScale ).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tflowdir = sample.b * (sample.xy - 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\trotmat = mat2(flowdir.x, -flowdir.y, flowdir.y ,flowdir.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT1 = texture(u_normalMap, rotmat * Tcoord - offset*1.24).rg ;\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalTCD = ff.x * NormalT0 + (1.0-ff.x) * NormalT1;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// NormalTCD = (NormalTCD - 0.5) / ffscale.x + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// now blend the two values togetherv\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 NormalT = ff.y * NormalTAB + (1.0-ff.y) * NormalTCD;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// this line below used to be here for scaling the result\n\t\t\t\t\t\t\t\t\t\t\t\t\t//NormalT = (NormalT - 0.5) / ffscale.y + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// below the new, direct scaling of NormalT\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT = (NormalT - 0.5) / (ffscale.y * ffscale.x);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// scaling by 0.3 is arbritrary, and could be done by just\n\t\t\t\t\t\t\t\t\t\t\t\t\t// changing the values in the normal map\n\t\t\t\t\t\t\t\t\t\t\t\t\t// without this factor, the waves look very strong\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT *= 0.3;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// to make the water more transparent\n\t\t\t\t\t\t\t\t\t\t\t\t\ttransp = 1.0;//texture( u_flowMap, texFlowCoord ).a;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// and scale the normals with the transparency\n\t\t\t\t\t\t\t\t\t\t\t\t\tNormalT *= transp*transp;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// assume normal of plane is 0,0,1 and produce the normalized sum of adding NormalT to it\n\t\t\t\t\t\t\t\t\t\t\t\t\tmyNormal = vec3(NormalT,sqrt(1.0-NormalT.x*NormalT.x - NormalT.y*NormalT.y));\n\t\t\t\t\t\t\t\t\t\t\t\t\t// 获取反射颜色。\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 envColor = u_reflectColor.rgb;//vec3(0.5647, 0.6941, 0.8235);\n\t\t\t\t\t\t\t\t\t\t\t\t\tif (u_reflection === 1)\n\t\t\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t//vec3 reflectDir = reflect(eyeDir, myNormal);\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t//vec3 envColor = vec3(czm_textureCube(u_cubeMap, -reflectDir));\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t// 如果要实现反射真实场景，需要把场景渲染5遍构建一个无底的立方体纹理。\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t// 目前使用一张反射纹理近似模拟。\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tvec2 final = projectionCoord.xy / projectionCoord.w;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tfinal = final * 0.5 + 0.5;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tfinal.y = 1.0 - final.y;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tenvColor = texture(u_reflectMap, final + myNormal.xy/texScale2*transp).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t\t\t// very ugly version of fresnel effect\n\t\t\t\t\t\t\t\t\t\t\t\t\t// but it gives a nice transparent water, but not too transparent\n\t\t\t\t\t\t\t\t\t\t\t\t\tmyangle = dot(myNormal,normalize(eyeDir));\n\t\t\t\t\t\t\t\t\t\t\t\t\tmyangle = 0.95-0.6*myangle*myangle;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// blend in the color of the plane below the water\n\t\t\t\t\t\t\t\t\t\t\t\t\t// add in a little distortion of the colormap for the effect of a refracted\n\t\t\t\t\t\t\t\t\t\t\t\t\t// view of the image below the surface.\n\t\t\t\t\t\t\t\t\t\t\t\t\t// (this isn't really tested, just a last minute addition\n\t\t\t\t\t\t\t\t\t\t\t\t\t// and perhaps should be coded differently\n\t\t\t\t\t\t\t\t\t\t\t\t\t// the correct way, would be to use the refract routine, use the alpha channel for depth of\n\t\t\t\t\t\t\t\t\t\t\t\t\t// the water (and make the water disappear when depth = 0), add some watercolor to the colormap\n\t\t\t\t\t\t\t\t\t\t\t\t\t// depending on the depth, and use the calculated refractdir and the depth to find the right\n\t\t\t\t\t\t\t\t\t\t\t\t\t// pixel in the colormap.... who knows, something for the next version\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 base = u_refractColor.rgb;//vec3(0.3, 0.4, 0.5);\n\t\t\t\t\t\t\t\t\t\t\t\t\tif (u_useRefractTex === 1)\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tbase = texture(u_refractMap,(texCoord + myNormal.xy/texScale2*0.03*transp)*32.0).rgb;\n\t\t\t\t\t\t\t\t\t\t\t\t\tbase = mix(base, u_waterColor.rgb, u_waterColor.a);\n\t\t\t\t\t\t\t\t\t\t\t\t\t// 光照计算\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 lightDir = czm_sunDirectionEC;//normalize(vec3(0.0, 0.0, 1.0)); // 光照方向需要从外面传入\n\t\t\t\t\t\t\t\t\t\t\t\t\tvec3 reflectVec = reflect(-lightDir, myNormal);\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat diffuse = max(0.0, dot(myNormal, lightDir));\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat spec = max(dot(reflectVec, normalize(-eyeDir)), 0.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\tspec = pow(spec, 128.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\t//float lightIntensity = 0.7 * diffuse + 0.3 * spec;\n\t\t\t\t\t\t\t\t\t\t\t\t\tfloat lightIntensity = 0.3 * spec;\n\t\t\t\t\t\t\t\t\t\t\t\t\tgl_FragColor = vec4(mix(base, envColor, myangle*transp), 1.0);\n\t\t\t\t\t\t\t\t\t\t\t\t\tgl_FragColor += vec4(0.8)*lightIntensity;\n\t\t\t\t\t\t\t\t\t\t\t\t\t// note that smaller waves appear to move slower than bigger waves\n\t\t\t\t\t\t\t\t\t\t\t\t\t// one could use the tiles and give each tile a different speed if that\n\t\t\t\t\t\t\t\t\t\t\t\t\t// is what you want\n\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t\t",
         "_uniformMap",
         "getColorTexture",
         "_reflectColor",
@@ -38722,7 +38722,7 @@ if(!Cesium.when){
           })
         var o =
             P("0x6fc") +
-            "attribute vec3 aPosition;\n" +
+            "in vec3 aPosition;\n" +
             P("0x6fd") +
             P("0x6fe") +
             P("0x6ff") +
@@ -39494,7 +39494,7 @@ if(!Cesium.when){
             P("0x6fc") +
             P("0x744") +
             P("0x6fd") +
-            "attribute vec4 aSpeedScaleLifeTime;\nattribute vec2 aTexcoord;\nuniform vec4 u_startColor;\n" +
+            "in vec4 aSpeedScaleLifeTime;\nattribute vec2 aTexcoord;\nuniform vec4 u_startColor;\n" +
             P("0x745") +
             "uniform float u_startScale;\n" +
             P("0x700") +
@@ -39530,9 +39530,9 @@ if(!Cesium.when){
             P("0x74f") +
             P("0x726") +
             P("0x750") +
-            "   gl_FragColor = color;\n}",
+            "   out_FragColor = color;\n}",
           g =
-            "attribute vec2 aPlane;\n" +
+            "in vec2 aPlane;\n" +
             P("0x744") +
             P("0x6fd") +
             P("0x6fe") +
@@ -40044,7 +40044,7 @@ if(!Cesium.when){
                     P("0x7c4") +
                     P("0x7bf") +
                     P("0x7b7") +
-                    "    gl_FragColor = color;\n}"
+                    "    out_FragColor = color;\n}"
                   ;(this._postProcess = new e[P("0x7c5")]({
                     fragmentShader: u,
                     uniforms: {
@@ -41367,7 +41367,7 @@ if(!Cesium.when){
                     P("0x88f") +
                     P("0x890") +
                     P("0x891") +
-                    "        gl_FragColor = mix(gl_FragColor, clippingPlanesEdgeColor, clippingPlanesEdgeWidth);\n" +
+                    "        out_FragColor = mix(out_FragColor, clippingPlanesEdgeColor, clippingPlanesEdgeWidth);\n" +
                     P("0x884") +
                     P("0x885")
                   )
@@ -41812,7 +41812,7 @@ if(!Cesium.when){
                 P("0x8ca") +
                 P("0x8cb") +
                 P("0x8cc") +
-                "       gl_FragColor = color;\n" +
+                "       out_FragColor = color;\n" +
                 P("0x8cd") +
                 P("0x614") +
                 P("0x8ce") +
@@ -41843,7 +41843,7 @@ if(!Cesium.when){
                 P("0x8e0") +
                 P("0x71d") +
                 P("0x8e1") +
-                "   }\n   gl_FragColor = color;\n}",
+                "   }\n   out_FragColor = color;\n}",
               n = new e[P("0x12")]()
             ;(i[P("0x8bc")] = new e.PostProcessStage({
               fragmentShader: r,
@@ -41884,10 +41884,10 @@ if(!Cesium.when){
                 P("0x8e4") +
                 "varying vec2 v_textureCoordinates;\n" +
                 P("0x5f9") +
-                "   vec4 color = texture2D(colorTexture, v_textureCoordinates);\n" +
+                "   vec4 color = texture(colorTexture, v_textureCoordinates);\n" +
                 P("0x8cb") +
                 P("0x8cc") +
-                "       gl_FragColor = color;\n" +
+                "       out_FragColor = color;\n" +
                 P("0x8cd") +
                 P("0x614") +
                 P("0x8ce") +
@@ -42137,7 +42137,7 @@ if(!Cesium.when){
                   "uniform vec4 u_param0;\nuniform vec4 u_param1;\nuniform vec4 u_param2;\n" +
                   P("0x901") +
                   P("0x7a4") +
-                  "void main(){\n   vec4 color = texture2D(colorTexture, v_textureCoordinates);\n" +
+                  "void main(){\n   vec4 color = texture(colorTexture, v_textureCoordinates);\n" +
                   P("0x8cb") +
                   P("0x8cc") +
                   P("0x902") +
@@ -42152,7 +42152,7 @@ if(!Cesium.when){
                   "   position /= position.w;\n" +
                   P("0x904") +
                   P("0x905") +
-                  "       gl_FragColor = color;\n       return;\n" +
+                  "       out_FragColor = color;\n       return;\n" +
                   P("0x614") +
                   P("0x906") +
                   P("0x907") +
@@ -42205,7 +42205,7 @@ if(!Cesium.when){
                   P("0x90d") +
                   P("0x7a4") +
                   P("0x5f9") +
-                  "   vec4 color = texture2D(colorTexture, v_textureCoordinates);\n" +
+                  "   vec4 color = texture(colorTexture, v_textureCoordinates);\n" +
                   P("0x8cb") +
                   "   if(currD.r >= 1.0){\n" +
                   P("0x902") +
@@ -42243,7 +42243,7 @@ if(!Cesium.when){
                   P("0x902") +
                   "       return;\n" +
                   P("0x614") +
-                  "   float u = z0 / (z0 + z1);\n   float v = z2 / (z2 + z3);\n   vec4 sColor = texture2D(u_texture, vec2(u, v));\n" +
+                  "   float u = z0 / (z0 + z1);\n   float v = z2 / (z2 + z3);\n   vec4 sColor = texture(u_texture, vec2(u, v));\n" +
                   P("0x917") +
                   "   sColor = sColor * (1.0 - a) + a * u_color;\n" +
                   P("0x918") +
@@ -47587,7 +47587,7 @@ if(!Cesium.when){
             P("0x7ac") +
             "    return (2.0 * z_window - n_range - f_range) / (f_range - n_range);\n}\n" +
             P("0xc77") +
-            "    float visibility = step(position.z, texture2D(shadowMap, position.xy).r);\n    return (visibility === 1.0);\n}\n" +
+            "    float visibility = step(position.z, texture(shadowMap, position.xy).r);\n    return (visibility === 1.0);\n}\n" +
             P("0x708") +
             "{\n" +
             P("0x7b1") +
@@ -47607,7 +47607,7 @@ if(!Cesium.when){
             P("0xc7a") +
             P("0xc7b") +
             P("0xc7c") +
-            "        gl_FragColor = vec4(mix(color.rgb, videoColor.rgb, mixNum), 1.0);\n" +
+            "        out_FragColor = vec4(mix(color.rgb, videoColor.rgb, mixNum), 1.0);\n" +
             P("0xc7d") +
             P("0x7b4") +
             P("0x7b7") +
@@ -47639,7 +47639,7 @@ if(!Cesium.when){
             P("0xc82") +
             "}\n" +
             P("0x708") +
-            "{\n    vec4 color = texture2D(colorTexture, v_textureCoordinates);\n    vec4 currD = texture2D(depthTexture, v_textureCoordinates);\n" +
+            "{\n    vec4 color = texture(colorTexture, v_textureCoordinates);\n    vec4 currD = texture(depthTexture, v_textureCoordinates);\n" +
             P("0x7b3") +
             P("0x7b4") +
             P("0x7b5") +
@@ -47690,7 +47690,7 @@ if(!Cesium.when){
             P("0xc82") +
             "}\n" +
             P("0x708") +
-            "{\n    vec4 color = texture2D(colorTexture, v_textureCoordinates);\n" +
+            "{\n    vec4 color = texture(colorTexture, v_textureCoordinates);\n" +
             P("0x7b2") +
             P("0x7b3") +
             P("0x7b4") +
@@ -47701,7 +47701,7 @@ if(!Cesium.when){
             P("0xc83") +
             P("0xc84") +
             P("0xc79") +
-            "    {\n        gl_FragColor = color;\n        return;\n" +
+            "    {\n        out_FragColor = color;\n        return;\n" +
             P("0x7b7") +
             P("0xc7a") +
             P("0xc7b") +
@@ -47744,7 +47744,7 @@ if(!Cesium.when){
             P("0x7b1") +
             P("0x7b2") +
             P("0x7b3") +
-            "        gl_FragColor = color;\n" +
+            "        out_FragColor = color;\n" +
             P("0x7b5") +
             P("0x7b7") +
             P("0x7b8") +
@@ -47767,7 +47767,7 @@ if(!Cesium.when){
             P("0xc8a") +
             P("0x7bf") +
             P("0xc85") +
-            "        gl_FragColor = vec4(mix(color.rgb, videoColor.rgb, mixNum), 1.0);\n" +
+            "        out_FragColor = vec4(mix(color.rgb, videoColor.rgb, mixNum), 1.0);\n" +
             P("0xc7d") +
             P("0x7b4") +
             "    }\n}"),
@@ -48389,7 +48389,7 @@ if(!Cesium.when){
           }),
           (n.prototype[P("0xcf1")] = function () {
             return (
-              "attribute vec4 aPosition;\n" +
+              "in vec4 aPosition;\n" +
               P("0xcf2") +
               P("0xcf3") +
               P("0xcf4") +

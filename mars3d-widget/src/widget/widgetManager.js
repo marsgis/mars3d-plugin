@@ -25,14 +25,14 @@ const removeKeys = ["_class"]
  * 初始化widget管理器，在构造完成map后调用一次即可。
  *
  * @param {Map} map 地图对象
- * @param {Object} [widgetcfg={}] 全局配置(一般存放在widget.json)，包括：
+ * @param {object} [widgetcfg={}] 全局配置(一般存放在widget.json)，包括：
  * @param {BaseWidget.widgetOptions} [widgetcfg.defaultOptions] 所有widget的默认参数值，可以系统内所有widget相同配置统一在此处传入，额外的个性化的再配置到各widget中。
  * @param {BaseWidget.widgetOptions[]} [widgetcfg.openAtStart] 默认自启动并不可释放的插件，其中autoDisable和openAtStart固定，设置无效。
  * @param {BaseWidget.widgetOptions[]} [widgetcfg.widgets] 所有插件配置，传入后后续激活时，只用传入uri即可。
- * @param {String} [widgetcfg.version] 加载资源时，附加的参数，主要为了清理浏览器缓存，可选值："time"（实时时间戳）或固定的字符串值，每次发布新版本换下固定值。
- * @param {Boolean} [widgetcfg.debugger] 是否显示插件测试栏，true时会在地图下侧显示所有插件测试按钮，方便测试。
+ * @param {string} [widgetcfg.version] 加载资源时，附加的参数，主要为了清理浏览器缓存，可选值："time"（实时时间戳）或固定的字符串值，每次发布新版本换下固定值。
+ * @param {boolean} [widgetcfg.debugger] 是否显示插件测试栏，true时会在地图下侧显示所有插件测试按钮，方便测试。
  *
- * @param {String} [_basePath=''] widgets目录所在的主路径(统一前缀), 如果widgets目录不在主页面一起或存在路由时，可以传入自定义主目录，值为 widgets目录相对于当前html页面的相对路径。
+ * @param {string} [_basePath=''] widgets目录所在的主路径(统一前缀), 如果widgets目录不在主页面一起或存在路由时，可以传入自定义主目录，值为 widgets目录相对于当前html页面的相对路径。
  * @return {void}  无
  * @example
 let widgetCfg ={
@@ -235,7 +235,7 @@ export function init(map, widgetcfg = {}, _basePath = "") {
 
 /**
  * 获取默认init时中传入配置的 windowOptions 参数
- * @return {Object} windowOptions参数默认值
+ * @return {object} windowOptions参数默认值
  * @see BaseWidget.widgetOptions
  */
 export function getDefWindowOptions() {
@@ -277,10 +277,10 @@ function bindDefOptions(item) {
 /**
  * 激活指定 widget模块
  *
- * @param {String|BaseWidget.widgetOptions} item 指widget模块的uri 或 指模块的配置参数,当有配置参数时，参数优先级是：
+ * @param {string|BaseWidget.widgetOptions} item 指widget模块的uri 或 指模块的配置参数,当有配置参数时，参数优先级是：
  * 【activate方法传入的配置 > init方法传入的配置(widget.json) > widget.js内部配置的】
  * @param {Map} [item.map] 当单页面简单场景没有init时，也可以传入map来使用单个widget
- * @param {Boolean} [noDisableOther=false]  不释放其他已激活的widget
+ * @param {boolean} [noDisableOther=false]  不释放其他已激活的widget
  * @return {BaseWidget.widgetOptions}  指widget模块对象
  * @example
 //常用方式，直接使用uri
@@ -414,7 +414,7 @@ function _reStart(thisItem) {
 /**
  * 获取指定的widget配置信息
  *
- * @param {String} uri widget的uri 或 id
+ * @param {string} uri widget的uri 或 id
  * @return {BaseWidget.widgetOptions} widget配置信息
  */
 export function getWidget(uri) {
@@ -430,7 +430,7 @@ export function getWidget(uri) {
 /**
  * 获取指定的widget 对应的实例化对象
  *
- * @param {String} uri widget的uri 或 id
+ * @param {string} uri widget的uri 或 id
  * @return {BaseWidget} widget对应的实例化对象
  */
 export function getClass(uri) {
@@ -445,8 +445,8 @@ export function getClass(uri) {
 /**
  * 获取widget的当前激活状态
  *
- * @param {String} uri widget的uri 或 id
- * @return {Boolean} 是否激活
+ * @param {string} uri widget的uri 或 id
+ * @return {boolean} 是否激活
  */
 export function isActivate(uri) {
   const _class = getClass(uri)
@@ -457,10 +457,26 @@ export function isActivate(uri) {
 }
 
 /**
+ * 设置view弹窗的显示和隐藏，基于修改css实现
+ *
+ * @param {string} uri widget的uri 或 id
+ * @param {boolean} show 是否显示
+ * @param {number} [index] 当有多个view时，可以指定单个操作的view的index
+ * @return {boolean} 是否成功设置
+ */
+export function setViewShow(uri, show, index) {
+  const _class = getClass(uri)
+  if (_class) {
+    _class.setViewShow(show, index)
+  }
+  return _class?.isActivate
+}
+
+/**
  * 释放指定的widget
  *
- * @param {String|String[]} uri widget的uri 或 id
- * @return {Boolean} 是否成功调用了释放
+ * @param {string|string[]} uri widget的uri 或 id
+ * @return {boolean} 是否成功调用了释放
  */
 export function disable(uri) {
   if (!uri) {
@@ -501,8 +517,8 @@ export function disable(uri) {
  * 关闭释放所有widget
  *
  * @export
- * @param {String|Boolean} [nodisable] 传string时 指定不释放的widget的uri或id ，传true值强制释放所有widget(默认autoDisable为false的widet不会释放)
- * @param {String} [group] 指定强制释放的group名(默认autoDisable为false的widet不会释放)，传入group值后会强制释放所有同group组的widget
+ * @param {string|boolean} [nodisable] 传string时 指定不释放的widget的uri或id ，传true值强制释放所有widget(默认autoDisable为false的widet不会释放)
+ * @param {string} [group] 指定强制释放的group名(默认autoDisable为false的widet不会释放)，传入group值后会强制释放所有同group组的widget
  * @return {void}  无
  */
 export function disableAll(nodisable, group) {
@@ -531,8 +547,8 @@ export function disableAll(nodisable, group) {
 /**
  * 关闭释放同组widget
  *
- * @param {String} group 指定强制释放的group名
- * @param {String} [nodisable]  指定不释放的widget的uri或id
+ * @param {string} group 指定强制释放的group名
+ * @param {string} [nodisable]  指定不释放的widget的uri或id
  * @return {void}  无
  */
 export function disableGroup(group, nodisable) {
@@ -616,7 +632,7 @@ function loadWidgetJs() {
  * 绑定类到当前对应js的widget中。
  *
  * @param {BaseWidget} _class 定义的BaseWidget子类
- * @return {Object} 实例化后的对象
+ * @return {object} 实例化后的对象
  */
 export function bindClass(_class) {
   fire(WidgetEventType.load, {
@@ -675,7 +691,7 @@ export function removeDebugeBar() {
 
 /**
  * 获取配置的version配置参数，用于附加清除浏览器缓存
- * @return {String} 配置的version参数
+ * @return {string} 配置的version参数
  */
 export function getCacheVersion() {
   return cacheVersion
@@ -683,7 +699,7 @@ export function getCacheVersion() {
 
 /**
  * 获取init方法传入的主目录配置参数
- * @return {String} 主目录配置参数
+ * @return {string} 主目录配置参数
  */
 export function getBasePath() {
   return basePath
@@ -718,7 +734,7 @@ export const eventTarget = new mars3d.BaseClass()
  *
  * @param {WidgetEventType|WidgetEventType[]} types 事件类型
  * @param {Function} [fn] 绑定的监听器回调方法
- * @param {Object} [context]  侦听器的上下文(this关键字将指向的对象)。
+ * @param {object} [context]  侦听器的上下文(this关键字将指向的对象)。
  * @return {void}  无
  */
 export function on(types, fn, context) {
@@ -730,7 +746,7 @@ export function on(types, fn, context) {
  *
  * @param {WidgetEventType|WidgetEventType[]} types 事件类型
  * @param {Function} [fn] 绑定的监听器回调方法
- * @param {Object} [context]  侦听器的上下文(this关键字将指向的对象)。
+ * @param {object} [context]  侦听器的上下文(this关键字将指向的对象)。
  * @return {void}  无
  */
 export function off(types, fn, context) {
@@ -741,8 +757,8 @@ export function off(types, fn, context) {
  * 触发指定类型的事件。
  *
  * @param {WidgetEventType} type 事件类型
- * @param {Object} data 传输的数据或对象，可在事件回调方法中event对象中获取进行使用
- * @param {BaseClass|Object} [propagate] 将事件传播给父类 (用addEventParent设置)
+ * @param {object} data 传输的数据或对象，可在事件回调方法中event对象中获取进行使用
+ * @param {BaseClass|object} [propagate] 将事件传播给父类 (用addEventParent设置)
  * @return {void}  无
  */
 export function fire(type, data, propagate) {
@@ -755,7 +771,7 @@ export function fire(type, data, propagate) {
  *
  * @param {WidgetEventType|WidgetEventType[]} types 事件类型
  * @param {Function} [fn] 绑定的监听器回调方法
- * @param {Object} [context]  侦听器的上下文(this关键字将指向的对象)。
+ * @param {object} [context]  侦听器的上下文(this关键字将指向的对象)。
  * @return {void}  无
  */
 export function once(types, fn, context) {
@@ -767,7 +783,7 @@ export function once(types, fn, context) {
  *
  * @param {WidgetEventType} type 事件类型
  * @param {BaseClass} [propagate] 是否判断指定的父类 (用addEventParent设置的)
- * @return {Boolean} 是否存在
+ * @return {boolean} 是否存在
  */
 export function listens(type, propagate) {
   return eventTarget.listens(type, propagate)
