@@ -23,7 +23,6 @@
 |  ----  | ----  |
 |[mars3d-supermap](./mars3d-supermap/README.md)	|超图服务插件| 
 |[mars3d-tdt](./mars3d-tdt/README.md)	|天地图三维地名和地形服务插件 | 
-|[mars3d-widget](./mars3d-widget/README.md)	|原生js下的widget模块化插件|  
 
 
   
