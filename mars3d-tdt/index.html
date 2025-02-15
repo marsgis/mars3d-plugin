@@ -65,7 +65,7 @@
         //读取 config.json 配置文件
         var configUrl = '//mars3d.cn/config/config.json'
         mars3d.Util.fetchJson({ url: configUrl }).then(function (json) {
-            initMap(json.map3d)//构建地图
+            initMap(json)//构建地图
         })
 
         var map
