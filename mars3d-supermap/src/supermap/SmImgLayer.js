@@ -25,13 +25,12 @@ const BaseTileLayer = mars3d.layer.BaseTileLayer
  * @param {number} options.rectangle.xmax 最大经度值, -180 至 180
  * @param {number} options.rectangle.ymin 最小纬度值, -90 至 90
  * @param {number} options.rectangle.ymax 最大纬度值, -90 至 90
- * @param {number[]} [options.bbox] bbox规范的瓦片数据的矩形区域范围,与rectangle二选一即可。
+ * @param {number[]} [options.bbox] bbox规范的瓦片数据的矩形区域范围[xmin ,ymin ,xmax ,ymax],与rectangle二选一即可。
  * @param {number} [options.zIndex] 控制图层的叠加层次，默认按加载的顺序进行叠加，但也可以自定义叠加顺序，数字大的在上面(只对同类型图层间有效)。
  * @param {CRS} [options.crs=CRS.EPSG3857] 瓦片数据的坐标系信息，默认为墨卡托投影
  * @param {ChinaCRS} [options.chinaCRS] 标识瓦片的国内坐标系（用于自动纠偏或加偏），自动将瓦片转为map对应的chinaCRS类型坐标系。
  *
  * @param {string} [options.proxy] 加载资源时要使用的代理服务url。
- * @param {object} [options.templateValues] 一个对象，用于替换Url中的模板值的键/值对
  * @param {object} [options.queryParameters] 一个对象，其中包含在检索资源时将发送的查询参数。比如：queryParameters: {'access_token': '123-435-456-000'},
  * @param {object} [options.headers] 一个对象，将发送的其他HTTP标头。比如：headers: { 'X-My-Header': 'valueOfHeader' },
  * @param {boolean} [options.enablePickFeatures=true] 如果为true，则 {@link UrlTemplateImageryProvider#pickFeatures} 请求 pickFeaturesUrl 并尝试解释响应中包含的功能。
@@ -57,13 +56,13 @@ const BaseTileLayer = mars3d.layer.BaseTileLayer
  * @param {object} [options.customTags] 允许替换网址模板中的自定义关键字。该对象必须具有字符串作为键，并且必须具有值。
  *
  * @param {string|number} [options.id = createGuid()] 图层id标识
- * @param {string|number} [options.pid = -1] 图层父级的id，一般图层管理中使用
- * @param {string} [options.name = ''] 图层名称
+ * @param {string|number} [options.pid] 图层父级的id，一般图层管理中使用
+ * @param {string} [options.name] 图层名称
  * @param {boolean} [options.show = true] 图层是否显示
  * @param {BaseClass|boolean} [options.eventParent]  指定的事件冒泡对象，默认为map对象，false时不冒泡
  * @param {object} [options.center] 图层自定义定位视角 {@link Map#setCameraView}
- * @param {number} options.center.lng 经度值, 180 - 180
- * @param {number} options.center.lat 纬度值, -90 - 90
+ * @param {number} options.center.lng 经度值, -180至180
+ * @param {number} options.center.lat 纬度值, -90至90
  * @param {number} [options.center.alt] 高度值
  * @param {number} [options.center.heading] 方向角度值，绕垂直于地心的轴旋转角度, 0至360
  * @param {number} [options.center.pitch] 俯仰角度值，绕纬度线旋转角度, -90至90

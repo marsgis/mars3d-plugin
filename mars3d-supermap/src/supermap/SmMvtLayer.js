@@ -17,13 +17,13 @@ const BaseLayer = mars3d.layer.BaseLayer
  *
  *
  * @param {string|number} [options.id = createGuid()] 图层id标识
- * @param {string|number} [options.pid = -1] 图层父级的id，一般图层管理中使用
- * @param {string} [options.name = ''] 图层名称
+ * @param {string|number} [options.pid] 图层父级的id，一般图层管理中使用
+ * @param {string} [options.name] 图层名称
  * @param {boolean} [options.show = true] 图层是否显示
  * @param {BaseClass|boolean} [options.eventParent]  指定的事件冒泡对象，默认为map对象，false时不冒泡
  * @param {object} [options.center] 图层自定义定位视角 {@link Map#setCameraView}
- * @param {number} options.center.lng 经度值, 180 - 180
- * @param {number} options.center.lat 纬度值, -90 - 90
+ * @param {number} options.center.lng 经度值, -180至180
+ * @param {number} options.center.lat 纬度值, -90至90
  * @param {number} [options.center.alt] 高度值
  * @param {number} [options.center.heading] 方向角度值，绕垂直于地心的轴旋转角度, 0至360
  * @param {number} [options.center.pitch] 俯仰角度值，绕纬度线旋转角度, -90至90
@@ -64,14 +64,13 @@ export class SmMvtLayer extends BaseLayer {
     //   // }
     // })
 
-    const scene = this._map.scene
-    const handler = new Cesium.ScreenSpaceEventHandler(scene.canvas)
+    const handler = new Cesium.ScreenSpaceEventHandler(this._map.scene.canvas)
     handler.setInputAction((event) => {
       if (!this.show) {
         return
       }
 
-      const position = mars3d.PointUtil.getCurrentMousePosition(scene, event.position)
+      const position = this._map.getCurrentMousePosition(event.position)
 
       // 查询出相交图层的feature
       const features = this._mvtLayer.queryRenderedFeatures([position], {

@@ -44,4 +44,6 @@ export class TdtTerrainProvider extends Cesium.GeoTerrainProvider {
 }
 mars3d.LayerUtil.registerTerrainProvider("tdt", TdtTerrainProvider)
 
+// eslint-disable-next-line no-import-assign
+mars3d.TdtTerrainProvider = TdtTerrainProvider // api文档这样的，也兼容使用
 mars3d.provider.TdtTerrainProvider = TdtTerrainProvider

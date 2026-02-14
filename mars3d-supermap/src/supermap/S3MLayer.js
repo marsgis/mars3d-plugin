@@ -16,13 +16,13 @@ const BaseLayer = mars3d.layer.BaseLayer
  * @param {number} options.position.alt 获取或设置底部高程。（单位：米）
  *
  * @param {string|number} [options.id = createGuid()] 图层id标识
- * @param {string|number} [options.pid = -1] 图层父级的id，一般图层管理中使用
- * @param {string} [options.name = ''] 图层名称
+ * @param {string|number} [options.pid] 图层父级的id，一般图层管理中使用
+ * @param {string} [options.name] 图层名称
  * @param {boolean} [options.show = true] 图层是否显示
  * @param {BaseClass|boolean} [options.eventParent]  指定的事件冒泡对象，默认为map对象，false时不冒泡
  * @param {object} [options.center] 图层自定义定位视角 {@link Map#setCameraView}
- * @param {number} options.center.lng 经度值, 180 - 180
- * @param {number} options.center.lat 纬度值, -90 - 90
+ * @param {number} options.center.lng 经度值, -180至180
+ * @param {number} options.center.lat 纬度值, -90至90
  * @param {number} [options.center.alt] 高度值
  * @param {number} [options.center.heading] 方向角度值，绕垂直于地心的轴旋转角度, 0至360
  * @param {number} [options.center.pitch] 俯仰角度值，绕纬度线旋转角度, -90至90
@@ -93,17 +93,17 @@ export class S3MLayer extends BaseLayer {
     }
 
     const centerOld = this._map.getCameraView()
-
+    const url = this.getUrl()
     // 场景添加S3M图层服务
     let promise
     if (this.options.layername) {
-      promise = this._map.scene.addS3MTilesLayerByScp(this.options.url, {
+      promise = this._map.scene.addS3MTilesLayerByScp(url, {
         name: this.options.layername,
         autoSetView: this.options.flyTo,
         cullEnabled: this.options.cullEnabled
       })
     } else {
-      promise = this._map.scene.open(this.options.url, this.options.sceneName, {
+      promise = this._map.scene.open(url, this.options.sceneName, {
         autoSetView: this.options.flyTo
       })
     }
@@ -114,6 +114,10 @@ export class S3MLayer extends BaseLayer {
           this._layerArr = smLayer
         } else {
           this._layerArr = [smLayer]
+        }
+        if (!this.isAdded) {
+          this._removedHook()
+          return
         }
 
         for (let i = 0; i < this._layerArr.length; i++) {
@@ -131,7 +135,7 @@ export class S3MLayer extends BaseLayer {
         this._showHook(this.show)
 
         if (this.options.flyTo) {
-          this.flyToByAnimationEnd()
+          this.flyTo()
         } else if (this.options.flyTo === false) {
           this._map.setCameraView(centerOld, { duration: 0 })
         }
@@ -190,7 +194,9 @@ export class S3MLayer extends BaseLayer {
    * @private
    */
   _addedHook() {
-    this._showHook(this.show)
+    this.eachLayer((layer) => {
+      this._map.scene.layers.add(layer)
+    })
   }
 
   /**
@@ -200,7 +206,13 @@ export class S3MLayer extends BaseLayer {
    * @private
    */
   _removedHook() {
-    this._showHook(false)
+    try {
+      this.eachLayer((layer) => {
+        this._map.scene.layers.remove(layer.name, true)
+      })
+    } catch (e) {
+      mars3d.Log.logWarn(`s3m移除中空值异常(插件本身问题，需改超图插件)`, e)
+    }
   }
 
   /**

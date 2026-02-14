@@ -10,14 +10,24 @@ const BaseLayer = mars3d.layer.BaseLayer
  * @param {string} [options.subdomains='01234567'] 服务负载子域
  * @param {string} [options.key=mars3d.Token.tianditu] 天地图服务token令牌
  *
- * @param {string|number} [options.id = createGuid()] 图层id标识
- * @param {string|number} [options.pid = -1] 图层父级的id，一般图层管理中使用
- * @param {string} [options.name = ''] 图层名称
+ * @param {LabelEntity.StyleOptions} [options.label] 文字样式信息
+ * @param {BillboardEntity.StyleOptions} [options.billboard] 文字样式信息
+ *
+ * @param {object} [options.metadata]  metadata
+ * @param {boolean} [options.aotuCollide=true] 是否开启避让
+ * @param {number[]} [options.collisionPadding=[5, 10, 8, 5]] 开启避让时，标注碰撞增加内边距，上、右、下、左
+ * @param {boolean} [options.serverFirstStyle=true] 服务端样式优先
+ * @param {array} [options.boundBoxList] GeoWTFS.initTDT方法参数
+ *
+ *
+ * @param {string|number} [options.id = mars3d.Util.createGuid()] 图层id标识
+ * @param {string|number} [options.pid] 图层父级的id，一般图层管理中使用
+ * @param {string} [options.name] 图层名称
  * @param {boolean} [options.show = true] 图层是否显示
  * @param {BaseClass|boolean} [options.eventParent]  指定的事件冒泡对象，默认为map对象，false时不冒泡
  * @param {object} [options.center] 图层自定义定位视角 {@link Map#setCameraView}
- * @param {number} options.center.lng 经度值, 180 - 180
- * @param {number} options.center.lat 纬度值, -90 - 90
+ * @param {number} options.center.lng 经度值, -180至180
+ * @param {number} options.center.lat 纬度值, -90至90
  * @param {number} [options.center.alt] 高度值
  * @param {number} [options.center.heading] 方向角度值，绕垂直于地心的轴旋转角度, 0至360
  * @param {number} [options.center.pitch] 俯仰角度值，绕纬度线旋转角度, -90至90
@@ -32,8 +42,19 @@ export class TdtDmLayer extends BaseLayer {
     return this.wtfs
   }
 
+  _showHook(show) {
+    if (show) {
+      this._addedHook()
+    } else {
+      this._removedHook()
+    }
+  }
+
   // 对象添加到地图上的创建钩子方法
   _addedHook() {
+    if (!this.show) {
+      return
+    }
     // 服务域名
     const tdtUrl = this.options.url || "https://t{s}.tianditu.gov.cn/mapservice/GetTiles"
     const token = this.options.key || mars3d.Token.tianditu
@@ -55,9 +76,6 @@ export class TdtDmLayer extends BaseLayer {
 
     // 叠加三维地名服务
     const wtfs = new Cesium.GeoWTFS({
-      ...this.options,
-      viewer: this._map.viewer,
-      subdomains: subdomains,
       metadata: {
         boundBox: {
           minX: -180,
@@ -71,7 +89,11 @@ export class TdtDmLayer extends BaseLayer {
       aotuCollide: true, // 是否开启避让
       collisionPadding: [5, 10, 8, 5], // 开启避让时，标注碰撞增加内边距，上、右、下、左
       serverFirstStyle: true, // 服务端样式优先
-      labelGraphics: {
+      ...this.options,
+
+      viewer: this._map.viewer,
+      subdomains: subdomains,
+      labelGraphics: mars3d.LabelStyleConver.toCesiumVal(this.options.label || {}, {
         font: "28px sans-serif",
         fontSize: 28,
         fillColor: Cesium.Color.WHITE,
@@ -82,12 +104,12 @@ export class TdtDmLayer extends BaseLayer {
         showBackground: false,
         backgroundColor: Cesium.Color.RED,
         backgroundPadding: new Cesium.Cartesian2(10, 10),
-        horizontalOrigin: Cesium.HorizontalOrigin.MIDDLE,
-        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
+        verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
         eyeOffset: Cesium.Cartesian3.ZERO,
-        pixelOffset: new Cesium.Cartesian2(0, 8)
-      },
-      billboardGraphics: {
+        pixelOffset: new Cesium.Cartesian2(0, -10)
+      }),
+      billboardGraphics: mars3d.BillboardStyleConver.toCesiumVal(this.options.billboard || {}, {
         horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
         verticalOrigin: Cesium.VerticalOrigin.CENTER,
         eyeOffset: Cesium.Cartesian3.ZERO,
@@ -98,35 +120,37 @@ export class TdtDmLayer extends BaseLayer {
         scale: 1,
         width: 18,
         height: 18
-      }
+      })
     })
 
     // 三维地名服务，使用wtfs服务
     wtfs.getTileUrl = function () {
-      return tdtUrl + "?lxys={z},{x},{y}&tk=" + token
+      return tdtUrl + "?lxys={z},{x},{y}&VERSION=1.0.0&tk=" + token
     }
 
-    wtfs.initTDT([
-      { x: 6, y: 1, level: 2, boundBox: { minX: 90, minY: 0, maxX: 135, maxY: 45 } },
-      { x: 7, y: 1, level: 2, boundBox: { minX: 135, minY: 0, maxX: 180, maxY: 45 } },
-      { x: 6, y: 0, level: 2, boundBox: { minX: 90, minY: 45, maxX: 135, maxY: 90 } },
-      { x: 7, y: 0, level: 2, boundBox: { minX: 135, minY: 45, maxX: 180, maxY: 90 } },
-      { x: 5, y: 1, level: 2, boundBox: { minX: 45, minY: 0, maxX: 90, maxY: 45 } },
-      { x: 4, y: 1, level: 2, boundBox: { minX: 0, minY: 0, maxX: 45, maxY: 45 } },
-      { x: 5, y: 0, level: 2, boundBox: { minX: 45, minY: 45, maxX: 90, maxY: 90 } },
-      { x: 4, y: 0, level: 2, boundBox: { minX: 0, minY: 45, maxX: 45, maxY: 90 } },
-      { x: 6, y: 2, level: 2, boundBox: { minX: 90, minY: -45, maxX: 135, maxY: 0 } },
-      { x: 6, y: 3, level: 2, boundBox: { minX: 90, minY: -90, maxX: 135, maxY: -45 } },
-      { x: 7, y: 2, level: 2, boundBox: { minX: 135, minY: -45, maxX: 180, maxY: 0 } },
-      { x: 5, y: 2, level: 2, boundBox: { minX: 45, minY: -45, maxX: 90, maxY: 0 } },
-      { x: 4, y: 2, level: 2, boundBox: { minX: 0, minY: -45, maxX: 45, maxY: 0 } },
-      { x: 3, y: 1, level: 2, boundBox: { minX: -45, minY: 0, maxX: 0, maxY: 45 } },
-      { x: 3, y: 0, level: 2, boundBox: { minX: -45, minY: 45, maxX: 0, maxY: 90 } },
-      { x: 2, y: 0, level: 2, boundBox: { minX: -90, minY: 45, maxX: -45, maxY: 90 } },
-      { x: 0, y: 1, level: 2, boundBox: { minX: -180, minY: 0, maxX: -135, maxY: 45 } },
-      { x: 1, y: 0, level: 2, boundBox: { minX: -135, minY: 45, maxX: -90, maxY: 90 } },
-      { x: 0, y: 0, level: 2, boundBox: { minX: -180, minY: 45, maxX: -135, maxY: 90 } }
-    ])
+    wtfs.initTDT(
+      this.options.boundBoxList || [
+        { x: 6, y: 1, level: 2, boundBox: { minX: 90, minY: 0, maxX: 135, maxY: 45 } },
+        { x: 7, y: 1, level: 2, boundBox: { minX: 135, minY: 0, maxX: 180, maxY: 45 } },
+        { x: 6, y: 0, level: 2, boundBox: { minX: 90, minY: 45, maxX: 135, maxY: 90 } },
+        { x: 7, y: 0, level: 2, boundBox: { minX: 135, minY: 45, maxX: 180, maxY: 90 } },
+        { x: 5, y: 1, level: 2, boundBox: { minX: 45, minY: 0, maxX: 90, maxY: 45 } },
+        { x: 4, y: 1, level: 2, boundBox: { minX: 0, minY: 0, maxX: 45, maxY: 45 } },
+        { x: 5, y: 0, level: 2, boundBox: { minX: 45, minY: 45, maxX: 90, maxY: 90 } },
+        { x: 4, y: 0, level: 2, boundBox: { minX: 0, minY: 45, maxX: 45, maxY: 90 } },
+        { x: 6, y: 2, level: 2, boundBox: { minX: 90, minY: -45, maxX: 135, maxY: 0 } },
+        { x: 6, y: 3, level: 2, boundBox: { minX: 90, minY: -90, maxX: 135, maxY: -45 } },
+        { x: 7, y: 2, level: 2, boundBox: { minX: 135, minY: -45, maxX: 180, maxY: 0 } },
+        { x: 5, y: 2, level: 2, boundBox: { minX: 45, minY: -45, maxX: 90, maxY: 0 } },
+        { x: 4, y: 2, level: 2, boundBox: { minX: 0, minY: -45, maxX: 45, maxY: 0 } },
+        { x: 3, y: 1, level: 2, boundBox: { minX: -45, minY: 0, maxX: 0, maxY: 45 } },
+        { x: 3, y: 0, level: 2, boundBox: { minX: -45, minY: 45, maxX: 0, maxY: 90 } },
+        { x: 2, y: 0, level: 2, boundBox: { minX: -90, minY: 45, maxX: -45, maxY: 90 } },
+        { x: 0, y: 1, level: 2, boundBox: { minX: -180, minY: 0, maxX: -135, maxY: 45 } },
+        { x: 1, y: 0, level: 2, boundBox: { minX: -135, minY: 45, maxX: -90, maxY: 90 } },
+        { x: 0, y: 0, level: 2, boundBox: { minX: -180, minY: 45, maxX: -135, maxY: 90 } }
+      ]
+    )
 
     this.wtfs = wtfs
   }
@@ -135,7 +159,7 @@ export class TdtDmLayer extends BaseLayer {
   _removedHook() {
     if (this.wtfs) {
       this.wtfs.destroy()
-      this.wtfs = null
+      delete this.wtfs
     }
   }
 }
